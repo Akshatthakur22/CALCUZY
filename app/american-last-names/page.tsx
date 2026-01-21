@@ -4,17 +4,13 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'American Last Names – 100+ Common Surnames',
-  description: 'Find the perfect American last name from our list of 100+ common surnames. Browse traditional, modern, and unique family names.',
-  keywords: 'american last names, surnames, family names, american surnames',
-  openGraph: {
-    title: 'American Last Names – 100+ Common Surnames',
-    description: 'Find the perfect American last name from our list of 100+ common surnames.',
-    type: 'website',
-  },
-}
+export const metadata = createMetadata({
+  title: 'American Last Names – Common US Surnames',
+  description: 'Find popular American last names from our list of common US surnames. Browse traditional and modern American family names.',
+  keywords: 'american last names, us surnames, common american names, family names',
+})
 
 export default function AmericanLastNames() {
   const commonNames = [

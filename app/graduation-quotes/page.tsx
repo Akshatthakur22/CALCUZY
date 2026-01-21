@@ -4,16 +4,12 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = (): Metadata => ({
-  title: 'Graduation Quotes – 100+ Inspiring Quotes',
-  description: 'Find the perfect graduation quote from our collection of 100+ inspiring quotes. Browse quotes about achievement, success, and new beginnings.',
-  keywords: 'graduation quotes, inspiring quotes, achievement quotes, success quotes',
-  openGraph: {
-    title: 'Graduation Quotes – 100+ Inspiring Quotes',
-    description: 'Find the perfect graduation quote from our collection of 100+ inspiring quotes.',
-    type: 'website',
-  },
+export const metadata = createMetadata({
+  title: 'Graduation Quotes – Inspiring Commencement Sayings',
+  description: 'Find perfect graduation quotes from our collection of inspiring commencement sayings. Motivational messages for graduates and students.',
+  keywords: 'graduation quotes, commencement quotes, inspiring graduation sayings',
 })
 
 export default function GraduationQuotes() {

@@ -1,65 +1,43 @@
-'use client'
-
-import type { Metadata } from 'next'
-import { useState } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
+import BMICalculatorClient from '@/components/client/BMICalculatorClient'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'BMI Calculator – Body Mass Index Tool',
   description: 'Calculate your BMI online with our free body mass index calculator. Get instant BMI results and health category classification.',
   keywords: 'bmi online, body mass index tool, bmi calculator, healthy weight',
-  openGraph: {
-    title: 'BMI Calculator – Body Mass Index Tool',
-    description: 'Calculate your BMI online with our free body mass index calculator.',
-    type: 'website',
-  },
-}
+  url: 'https://calcuzy.com/bmi-calculator',
+  image: '/og-tools.png',
+})
 
 export default function BMICalculator() {
-  const [weight, setWeight] = useState('')
-  const [height, setHeight] = useState('')
-  const [result, setResult] = useState('')
-
-  const calculateBMI = () => {
-    if (!weight || !height) {
-      setResult('Please enter both weight and height')
-      return
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BMI Calculator",
+    "description": "Calculate your Body Mass Index (BMI) online with our free health tool",
+    "url": "https://calcuzy.com/bmi-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
     }
-
-    const weightNum = parseFloat(weight)
-    const heightNum = parseFloat(height)
-
-    if (isNaN(weightNum) || isNaN(heightNum) || weightNum <= 0 || heightNum <= 0) {
-      setResult('Please enter valid positive numbers')
-      return
-    }
-
-    const bmi = weightNum / (heightNum * heightNum) * 703
-    let category = ''
-
-    if (bmi < 18.5) {
-      category = 'Underweight'
-    } else if (bmi < 25) {
-      category = 'Normal weight'
-    } else if (bmi < 30) {
-      category = 'Overweight'
-    } else {
-      category = 'Obese'
-    }
-
-    setResult(`Your BMI is ${bmi.toFixed(1)} (${category})`)
   }
-
   return (
-    <div className="min-h-screen bg-primary-bg">
+    <div className="min-h-screen bg-primary-bg fade-in">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Navbar />
       
-      <main className="container py-12">
-        <div className="text-center mb-12">
+      <main className="container section-responsive">
+        <div className="text-center mb-12 slide-up">
           <h1 className="heading-1 text-center mb-6">
             BMI Calculator
           </h1>
@@ -71,83 +49,33 @@ export default function BMICalculator() {
 
         <AdUnit slot={1} />
 
-        <Card className="max-w-2xl mx-auto mb-12">
-          <div className="space-y-6">
-            <div>
-              <label className="block text-primary-text font-medium mb-2">
-                Weight (kg or lbs)
-              </label>
-              <input
-                type="number"
-                value={weight}
-                onChange={(e) => setWeight(e.target.value)}
-                placeholder="Enter your weight"
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-                step="0.1"
-                min="0"
-              />
-            </div>
-
-            <div>
-              <label className="block text-primary-text font-medium mb-2">
-                Height (cm or inches)
-              </label>
-              <input
-                type="number"
-                value={height}
-                onChange={(e) => setHeight(e.target.value)}
-                placeholder="Enter your height in centimeters"
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-                step="0.1"
-                min="0"
-              />
-            </div>
-
-            <button
-              onClick={calculateBMI}
-              className="w-full btn-primary"
-            >
-              Calculate BMI
-            </button>
-
-            {result && (
-              <div className="p-4 bg-secondary-bg rounded-lg text-center">
-                <div className="text-lg font-medium text-primary-text">
-                  {result}
-                </div>
-              </div>
-            )}
-          </div>
-        </Card>
+        <BMICalculatorClient />
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto fade-in-up">
           <h2 className="heading-2 mb-6">About BMI Calculator</h2>
           
           <div className="prose prose-lg max-w-none">
             <p className="paragraph">
-              Body Mass Index (BMI) is a widely used measure to assess whether your 
-              weight is healthy relative to your height. Our BMI calculator provides instant 
-              results using the standard BMI formula, helping you understand your health 
-              status at a glance.
+              Our Body Mass Index (BMI) calculator provides instant health assessments based on your 
+              weight and height measurements. BMI is a widely used metric that helps determine 
+              whether your weight is healthy relative to your height.
             </p>
             
             <p className="paragraph">
-              BMI is calculated by dividing your weight in kilograms by the square of your 
-              height in meters. The result helps healthcare professionals assess whether you're 
-              underweight, normal weight, overweight, or obese. This simple calculation 
-              provides valuable insight into your overall health status.
+              The BMI calculation was developed in the 19th century and remains one of the most 
+              accessible health screening tools available. While it doesn't directly measure body fat, it 
+              provides a reliable indicator of healthy weight ranges for most adults.
             </p>
             
             <p className="paragraph">
-              Understanding your BMI is important for maintaining good health. A healthy BMI 
-              typically ranges from 18.5 to 24.9, though this can vary based on 
-              factors like age, muscle mass, and ethnicity. Regular BMI monitoring 
-              helps track changes in your body composition over time.
+              Understanding your BMI can help you make informed decisions about diet, exercise, and 
+              overall health management. Our calculator categorizes results into underweight, normal weight, 
+              overweight, and obese categories based on World Health Organization standards.
             </p>
             
-            <h3 className="heading-3 mt-8 mb-4">BMI Categories Explained</h3>
+            <h3 className="heading-3 mt-8 mb-4">BMI Categories</h3>
             <ul className="list-disc pl-6 space-y-2 mb-8">
               <li className="text-secondary-text"><strong>Underweight:</strong> BMI below 18.5</li>
               <li className="text-secondary-text"><strong>Normal weight:</strong> BMI 18.5-24.9</li>

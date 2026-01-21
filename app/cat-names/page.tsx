@@ -1,19 +1,14 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = (): Metadata => ({
-  title: 'Cat Names – 100+ Cat Names',
-  description: 'Find the perfect cat name from our list of 100+ cat names. Browse male, female, and unisex cat names.',
-  keywords: 'cat names, kitten names, cat name ideas, pet names',
-  openGraph: {
-    title: 'Cat Names – 100+ Cat Names',
-    description: 'Find the perfect cat name from our list of 100+ cat names.',
-    type: 'website',
-  },
+export const metadata = createMetadata({
+  title: 'Cat Names – 100+ Popular Cat Names',
+  description: 'Find the perfect cat name from our list of 100+ popular cat names. Browse unique, cute, and classic names for male and female cats.',
+  keywords: 'cat names, popular cat names, kitten names, cat name ideas',
 })
 
 export default function CatNames() {

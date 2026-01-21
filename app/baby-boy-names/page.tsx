@@ -1,24 +1,45 @@
-'use client'
-
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Baby Boy Names – 100+ Boy Names',
-  description: 'Find the perfect baby boy name from our list of 100+ boy names. Browse traditional, modern, and strong names.',
-  keywords: 'baby boy names, boy baby names, baby names, male names',
-  openGraph: {
-    title: 'Baby Boy Names – 100+ Boy Names',
-    description: 'Find the perfect baby boy name from our list of 100+ boy names.',
-    type: 'website',
-  },
-}
+export const metadata = createMetadata({
+  title: 'Baby Boy Names – Popular American Boy Names',
+  description: 'Find perfect baby boy name from our list of popular American boy names. Browse unique, traditional, and modern names for your baby boy.',
+  keywords: 'baby boy names, popular boy names, american boy names, baby name ideas',
+  url: 'https://calcuzy.com/baby-boy-names',
+  image: '/og-names.png',
+})
 
 export default function BabyBoyNames() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Popular Baby Boy Names",
+    "description": "Comprehensive list of popular American baby boy names including traditional, modern, and unique options",
+    "url": "https://calcuzy.com/baby-boy-names",
+    "numberOfItems": 60,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Liam"
+      },
+      {
+        "@type": "ListItem", 
+        "position": 2,
+        "name": "Noah"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Oliver"
+      }
+    ]
+  }
+
   const traditionalNames = [
     'Liam', 'Noah', 'Oliver', 'Ethan', 'Lucas', 'Mason', 'Logan', 'Jacob', 'William', 'James', 'Benjamin',
     'Alexander', 'Michael', 'Daniel', 'Henry', 'Jackson', 'Sebastian', 'Jack', 'Owen', 'Samuel', 'David',
@@ -38,10 +59,14 @@ export default function BabyBoyNames() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Navbar />
       
-      <main className="container py-12">
-        <div className="text-center mb-12">
+      <main className="container section-responsive">
+        <div className="text-center mb-12 slide-up">
           <h1 className="heading-1 text-center mb-6">
             Baby Boy Names – 100+ Strong Ideas
           </h1>
@@ -55,34 +80,50 @@ export default function BabyBoyNames() {
         <AdUnit slot={1} />
 
         <div className="max-w-4xl mx-auto mb-12">
-          <h2 className="heading-2 mb-8">Traditional Baby Boy Names</h2>
-          <Card className="mb-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-6">
+          <Card animation="fade-in-up" delay={100}>
+            <h2 className="heading-2 mb-6">Traditional Baby Boy Names</h2>
+            <p className="paragraph mb-6">
+              Classic and timeless names that have been popular for generations. These traditional 
+              boy names carry strong meanings and have stood the test of time.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {traditionalNames.map((name, index) => (
-                <div key={index} className="text-center p-2 bg-primary-bg border border-border rounded hover:bg-card-hover transition-colors">
-                  <div className="font-medium text-primary-text">{name}</div>
+                <div key={index} className="p-3 bg-secondary-bg rounded-lg text-center font-medium text-primary-text hover:bg-card-hover transition-all duration-200">
+                  {name}
                 </div>
               ))}
             </div>
           </Card>
+        </div>
 
-          <h2 className="heading-2 mb-8">Modern Baby Boy Names</h2>
-          <Card className="mb-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-6">
+        <div className="max-w-4xl mx-auto mb-12">
+          <Card animation="fade-in-up" delay={200}>
+            <h2 className="heading-2 mb-6">Modern Baby Boy Names</h2>
+            <p className="paragraph mb-6">
+              Contemporary and trendy names that are gaining popularity. These modern boy names 
+              reflect current naming trends while maintaining strong appeal.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {modernNames.map((name, index) => (
-                <div key={index} className="text-center p-2 bg-primary-bg border border-border rounded hover:bg-card-hover transition-colors">
-                  <div className="font-medium text-primary-text">{name}</div>
+                <div key={index} className="p-3 bg-secondary-bg rounded-lg text-center font-medium text-primary-text hover:bg-card-hover transition-all duration-200">
+                  {name}
                 </div>
               ))}
             </div>
           </Card>
+        </div>
 
-          <h2 className="heading-2 mb-8">Strong Baby Boy Names</h2>
-          <Card className="mb-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-6">
+        <div className="max-w-4xl mx-auto mb-12">
+          <Card animation="fade-in-up" delay={300}>
+            <h2 className="heading-2 mb-6">Strong & Powerful Boy Names</h2>
+            <p className="paragraph mb-6">
+              Powerful and meaningful names that convey strength and character. These strong 
+              boy names are perfect for parents seeking impactful name choices.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {strongNames.map((name, index) => (
-                <div key={index} className="text-center p-2 bg-primary-bg border border-border rounded hover:bg-card-hover transition-colors">
-                  <div className="font-medium text-primary-text">{name}</div>
+                <div key={index} className="p-3 bg-secondary-bg rounded-lg text-center font-medium text-primary-text hover:bg-card-hover transition-all duration-200">
+                  {name}
                 </div>
               ))}
             </div>
@@ -91,13 +132,13 @@ export default function BabyBoyNames() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto fade-in-up">
           <h2 className="heading-2 mb-6">About Baby Boy Names</h2>
           
           <div className="prose prose-lg max-w-none">
             <p className="paragraph">
-              Choosing the perfect baby boy name is an important decision that will last 
-              your son's lifetime. Our comprehensive list of 100+ strong boy names includes 
+              Choosing the perfect baby boy name is one of the most exciting decisions 
+              you'll make as a parent. Our comprehensive list of 100+ strong boy names includes 
               timeless classics, modern trends, and powerful options that convey strength 
               and character.
             </p>
@@ -116,6 +157,30 @@ export default function BabyBoyNames() {
               find a name that carries both beauty and purpose.
             </p>
             
+            <h3 className="heading-3 mt-8 mb-4">Popular Baby Boy Name Trends 2026</h3>
+            <p className="paragraph mb-6">
+              Current naming trends show parents moving toward shorter, more distinctive names 
+              while still appreciating traditional roots. Names with strong vowel sounds and 
+              positive meanings are particularly popular, reflecting a desire for names that 
+              will empower children throughout their lives.
+            </p>
+            
+            <h3 className="heading-3 mb-4">Cultural Influences in American Baby Names</h3>
+            <p className="paragraph mb-6">
+              American baby boy names today reflect diverse cultural influences, from traditional 
+              English and biblical names to international options gaining popularity. This diversity 
+              gives parents access to names that honor heritage while embracing global naming 
+              conventions and modern sensibilities.
+            </p>
+            
+            <h3 className="heading-3 mb-4">Choosing the Right Baby Boy Name</h3>
+            <p className="paragraph mb-6">
+              The perfect baby boy name should feel meaningful to parents while serving the 
+              child well throughout life. Consider factors like pronunciation ease, classroom 
+              friendliness, professional appropriateness, and how the name might be 
+              perceived in different social contexts.
+            </p>
+            
             <h3 className="heading-3 mt-8 mb-4">Tips for Choosing Baby Boy Names</h3>
             <ul className="list-disc pl-6 space-y-2 mb-8">
               <li className="text-secondary-text">Say the full name with your last name to test flow</li>
@@ -124,6 +189,7 @@ export default function BabyBoyNames() {
               <li className="text-secondary-text">Think about the meaning and origin of the name</li>
               <li className="text-secondary-text">Select a name that ages well from childhood to adulthood</li>
               <li className="text-secondary-text">Check popularity trends in your area</li>
+              <li className="text-secondary-text">Avoid names that might be difficult to spell or pronounce</li>
             </ul>
             
             <p className="paragraph">

@@ -4,16 +4,12 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = (): Metadata => ({
-  title: 'Aesthetic Quotes – 100+ Beautiful Quotes',
-  description: 'Find the perfect aesthetic quote from our collection of 100+ beautiful quotes. Browse quotes about beauty, art, and life.',
-  keywords: 'aesthetic quotes, beautiful quotes, art quotes, life quotes',
-  openGraph: {
-    title: 'Aesthetic Quotes – 100+ Beautiful Quotes',
-    description: 'Find the perfect aesthetic quote from our collection of 100+ beautiful quotes.',
-    type: 'website',
-  },
+export const metadata = createMetadata({
+  title: 'Aesthetic Quotes – Beautiful Short Quotes',
+  description: 'Find beautiful aesthetic quotes from our collection of inspiring short quotes. Perfect for social media and daily inspiration.',
+  keywords: 'aesthetic quotes, short aesthetic quotes, beautiful quotes, inspiring quotes',
 })
 
 export default function AestheticQuotes() {

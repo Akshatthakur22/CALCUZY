@@ -1,22 +1,32 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = (): Metadata => ({
+export const metadata = createMetadata({
   title: 'Motivational Quotes – 100+ Inspiring Quotes',
-  description: 'Find the perfect motivational quote from our collection of 100+ inspiring quotes. Browse quotes about success, perseverance, and achievement.',
+  description: 'Find perfect motivational quote from our collection of 100+ inspiring quotes. Browse quotes about success, perseverance, and achievement.',
   keywords: 'motivational quotes, inspiring quotes, success quotes, motivational sayings',
-  openGraph: {
-    title: 'Motivational Quotes – 100+ Inspiring Quotes',
-    description: 'Find the perfect motivational quote from our collection of 100+ inspiring quotes.',
-    type: 'website',
-  },
+  url: 'https://calcuzy.com/motivational-quotes',
+  image: '/og-quotes.png',
 })
 
 export default function MotivationalQuotes() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Motivational Quotes Collection",
+    "description": "Comprehensive collection of 100+ motivational quotes about success, perseverance, and achievement",
+    "url": "https://calcuzy.com/motivational-quotes",
+    "author": {
+      "@type": "Organization",
+      "name": "Calcuzy.com"
+    },
+    "keywords": "motivational quotes, inspiring quotes, success quotes, achievement quotes"
+  }
+
   const successQuotes = [
     'Success is not final, failure is not fatal: it is the courage to continue that counts. - Winston Churchill',
     'The only way to do great work is to love what you do. - Steve Jobs',
@@ -198,6 +208,28 @@ export default function MotivationalQuotes() {
             </div>
             
             <div>
+              <h3 className="heading-3 mb-2">The Psychology Behind Motivational Quotes</h3>
+              <p className="paragraph">
+                Motivational quotes work by tapping into fundamental human psychology 
+                - they remind us of our potential, challenge negative thought patterns, 
+                and activate the brain's reward centers. Scientific studies show that 
+                regular exposure to inspiring quotes can improve mood, increase 
+                productivity, and build resilience over time.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="heading-3 mb-2">Historical Evolution of Motivational Speaking</h3>
+              <p className="paragraph">
+                The tradition of motivational speaking dates back centuries, from ancient 
+                philosophical teachings to modern TED talks and social media influencers. 
+                Today's motivational quotes often blend timeless wisdom with 
+                contemporary challenges, making them relevant to modern audiences while 
+                preserving their core inspirational power.
+              </p>
+            </div>
+            
+            <div>
               <h3 className="heading-3 mb-2">How can I use motivational quotes effectively?</h3>
               <p className="paragraph">
                 Use motivational quotes by starting your day with an inspiring message, 
@@ -224,6 +256,26 @@ export default function MotivationalQuotes() {
                 backgrounds. Whether you're a student, professional, parent, or anyone 
                 seeking inspiration, you'll find quotes that speak to your unique 
                 situation and goals.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="heading-3 mb-2">Writing Your Own Motivational Quotes</h3>
+              <p className="paragraph">
+                The best motivational quotes often come from personal experience and 
+                authentic reflection. Keep a journal of insights that inspire you, 
+                share them with others, and don't be afraid to express your unique 
+                perspective on motivation and success.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="heading-3 mb-2">Motivational Quotes in Different Cultures</h3>
+              <p className="paragraph">
+                While our collection focuses on English-language quotes, 
+                motivational wisdom exists across all cultures. From Japanese proverbs about 
+                perseverance to African sayings about community strength, every culture 
+                offers unique perspectives on motivation and achievement worth exploring.
               </p>
             </div>
           </div>

@@ -1,19 +1,14 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = (): Metadata => ({
+export const metadata = createMetadata({
   title: 'Dog Names – 100+ Popular Dog Names',
   description: 'Find the perfect dog name from our list of 100+ popular dog names. Browse unique, cute, and classic names for male and female dogs.',
   keywords: 'dog names, popular dog names, puppy names, dog name ideas',
-  openGraph: {
-    title: 'Dog Names – 100+ Popular Dog Names',
-    description: 'Find the perfect dog name from our list of 100+ popular dog names.',
-    type: 'website',
-  },
 })
 
 export default function DogNames() {
@@ -165,6 +160,26 @@ export default function DogNames() {
                 A good dog name is typically short (1-2 syllables), easy to pronounce, 
                 and doesn't sound like common training commands. It should be distinctive 
                 enough for your dog to recognize but simple enough for daily use.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="heading-3 mb-2">Popular Dog Naming Trends 2026</h3>
+              <p className="paragraph mb-6">
+                Current dog naming trends reflect a blend of traditional favorites 
+                and modern creativity. Human names like Max, Bella, and Charlie remain popular, 
+                while nature-inspired names like Luna, River, and Willow are gaining traction. 
+                Pet owners increasingly choose names that reflect their dog's unique 
+                personality and appearance.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="heading-3 mb-2">Celebrity Dog Names</h3>
+              <p className="paragraph mb-6">
+                Celebrity dog names often influence popular naming trends. 
+                From Taylor Swift's dogs to social media famous pets, these names 
+                can spark inspiration while maintaining individuality for your furry friend.
               </p>
             </div>
             

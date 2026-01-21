@@ -4,16 +4,12 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = (): Metadata => ({
-  title: 'Love Quotes – 100+ Romantic Quotes',
-  description: 'Find the perfect love quote from our collection of 100+ romantic quotes. Browse quotes about romance, relationships, and matters of the heart.',
-  keywords: 'love quotes, romantic quotes, relationship quotes, heart quotes',
-  openGraph: {
-    title: 'Love Quotes – 100+ Romantic Quotes',
-    description: 'Find the perfect love quote from our collection of 100+ romantic quotes.',
-    type: 'website',
-  },
+export const metadata = createMetadata({
+  title: 'Love Quotes – Romantic & Heartfelt Sayings',
+  description: 'Find beautiful love quotes from our collection of romantic and heartfelt sayings. Perfect for expressing your feelings to loved ones.',
+  keywords: 'love quotes, romantic quotes, heartfelt sayings, relationship quotes',
 })
 
 export default function LoveQuotes() {

@@ -1,54 +1,17 @@
-'use client'
-
-import type { Metadata } from 'next'
-import { useState } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
+import DateDifferenceClient from '@/components/client/DateDifferenceClient'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Date Difference – Calculate Days Between Dates',
-  description: 'Calculate the exact number of days between any two dates with our free date difference calculator. Perfect for planning events, deadlines, and milestones.',
-  keywords: 'calculate days between dates, date difference calculator, days between two dates',
-  openGraph: {
-    title: 'Date Difference – Calculate Days Between Dates',
-    description: 'Calculate the exact number of days between any two dates with our free date difference calculator.',
-    type: 'website',
-  },
-}
+export const metadata = createMetadata({
+  title: 'Date Difference Calculator – Calculate Days Between Dates',
+  description: 'Calculate the exact number of days between two dates with our free date difference calculator. Perfect for planning and tracking important dates.',
+  keywords: 'calculate days between dates, date difference, date calculator',
+})
 
 export default function DateDifference() {
-  const [startDate, setStartDate] = useState('')
-  const [endDate, setEndDate] = useState('')
-  const [result, setResult] = useState('')
-
-  const calculateDifference = () => {
-    if (!startDate || !endDate) {
-      setResult('Please select both start and end dates')
-      return
-    }
-
-    const start = new Date(startDate)
-    const end = new Date(endDate)
-
-    if (start > end) {
-      setResult('Start date cannot be after end date')
-      return
-    }
-
-    const difference = end.getTime() - start.getTime()
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24))
-    const weeks = Math.floor(days / 7)
-    const months = Math.floor(days / 30.44)
-    const years = Math.floor(days / 365.25)
-
-    setResult(`${days} days (${weeks} weeks, ${months} months, ${years} years)`)
-  }
-
-  const today = new Date().toISOString().split('T')[0]
-
   return (
     <div className="min-h-screen bg-primary-bg">
       <Navbar />
@@ -59,57 +22,14 @@ export default function DateDifference() {
             Date Difference Calculator
           </h1>
           <p className="paragraph text-center max-w-2xl mx-auto mb-8">
-            Calculate the exact number of days, weeks, months, and years between any two 
-            dates. Perfect for planning events, tracking deadlines, or calculating time elapsed.
+            Calculate the exact number of days between two dates. Perfect for planning events, 
+            tracking deadlines, or calculating time periods.
           </p>
         </div>
 
         <AdUnit slot={1} />
 
-        <Card className="max-w-2xl mx-auto mb-12">
-          <div className="space-y-6">
-            <div>
-              <label className="block text-primary-text font-medium mb-2">
-                Start Date
-              </label>
-              <input
-                type="date"
-                value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-                max={today}
-              />
-            </div>
-
-            <div>
-              <label className="block text-primary-text font-medium mb-2">
-                End Date
-              </label>
-              <input
-                type="date"
-                value={endDate}
-                onChange={(e) => setEndDate(e.target.value)}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-                max={today}
-              />
-            </div>
-
-            <button
-              onClick={calculateDifference}
-              className="w-full btn-primary"
-            >
-              Calculate Difference
-            </button>
-
-            {result && (
-              <div className="p-4 bg-secondary-bg rounded-lg text-center">
-                <div className="text-lg font-medium text-primary-text">
-                  {result}
-                </div>
-              </div>
-            )}
-          </div>
-        </Card>
+        <DateDifferenceClient />
 
         <AdUnit slot={2} />
 

@@ -4,16 +4,12 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = (): Metadata => ({
-  title: 'Christmas Quotes – 100+ Holiday Quotes',
-  description: 'Find the perfect Christmas quote from our collection of 100+ holiday quotes. Browse quotes about love, joy, and Christmas spirit.',
-  keywords: 'christmas quotes, holiday quotes, festive quotes, christmas sayings',
-  openGraph: {
-    title: 'Christmas Quotes – 100+ Holiday Quotes',
-    description: 'Find the perfect Christmas quote from our collection of 100+ holiday quotes.',
-    type: 'website',
-  },
+export const metadata = createMetadata({
+  title: 'Christmas Quotes – Holiday Wishes & Sayings',
+  description: 'Find perfect Christmas quotes from our collection of holiday wishes and sayings. Heartwarming Christmas messages for cards and greetings.',
+  keywords: 'christmas quotes, holiday wishes, christmas sayings, christmas messages',
 })
 
 export default function ChristmasQuotes() {

@@ -4,17 +4,13 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Baby Girl Names – 100+ Girl Names',
-  description: 'Find the perfect baby girl name from our list of 100+ girl names. Browse traditional, modern, and unique names.',
-  keywords: 'baby girl names, girl baby names, baby names, female names',
-  openGraph: {
-    title: 'Baby Girl Names – 100+ Girl Names',
-    description: 'Find the perfect baby girl name from our list of 100+ girl names.',
-    type: 'website',
-  },
-}
+export const metadata = createMetadata({
+  title: 'Baby Girl Names – Popular Girl Names',
+  description: 'Find the perfect baby girl name from our list of popular girl names. Browse beautiful, unique, and traditional names for baby girls.',
+  keywords: 'baby girl names, popular girl names, girl name ideas, baby names',
+})
 
 export default function BabyGirlNames() {
   const traditionalNames = [

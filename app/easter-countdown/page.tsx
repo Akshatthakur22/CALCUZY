@@ -1,54 +1,17 @@
-'use client'
-
-import type { Metadata } from 'next'
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
+import CountdownEaster from '@/components/client/CountdownEaster'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Easter 2026 Countdown – How Many Days Left?',
-  description: 'Count down the exact days, hours, minutes, and seconds until Easter 2026. Real-time Easter countdown timer with accurate time remaining.',
+  description: 'Count down to Easter 2026 with our precise timer. See exactly how many days, hours, minutes, and seconds remain until Easter Sunday.',
   keywords: 'easter timer, easter countdown, days until easter, easter 2026',
-  openGraph: {
-    title: 'Easter 2026 Countdown – How Many Days Left?',
-    description: 'Count down the exact days, hours, minutes, and seconds until Easter 2026.',
-    type: 'website',
-  },
-}
+})
 
 export default function EasterCountdown() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  })
-
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const easter = new Date('April 5, 2026 00:00:00')
-      const now = new Date()
-      const difference = easter.getTime() - now.getTime()
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        })
-      }
-    }
-
-    calculateTimeLeft()
-    const timer = setInterval(calculateTimeLeft, 1000)
-
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <div className="min-h-screen bg-primary-bg">
       <Navbar />
@@ -66,39 +29,7 @@ export default function EasterCountdown() {
 
         <AdUnit slot={1} />
 
-        <Card className="max-w-4xl mx-auto mb-12">
-          <div className="text-center py-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <div className="text-5xl md:text-6xl font-heading-bold text-accent mb-2">
-                  {timeLeft.days}
-                </div>
-                <div className="text-secondary-text font-medium">Days</div>
-              </div>
-              <div>
-                <div className="text-5xl md:text-6xl font-heading-bold text-accent mb-2">
-                  {timeLeft.hours}
-                </div>
-                <div className="text-secondary-text font-medium">Hours</div>
-              </div>
-              <div>
-                <div className="text-5xl md:text-6xl font-heading-bold text-accent mb-2">
-                  {timeLeft.minutes}
-                </div>
-                <div className="text-secondary-text font-medium">Minutes</div>
-              </div>
-              <div>
-                <div className="text-5xl md:text-6xl font-heading-bold text-accent mb-2">
-                  {timeLeft.seconds}
-                </div>
-                <div className="text-secondary-text font-medium">Seconds</div>
-              </div>
-            </div>
-            <div className="text-lg text-primary-text font-medium">
-              Until Easter Sunday, April 5, 2026
-            </div>
-          </div>
-        </Card>
+        <CountdownEaster />
 
         <AdUnit slot={2} />
 

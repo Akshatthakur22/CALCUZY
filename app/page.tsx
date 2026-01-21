@@ -1,32 +1,48 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Calcuzy.com - Simple Online Tools, Countdowns & Everyday Utilities',
   description: 'Minimal. Fast. Search-Optimized. Revenue-Ready. Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity.',
   keywords: 'online tools, countdown timers, calculators, simple utilities, age calculator, BMI calculator',
-  openGraph: {
-    title: 'Calcuzy.com - Simple Online Tools & Countdowns',
-    description: 'Minimal. Fast. Search-Optimized. Simple online tools and countdown timers.',
-    type: 'website',
-  },
-}
+  url: 'https://calcuzy.com/',
+  image: '/og-default.png',
+})
 
 export default function HomePage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Calcuzy.com",
+    "description": "Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity",
+    "url": "https://calcuzy.com",
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": "https://calcuzy.com?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-primary-bg">
+    <div className="min-h-screen bg-primary-bg fade-in">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Navbar />
       
-      <main className="container py-12">
-        <div className="text-center mb-16">
+      <main className="container section-responsive">
+        <div className="text-center mb-16 slide-up">
           <h1 className="heading-1 text-center mb-6">
             Simple Online Tools, Countdowns & Everyday Utilities
           </h1>
-          <p className="paragraph text-center max-w-2xl mx-auto mb-8">
+          <p className="paragraph text-center max-w-3xl mx-auto mb-8">
             Calcuzy.com offers minimal, fast, and search-optimized tools for everyday use. 
             From countdown timers to practical calculators, we provide simple solutions without the clutter.
           </p>
@@ -34,51 +50,83 @@ export default function HomePage() {
 
         <AdUnit slot={1} />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <Card>
+        <div className="grid-responsive-4 mb-16">
+          <Card animation="fade-in-up" delay={100}>
             <h3 className="heading-3 mb-4">🎄 Countdowns</h3>
             <p className="paragraph text-sm mb-4">
               Track important dates and holidays with our precise countdown timers.
             </p>
-            <Link href="/days-until-christmas" className="text-accent hover:underline text-sm font-medium">
-              Christmas Countdown →
-            </Link>
+            <div className="space-y-2">
+              <Link href="/days-until-christmas" className="link-accent text-sm font-medium block">
+                Christmas Countdown →
+              </Link>
+              <Link href="/days-until-new-year" className="link-accent text-sm font-medium block">
+                New Year Countdown →
+              </Link>
+              <Link href="/days-until-halloween" className="link-accent text-sm font-medium block">
+                Halloween Countdown →
+              </Link>
+            </div>
           </Card>
 
-          <Card>
+          <Card animation="fade-in-up" delay={200}>
             <h3 className="heading-3 mb-4">🧮 Tools</h3>
             <p className="paragraph text-sm mb-4">
               Practical calculators and utilities for everyday calculations and conversions.
             </p>
-            <Link href="/age-calculator" className="text-accent hover:underline text-sm font-medium">
-              Age Calculator →
-            </Link>
+            <div className="space-y-2">
+              <Link href="/age-calculator" className="link-accent text-sm font-medium block">
+                Age Calculator →
+              </Link>
+              <Link href="/bmi-calculator" className="link-accent text-sm font-medium block">
+                BMI Calculator →
+              </Link>
+              <Link href="/unit-converter" className="link-accent text-sm font-medium block">
+                Unit Converter →
+              </Link>
+            </div>
           </Card>
 
-          <Card>
+          <Card animation="fade-in-up" delay={300}>
             <h3 className="heading-3 mb-4">📝 Names</h3>
             <p className="paragraph text-sm mb-4">
               Curated lists of popular and unique names for pets, babies, and more.
             </p>
-            <Link href="/dog-names" className="text-accent hover:underline text-sm font-medium">
-              Dog Names →
-            </Link>
+            <div className="space-y-2">
+              <Link href="/dog-names" className="link-accent text-sm font-medium block">
+                Dog Names →
+              </Link>
+              <Link href="/baby-boy-names" className="link-accent text-sm font-medium block">
+                Baby Boy Names →
+              </Link>
+              <Link href="/cat-names" className="link-accent text-sm font-medium block">
+                Cat Names →
+              </Link>
+            </div>
           </Card>
 
-          <Card>
+          <Card animation="fade-in-up" delay={400}>
             <h3 className="heading-3 mb-4">💬 Quotes</h3>
             <p className="paragraph text-sm mb-4">
               Inspirational and meaningful quotes for motivation and reflection.
             </p>
-            <Link href="/motivational-quotes" className="text-accent hover:underline text-sm font-medium">
-              Motivational Quotes →
-            </Link>
+            <div className="space-y-2">
+              <Link href="/motivational-quotes" className="link-accent text-sm font-medium block">
+                Motivational Quotes →
+              </Link>
+              <Link href="/love-quotes" className="link-accent text-sm font-medium block">
+                Love Quotes →
+              </Link>
+              <Link href="/christmas-quotes" className="link-accent text-sm font-medium block">
+                Christmas Quotes →
+              </Link>
+            </div>
           </Card>
         </div>
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto fade-in-up">
           <h2 className="heading-2 mb-6">Why Choose Calcuzy.com?</h2>
           
           <div className="prose prose-lg max-w-none">
@@ -121,7 +169,7 @@ export default function HomePage() {
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto mt-16">
+        <div className="max-w-4xl mx-auto mt-16 fade-in-up">
           <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
           
           <div className="space-y-6">

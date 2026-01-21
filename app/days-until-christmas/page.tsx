@@ -1,60 +1,43 @@
-'use client'
-
-import type { Metadata } from 'next'
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
+import CountdownChristmas from '@/components/client/CountdownChristmas'
 import AdUnit from '@/components/AdUnit'
+import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = (): Metadata => ({
+export const metadata = createMetadata({
   title: 'Days Until Christmas 2026 – Exact Countdown Timer',
   description: 'Count down the exact days, hours, minutes, and seconds until Christmas 2026. Real-time Christmas countdown timer with accurate time remaining.',
   keywords: 'christmas countdown, xmas 2026, days until christmas, christmas timer',
-  openGraph: {
-    title: 'Days Until Christmas 2026 – Exact Countdown Timer',
-    description: 'Count down the exact days, hours, minutes, and seconds until Christmas 2026.',
-    type: 'website',
-  },
+  url: 'https://calcuzy.com/days-until-christmas',
+  image: '/og-countdowns.png',
 })
 
 export default function ChristmasCountdown() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  })
-
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const christmas = new Date('December 25, 2026 00:00:00')
-      const now = new Date()
-      const difference = christmas.getTime() - now.getTime()
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        })
-      }
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Christmas 2026 Countdown",
+    "description": "Count down the exact days, hours, minutes, and seconds until Christmas 2026",
+    "startDate": "2026-12-25T00:00:00",
+    "eventStatus": "ScheduledEvent",
+    "eventAttendanceMode": "OnlineEventAttendanceMode",
+    "url": "https://calcuzy.com/days-until-christmas",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://calcuzy.com/days-until-christmas"
     }
-
-    calculateTimeLeft()
-    const timer = setInterval(calculateTimeLeft, 1000)
-
-    return () => clearInterval(timer)
-  }, [])
-
+  }
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Navbar />
       
-      <main className="container py-12">
-        <div className="text-center mb-12">
+      <main className="container section-responsive">
+        <div className="text-center mb-12 slide-up">
           <h1 className="heading-1 text-center mb-6">
             Days Until Christmas 2026
           </h1>
@@ -66,43 +49,11 @@ export default function ChristmasCountdown() {
 
         <AdUnit slot={1} />
 
-        <Card className="max-w-4xl mx-auto mb-12">
-          <div className="text-center py-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <div className="text-5xl md:text-6xl font-heading-bold text-accent mb-2">
-                  {timeLeft.days}
-                </div>
-                <div className="text-secondary-text font-medium">Days</div>
-              </div>
-              <div>
-                <div className="text-5xl md:text-6xl font-heading-bold text-accent mb-2">
-                  {timeLeft.hours}
-                </div>
-                <div className="text-secondary-text font-medium">Hours</div>
-              </div>
-              <div>
-                <div className="text-5xl md:text-6xl font-heading-bold text-accent mb-2">
-                  {timeLeft.minutes}
-                </div>
-                <div className="text-secondary-text font-medium">Minutes</div>
-              </div>
-              <div>
-                <div className="text-5xl md:text-6xl font-heading-bold text-accent mb-2">
-                  {timeLeft.seconds}
-                </div>
-                <div className="text-secondary-text font-medium">Seconds</div>
-              </div>
-            </div>
-            <div className="text-lg text-primary-text font-medium">
-              Until Christmas Day, December 25, 2026
-            </div>
-          </div>
-        </Card>
+        <CountdownChristmas />
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto fade-in-up">
           <h2 className="heading-2 mb-6">About Christmas Countdown</h2>
           
           <div className="prose prose-lg max-w-none">
@@ -117,21 +68,20 @@ export default function ChristmasCountdown() {
               The tradition of counting down to Christmas dates back centuries, with advent calendars and 
               other countdown methods helping build excitement for the holiday season. In modern times, 
               digital countdown timers like ours provide precise measurements down to the second, helping 
-              families coordinate their holiday activities and celebrations.
+              you experience the anticipation in real-time.
             </p>
             
             <p className="paragraph">
-              Christmas falls on December 25th every year, commemorating the birth of Jesus Christ. In the 
-              United States, it's a federal holiday marked by gift-giving, family gatherings, festive 
-              decorations, and traditional meals. Many Americans start celebrating weeks in advance, with 
-              holiday music, decorations, and events beginning as early as November.
+              Our Christmas countdown updates automatically every second, ensuring you always have the most 
+              accurate time remaining until Christmas morning. Whether you're checking from your phone, 
+              tablet, or computer, the countdown remains synchronized and precise.
             </p>
             
-            <h3 className="heading-3 mt-8 mb-4">Popular Christmas Traditions in the US</h3>
+            <h3 className="heading-3 mt-8 mb-4">Popular Christmas Traditions</h3>
             <ul className="list-disc pl-6 space-y-2 mb-8">
               <li className="text-secondary-text">Decorating Christmas trees with lights and ornaments</li>
               <li className="text-secondary-text">Exchanging gifts with family and friends</li>
-              <li className="text-secondary-text">Hanging stockings by the fireplace</li>
+              <li className="text-secondary-text">Hanging stockings by fireplace</li>
               <li className="text-secondary-text">Singing Christmas carols and holiday music</li>
               <li className="text-secondary-text">Watching classic Christmas movies and specials</li>
             </ul>

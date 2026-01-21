@@ -15,6 +15,12 @@ module.exports = {
         'border': '#E5E5E5',
         'card-hover': '#F2F2F2',
         'accent': '#0A84FF',
+        'gray-50': '#F9FAFB',
+        'gray-100': '#F3F4F6',
+        'gray-200': '#E5E7EB',
+        'gray-500': '#6B7280',
+        'blue-500': '#3B82F6',
+        'blue-600': '#2563EB',
       },
       fontFamily: {
         'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
@@ -31,6 +37,35 @@ module.exports = {
         'text': '300',
         'text-normal': '400',
         'button': '500',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.6s ease-out',
+        'slide-up': 'slideUp 0.6s ease-out',
+        'fade-in-up': 'fadeInUp 0.6s ease-out',
+        'staggered-fade-in': 'staggeredFadeIn 0.6s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        staggeredFadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
   },
