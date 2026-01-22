@@ -7,10 +7,10 @@ import RentAffordabilityCalculatorClient from '@/components/tools/RentAffordabil
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Rent Affordability Calculator - How Much Rent Can I Afford? | Calcuzy.com',
+  title: 'Rent Affordability Calculator - How Much Rent Can I Afford? | Calcuzy.app',
   description: 'Calculate how much rent you can afford based on income and expenses. Free rent affordability calculator with 30% rule and financial guidelines.',
   keywords: 'rent affordability calculator, how much rent can i afford, rent to income ratio, 30 rule rent, housing budget calculator',
-  url: 'https://calcuzy.com/rent-affordability-calculator',
+  url: 'https://Calcuzy.app/rent-affordability-calculator',
   image: '/og-tools.png',
 })
 
@@ -20,11 +20,11 @@ export default function RentAffordabilityCalculatorPage() {
     "@type": "FinancialProduct",
     "name": "Rent Affordability Calculator",
     "description": "Calculate how much rent you can afford based on income and expenses",
-    "url": "https://calcuzy.com/rent-affordability-calculator",
+    "url": "https://Calcuzy.app/rent-affordability-calculator",
     "provider": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     },
     "offers": {
       "@type": "Offer",

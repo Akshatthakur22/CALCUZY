@@ -6,10 +6,10 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Terms of Service - Calcuzy.com',
-  description: 'Read Calcuzy.com terms of service. Learn about acceptable use, limitations, disclaimers, and user responsibilities.',
+  title: 'Terms of Service - Calcuzy.app',
+  description: 'Read Calcuzy.app terms of service. Learn about acceptable use, limitations, disclaimers, and user responsibilities.',
   keywords: 'terms of service, calcuzy terms, acceptable use, user agreement',
-  url: 'https://calcuzy.com/terms',
+  url: 'https://Calcuzy.app/terms',
   image: '/og-default.png',
 })
 
@@ -18,12 +18,12 @@ export default function TermsPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Terms of Service",
-    "description": "Calcuzy.com terms of service explaining acceptable use, limitations, and user responsibilities",
-    "url": "https://calcuzy.com/terms",
+    "description": "Calcuzy.app terms of service explaining acceptable use, limitations, and user responsibilities",
+    "url": "https://Calcuzy.app/terms",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     }
   }
 
@@ -41,7 +41,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Please read these terms carefully before using Calcuzy.com tools. 
+            Please read these terms carefully before using Calcuzy.app tools. 
             Your continued use signifies acceptance of these conditions.
           </p>
         </div>
@@ -53,13 +53,13 @@ export default function TermsPage() {
             <div>
               <h2 className="heading-2 mb-6">Acceptance of Terms</h2>
               <p className="paragraph">
-                By accessing or using Calcuzy.com, you acknowledge that you have read, 
+                By accessing or using Calcuzy.app, you acknowledge that you have read, 
                 understood, and agree to be bound by these Terms of Service. 
                 If you do not agree to these terms, please do not use our 
                 services.
               </p>
               <p className="paragraph">
-                These terms apply to all users of Calcuzy.com and all tools 
+                These terms apply to all users of Calcuzy.app and all tools 
                 and services provided. Your use of our services constitutes acceptance 
                 of these terms and our Privacy Policy, which is incorporated 
                 by reference.
@@ -69,7 +69,7 @@ export default function TermsPage() {
             <div>
               <h2 className="heading-2 mb-6">Service Description</h2>
               <p className="paragraph">
-                Calcuzy.com provides free online tools and utilities including calculators, 
+                Calcuzy.app provides free online tools and utilities including calculators, 
                 countdown timers, name generators, and quote collections. All services 
                 are provided &quot;as is&quot; without warranties of any kind.
               </p>
@@ -115,7 +115,7 @@ export default function TermsPage() {
             <div>
               <h2 className="heading-2 mb-6">Intellectual Property</h2>
               <p className="paragraph">
-                All content, features, and functionality on Calcuzy.com are owned by 
+                All content, features, and functionality on Calcuzy.app are owned by 
                 us or our licensors and protected by copyright, trademark, and 
                 other intellectual property laws.
               </p>
@@ -148,7 +148,7 @@ export default function TermsPage() {
             <div>
               <h2 className="heading-2 mb-6">Limitation of Liability</h2>
               <p className="paragraph">
-                To the fullest extent permitted by law, Calcuzy.com shall not be 
+                To the fullest extent permitted by law, Calcuzy.app shall not be 
                 liable for any indirect, incidental, special, or consequential 
                 damages arising from your use of our services.
               </p>
@@ -192,7 +192,7 @@ export default function TermsPage() {
               <h2 className="heading-2 mb-6">Contact Information</h2>
               <p className="paragraph">
                 Questions about these terms should be directed to 
-                <strong>legal@calcuzy.com</strong>. We will respond to 
+                <strong>legal@Calcuzy.app</strong>. We will respond to 
                 legitimate inquiries in a timely manner.
               </p>
             </div>
@@ -210,12 +210,12 @@ export default function TermsPage() {
               <h2 className="heading-2 mb-6">Entire Agreement</h2>
               <p className="paragraph">
                 These terms, along with our Privacy Policy, constitute the entire 
-                agreement between you and Calcuzy.com regarding your use of our 
+                agreement between you and Calcuzy.app regarding your use of our 
                 services.
               </p>
               <p className="paragraph">
                 This agreement supersedes all prior agreements between you and 
-                Calcuzy.com regarding your use of our services.
+                Calcuzy.app regarding your use of our services.
               </p>
             </div>
           </div>
@@ -224,7 +224,7 @@ export default function TermsPage() {
             <h2 className="heading-2 mb-6">Last Updated</h2>
             <p className="paragraph">
               These Terms of Service were last updated on January 22, 2026. 
-              Calcuzy.com may update these terms periodically to reflect changes 
+              Calcuzy.app may update these terms periodically to reflect changes 
               in our practices, services, or applicable laws.
             </p>
             
@@ -254,7 +254,7 @@ export default function TermsPage() {
           <h2 className="heading-2 mb-6">Effective Date</h2>
           <p className="paragraph">
             These terms are effective as of January 22, 2026, and govern 
-            your use of Calcuzy.com services. By continuing to use our 
+            your use of Calcuzy.app services. By continuing to use our 
             tools, you acknowledge that you have read, understood, and agree 
             to be bound by this agreement.
           </p>

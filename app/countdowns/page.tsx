@@ -6,10 +6,10 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Countdown Timers - Holiday & Event Countdowns | Calcuzy.com',
+  title: 'Countdown Timers - Holiday & Event Countdowns | Calcuzy.app',
   description: 'Free countdown timers for holidays and events. Track days until Christmas, New Year, Halloween, Easter, Thanksgiving and more. Simple, fast, and accurate.',
   keywords: 'countdown timers, holiday countdown, days until christmas, new year countdown, event timers',
-  url: 'https://calcuzy.com/countdowns',
+  url: 'https://Calcuzy.app/countdowns',
   image: '/og-default.png',
 })
 
@@ -19,24 +19,24 @@ export default function CountdownsPage() {
     "@type": "CollectionPage",
     "name": "Countdown Timers",
     "description": "Collection of countdown timers for holidays and special events",
-    "url": "https://calcuzy.com/countdowns",
+    "url": "https://Calcuzy.app/countdowns",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
         {
           "@type": "WebPage",
           "name": "Christmas Countdown",
-          "url": "https://calcuzy.com/days-until-christmas"
+          "url": "https://Calcuzy.app/days-until-christmas"
         },
         {
           "@type": "WebPage", 
           "name": "New Year Countdown",
-          "url": "https://calcuzy.com/days-until-new-year"
+          "url": "https://Calcuzy.app/days-until-new-year"
         },
         {
           "@type": "WebPage",
           "name": "Halloween Countdown", 
-          "url": "https://calcuzy.com/days-until-halloween"
+          "url": "https://Calcuzy.app/days-until-halloween"
         }
       ]
     }

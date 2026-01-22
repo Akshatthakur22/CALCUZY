@@ -6,10 +6,10 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Privacy Policy - Calcuzy.com',
-  description: 'Read Calcuzy.com privacy policy. Learn how we protect your data, ensure complete privacy, and handle information securely.',
+  title: 'Privacy Policy - Calcuzy.app',
+  description: 'Read Calcuzy.app privacy policy. Learn how we protect your data, ensure complete privacy, and handle information securely.',
   keywords: 'privacy policy, data protection, user privacy, calcuzy privacy',
-  url: 'https://calcuzy.com/privacy-policy',
+  url: 'https://Calcuzy.app/privacy-policy',
   image: '/og-default.png',
 })
 
@@ -18,12 +18,12 @@ export default function PrivacyPolicyPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Privacy Policy",
-    "description": "Calcuzy.com privacy policy explaining data protection and user privacy practices",
-    "url": "https://calcuzy.com/privacy-policy",
+    "description": "Calcuzy.app privacy policy explaining data protection and user privacy practices",
+    "url": "https://Calcuzy.app/privacy-policy",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     }
   }
 
@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            At Calcuzy.com, your privacy is our highest priority. Learn how we 
+            At Calcuzy.app, your privacy is our highest priority. Learn how we 
             protect your data and ensure complete anonymity when using our tools.
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2 className="heading-2 mb-6">Information We Collect</h2>
               <p className="paragraph">
-                <strong>Calcuzy.com does not collect personal information.</strong> Our tools 
+                <strong>Calcuzy.app does not collect personal information.</strong> Our tools 
                 are designed to work entirely in your browser without requiring registration, 
                 email addresses, or any personal data. All calculations and processing 
                 happen locally on your device, ensuring complete privacy.
@@ -101,7 +101,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2 className="heading-2 mb-6">Third-Party Services</h2>
               <p className="paragraph">
-                Calcuzy.com displays advertisements through Google AdSense to keep our 
+                Calcuzy.app displays advertisements through Google AdSense to keep our 
                 tools free. Google may place cookies for ad targeting and analytics 
                 purposes. We have no control over these third-party cookies.
               </p>
@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage() {
               <p className="paragraph">
                 This privacy policy was last updated on January 22, 2026, and 
                 reflects our current practices regarding data collection, use, and 
-                protection on Calcuzy.com.
+                protection on Calcuzy.app.
               </p>
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="heading-2 mb-6">Contact Us About Privacy</h2>
             <p className="paragraph">
               If you have questions or concerns about this privacy policy or our data 
-              practices, please contact us at <strong>privacy@calcuzy.com</strong>. We&apos;re 
+              practices, please contact us at <strong>privacy@Calcuzy.app</strong>. We&apos;re 
               committed to addressing privacy issues promptly and transparently.
             </p>
             
@@ -204,7 +204,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="heading-2 mb-6">Effective Date</h2>
           <p className="paragraph">
             This privacy policy is effective as of January 22, 2026, and governs 
-            your use of Calcuzy.com services. By continuing to use our tools, 
+            your use of Calcuzy.app services. By continuing to use our tools, 
             you acknowledge that you have read, understood, and agree to be bound by 
             this policy.
           </p>

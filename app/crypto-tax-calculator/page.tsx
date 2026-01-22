@@ -7,10 +7,10 @@ import CryptoTaxCalculatorClient from '@/components/tools/CryptoTaxCalculatorCli
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Crypto Tax Calculator - Bitcoin & Cryptocurrency Capital Gains | Calcuzy.com',
+  title: 'Crypto Tax Calculator - Bitcoin & Cryptocurrency Capital Gains | Calcuzy.app',
   description: 'Calculate cryptocurrency taxes, capital gains, and cost basis using FIFO, LIFO, or Average Cost methods. Free crypto tax calculator for Bitcoin, Ethereum, and altcoins.',
   keywords: 'crypto tax calculator, bitcoin tax, cryptocurrency capital gains, FIFO LIFO, crypto cost basis, crypto tax software',
-  url: 'https://calcuzy.com/crypto-tax-calculator',
+  url: 'https://Calcuzy.app/crypto-tax-calculator',
   image: '/og-tools.png',
 })
 
@@ -20,11 +20,11 @@ export default function CryptoTaxCalculatorPage() {
     "@type": "FinancialProduct",
     "name": "Crypto Tax Calculator",
     "description": "Calculate cryptocurrency taxes, capital gains, and cost basis using different accounting methods",
-    "url": "https://calcuzy.com/crypto-tax-calculator",
+    "url": "https://Calcuzy.app/crypto-tax-calculator",
     "provider": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     },
     "offers": {
       "@type": "Offer",

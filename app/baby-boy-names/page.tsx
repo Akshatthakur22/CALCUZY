@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   title: 'Baby Boy Names – Popular American Boy Names',
   description: 'Find perfect baby boy name from our list of popular American boy names. Browse unique, traditional, and modern names for your baby boy.',
   keywords: 'baby boy names, popular boy names, american boy names, baby name ideas',
-  url: 'https://calcuzy.com/baby-boy-names',
+  url: 'https://Calcuzy.app/baby-boy-names',
   image: '/og-names.png',
 })
 
@@ -19,7 +19,7 @@ export default function BabyBoyNames() {
     "@type": "ItemList",
     "name": "Popular Baby Boy Names",
     "description": "Comprehensive list of popular American baby boy names including traditional, modern, and unique options",
-    "url": "https://calcuzy.com/baby-boy-names",
+    "url": "https://Calcuzy.app/baby-boy-names",
     "numberOfItems": 60,
     "itemListElement": [
       {

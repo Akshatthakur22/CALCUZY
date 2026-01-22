@@ -7,10 +7,10 @@ import WillGeneratorClient from '@/components/tools/WillGeneratorClient'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Will Generator - Free Online Will Template | Calcuzy.com',
+  title: 'Will Generator - Free Online Will Template | Calcuzy.app',
   description: 'Create a simple last will and testament online with our free will generator. Generate a basic legal will template with beneficiaries, assets, and special wishes.',
   keywords: 'will generator, last will and testament, free will template, legal will creator, online will generator, simple will form',
-  url: 'https://calcuzy.com/will-generator',
+  url: 'https://Calcuzy.app/will-generator',
   image: '/og-legal.png',
 })
 
@@ -20,11 +20,11 @@ export default function WillGeneratorPage() {
     "@type": "LegalService",
     "name": "Will Generator",
     "description": "Create a simple last will and testament online with our free will generator",
-    "url": "https://calcuzy.com/will-generator",
+    "url": "https://Calcuzy.app/will-generator",
     "provider": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     },
     "offers": {
       "@type": "Offer",

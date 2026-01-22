@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   title: 'Motivational Quotes – 100+ Inspiring Quotes',
   description: 'Find perfect motivational quote from our collection of 100+ inspiring quotes. Browse quotes about success, perseverance, and achievement.',
   keywords: 'motivational quotes, inspiring quotes, success quotes, motivational sayings',
-  url: 'https://calcuzy.com/motivational-quotes',
+  url: 'https://Calcuzy.app/motivational-quotes',
   image: '/og-quotes.png',
 })
 
@@ -19,10 +19,10 @@ export default function MotivationalQuotes() {
     "@type": "CreativeWork",
     "name": "Motivational Quotes Collection",
     "description": "Comprehensive collection of 100+ motivational quotes about success, perseverance, and achievement",
-    "url": "https://calcuzy.com/motivational-quotes",
+    "url": "https://Calcuzy.app/motivational-quotes",
     "author": {
       "@type": "Organization",
-      "name": "Calcuzy.com"
+      "name": "Calcuzy.app"
     },
     "keywords": "motivational quotes, inspiring quotes, success quotes, achievement quotes"
   }

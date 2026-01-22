@@ -7,10 +7,10 @@ import OvulationCalculatorClient from '@/components/tools/OvulationCalculatorCli
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Ovulation Calculator - Fertile Window & Fertility Tracker | Calcuzy.com',
+  title: 'Ovulation Calculator - Fertile Window & Fertility Tracker | Calcuzy.app',
   description: 'Calculate your ovulation day, fertile window, and safe days with our free ovulation calculator. Track your menstrual cycle for family planning.',
   keywords: 'ovulation calculator, fertile window, fertility tracker, menstrual cycle, pregnancy planning, ovulation day calculator',
-  url: 'https://calcuzy.com/ovulation-calculator',
+  url: 'https://Calcuzy.app/ovulation-calculator',
   image: '/og-health.png',
 })
 
@@ -20,7 +20,7 @@ export default function OvulationCalculatorPage() {
     "@type": "HealthApplication",
     "name": "Ovulation Calculator",
     "description": "Calculate ovulation day, fertile window, and safe days for family planning",
-    "url": "https://calcuzy.com/ovulation-calculator",
+    "url": "https://Calcuzy.app/ovulation-calculator",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Web Browser",
     "offers": {

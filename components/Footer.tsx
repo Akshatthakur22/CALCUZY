@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-lg font-heading-bold text-primary-text mb-4">
-              Calcuzy.com
+              Calcuzy.app
             </h3>
             <p className="text-sm text-gray-500 mb-4 leading-relaxed">
               Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity. 
@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-500">
-              © 2024 Calcuzy.com. All rights reserved. Simple tools built beautifully.
+              © 2024 Calcuzy.app. All rights reserved. Simple tools built beautifully.
             </p>
             <div className="flex flex-wrap items-center justify-center space-x-4 text-sm text-gray-500">
               <Link 

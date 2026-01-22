@@ -7,10 +7,10 @@ import NDAGeneratorClient from '@/components/tools/NDAGeneratorClient'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'NDA Generator - Free Non-Disclosure Agreement Template | Calcuzy.com',
+  title: 'NDA Generator - Free Non-Disclosure Agreement Template | Calcuzy.app',
   description: 'Generate custom Non-Disclosure Agreement (NDA) templates online. Free NDA generator with customizable terms, duration, and confidentiality clauses.',
   keywords: 'NDA generator, non-disclosure agreement, confidentiality agreement template, legal document generator, NDA template',
-  url: 'https://calcuzy.com/nda-generator',
+  url: 'https://Calcuzy.app/nda-generator',
   image: '/og-legal.png',
 })
 
@@ -20,11 +20,11 @@ export default function NDAGeneratorPage() {
     "@type": "LegalService",
     "name": "NDA Generator",
     "description": "Generate custom Non-Disclosure Agreement templates online",
-    "url": "https://calcuzy.com/nda-generator",
+    "url": "https://Calcuzy.app/nda-generator",
     "provider": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     },
     "offers": {
       "@type": "Offer",

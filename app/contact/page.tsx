@@ -6,10 +6,10 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Contact Calcuzy.com - Get in Touch',
-  description: 'Contact Calcuzy.com with feedback, suggestions, or questions. We welcome user input and ideas for new tools.',
+  title: 'Contact Calcuzy.app - Get in Touch',
+  description: 'Contact Calcuzy.app with feedback, suggestions, or questions. We welcome user input and ideas for new tools.',
   keywords: 'contact calcuzy, feedback, suggestions, tool requests',
-  url: 'https://calcuzy.com/contact',
+  url: 'https://Calcuzy.app/contact',
   image: '/og-default.png',
 })
 
@@ -17,13 +17,13 @@ export default function ContactPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact Calcuzy.com",
-    "description": "Contact Calcuzy.com with feedback, suggestions, or questions",
-    "url": "https://calcuzy.com/contact",
+    "name": "Contact Calcuzy.app",
+    "description": "Contact Calcuzy.app with feedback, suggestions, or questions",
+    "url": "https://Calcuzy.app/contact",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com",
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
@@ -43,7 +43,7 @@ export default function ContactPage() {
       <main className="container section-responsive">
         <div className="text-center mb-16 slide-up">
           <h1 className="heading-1 text-center mb-6">
-            Contact Calcuzy.com
+            Contact Calcuzy.app
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
             Have feedback, suggestions, or questions? We&apos;d love to hear from you 
@@ -60,7 +60,7 @@ export default function ContactPage() {
               <p className="paragraph mb-6">
                 We value your feedback and use it to guide our development priorities. 
                 Whether you&apos;ve found a bug, have an idea for a new tool, or simply 
-                want to share your experience, your input helps us make Calcuzy.com better 
+                want to share your experience, your input helps us make Calcuzy.app better 
                 for everyone.
               </p>
               
@@ -106,7 +106,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="heading-3 mb-2">Email</h3>
                   <p className="paragraph">
-                    Send us a detailed message at <strong>contact@calcuzy.com</strong>. 
+                    Send us a detailed message at <strong>contact@Calcuzy.app</strong>. 
                     Include specific information about your feedback or suggestion to help us 
                     understand and respond appropriately.
                   </p>
@@ -158,7 +158,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="heading-3 mb-3">Community</h3>
                 <p className="paragraph mb-4">
-                  Join thousands of users who rely on Calcuzy.com for their everyday 
+                  Join thousands of users who rely on Calcuzy.app for their everyday 
                   calculation and countdown needs. Share your experiences and learn from others 
                   in our growing community.
                 </p>

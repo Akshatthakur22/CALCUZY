@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   title: 'Age Calculator – Calculate Age from Date',
   description: 'Calculate your exact age in years, months, and days with our free age calculator. Enter your birth date to get precise age calculations instantly.',
   keywords: 'age from date, calculate age, age calculator, birthday calculator',
-  url: 'https://calcuzy.com/age-calculator',
+  url: 'https://Calcuzy.app/age-calculator',
   image: '/og-tools.png',
 })
 
@@ -19,7 +19,7 @@ export default function AgeCalculator() {
     "@type": "SoftwareApplication",
     "name": "Age Calculator",
     "description": "Calculate your exact age in years, months, and days with our free age calculator",
-    "url": "https://calcuzy.com/age-calculator",
+    "url": "https://Calcuzy.app/age-calculator",
     "applicationCategory": "Utility",
     "operatingSystem": "Web Browser",
     "offers": {

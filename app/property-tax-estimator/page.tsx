@@ -7,10 +7,10 @@ import PropertyTaxEstimatorClient from '@/components/tools/PropertyTaxEstimatorC
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Property Tax Estimator - Calculate Annual Property Taxes | Calcuzy.com',
+  title: 'Property Tax Estimator - Calculate Annual Property Taxes | Calcuzy.app',
   description: 'Estimate property taxes based on home value and local tax rates. Free property tax calculator with exemptions and monthly payment estimates.',
   keywords: 'property tax calculator, home tax estimator, real estate tax, county tax rates, property tax assessment',
-  url: 'https://calcuzy.com/property-tax-estimator',
+  url: 'https://Calcuzy.app/property-tax-estimator',
   image: '/og-tools.png',
 })
 
@@ -20,11 +20,11 @@ export default function PropertyTaxEstimatorPage() {
     "@type": "FinancialProduct",
     "name": "Property Tax Estimator",
     "description": "Calculate property taxes based on home value and local tax rates",
-    "url": "https://calcuzy.com/property-tax-estimator",
+    "url": "https://Calcuzy.app/property-tax-estimator",
     "provider": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     },
     "offers": {
       "@type": "Offer",

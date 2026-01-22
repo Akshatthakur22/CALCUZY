@@ -7,10 +7,10 @@ import PasswordToolsClient from '@/components/tools/PasswordToolsClient'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Password Strength Checker & Hash Generator | Calcuzy.com',
+  title: 'Password Strength Checker & Hash Generator | Calcuzy.app',
   description: 'Check password strength and generate SHA-256 hashes with our free password security tools. Analyze password security and create secure hashes.',
   keywords: 'password strength checker, password security, hash generator, SHA-256, password analyzer, secure password checker',
-  url: 'https://calcuzy.com/password-tools',
+  url: 'https://Calcuzy.app/password-tools',
   image: '/og-tools.png',
 })
 
@@ -20,7 +20,7 @@ export default function PasswordToolsPage() {
     "@type": "SoftwareApplication",
     "name": "Password Tools",
     "description": "Check password strength and generate SHA-256 hashes for security",
-    "url": "https://calcuzy.com/password-tools",
+    "url": "https://Calcuzy.app/password-tools",
     "applicationCategory": "SecurityApplication",
     "operatingSystem": "Web Browser",
     "offers": {

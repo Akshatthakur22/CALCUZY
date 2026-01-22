@@ -14,7 +14,7 @@ export default function Navbar() {
             href="/" 
             className="text-xl font-heading-bold text-primary-text hover:text-accent transition-colors duration-200 focus-ring"
           >
-            Calcuzy.com
+            Calcuzy.app
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">

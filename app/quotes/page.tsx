@@ -6,10 +6,10 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Inspirational Quotes & Motivational Sayings | Calcuzy.com',
+  title: 'Inspirational Quotes & Motivational Sayings | Calcuzy.app',
   description: 'Free collection of inspirational quotes and motivational sayings. Motivational quotes, love quotes, graduation quotes, Christmas quotes and aesthetic quotes for daily inspiration.',
   keywords: 'inspirational quotes, motivational quotes, love quotes, graduation quotes, daily inspiration, positive quotes',
-  url: 'https://calcuzy.com/quotes',
+  url: 'https://Calcuzy.app/quotes',
   image: '/og-default.png',
 })
 
@@ -19,24 +19,24 @@ export default function QuotesPage() {
     "@type": "CollectionPage",
     "name": "Inspirational Quotes & Motivational Sayings",
     "description": "Collection of inspirational quotes and motivational sayings for daily inspiration",
-    "url": "https://calcuzy.com/quotes",
+    "url": "https://Calcuzy.app/quotes",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
         {
           "@type": "WebPage",
           "name": "Motivational Quotes",
-          "url": "https://calcuzy.com/motivational-quotes"
+          "url": "https://Calcuzy.app/motivational-quotes"
         },
         {
           "@type": "WebPage", 
           "name": "Love Quotes",
-          "url": "https://calcuzy.com/love-quotes"
+          "url": "https://Calcuzy.app/love-quotes"
         },
         {
           "@type": "WebPage",
           "name": "Graduation Quotes", 
-          "url": "https://calcuzy.com/graduation-quotes"
+          "url": "https://Calcuzy.app/graduation-quotes"
         }
       ]
     }

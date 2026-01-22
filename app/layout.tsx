@@ -1,11 +1,12 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { createMetadata } from '@/lib/metadata'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = createMetadata({
-  title: 'Calcuzy.com - Simple Online Tools, Countdowns & Everyday Utilities',
+  title: 'Calcuzy.app - Simple Online Tools, Countdowns & Everyday Utilities',
   description: 'Minimal. Fast. Search-Optimized. Revenue-Ready. Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity.',
   keywords: 'online tools, countdown timers, calculators, simple utilities',
 })
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-primary-bg text-primary-text antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )

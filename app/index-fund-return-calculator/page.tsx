@@ -7,10 +7,10 @@ import IndexFundReturnCalculatorClient from '@/components/tools/IndexFundReturnC
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Index Fund Return Calculator - SIP & CAGR Calculator | Calcuzy.com',
+  title: 'Index Fund Return Calculator - SIP & CAGR Calculator | Calcuzy.app',
   description: 'Calculate index fund returns, SIP investments, and compound annual growth rate (CAGR). Free investment growth calculator with monthly contributions.',
   keywords: 'index fund calculator, SIP calculator, CAGR calculator, investment returns, compound interest, mutual fund calculator',
-  url: 'https://calcuzy.com/index-fund-return-calculator',
+  url: 'https://Calcuzy.app/index-fund-return-calculator',
   image: '/og-tools.png',
 })
 
@@ -20,11 +20,11 @@ export default function IndexFundReturnCalculatorPage() {
     "@type": "FinancialProduct",
     "name": "Index Fund Return Calculator",
     "description": "Calculate index fund returns, SIP investments, and compound annual growth rate",
-    "url": "https://calcuzy.com/index-fund-return-calculator",
+    "url": "https://Calcuzy.app/index-fund-return-calculator",
     "provider": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     },
     "offers": {
       "@type": "Offer",

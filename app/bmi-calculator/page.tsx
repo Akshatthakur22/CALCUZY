@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   title: 'BMI Calculator – Body Mass Index Tool',
   description: 'Calculate your BMI online with our free body mass index calculator. Get instant BMI results and health category classification.',
   keywords: 'bmi online, body mass index tool, bmi calculator, healthy weight',
-  url: 'https://calcuzy.com/bmi-calculator',
+  url: 'https://Calcuzy.app/bmi-calculator',
   image: '/og-tools.png',
 })
 
@@ -19,7 +19,7 @@ export default function BMICalculator() {
     "@type": "SoftwareApplication",
     "name": "BMI Calculator",
     "description": "Calculate your Body Mass Index (BMI) online with our free health tool",
-    "url": "https://calcuzy.com/bmi-calculator",
+    "url": "https://Calcuzy.app/bmi-calculator",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Web Browser",
     "offers": {

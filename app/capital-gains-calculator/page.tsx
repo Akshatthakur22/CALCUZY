@@ -7,10 +7,10 @@ import CapitalGainsCalculatorClient from '@/components/tools/CapitalGainsCalcula
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Capital Gains Tax Calculator - Stock & Investment Tax | Calcuzy.com',
+  title: 'Capital Gains Tax Calculator - Stock & Investment Tax | Calcuzy.app',
   description: 'Calculate capital gains tax on stocks, investments, and assets. Short-term vs long-term tax rates with US federal tax brackets. Free investment tax calculator.',
   keywords: 'capital gains calculator, stock tax calculator, investment tax, long-term capital gains, short-term capital gains, tax brackets',
-  url: 'https://calcuzy.com/capital-gains-calculator',
+  url: 'https://Calcuzy.app/capital-gains-calculator',
   image: '/og-tools.png',
 })
 
@@ -20,11 +20,11 @@ export default function CapitalGainsCalculatorPage() {
     "@type": "FinancialProduct",
     "name": "Capital Gains Tax Calculator",
     "description": "Calculate capital gains tax on investments with short-term and long-term tax rates",
-    "url": "https://calcuzy.com/capital-gains-calculator",
+    "url": "https://Calcuzy.app/capital-gains-calculator",
     "provider": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
-      "url": "https://calcuzy.com"
+      "name": "Calcuzy.app",
+      "url": "https://Calcuzy.app"
     },
     "offers": {
       "@type": "Offer",

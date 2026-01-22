@@ -6,10 +6,10 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Baby Names & Pet Names - Name Ideas & Inspiration | Calcuzy.com',
+  title: 'Baby Names & Pet Names - Name Ideas & Inspiration | Calcuzy.app',
   description: 'Find the perfect name with our curated collections. Baby boy names, baby girl names, dog names, cat names, and American last names. Free name inspiration.',
   keywords: 'baby names, pet names, dog names, cat names, last names, name ideas, name inspiration',
-  url: 'https://calcuzy.com/names',
+  url: 'https://Calcuzy.app/names',
   image: '/og-default.png',
 })
 
@@ -19,24 +19,24 @@ export default function NamesPage() {
     "@type": "CollectionPage",
     "name": "Baby Names & Pet Names",
     "description": "Collection of name ideas for babies, pets, and family names",
-    "url": "https://calcuzy.com/names",
+    "url": "https://Calcuzy.app/names",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
         {
           "@type": "WebPage",
           "name": "Baby Boy Names",
-          "url": "https://calcuzy.com/baby-boy-names"
+          "url": "https://Calcuzy.app/baby-boy-names"
         },
         {
           "@type": "WebPage", 
           "name": "Baby Girl Names",
-          "url": "https://calcuzy.com/baby-girl-names"
+          "url": "https://Calcuzy.app/baby-girl-names"
         },
         {
           "@type": "WebPage",
           "name": "Dog Names", 
-          "url": "https://calcuzy.com/dog-names"
+          "url": "https://Calcuzy.app/dog-names"
         }
       ]
     }

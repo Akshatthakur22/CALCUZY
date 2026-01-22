@@ -7,10 +7,10 @@ import PaintCostCalculatorClient from '@/components/tools/PaintCostCalculatorCli
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Paint Cost Calculator - Room Painting Cost Estimator | Calcuzy.com',
+  title: 'Paint Cost Calculator - Room Painting Cost Estimator | Calcuzy.app',
   description: 'Calculate paint cost for rooms with our free paint calculator. Estimate paint needed, coverage area, and total cost for your painting project.',
   keywords: 'paint cost calculator, paint estimator, room painting cost, paint coverage calculator, how much paint needed, painting cost estimator',
-  url: 'https://calcuzy.com/paint-cost-calculator',
+  url: 'https://Calcuzy.app/paint-cost-calculator',
   image: '/og-tools.png',
 })
 
@@ -20,7 +20,7 @@ export default function PaintCostCalculatorPage() {
     "@type": "SoftwareApplication",
     "name": "Paint Cost Calculator",
     "description": "Calculate paint cost and coverage for room painting projects",
-    "url": "https://calcuzy.com/paint-cost-calculator",
+    "url": "https://Calcuzy.app/paint-cost-calculator",
     "applicationCategory": "UtilityApplication",
     "operatingSystem": "Web Browser",
     "offers": {

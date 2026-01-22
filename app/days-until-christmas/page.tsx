@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   title: 'Days Until Christmas 2026 – Exact Countdown Timer',
   description: 'Count down the exact days, hours, minutes, and seconds until Christmas 2026. Real-time Christmas countdown timer with accurate time remaining.',
   keywords: 'christmas countdown, xmas 2026, days until christmas, christmas timer',
-  url: 'https://calcuzy.com/days-until-christmas',
+  url: 'https://Calcuzy.app/days-until-christmas',
   image: '/og-countdowns.png',
 })
 
@@ -22,10 +22,10 @@ export default function ChristmasCountdown() {
     "startDate": "2026-12-25T00:00:00",
     "eventStatus": "ScheduledEvent",
     "eventAttendanceMode": "OnlineEventAttendanceMode",
-    "url": "https://calcuzy.com/days-until-christmas",
+    "url": "https://Calcuzy.app/days-until-christmas",
     "location": {
       "@type": "VirtualLocation",
-      "url": "https://calcuzy.com/days-until-christmas"
+      "url": "https://Calcuzy.app/days-until-christmas"
     }
   }
   return (

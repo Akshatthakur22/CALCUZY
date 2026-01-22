@@ -6,10 +6,10 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'About Calcuzy.com - Simple Online Tools & Utilities',
-  description: 'Learn about Calcuzy.com mission to provide simple, fast, and search-optimized online tools. Discover our story and commitment to user privacy.',
+  title: 'About Calcuzy.app - Simple Online Tools & Utilities',
+  description: 'Learn about Calcuzy.app mission to provide simple, fast, and search-optimized online tools. Discover our story and commitment to user privacy.',
   keywords: 'about calcuzy, online tools mission, simple utilities, privacy focused',
-  url: 'https://calcuzy.com/about',
+  url: 'https://Calcuzy.app/about',
   image: '/og-default.png',
 })
 
@@ -17,14 +17,14 @@ export default function AboutPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "About Calcuzy.com",
-    "description": "Learn about Calcuzy.com mission to provide simple, fast, and search-optimized online tools",
-    "url": "https://calcuzy.com/about",
+    "name": "About Calcuzy.app",
+    "description": "Learn about Calcuzy.app mission to provide simple, fast, and search-optimized online tools",
+    "url": "https://Calcuzy.app/about",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Calcuzy.com",
+      "name": "Calcuzy.app",
       "description": "Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity",
-      "url": "https://calcuzy.com"
+      "url": "https://Calcuzy.app"
     }
   }
 
@@ -39,7 +39,7 @@ export default function AboutPage() {
       <main className="container section-responsive">
         <div className="text-center mb-16 slide-up">
           <h1 className="heading-1 text-center mb-6">
-            About Calcuzy.com
+            About Calcuzy.app
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
             Discover our mission to provide simple, fast, and search-optimized online tools 
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <Card animation="fade-in-up" delay={100}>
               <h2 className="heading-2 mb-6">Who We Are</h2>
               <p className="paragraph">
-                Calcuzy.com was founded with a simple mission: to create the most 
+                Calcuzy.app was founded with a simple mission: to create the most 
                 user-friendly online tools and utilities that help people solve everyday problems 
                 without complexity or confusion. We believe the best tools are often the simplest 
                 ones—fast, reliable, and completely free to use.
@@ -70,7 +70,7 @@ export default function AboutPage() {
             <Card animation="fade-in-up" delay={200}>
               <h2 className="heading-2 mb-6">What We Offer</h2>
               <p className="paragraph">
-                Calcuzy.com provides a comprehensive suite of online tools designed for 
+                Calcuzy.app provides a comprehensive suite of online tools designed for 
                 everyday use. Our countdown timers help you track important dates and holidays, while our 
                 calculators handle everything from age calculations to unit conversions and health metrics.
               </p>
@@ -236,9 +236,9 @@ export default function AboutPage() {
           
           <div className="space-y-6">
             <div>
-              <h3 className="heading-3 mb-2">Is Calcuzy.com really free?</h3>
+              <h3 className="heading-3 mb-2">Is Calcuzy.app really free?</h3>
               <p className="paragraph">
-                Yes, all tools and features on Calcuzy.com are completely free to use. 
+                Yes, all tools and features on Calcuzy.app are completely free to use. 
                 We don&apos;t require registration, payment, or any personal information. Our mission 
                 is to provide essential utilities to everyone without barriers.
               </p>
