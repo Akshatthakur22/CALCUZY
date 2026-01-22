@@ -16,37 +16,43 @@ export default function AgeCalculatorClient() {
       return
     }
 
-    const birth = new Date(birthDate)
-    const current = new Date(currentDate)
+    try {
+      const birth = new Date(birthDate)
+      const current = new Date(currentDate)
 
-    if (birth > current) {
-      setResult('Birth date cannot be in the future')
-      return
+      if (birth > current) {
+        setResult('Birth date cannot be in future')
+        return
+      }
+
+      setIsLoading(true)
+      
+      // Simulate processing for better UX
+      await new Promise(resolve => setTimeout(resolve, 500))
+
+      let years = current.getFullYear() - birth.getFullYear()
+      let months = current.getMonth() - birth.getMonth()
+      let days = current.getDate() - birth.getDate()
+
+      if (days < 0) {
+        months--
+        const lastMonth = new Date(current.getFullYear(), current.getMonth(), 0)
+        days += lastMonth.getDate()
+      }
+
+      if (months < 0) {
+        years--
+        months += 12
+      }
+
+      const ageText = `You are ${years} years, ${months} months, and ${days} days old`
+      setResult(ageText)
+    } catch (error) {
+      console.error('Age calculation failed:', error)
+      setResult('Error calculating age. Please check your dates.')
+    } finally {
+      setIsLoading(false)
     }
-
-    setIsLoading(true)
-    
-    // Simulate processing for better UX
-    await new Promise(resolve => setTimeout(resolve, 500))
-
-    let years = current.getFullYear() - birth.getFullYear()
-    let months = current.getMonth() - birth.getMonth()
-    let days = current.getDate() - birth.getDate()
-
-    if (days < 0) {
-      months--
-      const lastMonth = new Date(current.getFullYear(), current.getMonth(), 0)
-      days += lastMonth.getDate()
-    }
-
-    if (months < 0) {
-      years--
-      months += 12
-    }
-
-    const ageText = `You are ${years} years, ${months} months, and ${days} days old`
-    setResult(ageText)
-    setIsLoading(false)
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {

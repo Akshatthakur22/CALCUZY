@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { createHash } from 'crypto'
 
 export default function PasswordToolsClient() {
   const [password, setPassword] = useState('')
@@ -65,11 +64,20 @@ export default function PasswordToolsClient() {
     calculateStrength(pwd)
   }
 
-  const generateHash = () => {
+  const generateHash = async () => {
     if (!password) return
     
-    const hash = createHash('sha256').update(password).digest('hex')
-    setHashResult(hash)
+    try {
+      const encoder = new TextEncoder()
+      const data = encoder.encode(password)
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data)
+      const hashArray = Array.from(new Uint8Array(hashBuffer))
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+      setHashResult(hashHex)
+    } catch (error) {
+      console.error('Hash generation failed:', error)
+      setHashResult('Error generating hash')
+    }
   }
 
   const getPasswordTips = () => {
