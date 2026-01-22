@@ -12,9 +12,13 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link 
             href="/" 
-            className="text-xl font-heading-bold text-primary-text hover:text-accent transition-colors duration-200 focus-ring"
+            className="flex items-center text-primary-text hover:text-accent transition-colors duration-200 focus-ring"
           >
-            Calcuzy.app
+            <img 
+              src="/logo.png" 
+              alt="Calcuzy Logo" 
+              className="h-18 w-18"
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">

@@ -6,9 +6,13 @@ export default function Footer() {
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-lg font-heading-bold text-primary-text mb-4">
-              Calcuzy.app
-            </h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/logo.png" 
+                alt="Calcuzy Logo" 
+                className="h-20 w-20"
+              />
+            </div>
             <p className="text-sm text-gray-500 mb-4 leading-relaxed">
               Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity. 
               Minimal. Fast. Search-Optimized.
