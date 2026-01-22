@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://calcuzy.com/sitemap.xml
+Sitemap: https://calcuzy.app/sitemap.xml

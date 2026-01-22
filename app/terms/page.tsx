@@ -71,7 +71,7 @@ export default function TermsPage() {
               <p className="paragraph">
                 Calcuzy.com provides free online tools and utilities including calculators, 
                 countdown timers, name generators, and quote collections. All services 
-                are provided "as is" without warranties of any kind.
+                are provided &quot;as is&quot; without warranties of any kind.
               </p>
               <p className="paragraph">
                 We reserve the right to modify, suspend, or discontinue any service 

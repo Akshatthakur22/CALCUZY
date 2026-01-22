@@ -39,7 +39,7 @@ export default function UnitConverter() {
           <div className="prose prose-lg max-w-none">
             <p className="paragraph">
               Our unit converter provides instant conversions between different units of measurement, 
-              making it easy to work with both metric and imperial systems. Whether you're converting 
+              making it easy to work with both metric and imperial systems. Whether you&apos;re converting 
               length, weight, or other measurements, our tool delivers accurate results instantly.
             </p>
             

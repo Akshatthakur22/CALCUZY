@@ -63,7 +63,7 @@ export default function CountdownNewYear() {
           </div>
         </div>
         <div className="text-lg text-primary-text font-medium">
-          Until New Year's Day, January 1, 2027
+          Until New Year&apos;s Day, January 1, 2027
         </div>
       </div>
     </Card>

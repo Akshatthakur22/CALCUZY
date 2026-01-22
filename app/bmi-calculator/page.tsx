@@ -65,7 +65,7 @@ export default function BMICalculator() {
             
             <p className="paragraph">
               The BMI calculation was developed in the 19th century and remains one of the most 
-              accessible health screening tools available. While it doesn't directly measure body fat, it 
+              accessible health screening tools available. While it doesn&apos;t directly measure body fat, it 
               provides a reliable indicator of healthy weight ranges for most adults.
             </p>
             
@@ -151,7 +151,7 @@ export default function BMICalculator() {
               <h3 className="heading-3 mb-2">Is my data secure when using this calculator?</h3>
               <p className="paragraph">
                 Yes, your privacy is completely protected. All calculations happen locally 
-                in your browser, and we don't store any personal information. Your BMI 
+                in your browser, and we don&apos;t store any personal information. Your BMI 
                 results are not saved or shared with anyone.
               </p>
             </div>

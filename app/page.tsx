@@ -131,13 +131,13 @@ export default function HomePage() {
           
           <div className="prose prose-lg max-w-none">
             <p className="paragraph">
-              In today's digital world, simplicity is power. Calcuzy.com was built on the principle that 
-              the best tools are often the simplest ones. We've eliminated unnecessary features, 
+              In today&apos;s digital world, simplicity is power. Calcuzy.com was built on the principle that 
+              the best tools are often the simplest ones. We&apos;ve eliminated unnecessary features, 
               complex interfaces, and distracting elements to deliver exactly what you need—fast.
             </p>
             
             <p className="paragraph">
-              Our platform serves millions of users who value speed and efficiency. Whether you're 
+              Our platform serves millions of users who value speed and efficiency. Whether you&apos;re 
               calculating your age, counting down to Christmas, finding the perfect name for your new 
               puppy, or seeking daily motivation, our tools work instantly without registration or 
               complicated processes.
@@ -159,7 +159,7 @@ export default function HomePage() {
             </ul>
             
             <p className="paragraph">
-              All our tools are completely free to use and work offline once loaded. We don't require 
+              All our tools are completely free to use and work offline once loaded. We don&apos;t require 
               any personal information or accounts—just visit, use, and get results instantly. This 
               commitment to privacy and simplicity has made us a trusted resource for users across 
               the United States and beyond.
@@ -176,7 +176,7 @@ export default function HomePage() {
             <div>
               <h3 className="heading-3 mb-2">Is Calcuzy.com really free?</h3>
               <p className="paragraph">
-                Yes, all tools and features on Calcuzy.com are completely free to use. We don't require 
+                Yes, all tools and features on Calcuzy.com are completely free to use. We don&apos;t require 
                 registration, payment, or any personal information.
               </p>
             </div>
@@ -200,7 +200,7 @@ export default function HomePage() {
             <div>
               <h3 className="heading-3 mb-2">Do you store my data?</h3>
               <p className="paragraph">
-                No. We don't store any personal data or calculation results. Everything runs locally 
+                No. We don&apos;t store any personal data or calculation results. Everything runs locally 
                 in your browser for complete privacy.
               </p>
             </div>

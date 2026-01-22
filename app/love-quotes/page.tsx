@@ -16,7 +16,7 @@ export default function LoveQuotes() {
   const romanticQuotes = [
     'Love is composed of a single soul inhabiting two bodies. - Aristotle',
     'The best thing to hold onto in life is each other. - Audrey Hepburn',
-    'Love is not finding someone to live with, it\'s finding someone you can\'t live without. - Unknown',
+    'Love is not finding someone to live with, it&apos;s finding someone you can&apos;t live without. - Unknown',
     'Being deeply loved by someone gives you strength, while loving someone deeply gives you courage. - Lao Tzu',
     'Love is the bridge between two hearts that beats as one. - Unknown',
     'The greatest happiness of life is the conviction that we are loved. - Victor Hugo',
@@ -25,14 +25,14 @@ export default function LoveQuotes() {
     'Love is the voice under all silences. - Unknown',
     'Love is the master key that opens the gates of happiness. - Unknown',
     'Love is the only sane and satisfactory answer to the problem of human existence. - Erich Fromm',
-    'Love is the flower you\'ve got to let grow. - Unknown'
+    'Love is the flower you&apos;ve got to let grow. - Unknown'
   ]
 
   const relationshipQuotes = [
     'A successful marriage requires falling in love many times, always with the same person. - Mignon McLaughlin',
     'Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day. - Unknown',
     'The best relationships are the ones where you can be completely yourself. - Unknown',
-    'Love is when the other person\'s happiness is more important than your own. - Unknown',
+    'Love is when the other person&apos;s happiness is more important than your own. - Unknown',
     'Love is the voice under all silences. - Unknown',
     'Love is the bridge between two hearts that beats as one. - Unknown',
     'Love is the only force capable of transforming an enemy into a friend. - Martin Luther King Jr.',
@@ -46,7 +46,7 @@ export default function LoveQuotes() {
     'Love is the voice under all silences. - Unknown',
     'Love is the bridge between two hearts that beats as one. - Unknown',
     'Love is the only force capable of transforming an enemy into a friend. - Martin Luther King Jr.',
-    'Love is when the other person\'s happiness is more important than your own. - Unknown',
+    'Love is when the other person&apos;s happiness is more important than your own. - Unknown',
     'Love is the voice under all silences. - Unknown',
     'Love is the bridge between two hearts that beats as one. - Unknown',
     'Love is the only force capable of transforming an enemy into a friend. - Martin Luther King Jr.',
@@ -149,10 +149,10 @@ export default function LoveQuotes() {
             
             <p className="paragraph">
               Our love quotes collection is completely free to browse and includes 
-              quotes suitable for all occasions - anniversaries, Valentine's Day, 
-              wedding vows, or simply expressing your feelings. Whether you're 
+              quotes suitable for all occasions - anniversaries, Valentine&apos;s Day, 
+              wedding vows, or simply expressing your feelings. Whether you&apos;re 
               seeking inspiration for a new relationship, celebrating existing love, or 
-              understanding the complexities of the heart, you'll find the perfect words 
+              understanding the complexities of the heart, you&apos;ll find the perfect words 
               to express your emotions.
             </p>
           </div>
@@ -202,7 +202,7 @@ export default function LoveQuotes() {
             <div>
               <h3 className="heading-3 mb-2">How can I use love quotes?</h3>
               <p className="paragraph">
-                Use love quotes in Valentine's Day cards, anniversary 
+                Use love quotes in Valentine&apos;s Day cards, anniversary 
                 messages, wedding vows, or as daily affirmations of your relationship. 
                 They work beautifully for social media posts about love, personal 
                 journaling, or simply expressing your feelings to someone special.

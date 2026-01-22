@@ -22,7 +22,7 @@ export default function NewYearCountdown() {
             New Year Countdown 2027
           </h1>
           <p className="paragraph text-center max-w-2xl mx-auto mb-8">
-            Count down every second to New Year's Day 2027. Watch the precise time remaining 
+            Count down every second to New Year&apos;s Day 2027. Watch the precise time remaining 
             until the clock strikes midnight and we welcome the new year with celebration and hope.
           </p>
         </div>
@@ -38,40 +38,40 @@ export default function NewYearCountdown() {
           
           <div className="prose prose-lg max-w-none">
             <p className="paragraph">
-              New Year's Eve is one of the most celebrated nights worldwide, marking the transition 
+              New Year&apos;s Eve is one of the most celebrated nights worldwide, marking the transition 
               from one year to the next. Our countdown timer helps you track every moment leading up 
-              to this magical midnight celebration, whether you're planning parties, setting resolutions, 
+              to this magical midnight celebration, whether you&apos;re planning parties, setting resolutions, 
               or simply anticipating the fresh start that a new year brings.
             </p>
             
             <p className="paragraph">
-              The tradition of counting down to midnight on New Year's Eve dates back centuries, with 
+              The tradition of counting down to midnight on New Year&apos;s Eve dates back centuries, with 
               gatherings in public squares like Times Square in New York City drawing millions of viewers. 
-              The dropping of the ball, fireworks displays, and collective countdown from "10" to "1" 
+              The dropping of the ball, fireworks displays, and collective countdown from &quot;10&quot; to &quot;1&quot; 
               have become iconic symbols of New Year celebrations across the United States and beyond.
             </p>
             
             <p className="paragraph">
-              New Year's Day, January 1st, represents new beginnings, fresh opportunities, and the chance 
-              to start anew. Many Americans celebrate by making New Year's resolutions, watching parades 
-              like the Tournament of Roses Parade, and enjoying time with family and friends. It's a day 
-              filled with hope, optimism, and celebration of what's to come.
+              New Year&apos;s Day, January 1st, represents new beginnings, fresh opportunities, and the chance 
+              to start anew. Many Americans celebrate by making New Year&apos;s resolutions, watching parades 
+              like the Tournament of Roses Parade, and enjoying time with family and friends. It&apos;s a day 
+              filled with hope, optimism, and celebration of what&apos;s to come.
             </p>
             
             <h3 className="heading-3 mt-8 mb-4">Popular New Year Traditions in the US</h3>
             <ul className="list-disc pl-6 space-y-2 mb-8">
               <li className="text-secondary-text">Watching the Times Square Ball Drop in New York City</li>
-              <li className="text-secondary-text">Making New Year's resolutions for self-improvement</li>
+              <li className="text-secondary-text">Making New Year&apos;s resolutions for self-improvement</li>
               <li className="text-secondary-text">Setting off fireworks and attending midnight celebrations</li>
-              <li className="text-secondary-text">Watching college football bowl games on New Year's Day</li>
+              <li className="text-secondary-text">Watching college football bowl games on New Year&apos;s Day</li>
               <li className="text-secondary-text">Enjoying special meals and toasting with champagne</li>
             </ul>
             
             <p className="paragraph">
               Our countdown timer updates every second, ensuring you know exactly when midnight arrives 
-              and the new year begins. Whether you're counting down to kiss someone special, pop the 
+              and the new year begins. Whether you&apos;re counting down to kiss someone special, pop the 
               champagne, or simply welcome the new year with quiet reflection, this timer keeps you 
-              connected to the excitement and anticipation of New Year's Eve.
+              connected to the excitement and anticipation of New Year&apos;s Eve.
             </p>
           </div>
 
@@ -105,20 +105,20 @@ export default function NewYearCountdown() {
             </div>
             
             <div>
-              <h3 className="heading-3 mb-2">Why do people celebrate New Year's Eve?</h3>
+              <h3 className="heading-3 mb-2">Why do people celebrate New Year&apos;s Eve?</h3>
               <p className="paragraph">
-                New Year's Eve celebrates the end of one year and the beginning of another, offering 
-                a chance for reflection, celebration, and hope for the future. It's a time to gather 
+                New Year&apos;s Eve celebrates the end of one year and the beginning of another, offering 
+                a chance for reflection, celebration, and hope for the future. It&apos;s a time to gather 
                 with loved ones and welcome new opportunities.
               </p>
             </div>
             
             <div>
-              <h3 className="heading-3 mb-2">What happens at midnight on New Year's Eve?</h3>
+              <h3 className="heading-3 mb-2">What happens at midnight on New Year&apos;s Eve?</h3>
               <p className="paragraph">
                 At midnight, people traditionally count down from 10, kiss loved ones, toast with 
                 champagne, set off fireworks, and celebrate the arrival of the new year with joy 
-                and optimism for what's ahead.
+                and optimism for what&apos;s ahead.
               </p>
             </div>
             
@@ -132,7 +132,7 @@ export default function NewYearCountdown() {
             </div>
             
             <div>
-              <h3 className="heading-3 mb-2">What are common New Year's resolutions?</h3>
+              <h3 className="heading-3 mb-2">What are common New Year&apos;s resolutions?</h3>
               <p className="paragraph">
                 Popular resolutions include exercising more, eating healthier, saving money, learning 
                 new skills, spending more time with family, and personal growth goals. Many people 

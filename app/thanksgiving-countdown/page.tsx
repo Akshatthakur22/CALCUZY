@@ -38,9 +38,9 @@ export default function ThanksgivingCountdown() {
           
           <div className="prose prose-lg max-w-none">
             <p className="paragraph">
-              Thanksgiving is one of America's most cherished holidays, bringing families together for 
+              Thanksgiving is one of America&apos;s most cherished holidays, bringing families together for 
               gratitude, feasting, and fellowship. Our countdown timer helps you track every moment 
-              leading up to this special day, whether you're planning the perfect Thanksgiving dinner, 
+              leading up to this special day, whether you&apos;re planning the perfect Thanksgiving dinner, 
               coordinating travel plans, or simply anticipating the warmth of family gatherings.
             </p>
             
@@ -48,12 +48,12 @@ export default function ThanksgivingCountdown() {
               The tradition of Thanksgiving dates back to 1621 when Pilgrims and Native Americans 
               shared a harvest feast in Plymouth, Massachusetts. Today, Americans celebrate on the 
               fourth Thursday of November with turkey dinners, pumpkin pie, football games, and 
-              expressions of gratitude for life's blessings.
+              expressions of gratitude for life&apos;s blessings.
             </p>
             
             <p className="paragraph">
               Thanksgiving marks the beginning of the holiday season in the United States, followed 
-              by Black Friday shopping and Christmas preparations. It's a time when millions of 
+              by Black Friday shopping and Christmas preparations. It&apos;s a time when millions of 
               Americans travel to be with loved ones, making it one of the busiest travel periods 
               of the year. The holiday emphasizes gratitude, family traditions, and sharing 
               blessings with others.
@@ -70,7 +70,7 @@ export default function ThanksgivingCountdown() {
             
             <p className="paragraph">
               Our countdown timer updates every second, ensuring you always know exactly how much time 
-              remains until Thanksgiving Day. Whether you're excited about the family feast, the 
+              remains until Thanksgiving Day. Whether you&apos;re excited about the family feast, the 
               holiday sales, or simply the opportunity to give thanks, this timer helps you stay 
               connected to the spirit of gratitude and togetherness.
             </p>
@@ -108,7 +108,7 @@ export default function ThanksgivingCountdown() {
             <div>
               <h3 className="heading-3 mb-2">Why do people celebrate Thanksgiving?</h3>
               <p className="paragraph">
-                Thanksgiving celebrates the harvest and blessings of the past year. It's a time for 
+                Thanksgiving celebrates the harvest and blessings of the past year. It&apos;s a time for 
                 families to gather, share meals, and express gratitude for what they have, following 
                 the tradition of the first Thanksgiving feast shared by Pilgrims and Native Americans.
               </p>

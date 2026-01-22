@@ -17,10 +17,10 @@ export default function GraduationQuotes() {
     'The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt',
     'Education is the most powerful weapon which you can use to change the world. - Nelson Mandela',
     'The beautiful thing about learning is that no one can take it away from you. - B.B. King',
-    'Your time is limited, so don\'t waste it living someone else\'s life. - Steve Jobs',
+    'Your time is limited, so don&apos;t waste it living someone else&apos;s life. - Steve Jobs',
     'Success is not final, failure is not fatal: it is the courage to continue that counts. - Winston Churchill',
     'The only way to do great work is to love what you do. - Steve Jobs',
-    'Don\'t watch the clock; do what it does. Keep going. - Sam Levenson',
+    'Don&apos;t watch the clock; do what it does. Keep going. - Sam Levenson',
     'The expert in anything was once a beginner. - Helen Hayes',
     'It does not matter how slowly you go as long as you do not stop. - Confucius',
     'The only impossible journey is the one you never begin. - Tony Robbins'
@@ -29,19 +29,19 @@ export default function GraduationQuotes() {
   const futureQuotes = [
     'Go confidently in the direction of your dreams. Live the life you have imagined. - Henry David Thoreau',
     'The future starts today, not tomorrow. - Pope John Paul II',
-    'Your limitation—it\'s only your imagination. - Unknown',
+    'Your limitation—it&apos;s only your imagination. - Unknown',
     'Great things never come from comfort zones. - Unknown',
     'Dream big and dare to fail. - Norman Vaughan',
     'The best way to predict the future is to create it. - Peter Drucker',
     'If you want to fly, you have to give up what weighs you down. - Roy T. Bennett',
     'The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh',
-    'Don\'t be pushed around by the fears in your mind. Be led by the dreams in your heart. - Roy T. Bennett',
+    'Don&apos;t be pushed around by the fears in your mind. Be led by the dreams in your heart. - Roy T. Bennett',
     'The secret of getting ahead is getting started. - Mark Twain',
     'The future depends on what you do today. - Mahatma Gandhi'
   ]
 
   const wisdomQuotes = [
-    'Graduation is not the end; it\'s the beginning. - Senator Orrin Hatch',
+    'Graduation is not the end; it&apos;s the beginning. - Senator Orrin Hatch',
     'The tassel was worth the hassle. - Unknown',
     'Education is not preparation for life; education is life itself. - John Dewey',
     'Learning never exhausts the mind. - Leonardo da Vinci',
@@ -49,7 +49,7 @@ export default function GraduationQuotes() {
     'Education is the passport to the future, for tomorrow belongs to those who prepare for it today. - Malcolm X',
     'The beautiful thing about learning is that no one can take it away from you. - B.B. King',
     'Education is the movement from darkness to light. - Allan Bloom',
-    'The more that you read, the more things you will know. The more that you learn, the more places you\'ll go. - Dr. Seuss',
+    'The more that you read, the more things you will know. The more that you learn, the more places you&apos;ll go. - Dr. Seuss',
     'Education is not the filling of a pail, but the lighting of a fire. - William Butler Yeats',
     'The capacity to learn is a gift; the ability to learn is a skill. - Unknown'
   ]
@@ -130,7 +130,7 @@ export default function GraduationQuotes() {
             
             <p className="paragraph">
               Graduation quotes serve as powerful reminders that education is not just 
-              about acquiring knowledge, but about discovering one's potential and developing 
+              about acquiring knowledge, but about discovering one&apos;s potential and developing 
               the confidence to pursue dreams. They encourage graduates to see challenges 
               as opportunities and to maintain the curiosity that drives lifelong learning 
               and personal growth.
@@ -148,8 +148,8 @@ export default function GraduationQuotes() {
             <p className="paragraph">
               Our graduation quotes collection is completely free to browse and includes 
               quotes suitable for all graduation ceremonies, cards, speeches, or personal 
-              reflection. Whether you're a graduate, parent, educator, or simply 
-              seeking inspiration, you'll find the perfect words to mark this 
+              reflection. Whether you&apos;re a graduate, parent, educator, or simply 
+              seeking inspiration, you&apos;ll find the perfect words to mark this 
               special occasion.
             </p>
           </div>
@@ -210,7 +210,7 @@ export default function GraduationQuotes() {
               <p className="paragraph">
                 Yes, graduation quotes are suitable for all ages and 
                 educational levels. Whether celebrating kindergarten graduation, high school 
-                completion, college degree, or advanced certifications, you'll find 
+                completion, college degree, or advanced certifications, you&apos;ll find 
                 quotes that appropriately mark the significance of each achievement.
               </p>
             </div>

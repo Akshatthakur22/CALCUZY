@@ -38,7 +38,7 @@ export default function RandomNumberGenerator() {
           
           <div className="prose prose-lg max-w-none">
             <p className="paragraph">
-              Our random number generator provides truly random numbers using JavaScript's 
+              Our random number generator provides truly random numbers using JavaScript&apos;s 
               Math.random() function, which generates uniformly distributed random values. 
               This tool is perfect for games, contests, statistical sampling, and any 
               situation requiring random selection.
@@ -99,7 +99,7 @@ export default function RandomNumberGenerator() {
             <div>
               <h3 className="heading-3 mb-2">How random are the numbers?</h3>
               <p className="paragraph">
-                Our generator uses JavaScript's Math.random() function which produces 
+                Our generator uses JavaScript&apos;s Math.random() function which produces 
                 cryptographically secure random numbers suitable for most applications. Each number 
                 has equal probability of being selected within your range.
               </p>
@@ -136,7 +136,7 @@ export default function RandomNumberGenerator() {
               <h3 className="heading-3 mb-2">Is my data secure when using this generator?</h3>
               <p className="paragraph">
                 Yes, your privacy is completely protected. All number generation 
-                happens locally in your browser, and we don't store any generated 
+                happens locally in your browser, and we don&apos;t store any generated 
                 numbers or settings. Your random numbers remain private and secure.
               </p>
             </div>

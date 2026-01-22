@@ -62,48 +62,65 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-heading text-primary-text mb-4 text-sm">Popular Pages</h4>
+            <h4 className="font-heading text-primary-text mb-4 text-sm">Legal & Info</h4>
             <ul className="space-y-2">
               <li>
                 <Link 
-                  href="/days-until-christmas" 
+                  href="/about" 
                   className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
                 >
-                  Christmas Countdown
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/days-until-new-year" 
+                  href="/contact" 
                   className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
                 >
-                  New Year Countdown
+                  Contact
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/dog-names" 
+                  href="/privacy-policy" 
                   className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
                 >
-                  Dog Names
+                  Privacy Policy
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/motivational-quotes" 
+                  href="/terms" 
                   className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
                 >
-                  Motivational Quotes
+                  Terms of Service
                 </Link>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-200 mt-8 pt-8 text-center">
-          <p className="text-sm text-gray-500">
-            © 2024 Calcuzy.com. All rights reserved. Simple tools built beautifully.
-          </p>
+        <div className="border-t border-gray-200 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-sm text-gray-500">
+              © 2024 Calcuzy.com. All rights reserved. Simple tools built beautifully.
+            </p>
+            <div className="flex flex-wrap items-center justify-center space-x-4 text-sm text-gray-500">
+              <Link 
+                href="/privacy-policy" 
+                className="hover:text-accent transition-colors duration-200 focus-ring py-1"
+              >
+                Privacy Policy
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link 
+                href="/terms" 
+                className="hover:text-accent transition-colors duration-200 focus-ring py-1"
+              >
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

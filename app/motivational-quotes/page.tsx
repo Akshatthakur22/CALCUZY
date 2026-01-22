@@ -143,7 +143,7 @@ export default function MotivationalQuotes() {
             
             <p className="paragraph">
               Motivational quotes serve as daily reminders that our current circumstances 
-              don't define our future. They encourage us to push beyond comfort zones, 
+              don&apos;t define our future. They encourage us to push beyond comfort zones, 
               embrace challenges as opportunities, and maintain perspective during difficult times. 
               The right quote at the right moment can provide the spark needed to take 
               the next step toward our goals.
@@ -161,9 +161,9 @@ export default function MotivationalQuotes() {
             
             <p className="paragraph">
               Our motivational quotes collection is completely free to browse and includes 
-              quotes suitable for all situations and goals. Whether you're seeking 
+              quotes suitable for all situations and goals. Whether you&apos;re seeking 
               inspiration for work, personal development, or overcoming challenges, 
-              you'll find the perfect words to motivate your journey.
+              you&apos;ll find the perfect words to motivate your journey.
             </p>
           </div>
 
@@ -193,7 +193,7 @@ export default function MotivationalQuotes() {
               <p className="paragraph">
                 Our comprehensive collection includes over 100 motivational quotes, 
                 organized into categories like success, perseverance, and achievement. This provides 
-                plenty of inspiration for any situation or goal you're pursuing.
+                plenty of inspiration for any situation or goal you&apos;re pursuing.
               </p>
             </div>
             
@@ -212,7 +212,7 @@ export default function MotivationalQuotes() {
               <p className="paragraph">
                 Motivational quotes work by tapping into fundamental human psychology 
                 - they remind us of our potential, challenge negative thought patterns, 
-                and activate the brain's reward centers. Scientific studies show that 
+                and activate the brain&apos;s reward centers. Scientific studies show that 
                 regular exposure to inspiring quotes can improve mood, increase 
                 productivity, and build resilience over time.
               </p>
@@ -223,7 +223,7 @@ export default function MotivationalQuotes() {
               <p className="paragraph">
                 The tradition of motivational speaking dates back centuries, from ancient 
                 philosophical teachings to modern TED talks and social media influencers. 
-                Today's motivational quotes often blend timeless wisdom with 
+                Today&apos;s motivational quotes often blend timeless wisdom with 
                 contemporary challenges, making them relevant to modern audiences while 
                 preserving their core inspirational power.
               </p>
@@ -253,8 +253,8 @@ export default function MotivationalQuotes() {
               <h3 className="heading-3 mb-2">Are these quotes suitable for all ages?</h3>
               <p className="paragraph">
                 Our motivational quotes collection is suitable for all ages and 
-                backgrounds. Whether you're a student, professional, parent, or anyone 
-                seeking inspiration, you'll find quotes that speak to your unique 
+                backgrounds. Whether you&apos;re a student, professional, parent, or anyone 
+                seeking inspiration, you&apos;ll find quotes that speak to your unique 
                 situation and goals.
               </p>
             </div>
@@ -264,7 +264,7 @@ export default function MotivationalQuotes() {
               <p className="paragraph">
                 The best motivational quotes often come from personal experience and 
                 authentic reflection. Keep a journal of insights that inspire you, 
-                share them with others, and don't be afraid to express your unique 
+                share them with others, and don&apos;t be afraid to express your unique 
                 perspective on motivation and success.
               </p>
             </div>

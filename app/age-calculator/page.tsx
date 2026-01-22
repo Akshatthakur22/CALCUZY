@@ -84,7 +84,7 @@ export default function AgeCalculator() {
               <li className="text-secondary-text">Planning birthday celebrations and milestones</li>
               <li className="text-secondary-text">Checking eligibility for age-restricted activities</li>
               <li className="text-secondary-text">Calculating retirement dates and benefits</li>
-              <li className="text-secondary-text">Tracking children's development and growth</li>
+              <li className="text-secondary-text">Tracking children&apos;s development and growth</li>
             </ul>
             
             <p className="paragraph">
@@ -142,10 +142,10 @@ export default function AgeCalculator() {
             </div>
             
             <div>
-              <h3 className="heading-3 mb-2">Can I calculate someone else's age?</h3>
+              <h3 className="heading-3 mb-2">Can I calculate someone else&apos;s age?</h3>
               <p className="paragraph">
-                Yes, you can calculate anyone's age by entering their birth date and the current 
-                date. This is useful for calculating family members' ages, planning celebrations, 
+                Yes, you can calculate anyone&apos;s age by entering their birth date and the current 
+                date. This is useful for calculating family members&apos; ages, planning celebrations, 
                 or filling out forms for others.
               </p>
             </div>
@@ -162,7 +162,7 @@ export default function AgeCalculator() {
             <div>
               <h3 className="heading-3 mb-2">Is my data stored when using this calculator?</h3>
               <p className="paragraph">
-                No, we don't store any of your personal data or calculation results. All calculations 
+                No, we don&apos;t store any of your personal data or calculation results. All calculations 
                 happen locally in your browser, ensuring complete privacy and security of your information.
               </p>
             </div>

@@ -42,7 +42,7 @@ export default function BabyGirlNames() {
           <p className="paragraph text-center max-w-2xl mx-auto mb-8">
             Find the perfect baby girl name from our comprehensive list of 
             100+ beautiful girl names. Browse unique, traditional, and modern names 
-            that will make your daughter's name special and meaningful.
+            that will make your daughter&apos;s name special and meaningful.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export default function BabyGirlNames() {
               Choosing the perfect baby girl name is one of the most exciting decisions 
               for expectant parents. Our comprehensive list of 100+ beautiful girl names includes 
               traditional classics, modern trends, and unique options that will make your 
-              daughter's name special and meaningful.
+              daughter&apos;s name special and meaningful.
             </p>
             
             <p className="paragraph">
@@ -123,7 +123,7 @@ export default function BabyGirlNames() {
             <p className="paragraph">
               Our baby girl names list is completely free to browse and includes names 
               suitable for all families and backgrounds. Whether you prefer timeless 
-              classics or want something more unique, you'll find plenty of inspiration 
+              classics or want something more unique, you&apos;ll find plenty of inspiration 
               for your precious daughter.
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function BabyGirlNames() {
               <h3 className="heading-3 mb-2">What makes a good baby girl name?</h3>
               <p className="paragraph">
                 A good baby girl name is meaningful, easy to pronounce, and 
-                complements your family's heritage. It should be timeless yet contemporary, 
+                complements your family&apos;s heritage. It should be timeless yet contemporary, 
                 with positive associations and a beautiful sound that will serve your 
                 daughter well throughout her life.
               </p>
@@ -181,7 +181,7 @@ export default function BabyGirlNames() {
             <div>
               <h3 className="heading-3 mb-2">How do I ensure the name ages well?</h3>
               <p className="paragraph">
-                Choose a name that's classic enough to remain stylish but not 
+                Choose a name that&apos;s classic enough to remain stylish but not 
                 so trendy that it becomes dated. Consider how the name sounds at different 
                 life stages - from childhood to professional settings - and select one 
                 that will grow with your daughter.

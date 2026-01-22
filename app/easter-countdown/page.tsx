@@ -40,12 +40,12 @@ export default function EasterCountdown() {
             <p className="paragraph">
               Easter is one of the most important Christian holidays, celebrating the resurrection of 
               Jesus Christ. Our countdown timer helps you track every moment leading up to this joyous 
-              celebration, whether you're planning Easter egg hunts, family gatherings, or simply 
+              celebration, whether you&apos;re planning Easter egg hunts, family gatherings, or simply 
               anticipating the spiritual significance of the day.
             </p>
             
             <p className="paragraph">
-              The date of Easter changes each year because it's based on the lunar calendar, falling 
+              The date of Easter changes each year because it&apos;s based on the lunar calendar, falling 
               on the first Sunday after the first full moon following the vernal equinox. In 2026, 
               Easter Sunday falls on April 5th. This movable date means Easter can occur anytime 
               between March 22nd and April 25th.
@@ -69,7 +69,7 @@ export default function EasterCountdown() {
             
             <p className="paragraph">
               Our countdown timer updates every second, ensuring you always know exactly how much time 
-              remains until Easter Sunday. Whether you're excited about the family traditions, the 
+              remains until Easter Sunday. Whether you&apos;re excited about the family traditions, the 
               spiritual significance, or simply the spring celebration, this timer helps you stay 
               connected to the Easter season.
             </p>
@@ -107,7 +107,7 @@ export default function EasterCountdown() {
             <div>
               <h3 className="heading-3 mb-2">Why does Easter change dates every year?</h3>
               <p className="paragraph">
-                Easter's date changes because it's based on the lunar calendar and astronomical 
+                Easter&apos;s date changes because it&apos;s based on the lunar calendar and astronomical 
                 calculations. It falls on the first Sunday after the first full moon following the 
                 spring equinox, which is why the date varies each year.
               </p>
@@ -116,7 +116,7 @@ export default function EasterCountdown() {
             <div>
               <h3 className="heading-3 mb-2">What do people celebrate on Easter?</h3>
               <p className="paragraph">
-                Easter celebrates the resurrection of Jesus Christ in Christian tradition. It's also 
+                Easter celebrates the resurrection of Jesus Christ in Christian tradition. It&apos;s also 
                 celebrated with secular traditions like Easter egg hunts, decorating eggs, and family 
                 gatherings that symbolize spring and new life.
               </p>

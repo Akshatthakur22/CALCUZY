@@ -101,12 +101,12 @@ export default function AmericanLastNames() {
               The most common American last names often have English, Scottish, Irish, 
               or German origins, reflecting the early settlers who shaped the nation. Names like 
               Smith, Johnson, and Williams have remained popular for generations, while 
-              newer additions reflect America's growing diversity and multicultural heritage.
+              newer additions reflect America&apos;s growing diversity and multicultural heritage.
             </p>
             
             <p className="paragraph">
               When selecting an American last name, consider its historical significance, 
-              cultural meaning, and how it represents your family's story. Many American 
+              cultural meaning, and how it represents your family&apos;s story. Many American 
               surnames carry fascinating histories tied to immigration, settlement patterns, 
               and the American experience of building new lives in a new land.
             </p>
@@ -115,7 +115,7 @@ export default function AmericanLastNames() {
             <ul className="list-disc pl-6 space-y-2 mb-8">
               <li className="text-secondary-text"><strong>English:</strong> Smith, Johnson, Williams, Brown, Jones</li>
               <li className="text-secondary-text"><strong>Scottish:</strong> Campbell, Stewart, Robertson, Anderson</li>
-              <li className="text-secondary-text"><strong>Irish:</strong> Murphy, Kelly, O'Brien, Ryan</li>
+              <li className="text-secondary-text"><strong>Irish:</strong> Murphy, Kelly, O&apos;Brien, Ryan</li>
               <li className="text-secondary-text"><strong>German:</strong> Miller, Wagner, Schmidt, Becker</li>
               <li className="text-secondary-text"><strong>Italian:</strong> Rossi, Romano, Ferrari, Bianchi</li>
               <li className="text-secondary-text"><strong>Spanish:</strong> Garcia, Rodriguez, Martinez, Lopez</li>
@@ -123,8 +123,8 @@ export default function AmericanLastNames() {
             
             <p className="paragraph">
               Our American last names list is completely free to browse and includes names 
-              suitable for all families and backgrounds. Whether you're researching your 
-              family history or choosing a name for your family, you'll find plenty 
+              suitable for all families and backgrounds. Whether you&apos;re researching your 
+              family history or choosing a name for your family, you&apos;ll find plenty 
               of inspiration here.
             </p>
           </div>
@@ -173,7 +173,7 @@ export default function AmericanLastNames() {
               <p className="paragraph">
                 American last names come from diverse origins including English, Scottish, 
                 Irish, German, Italian, Spanish, and many other European and 
-                international backgrounds. This diversity reflects America's multicultural 
+                international backgrounds. This diversity reflects America&apos;s multicultural 
                 heritage and immigration history.
               </p>
             </div>
@@ -183,7 +183,7 @@ export default function AmericanLastNames() {
               <p className="paragraph">
                 Research your American last name through genealogy websites, census 
                 records, immigration documents, and family histories. Many American surnames 
-                have fascinating stories tied to your ancestors' journey to America.
+                have fascinating stories tied to your ancestors&apos; journey to America.
               </p>
             </div>
             

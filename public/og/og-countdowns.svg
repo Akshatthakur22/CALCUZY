@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  <text x="600" y="200" font-family="Inter, sans-serif" font-size="64" font-weight="700" text-anchor="middle" fill="#111111">Countdown Timers</text>
+  <text x="600" y="280" font-family="Inter, sans-serif" font-size="28" font-weight="400" text-anchor="middle" fill="#555555">Christmas • New Year • Black Friday • Easter</text>
+  <text x="600" y="320" font-family="Inter, sans-serif" font-size="28" font-weight="400" text-anchor="middle" fill="#555555">Thanksgiving • Halloween • Special Events</text>
+  <rect x="450" y="400" width="80" height="80" rx="12" fill="#0A84FF" opacity="0.1"/>
+  <rect x="560" y="400" width="80" height="80" rx="12" fill="#0A84FF" opacity="0.1"/>
+  <rect x="670" y="400" width="80" height="80" rx="12" fill="#0A84FF" opacity="0.1"/>
+  <text x="490" y="455" font-family="Inter, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#0A84FF">25</text>
+  <text x="600" y="455" font-family="Inter, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#0A84FF">12</text>
+  <text x="710" y="455" font-family="Inter, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#0A84FF">30</text>
+  <text x="490" y="510" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#555555">Days</text>
+  <text x="600" y="510" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#555555">Hours</text>
+  <text x="710" y="510" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#555555">Mins</text>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F7F7"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+</svg>

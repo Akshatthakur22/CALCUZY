@@ -107,7 +107,7 @@ export default function DateDifference() {
             <div>
               <h3 className="heading-3 mb-2">Can I calculate dates in the past?</h3>
               <p className="paragraph">
-                Yes, you can calculate differences between any two dates, whether they're in 
+                Yes, you can calculate differences between any two dates, whether they&apos;re in 
                 the past, present, or future. The calculator will show negative results 
                 for past dates and positive results for future dates.
               </p>
@@ -135,7 +135,7 @@ export default function DateDifference() {
               <h3 className="heading-3 mb-2">Is my data secure when using this calculator?</h3>
               <p className="paragraph">
                 Yes, your privacy is completely protected. All calculations happen locally 
-                in your browser, and we don't store any date information or results. 
+                in your browser, and we don&apos;t store any date information or results. 
                 Your calculations remain private and secure.
               </p>
             </div>

@@ -92,7 +92,7 @@ export default function AboutPage() {
               and no privacy concerns.
             </p>
             <p className="paragraph">
-              We're committed to continuous improvement based on user feedback and emerging 
+              We&apos;re committed to continuous improvement based on user feedback and emerging 
               needs. Every feature we add is tested rigorously to ensure it meets our standards 
               of simplicity, accuracy, and speed. Your trust is our most valuable asset, 
               and we work daily to earn and maintain it through transparent practices and 
@@ -239,7 +239,7 @@ export default function AboutPage() {
               <h3 className="heading-3 mb-2">Is Calcuzy.com really free?</h3>
               <p className="paragraph">
                 Yes, all tools and features on Calcuzy.com are completely free to use. 
-                We don't require registration, payment, or any personal information. Our mission 
+                We don&apos;t require registration, payment, or any personal information. Our mission 
                 is to provide essential utilities to everyone without barriers.
               </p>
             </div>
@@ -249,16 +249,16 @@ export default function AboutPage() {
               <p className="paragraph">
                 We display advertisements through Google AdSense to keep our tools free. 
                 This allows us to maintain and improve our services without charging users. 
-                We're transparent about this and never prioritize ads over user experience.
+                We&apos;re transparent about this and never prioritize ads over user experience.
               </p>
             </div>
             
             <div>
               <h3 className="heading-3 mb-2">Is my data safe?</h3>
               <p className="paragraph">
-                Absolutely. We don't collect, store, or share any personal data. 
+                Absolutely. We don&apos;t collect, store, or share any personal data. 
                 All calculations happen locally in your browser, ensuring complete privacy. 
-                We're committed to protecting your information and being transparent about our practices.
+                We&apos;re committed to protecting your information and being transparent about our practices.
               </p>
             </div>
             

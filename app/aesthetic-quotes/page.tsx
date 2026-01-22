@@ -20,9 +20,9 @@ export default function AestheticQuotes() {
     'The beauty of a woman must be seen from in her eyes, because that is the doorway to her heart. - Audrey Hepburn',
     'Beauty is not in the face; beauty is a light in the heart. - Kahlil Gibran',
     'The best and most beautiful things in the world cannot be seen or even touched. They must be felt with the heart. - Helen Keller',
-    'Beauty is about enhancing what you have, not striving for what you don\'t. - Bobbi Brown',
+    'Beauty is about enhancing what you have, not striving for what you don&apos;t. - Bobbi Brown',
     'The beauty of a woman is not in a facial mole, but the true beauty in a woman is reflected in her soul. - Audrey Hepburn',
-    'Beauty is the illumination of your soul. - John O\'Donohue',
+    'Beauty is the illumination of your soul. - John O&apos;Donohue',
     'The most beautiful makeup for a woman is passion. But cosmetics are easier to buy. - Yves Saint Laurent',
     'Beauty is about being comfortable in your own skin. - Unknown'
   ]
@@ -44,14 +44,14 @@ export default function AestheticQuotes() {
   const lifeQuotes = [
     'Life is a journey that must be traveled no matter how bad the roads and accommodations. - Oliver Goldsmith',
     'The purpose of our lives is to be happy. - Dalai Lama',
-    'Life is what happens when you\'re busy making other plans. - John Lennon',
+    'Life is what happens when you&apos;re busy making other plans. - John Lennon',
     'Life is really simple, but we insist on making it complicated. - Confucius',
     'Life is 10% what happens to you and 90% how you react to it. - Charles R. Swindoll',
     'Life is a succession of lessons which must be lived to be understood. - Helen Keller',
     'Life is either a daring adventure or nothing at all. - Helen Keller',
     'Life is short, and it is up to you to make it sweet. - Unknown',
     'Life is not measured by the number of breaths we take, but by the moments that take our breath away. - Maya Angelou',
-    'Life is what happens to you while you\'re busy making other plans. - John Lennon'
+    'Life is what happens to you while you&apos;re busy making other plans. - John Lennon'
   ]
 
   return (
@@ -148,9 +148,9 @@ export default function AestheticQuotes() {
             <p className="paragraph">
               Our aesthetic quotes collection is completely free to browse and includes 
               quotes suitable for all moments when you need inspiration about beauty, 
-              art, or the meaning of life. Whether you're seeking motivation 
+              art, or the meaning of life. Whether you&apos;re seeking motivation 
               for creative projects or simply want to appreciate the beauty around you, 
-              you'll find the perfect words to inspire your aesthetic journey.
+              you&apos;ll find the perfect words to inspire your aesthetic journey.
             </p>
           </div>
 
@@ -208,7 +208,7 @@ export default function AestheticQuotes() {
             <div>
               <h3 className="heading-3 mb-2">Are aesthetic quotes good for social media?</h3>
               <p className="paragraph">
-                Yes, aesthetic quotes are perfect for social media as they're 
+                Yes, aesthetic quotes are perfect for social media as they&apos;re 
                 typically short, visually appealing, and emotionally resonant. They work 
                 beautifully as Instagram captions, Twitter posts, or Pinterest pins, 
                 especially when paired with aesthetic photography or art.

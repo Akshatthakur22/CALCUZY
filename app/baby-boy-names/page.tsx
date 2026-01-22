@@ -73,7 +73,7 @@ export default function BabyBoyNames() {
           <p className="paragraph text-center max-w-2xl mx-auto mb-8">
             Find the perfect baby boy name from our comprehensive list of 
             100+ strong boy names. Browse classic, modern, and unique names 
-            that will make your son's name special and memorable.
+            that will make your son&apos;s name special and memorable.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function BabyBoyNames() {
           <div className="prose prose-lg max-w-none">
             <p className="paragraph">
               Choosing the perfect baby boy name is one of the most exciting decisions 
-              you'll make as a parent. Our comprehensive list of 100+ strong boy names includes 
+              you&apos;ll make as a parent. Our comprehensive list of 100+ strong boy names includes 
               timeless classics, modern trends, and powerful options that convey strength 
               and character.
             </p>
@@ -195,7 +195,7 @@ export default function BabyBoyNames() {
             <p className="paragraph">
               Our baby boy names list is completely free to browse and includes names 
               suitable for all families and backgrounds. Whether you prefer timeless 
-              classics or want something more unique, you'll find plenty of inspiration 
+              classics or want something more unique, you&apos;ll find plenty of inspiration 
               for your precious son.
             </p>
           </div>
@@ -234,7 +234,7 @@ export default function BabyBoyNames() {
               <h3 className="heading-3 mb-2">What makes a good baby boy name?</h3>
               <p className="paragraph">
                 A good baby boy name is meaningful, strong, and easy to pronounce. 
-                It should reflect your family's values and heritage while being 
+                It should reflect your family&apos;s values and heritage while being 
                 distinctive enough to stand out. The name should carry positive 
                 associations and serve your son well throughout his life.
               </p>
@@ -253,7 +253,7 @@ export default function BabyBoyNames() {
             <div>
               <h3 className="heading-3 mb-2">How do I ensure the name ages well?</h3>
               <p className="paragraph">
-                Choose a name that's classic enough to remain stylish but not 
+                Choose a name that&apos;s classic enough to remain stylish but not 
                 so trendy that it becomes dated. Consider how the name sounds at different 
                 life stages - from childhood to professional settings - and select one 
                 that will grow with your son.

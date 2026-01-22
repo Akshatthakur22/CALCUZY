@@ -60,7 +60,7 @@ export default function ChristmasCountdown() {
             <p className="paragraph">
               Christmas is one of the most anticipated holidays in the United States, celebrated by millions 
               of families across the country. Our countdown timer helps you track every moment leading up to 
-              this magical day, whether you're planning holiday preparations, gift shopping, or simply 
+              this magical day, whether you&apos;re planning holiday preparations, gift shopping, or simply 
               counting down to the festive celebrations.
             </p>
             
@@ -73,7 +73,7 @@ export default function ChristmasCountdown() {
             
             <p className="paragraph">
               Our Christmas countdown updates automatically every second, ensuring you always have the most 
-              accurate time remaining until Christmas morning. Whether you're checking from your phone, 
+              accurate time remaining until Christmas morning. Whether you&apos;re checking from your phone, 
               tablet, or computer, the countdown remains synchronized and precise.
             </p>
             
@@ -88,7 +88,7 @@ export default function ChristmasCountdown() {
             
             <p className="paragraph">
               Our countdown timer automatically updates every second, ensuring you always know exactly 
-              how much time remains until Christmas morning. Whether you're excited about Santa's arrival, 
+              how much time remains until Christmas morning. Whether you&apos;re excited about Santa&apos;s arrival, 
               family gatherings, or simply the festive atmosphere, this tool helps you stay connected to 
               the holiday spirit all season long.
             </p>

@@ -18,7 +18,7 @@ export default function ChristmasQuotes() {
     'The best of all gifts around any Christmas tree: the presence of a happy family all wrapped up in each other. - Burton Hillis',
     'Christmas waves a magic wand over this world, and behold, everything is softer and more beautiful. - Norman Vincent Peale',
     'Christmas is the day that holds all time together. - Unknown',
-    'The spirit of Christmas is love and generosity and goodwill. It\'s a time when we open our hearts to God and one another. - Unknown',
+    'The spirit of Christmas is love and generosity and goodwill. It&apos;s a time when we open our hearts to God and one another. - Unknown',
     'Christmas is most truly Christmas when we celebrate it by giving the light of love to those who need it most. - Unknown',
     'Christmas is not as much about opening our presents as opening our hearts. - Janice Kapp Perry',
     'The best Christmas trees are the ones that have families gathered around them. - Unknown',
@@ -30,10 +30,10 @@ export default function ChristmasQuotes() {
     'Christmas is the day that holds all time together. - Unknown',
     'The best way to spread Christmas cheer is being kind to others. - Unknown',
     'Christmas is the spirit of giving without expecting anything in return. - Unknown',
-    'Christmas is not about presents, it\'s about being present. - Unknown',
+    'Christmas is not about presents, it&apos;s about being present. - Unknown',
     'The magic of Christmas is not in the presents, but in being present. - Unknown',
     'Christmas is the day that makes the whole world kin. - Charles Dickens',
-    'Christmas is the season when we buy gifts we can\'t afford for people we don\'t like. - Unknown',
+    'Christmas is the season when we buy gifts we can&apos;t afford for people we don&apos;t like. - Unknown',
     'Christmas is the time when you tell your family you love them. - Unknown',
     'Christmas is the day when we remember that we are all children of God, and that we are all brothers and sisters. - Unknown',
     'Christmas is the season when we realize that we are all connected, and that we are all part of something bigger than ourselves. - Unknown',
@@ -118,7 +118,7 @@ export default function ChristmasQuotes() {
               the joy of giving. Our collection of 100+ Christmas quotes celebrates 
               the warmth, tradition, and meaningful connections that make this season 
               truly special. These quotes remind us that Christmas is about more than 
-              just presents - it's about presence, love, and the magic of human 
+              just presents - it&apos;s about presence, love, and the magic of human 
               connection.
             </p>
             
@@ -151,8 +151,8 @@ export default function ChristmasQuotes() {
             <p className="paragraph">
               Our Christmas quotes collection is completely free to browse and includes 
               quotes suitable for all holiday celebrations, cards, or family gatherings. 
-              Whether you're seeking inspiration for Christmas cards, social media posts, 
-              or simply want to embrace the holiday spirit, you'll find the perfect 
+              Whether you&apos;re seeking inspiration for Christmas cards, social media posts, 
+              or simply want to embrace the holiday spirit, you&apos;ll find the perfect 
               words to make this season meaningful.
             </p>
           </div>

@@ -40,13 +40,13 @@ export default function BlackFridayCountdown() {
             <p className="paragraph">
               Black Friday is the biggest shopping day of the year in the United States, marking the beginning 
               of the holiday shopping season. Our countdown timer helps you track every moment leading up to 
-              this massive sales event, whether you're planning your shopping strategy, budgeting for deals, 
+              this massive sales event, whether you&apos;re planning your shopping strategy, budgeting for deals, 
               or simply anticipating the incredible discounts.
             </p>
             
             <p className="paragraph">
               The tradition of Black Friday dates back to the 1950s when retailers would offer massive 
-              discounts the day after Thanksgiving. Today, it's evolved into a shopping phenomenon with 
+              discounts the day after Thanksgiving. Today, it&apos;s evolved into a shopping phenomenon with 
               doorbuster deals, early morning openings, and both online and in-store sales that attract 
               millions of shoppers seeking the best holiday bargains.
             </p>
@@ -69,7 +69,7 @@ export default function BlackFridayCountdown() {
             
             <p className="paragraph">
               Our countdown timer updates every second, ensuring you always know exactly how much time 
-              remains until Black Friday sales begin. Whether you're planning to brave the crowds or 
+              remains until Black Friday sales begin. Whether you&apos;re planning to brave the crowds or 
               shop from the comfort of home, this timer helps you prepare for the biggest shopping 
               day of the year.
             </p>
@@ -107,8 +107,8 @@ export default function BlackFridayCountdown() {
             <div>
               <h3 className="heading-3 mb-2">Why is it called Black Friday?</h3>
               <p className="paragraph">
-                Black Friday got its name because retailers' accounting records would go from "in the red" 
-                (losses) to "in the black" (profits) due to the massive shopping volume. It marks the 
+                Black Friday got its name because retailers&apos; accounting records would go from &quot;in the red&quot; 
+                (losses) to &quot;in the black&quot; (profits) due to the massive shopping volume. It marks the 
                 beginning of the profitable holiday shopping season.
               </p>
             </div>

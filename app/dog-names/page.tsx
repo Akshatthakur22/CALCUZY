@@ -96,14 +96,14 @@ export default function DogNames() {
             
             <p className="paragraph">
               The best dog names are typically short, easy to pronounce, and distinctive enough for 
-              your dog to recognize. Many pet owners choose names that reflect their dog's 
+              your dog to recognize. Many pet owners choose names that reflect their dog&apos;s 
               personality, appearance, or breed characteristics. Popular trends include names inspired 
               by nature, mythology, and human names.
             </p>
             
             <p className="paragraph">
               When selecting a dog name, consider how it sounds when calling your pet, 
-              whether it's easily confused with commands, and if it will age well. Our list 
+              whether it&apos;s easily confused with commands, and if it will age well. Our list 
               includes timeless classics like Max and Bella, alongside trendy options like Luna and 
               Charlie that have gained popularity in recent years.
             </p>
@@ -113,14 +113,14 @@ export default function DogNames() {
               <li className="text-secondary-text">Say the name out loud to test how it sounds</li>
               <li className="text-secondary-text">Choose a name with 1-2 syllables for easier training</li>
               <li className="text-secondary-text">Avoid names that sound like common commands</li>
-              <li className="text-secondary-text">Consider your dog's size and personality</li>
+              <li className="text-secondary-text">Consider your dog&apos;s size and personality</li>
               <li className="text-secondary-text">Test the name for a few days before committing</li>
             </ul>
             
             <p className="paragraph">
               Our dog names list is completely free to browse and includes names suitable 
               for all breeds and personalities. Whether you prefer traditional names or want 
-              something more unique, you'll find plenty of inspiration here.
+              something more unique, you&apos;ll find plenty of inspiration here.
             </p>
           </div>
 
@@ -158,7 +158,7 @@ export default function DogNames() {
               <h3 className="heading-3 mb-2">What makes a good dog name?</h3>
               <p className="paragraph">
                 A good dog name is typically short (1-2 syllables), easy to pronounce, 
-                and doesn't sound like common training commands. It should be distinctive 
+                and doesn&apos;t sound like common training commands. It should be distinctive 
                 enough for your dog to recognize but simple enough for daily use.
               </p>
             </div>
@@ -169,7 +169,7 @@ export default function DogNames() {
                 Current dog naming trends reflect a blend of traditional favorites 
                 and modern creativity. Human names like Max, Bella, and Charlie remain popular, 
                 while nature-inspired names like Luna, River, and Willow are gaining traction. 
-                Pet owners increasingly choose names that reflect their dog's unique 
+                Pet owners increasingly choose names that reflect their dog&apos;s unique 
                 personality and appearance.
               </p>
             </div>
@@ -178,7 +178,7 @@ export default function DogNames() {
               <h3 className="heading-3 mb-2">Celebrity Dog Names</h3>
               <p className="paragraph mb-6">
                 Celebrity dog names often influence popular naming trends. 
-                From Taylor Swift's dogs to social media famous pets, these names 
+                From Taylor Swift&apos;s dogs to social media famous pets, these names 
                 can spark inspiration while maintaining individuality for your furry friend.
               </p>
             </div>
@@ -186,16 +186,16 @@ export default function DogNames() {
             <div>
               <h3 className="heading-3 mb-2">Should I choose a gender-specific name?</h3>
               <p className="paragraph">
-                Gender-specific names can be great for expressing your dog's personality, 
-                but unisex names offer flexibility. Consider your dog's appearance and 
+                Gender-specific names can be great for expressing your dog&apos;s personality, 
+                but unisex names offer flexibility. Consider your dog&apos;s appearance and 
                 temperament when choosing between male, female, or unisex options.
               </p>
             </div>
             
             <div>
-              <h3 className="heading-3 mb-2">Can I change my dog's name later?</h3>
+              <h3 className="heading-3 mb-2">Can I change my dog&apos;s name later?</h3>
               <p className="paragraph">
-                Yes, you can change your dog's name, though it's easier if done 
+                Yes, you can change your dog&apos;s name, though it&apos;s easier if done 
                 early. Dogs can learn new names with consistent training, but it may take 
                 time for them to respond reliably to the change.
               </p>
@@ -204,8 +204,8 @@ export default function DogNames() {
             <div>
               <h3 className="heading-3 mb-2">Are these names good for training?</h3>
               <p className="paragraph">
-                Most names in our list are training-friendly as they don't sound like 
-                common commands. Avoid names that rhyme with "no," "stay," or "come" to 
+                Most names in our list are training-friendly as they don&apos;t sound like 
+                common commands. Avoid names that rhyme with &quot;no,&quot; &quot;stay,&quot; or &quot;come&quot; to 
                 prevent confusion during training sessions.
               </p>
             </div>

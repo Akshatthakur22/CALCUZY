@@ -42,6 +42,19 @@ export default function Navbar() {
             >
               Quotes
             </Link>
+            <div className="border-l border-gray-300 h-6"></div>
+            <Link 
+              href="/about" 
+              className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-2"
+            >
+              About
+            </Link>
+            <Link 
+              href="/contact" 
+              className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-2"
+            >
+              Contact
+            </Link>
           </div>
 
           <button
@@ -93,6 +106,21 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Quotes
+              </Link>
+              <div className="border-t border-gray-200 my-2"></div>
+              <Link 
+                href="/about" 
+                className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
               </Link>
             </div>
           </div>

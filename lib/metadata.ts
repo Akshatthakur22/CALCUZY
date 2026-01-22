@@ -16,7 +16,7 @@ export function createMetadata({
     description,
     keywords,
 
-    metadataBase: new URL("https://calcuzy.com"),
+    metadataBase: new URL("https://calcuzy.app"),
 
     alternates: {
       canonical: url,

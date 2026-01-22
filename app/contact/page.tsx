@@ -46,7 +46,7 @@ export default function ContactPage() {
             Contact Calcuzy.com
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Have feedback, suggestions, or questions? We'd love to hear from you 
+            Have feedback, suggestions, or questions? We&apos;d love to hear from you 
             and continuously improve our tools based on user input and experiences.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function ContactPage() {
               <h2 className="heading-2 mb-6">Get in Touch</h2>
               <p className="paragraph mb-6">
                 We value your feedback and use it to guide our development priorities. 
-                Whether you've found a bug, have an idea for a new tool, or simply 
+                Whether you&apos;ve found a bug, have an idea for a new tool, or simply 
                 want to share your experience, your input helps us make Calcuzy.com better 
                 for everyone.
               </p>
@@ -78,7 +78,7 @@ export default function ContactPage() {
                   <h3 className="heading-3 mb-2">New Tool Ideas</h3>
                   <p className="paragraph">
                     Have an idea for a tool that would make everyday life easier? 
-                    We're always looking for practical utility suggestions that align with our mission 
+                    We&apos;re always looking for practical utility suggestions that align with our mission 
                     of simplicity and usefulness.
                   </p>
                 </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
             <Card animation="fade-in-up" delay={200}>
               <h2 className="heading-2 mb-6">Contact Form</h2>
               <p className="paragraph mb-6">
-                While we don't have a contact form backend, you can reach out through 
+                While we don&apos;t have a contact form backend, you can reach out through 
                 various channels. We read every message and respond to legitimate inquiries 
                 as quickly as possible.
               </p>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                   <h3 className="heading-3 mb-2">Response Time</h3>
                   <p className="paragraph">
                     We typically respond within 24-48 hours during business days. 
-                    While we can't implement every suggestion, we carefully consider all 
+                    While we can&apos;t implement every suggestion, we carefully consider all 
                     user input in our planning and development process.
                   </p>
                 </div>
@@ -193,7 +193,7 @@ export default function ContactPage() {
             <div>
               <h3 className="heading-3 mb-2">Do you implement every suggestion?</h3>
               <p className="paragraph">
-                We carefully review and consider all user feedback, though we can't 
+                We carefully review and consider all user feedback, though we can&apos;t 
                 implement every suggestion due to technical constraints, resource limitations, 
                 or conflicts with our mission of simplicity. All ideas are valued and 
                 help us understand user needs better.
@@ -205,7 +205,7 @@ export default function ContactPage() {
               <p className="paragraph">
                 Yes! We consider custom tool requests, especially from organizations 
                 or educational institutions. Please contact us with detailed requirements 
-                and we'll evaluate feasibility based on our mission and resources.
+                and we&apos;ll evaluate feasibility based on our mission and resources.
               </p>
             </div>
             

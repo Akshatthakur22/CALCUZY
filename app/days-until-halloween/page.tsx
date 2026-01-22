@@ -40,7 +40,7 @@ export default function HalloweenCountdown() {
             <p className="paragraph">
               Halloween is one of the most exciting holidays in the United States, celebrated by millions 
               with costumes, trick-or-treating, haunted houses, and spooky festivities. Our countdown timer 
-              helps you track every moment leading up to this thrilling night, whether you're planning 
+              helps you track every moment leading up to this thrilling night, whether you&apos;re planning 
               costumes, parties, or simply anticipating the candy and excitement.
             </p>
             
@@ -53,7 +53,7 @@ export default function HalloweenCountdown() {
             
             <p className="paragraph">
               Halloween falls on October 31st every year and is celebrated with various traditions across 
-              the United States. From carving pumpkins into jack-o'-lanterns to decorating homes with 
+              the United States. From carving pumpkins into jack-o&apos;-lanterns to decorating homes with 
               spooky decorations, Americans spend billions annually on Halloween-related purchases, 
               making it one of the most commercially successful holidays.
             </p>
@@ -61,7 +61,7 @@ export default function HalloweenCountdown() {
             <h3 className="heading-3 mt-8 mb-4">Popular Halloween Traditions in the US</h3>
             <ul className="list-disc pl-6 space-y-2 mb-8">
               <li className="text-secondary-text">Trick-or-treating door-to-door for candy and treats</li>
-              <li className="text-secondary-text">Carving pumpkins into jack-o'-lanterns</li>
+              <li className="text-secondary-text">Carving pumpkins into jack-o&apos;-lanterns</li>
               <li className="text-secondary-text">Wearing costumes and attending costume parties</li>
               <li className="text-secondary-text">Visiting haunted houses and spooky attractions</li>
               <li className="text-secondary-text">Watching horror movies and telling scary stories</li>
@@ -69,7 +69,7 @@ export default function HalloweenCountdown() {
             
             <p className="paragraph">
               Our countdown timer updates every second, ensuring you always know exactly how much time 
-              remains until Halloween night. Whether you're excited about trick-or-treating, costume 
+              remains until Halloween night. Whether you&apos;re excited about trick-or-treating, costume 
               planning, or simply the festive atmosphere, this tool helps you stay connected to the 
               Halloween spirit all October long.
             </p>

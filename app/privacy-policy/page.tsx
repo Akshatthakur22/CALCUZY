@@ -120,7 +120,7 @@ export default function PrivacyPolicyPage() {
                 regularly review our security practices and update them as needed.
               </p>
               <p className="paragraph">
-                Since we don't collect personal data and all processing happens locally, 
+                Since we don&apos;t collect personal data and all processing happens locally, 
                 there is minimal risk to your privacy. Your information never leaves 
                 your device unless you choose to share it.
               </p>
@@ -134,23 +134,23 @@ export default function PrivacyPolicyPage() {
                 data at any time.
               </p>
               <p className="paragraph">
-                You have the right to understand what information is collected and how it's 
+                You have the right to understand what information is collected and how it&apos;s 
                 used. This privacy policy is designed to be transparent about our 
                 practices and your rights as a user.
               </p>
               <p className="paragraph">
                 You have the right to contact us with questions or concerns about this 
-                privacy policy. We're committed to addressing any issues promptly 
+                privacy policy. We&apos;re committed to addressing any issues promptly 
                 and ensuring your trust in our services.
               </p>
             </div>
 
             <div>
-              <h2 className="heading-2 mb-6">Children's Privacy</h2>
+              <h2 className="heading-2 mb-6">Children&apos;s Privacy</h2>
               <p className="paragraph">
                 Our services are not directed to children under 13, and we do not 
                 knowingly collect personal information from minors. We encourage parents to 
-                monitor their children's online activities and educate them about privacy 
+                monitor their children&apos;s online activities and educate them about privacy 
                 best practices.
               </p>
             </div>
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="heading-2 mb-6">Contact Us About Privacy</h2>
             <p className="paragraph">
               If you have questions or concerns about this privacy policy or our data 
-              practices, please contact us at <strong>privacy@calcuzy.com</strong>. We're 
+              practices, please contact us at <strong>privacy@calcuzy.com</strong>. We&apos;re 
               committed to addressing privacy issues promptly and transparently.
             </p>
             
