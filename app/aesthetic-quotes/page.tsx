@@ -107,7 +107,7 @@ export default function AestheticQuotes() {
           </Card>
         </div>
 
-        <AdUnit slot={2} />
+        <AdUnit slot= {2} />
 
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-2 mb-6">About Aesthetic Quotes</h2>
@@ -169,7 +169,7 @@ export default function AestheticQuotes() {
           </div>
         </div>
 
-        <AdUnit slot={3} />
+        <AdUnit slot= {3} />
 
         <div className="max-w-4xl mx-auto mt-16">
           <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
