@@ -117,7 +117,7 @@ export default function HomePage() {
       />
       <Navbar />
       
-      <main className="min-h-screen bg-primary-bg">
+      <main id="main-content" className="min-h-screen bg-primary-bg">
         {/* Hero Section */}
         <section className="container section-responsive py-20">
           <div className="text-center max-w-4xl mx-auto fade-in">
