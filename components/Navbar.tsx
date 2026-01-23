@@ -17,7 +17,11 @@ export default function Navbar() {
             <img 
               src="/logo.png" 
               alt="Calcuzy Logo" 
+              width={72}
+              height={72}
               className="h-18 w-18"
+              loading="eager"
+              fetchPriority="high"
             />
           </Link>
 

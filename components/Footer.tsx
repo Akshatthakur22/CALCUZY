@@ -10,7 +10,10 @@ export default function Footer() {
               <img 
                 src="/logo.png" 
                 alt="Calcuzy Logo" 
+                width={80}
+                height={80}
                 className="h-20 w-20"
+                loading="lazy"
               />
             </div>
             <p className="text-sm text-gray-500 mb-4 leading-relaxed">

@@ -5,7 +5,12 @@ import { Analytics } from '@vercel/analytics/react'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import LoadingBoundary from '@/components/LoadingBoundary'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial']
+})
 
 export const metadata = createMetadata({
   title: 'Calcuzy.app - Simple Online Tools, Countdowns & Everyday Utilities',
@@ -21,7 +26,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-         <meta
+        {/* Critical resource hints */}
+        <link rel="preload" href="/logo.png" as="image" type="image/png" />
+        <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://vercel.live" />
+        
+        <meta
           name="google-adsense-account"
           content="ca-pub-2612507905879561"
         />
