@@ -1,35 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useCallback, memo } from 'react'
-
-const NavLink = memo(({ href, children, onClick, className = "" }: {
-  href: string
-  children: React.ReactNode
-  onClick?: () => void
-  className?: string
-}) => (
-  <Link 
-    href={href} 
-    className={`text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-2 ${className}`}
-    onClick={onClick}
-  >
-    {children}
-  </Link>
-))
-
-NavLink.displayName = 'NavLink'
+import { useState } from 'react'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const toggleMenu = useCallback(() => {
-    setIsMenuOpen(prev => !prev)
-  }, [])
-
-  const closeMenu = useCallback(() => {
-    setIsMenuOpen(false)
-  }, [])
 
   return (
     <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50 fade-in">
@@ -42,11 +17,7 @@ export default function Navbar() {
             <img 
               src="/logo.png" 
               alt="Calcuzy Logo" 
-              width={72}
-              height={72}
               className="h-18 w-18"
-              loading="eager"
-              fetchPriority="high"
             />
           </Link>
 
@@ -92,7 +63,7 @@ export default function Navbar() {
 
           <button
             className="md:hidden p-3 rounded-lg hover:bg-secondary-bg transition-all duration-200 focus-ring"
-            onClick={toggleMenu}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -112,49 +83,49 @@ export default function Navbar() {
         }`}>
           <div className="border-t border-gray-200 pt-4">
             <div className="flex flex-col space-y-2">
-              <NavLink 
+              <Link 
                 href="/countdowns" 
-                onClick={closeMenu}
-                className="py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Countdowns
-              </NavLink>
-              <NavLink 
+              </Link>
+              <Link 
                 href="/tools" 
-                onClick={closeMenu}
-                className="py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Tools
-              </NavLink>
-              <NavLink 
+              </Link>
+              <Link 
                 href="/names" 
-                onClick={closeMenu}
-                className="py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Names
-              </NavLink>
-              <NavLink 
+              </Link>
+              <Link 
                 href="/quotes" 
-                onClick={closeMenu}
-                className="py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Quotes
-              </NavLink>
+              </Link>
               <div className="border-t border-gray-200 my-2"></div>
-              <NavLink 
+              <Link 
                 href="/about" 
-                onClick={closeMenu}
-                className="py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 About
-              </NavLink>
-              <NavLink 
+              </Link>
+              <Link 
                 href="/contact" 
-                onClick={closeMenu}
-                className="py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                className="text-secondary-text hover:text-primary-text transition-colors duration-200 focus-ring py-3 px-2 rounded-lg hover:bg-secondary-bg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Contact
-              </NavLink>
+              </Link>
             </div>
           </div>
         </div>

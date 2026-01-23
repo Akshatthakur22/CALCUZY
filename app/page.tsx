@@ -1,89 +1,10 @@
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import SearchBar from '@/components/SearchBar'
 import { createMetadata } from '@/lib/metadata'
-
-// Dynamically import heavy components with no SSR for static export
-const SearchBar = dynamic(() => import('@/components/SearchBarOptimized'), { 
-  ssr: false,
-  loading: () => (
-    <div className="max-w-2xl mx-auto mb-16">
-      <div className="w-full px-6 py-4 text-lg rounded-2xl border border-border bg-gray-100 animate-pulse">
-        <span className="text-gray-400">Loading search...</span>
-      </div>
-    </div>
-  )
-})
-
-const CategoriesSection = dynamic(() => import('@/components/CategoriesSection'), {
-  ssr: false,
-  loading: () => (
-    <div className="container section-responsive py-16">
-      <div className="animate-pulse">
-        <div className="h-8 bg-gray-200 rounded w-1/3 mx-auto mb-4"></div>
-        <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto mb-8"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[...Array(8)].map((_, i) => (
-            <div key={i} className="bg-gray-100 rounded-xl h-48"></div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-})
-
-const TrendingToolsSection = dynamic(() => import('@/components/TrendingToolsSection'), {
-  ssr: false,
-  loading: () => (
-    <div className="container section-responsive py-16">
-      <div className="animate-pulse">
-        <div className="h-8 bg-gray-200 rounded w-1/3 mx-auto mb-4"></div>
-        <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto mb-8"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[...Array(8)].map((_, i) => (
-            <div key={i} className="bg-gray-100 rounded-xl h-32"></div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-})
-
-const WhyCalcuzySection = dynamic(() => import('@/components/WhyCalcuzySection'), {
-  ssr: false,
-  loading: () => (
-    <div className="container section-responsive py-16">
-      <div className="animate-pulse">
-        <div className="h-8 bg-gray-200 rounded w-1/3 mx-auto mb-4"></div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="bg-gray-100 rounded-xl h-32"></div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-})
-
-const TrustSection = dynamic(() => import('@/components/TrustSection'), {
-  ssr: false,
-  loading: () => (
-    <div className="container section-responsive py-16">
-      <div className="animate-pulse text-center">
-        <div className="h-16 bg-gray-200 rounded w-16 mx-auto mb-4"></div>
-        <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
-        <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="bg-gray-100 rounded h-16"></div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-})
 
 export const metadata = createMetadata({
   title: 'Calcuzy - Your All-In-One Online Tools Platform',
@@ -117,7 +38,7 @@ export default function HomePage() {
       />
       <Navbar />
       
-      <main id="main-content" className="min-h-screen bg-primary-bg">
+      <main className="min-h-screen bg-primary-bg">
         {/* Hero Section */}
         <section className="container section-responsive py-20">
           <div className="text-center max-w-4xl mx-auto fade-in">
@@ -136,14 +57,181 @@ export default function HomePage() {
 
         <AdUnit slot={1} />
 
-        {/* Categories Section - Lazy Loaded */}
-        <CategoriesSection />
+        {/* Categories Section */}
+        <section className="container section-responsive py-16">
+          <div className="text-center mb-12 fade-in">
+            <h2 className="text-4xl font-bold text-primary-text mb-4">Explore Every Tool You Need</h2>
+            <p className="text-xl text-secondary-text max-w-2xl mx-auto">
+              From everyday calculations to specialized utilities, find everything in one place
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card animation="fade-in-up" delay={100}>
+              <div className="text-center">
+                <div className="text-4xl mb-4">🧮</div>
+                <h3 className="heading-3 mb-3">Calculators</h3>
+                <p className="paragraph text-sm mb-4">Age, BMI, loan, mortgage, and more specialized calculators</p>
+                <Link href="/age-calculator" className="link-accent font-medium">Explore Calculators →</Link>
+              </div>
+            </Card>
 
-        {/* Trending Tools Section - Lazy Loaded */}
-        <TrendingToolsSection />
+            <Card animation="fade-in-up" delay={200}>
+              <div className="text-center">
+                <div className="text-4xl mb-4">⏰</div>
+                <h3 className="heading-3 mb-3">Countdowns</h3>
+                <p className="paragraph text-sm mb-4">Track holidays, events, and important dates with precision</p>
+                <Link href="/days-until-christmas" className="link-accent font-medium">View Countdowns →</Link>
+              </div>
+            </Card>
 
-        {/* Why Calcuzy Section - Lazy Loaded */}
-        <WhyCalcuzySection />
+            <Card animation="fade-in-up" delay={300}>
+              <div className="text-center">
+                <div className="text-4xl mb-4">⚖️</div>
+                <h3 className="heading-3 mb-3">Legal Generators</h3>
+                <p className="paragraph text-sm mb-4">Will generator, lease agreements, and legal document templates</p>
+                <Link href="/will-generator" className="link-accent font-medium">Legal Tools →</Link>
+              </div>
+            </Card>
+
+            <Card animation="fade-in-up" delay={400}>
+              <div className="text-center">
+                <div className="text-4xl mb-4">💰</div>
+                <h3 className="heading-3 mb-3">Finance Tools</h3>
+                <p className="paragraph text-sm mb-4">Tax calculators, investment tools, and budget planners</p>
+                <Link href="/capital-gains-calculator" className="link-accent font-medium">Finance Tools →</Link>
+              </div>
+            </Card>
+
+            <Card animation="fade-in-up" delay={500}>
+              <div className="text-center">
+                <div className="text-4xl mb-4">🏠</div>
+                <h3 className="heading-3 mb-3">Home & Real Estate</h3>
+                <p className="paragraph text-sm mb-4">Mortgage calculators, paint cost, and home improvement tools</p>
+                <Link href="/paint-cost-calculator" className="link-accent font-medium">Home Tools →</Link>
+              </div>
+            </Card>
+
+            <Card animation="fade-in-up" delay={600}>
+              <div className="text-center">
+                <div className="text-4xl mb-4">📝</div>
+                <h3 className="heading-3 mb-3">Name Generators</h3>
+                <p className="paragraph text-sm mb-4">Baby names, pet names, business names, and more</p>
+                <Link href="/dog-names" className="link-accent font-medium">Name Tools →</Link>
+              </div>
+            </Card>
+
+            <Card animation="fade-in-up" delay={700}>
+              <div className="text-center">
+                <div className="text-4xl mb-4">🔒</div>
+                <h3 className="heading-3 mb-3">Security Tools</h3>
+                <p className="paragraph text-sm mb-4">Password generators, strength checkers, and encryption tools</p>
+                <Link href="/password-strength-checker" className="link-accent font-medium">Security Tools →</Link>
+              </div>
+            </Card>
+
+            <Card animation="fade-in-up" delay={800}>
+              <div className="text-center">
+                <div className="text-4xl mb-4">💬</div>
+                <h3 className="heading-3 mb-3">Quotes & Content</h3>
+                <p className="paragraph text-sm mb-4">Inspirational quotes, content generators, and writing tools</p>
+                <Link href="/motivational-quotes" className="link-accent font-medium">Content Tools →</Link>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        <AdUnit slot={2} />
+
+        {/* Trending Tools Section */}
+        <section className="container section-responsive py-16">
+          <div className="text-center mb-12 fade-in">
+            <h2 className="text-4xl font-bold text-primary-text mb-4">Trending Tools Today</h2>
+            <p className="text-xl text-secondary-text max-w-2xl mx-auto">
+              The most popular tools people are using right now
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card animation="fade-in-up" delay={100}>
+              <h3 className="heading-3 mb-3">Age Calculator</h3>
+              <p className="paragraph text-sm mb-4">Calculate exact age in years, months, and days</p>
+              <Link href="/age-calculator" className="link-accent font-medium text-sm">Calculate Age →</Link>
+            </Card>
+
+            <Card animation="fade-in-up" delay={200}>
+              <h3 className="heading-3 mb-3">BMI Calculator</h3>
+              <p className="paragraph text-sm mb-4">Check your body mass index instantly</p>
+              <Link href="/bmi-calculator" className="link-accent font-medium text-sm">Calculate BMI →</Link>
+            </Card>
+
+            <Card animation="fade-in-up" delay={300}>
+              <h3 className="heading-3 mb-3">Capital Gains Calculator</h3>
+              <p className="paragraph text-sm mb-4">Calculate tax on investment profits</p>
+              <Link href="/capital-gains-calculator" className="link-accent font-medium text-sm">Calculate Gains →</Link>
+            </Card>
+
+            <Card animation="fade-in-up" delay={400}>
+              <h3 className="heading-3 mb-3">Crypto Tax Calculator</h3>
+              <p className="paragraph text-sm mb-4">Simplify cryptocurrency tax calculations</p>
+              <Link href="/crypto-tax-calculator" className="link-accent font-medium text-sm">Calculate Tax →</Link>
+            </Card>
+
+            <Card animation="fade-in-up" delay={500}>
+              <h3 className="heading-3 mb-3">Ovulation Calculator</h3>
+              <p className="paragraph text-sm mb-4">Track fertility and calculate fertile days</p>
+              <Link href="/ovulation-calculator" className="link-accent font-medium text-sm">Track Ovulation →</Link>
+            </Card>
+
+            <Card animation="fade-in-up" delay={600}>
+              <h3 className="heading-3 mb-3">Paint Cost Calculator</h3>
+              <p className="paragraph text-sm mb-4">Estimate paint needed for your project</p>
+              <Link href="/paint-cost-calculator" className="link-accent font-medium text-sm">Calculate Paint →</Link>
+            </Card>
+
+            <Card animation="fade-in-up" delay={700}>
+              <h3 className="heading-3 mb-3">Will Generator</h3>
+              <p className="paragraph text-sm mb-4">Create a legally sound will online</p>
+              <Link href="/will-generator" className="link-accent font-medium text-sm">Generate Will →</Link>
+            </Card>
+
+            <Card animation="fade-in-up" delay={800}>
+              <h3 className="heading-3 mb-3">Password Strength Tool</h3>
+              <p className="paragraph text-sm mb-4">Test and improve your password security</p>
+              <Link href="/password-strength-checker" className="link-accent font-medium text-sm">Check Strength →</Link>
+            </Card>
+          </div>
+        </section>
+
+        {/* Why Calcuzy Section */}
+        <section className="container section-responsive py-16">
+          <div className="text-center mb-12 fade-in">
+            <h2 className="text-4xl font-bold text-primary-text mb-4">Why Choose Calcuzy?</h2>
+            <p className="text-xl text-secondary-text max-w-2xl mx-auto">
+              Built for speed, accuracy, and simplicity
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card animation="fade-in-up" delay={100} className="text-center">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="heading-3 mb-3">Fast</h3>
+              <p className="paragraph text-sm">Instant calculations and real-time results. No loading, no waiting.</p>
+            </Card>
+
+            <Card animation="fade-in-up" delay={200} className="text-center">
+              <div className="text-4xl mb-4">✅</div>
+              <h3 className="heading-3 mb-3">Accurate</h3>
+              <p className="paragraph text-sm">Verified formulas and precise calculations you can trust.</p>
+            </Card>
+
+            <Card animation="fade-in-up" delay={300} className="text-center">
+              <div className="text-4xl mb-4">🆓</div>
+              <h3 className="heading-3 mb-3">Free Forever</h3>
+              <p className="paragraph text-sm">Ad-supported, no login required. Always free, always accessible.</p>
+            </Card>
+          </div>
+        </section>
 
         {/* Featured Categories */}
         <section className="container section-responsive py-16">
@@ -209,8 +297,36 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Trust Section - Lazy Loaded */}
-        <TrustSection />
+        {/* Trust Section */}
+        <section className="container section-responsive py-16">
+          <div className="text-center fade-in">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-6xl mb-6">🌍</div>
+              <h2 className="text-3xl font-bold text-primary-text mb-4">Trusted Worldwide</h2>
+              <p className="text-xl text-secondary-text mb-8">
+                Calcuzy is used by people in 150+ countries.
+                <br />
+                100% free. No sign-up. No data tracking.
+              </p>
+              <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                <div>
+                  <div className="text-3xl font-bold text-accent mb-2">10M+</div>
+                  <div className="text-sm text-secondary-text">Monthly Users</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-accent mb-2">150+</div>
+                  <div className="text-sm text-secondary-text">Countries</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-accent mb-2">100+</div>
+                  <div className="text-sm text-secondary-text">Tools Available</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <AdUnit slot={3} />
 
         {/* SEO Content Block */}
         <section className="container section-responsive py-16">

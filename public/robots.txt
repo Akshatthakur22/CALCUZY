@@ -1,19 +1,4 @@
 User-agent: *
 Allow: /
-Crawl-delay: 1
-
-# Block unnecessary crawlers to save bandwidth
-User-agent: AhrefsBot
-Disallow: /
-User-agent: MJ12bot
-Disallow: /
-User-agent: DotBot
-Disallow: /
-
-# Allow important crawlers with optimized access
-User-agent: Googlebot
-Allow: /
-User-agent: Bingbot
-Allow: /
 
 Sitemap: https://calcuzy.app/sitemap.xml
