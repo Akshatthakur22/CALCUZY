@@ -55,6 +55,13 @@ const tools: Tool[] = [
   
   // Other Tools
   { name: 'Date Difference Calculator', description: 'Calculate the difference between two dates', url: '/date-difference', category: 'Calculators' },
+  
+  // PDF Tools
+  { name: 'PDF Merger', description: 'Combine multiple PDF files into one', url: '/pdf-tools/pdf-merger', category: 'PDF Tools' },
+  { name: 'PDF Splitter', description: 'Split PDF files into multiple documents', url: '/pdf-tools/pdf-splitter', category: 'PDF Tools' },
+  { name: 'PDF Compressor', description: 'Compress PDF files to reduce size', url: '/pdf-tools/pdf-compressor', category: 'PDF Tools' },
+  { name: 'PDF to Word', description: 'Convert PDF files to Word documents', url: '/pdf-tools/pdf-to-word', category: 'PDF Tools' },
+  { name: 'Word to PDF', description: 'Convert Word documents to PDF files', url: '/pdf-tools/word-to-pdf', category: 'PDF Tools' },
 ]
 
 export default function SearchBar() {

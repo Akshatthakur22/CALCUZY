@@ -1,0 +1,282 @@
+{
+  "common": {
+    "siteName": "Calcuzy.app",
+    "tagline": "Outils en Ligne Simples, Comptes à Rebours & Utilitaires du Quotidien",
+    "description": "Minimal. Rapide. Optimisé pour la Recherche. Prêt pour les Revenus. Outils en ligne simples, compte à rebours et utilitaires du quotidien conçus pour la vitesse et la simplicité.",
+    "keywords": "outils en ligne, compte à rebours, calculatrices, utilitaires simples",
+    "calculate": "Calculer",
+    "reset": "Réinitialiser",
+    "result": "Résultat",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "share": "Partager",
+    "download": "Télécharger",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "tryAgain": "Réessayer",
+    "search": "Rechercher",
+    "searchPlaceholder": "Rechercher des outils...",
+    "noResults": "Aucun résultat trouvé",
+    "backToHome": "Retour à l'Accueil",
+    "viewAll": "Voir Tout",
+    "readMore": "Lire Plus",
+    "learnMore": "En Savoir Plus",
+    "getStarted": "Commencer",
+    "explore": "Explorer",
+    "featured": "En Vedette",
+    "popular": "Populaire",
+    "recent": "Récent",
+    "all": "Tous",
+    "categories": "Catégories",
+    "tools": "Outils",
+    "countdowns": "Comptes à Rebours",
+    "names": "Noms",
+    "quotes": "Citations"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "tools": "Outils",
+    "countdowns": "Comptes à Rebours",
+    "names": "Noms",
+    "quotes": "Citations",
+    "about": "À Propos",
+    "contact": "Contact",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  },
+  "footer": {
+    "description": "Outils en ligne simples, compte à rebours et utilitaires du quotidien conçus pour la vitesse et la simplicité.",
+    "quickLinks": "Liens Rapides",
+    "legal": "Légal",
+    "social": "Suivez-nous",
+    "copyright": "© 2024 Calcuzy.app. Tous droits réservés."
+  },
+  "homepage": {
+    "heroTitle": "Outils en Ligne Simples pour la Vie Quotidienne",
+    "heroSubtitle": "Minimal. Rapide. Optimisé pour la Recherche. Prêt pour les Revenus.",
+    "heroDescription": "Découvrez notre collection d'outils simples et puissants conçus pour faciliter vos tâches quotidiennes.",
+    "searchTitle": "Trouvez Votre Outil",
+    "searchSubtitle": "Parcourez notre collection de 40+ outils",
+    "categoriesTitle": "Parcourir les Catégories",
+    "categoriesSubtitle": "Trouvez l'outil parfait pour vos besoins",
+    "featuredTitle": "Outils en Vedette",
+    "featuredSubtitle": "Outils les plus populaires et utiles",
+    "faqTitle": "Questions Fréquemment Posées",
+    "faqSubtitle": "Tout ce que vous devez savoir sur Calcuzy"
+  },
+  "tools": {
+    "ageCalculator": {
+      "title": "Calculateur d'Âge",
+      "description": "Calculez votre âge exact en années, mois et jours",
+      "placeholder": "Entrez votre date de naissance",
+      "result": "Vous avez {{years}} ans, {{months}} mois et {{days}} jours"
+    },
+    "bmiCalculator": {
+      "title": "Calculateur d'IMC",
+      "description": "Calculez votre Indice de Masse Corporelle et catégorie de santé",
+      "heightPlaceholder": "Entrez la taille (cm)",
+      "weightPlaceholder": "Entrez le poids (kg)",
+      "result": "Votre IMC est {{bmi}} ({{category}})"
+    },
+    "capitalGainsCalculator": {
+      "title": "Calculateur de Plus-Values",
+      "description": "Calculez l'impôt sur les plus-values de vos investissements",
+      "purchasePricePlaceholder": "Prix d'achat",
+      "salePricePlaceholder": "Prix de vente",
+      "result": "Plus-Values : {{amount}}"
+    },
+    "cryptoTaxCalculator": {
+      "title": "Calculateur d'Impôt Crypto",
+      "description": "Calculez l'impôt sur les transactions de cryptomonnaies",
+      "costBasisPlaceholder": "Coût de base",
+      "salePricePlaceholder": "Prix de vente",
+      "result": "Montant Imposable : {{amount}}"
+    },
+    "dateDifference": {
+      "title": "Calculateur de Différence de Date",
+      "description": "Calculez la différence entre deux dates",
+      "fromDatePlaceholder": "Date de début",
+      "toDatePlaceholder": "Date de fin",
+      "result": "Différence : {{days}} jours"
+    },
+    "indexFundReturnCalculator": {
+      "title": "Calculateur de Rendement de Fonds Indiciel",
+      "description": "Calculez les rendements potentiels des investissements en fonds indiciels",
+      "initialAmountPlaceholder": "Investissement initial",
+      "monthlyContributionPlaceholder": "Contribution mensuelle",
+      "result": "Valeur Future : {{amount}}"
+    },
+    "ovulationCalculator": {
+      "title": "Calculateur d'Ovulation",
+      "description": "Suivez votre fenêtre de fertilité et dates d'ovulation",
+      "lastPeriodPlaceholder": "Dernières règles",
+      "cycleLengthPlaceholder": "Durée du cycle (jours)",
+      "result": "Prochaine ovulation : {{date}}"
+    },
+    "paintCostCalculator": {
+      "title": "Calculateur de Coût de Peinture",
+      "description": "Estimez la quantité et le coût de peinture pour votre projet",
+      "areaPlaceholder": "Zone à peindre (m²)",
+      "result": "Peinture nécessaire : {{gallons}} litres"
+    },
+    "passwordTools": {
+      "title": "Outils de Mot de Passe",
+      "description": "Générez des mots de passe forts et vérifiez la sécurité",
+      "generatePassword": "Générer un Mot de Passe",
+      "checkStrength": "Vérifier la Force du Mot de Passe"
+    },
+    "propertyTaxEstimator": {
+      "title": "Estimateur d'Impôt Foncier",
+      "description": "Estimez les impôts fonciers annuels",
+      "propertyValuePlaceholder": "Valeur du bien",
+      "taxRatePlaceholder": "Taux d'imposition (%)",
+      "result": "Impôt Annuel : {{amount}}"
+    },
+    "randomNumberGenerator": {
+      "title": "Générateur de Nombre Aléatoire",
+      "description": "Générez des nombres aléatoires dans une plage",
+      "minPlaceholder": "Minimum",
+      "maxPlaceholder": "Maximum",
+      "generate": "Générer un Nombre"
+    },
+    "rentAffordabilityCalculator": {
+      "title": "Calculateur d'Accessibilité au Loyer",
+      "description": "Calculez combien de loyer vous pouvez vous permettre",
+      "incomePlaceholder": "Revenu mensuel",
+      "result": "Loyer Abordable : {{amount}}"
+    },
+    "unitConverter": {
+      "title": "Convertisseur d'Unités",
+      "description": "Convertissez entre différentes unités de mesure",
+      "fromUnitPlaceholder": "De",
+      "toUnitPlaceholder": "À",
+      "valuePlaceholder": "Valeur à convertir"
+    },
+    "willGenerator": {
+      "title": "Générateur de Testament",
+      "description": "Créez un testament simple",
+      "fullNamePlaceholder": "Nom complet",
+      "beneficiaryPlaceholder": "Bénéficiaire",
+      "generateWill": "Générer un Testament"
+    },
+    "ndaGenerator": {
+      "title": "Générateur de NDA",
+      "description": "Créez un accord de non-divulgation",
+      "partyAPlaceholder": "Partie divulgatrice",
+      "partyBPlaceholder": "Partie destinataire",
+      "generateNDA": "Générer un NDA"
+    }
+  },
+  "countdowns": {
+    "christmas": {
+      "title": "Compte à Rebours de Noël",
+      "description": "Compte à rebours jusqu'au jour de Noël"
+    },
+    "newYear": {
+      "title": "Compte à Rebours du Nouvel An",
+      "description": "Compte à rebours jusqu'au jour de l'An"
+    },
+    "halloween": {
+      "title": "Compte à Rebours d'Halloween",
+      "description": "Compte à rebours jusqu'à Halloween"
+    },
+    "thanksgiving": {
+      "title": "Compte à Rebours de Thanksgiving",
+      "description": "Compte à rebours jusqu'à Thanksgiving"
+    },
+    "easter": {
+      "title": "Compte à Rebours de Pâques",
+      "description": "Compte à rebours jusqu'au dimanche de Pâques"
+    },
+    "blackFriday": {
+      "title": "Compte à Rebours du Black Friday",
+      "description": "Compte à rebours jusqu'au Black Friday"
+    }
+  },
+  "names": {
+    "babyBoy": {
+      "title": "Noms de Garçon",
+      "description": "Trouvez le nom parfait pour votre bébé garçon"
+    },
+    "babyGirl": {
+      "title": "Noms de Fille",
+      "description": "Trouvez le nom parfait pour votre bébé fille"
+    },
+    "dog": {
+      "title": "Noms de Chien",
+      "description": "Trouvez le nom parfait pour votre chien"
+    },
+    "cat": {
+      "title": "Noms de Chat",
+      "description": "Trouvez le nom parfait pour votre chat"
+    },
+    "americanLast": {
+      "title": "Noms de Famille Américains",
+      "description": "Noms de famille américains populaires"
+    }
+  },
+  "quotes": {
+    "motivational": {
+      "title": "Citations Motivationnelles",
+      "description": "Inspirez-vous avec des citations motivationnelles"
+    },
+    "love": {
+      "title": "Citations d'Amour",
+      "description": "Citations romantiques pour toutes occasions"
+    },
+    "christmas": {
+      "title": "Citations de Noël",
+      "description": "Citations festives pour la saison des fêtes"
+    },
+    "graduation": {
+      "title": "Citations de Remise des Diplômes",
+      "description": "Citations inspirantes pour les diplômés"
+    },
+    "aesthetic": {
+      "title": "Citations Esthétiques",
+      "description": "Citations belles et artistiques"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "À Propos de Calcuzy",
+      "description": "En savoir plus sur notre mission et notre histoire"
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "description": "Contactez notre équipe"
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "description": "Comment nous protégeons vos données et votre vie privée"
+    },
+    "terms": {
+      "title": "Conditions d'Utilisation",
+      "description": "Conditions et termes pour l'utilisation de Calcuzy"
+    }
+  },
+  "seo": {
+    "defaultTitle": "Calcuzy.app - Outils en Ligne Simples, Comptes à Rebours & Utilitaires du Quotidien",
+    "defaultDescription": "Minimal. Rapide. Optimisé pour la Recherche. Prêt pour les Revenus. Outils en ligne simples, compte à rebours et utilitaires du quotidien conçus pour la vitesse et la simplicité.",
+    "toolsTitle": "Tous les Outils - Calcuzy.app",
+    "toolsDescription": "Parcourez notre collection complète de 40+ outils en ligne, calculatrices et utilitaires.",
+    "countdownsTitle": "Compte à Rebours - Calcuzy.app",
+    "countdownsDescription": "Compte à rebours vers les vacances et occasions spéciales avec notre collection de compte à rebours.",
+    "namesTitle": "Générateurs de Noms - Calcuzy.app",
+    "namesDescription": "Trouvez le nom parfait avec notre collection de générateurs de noms pour bébés, animaux de compagnie et plus.",
+    "quotesTitle": "Collection de Citations - Calcuzy.app",
+    "quotesDescription": "Inspirez-vous avec notre collection de citations motivationnelles, d'amour et esthétiques."
+  },
+  "errors": {
+    "404": {
+      "title": "Page Non Trouvée",
+      "description": "La page que vous cherchez n'existe pas.",
+      "button": "Retour à l'Accueil"
+    },
+    "500": {
+      "title": "Quelque chose s'est mal passé",
+      "description": "Nous avons rencontré une erreur lors du traitement de votre demande.",
+      "button": "Réessayer"
+    }
+  }
+}

@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/file-saver": "^2.0.7",
     "@vercel/analytics": "^1.6.1",
     "autoprefixer": "^10.4.23",
+    "docx": "^9.5.1",
+    "file-saver": "^2.0.5",
     "next": "14.2.5",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^5.4.530",
     "react": "^18",
     "react-dom": "^18"
   },

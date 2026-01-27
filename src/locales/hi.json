@@ -1,0 +1,282 @@
+{
+  "common": {
+    "siteName": "Calcuzy.app",
+    "tagline": "सरल ऑनलाइन टूल्स, काउंटडाउन और रोजमर्रा की उपयोगिताएं",
+    "description": "न्यूनतम। तेज़। खोज-अनुकूलित। राजस्व-तैयार। गति और सरलता के लिए डिज़ाइन किए गए सरल ऑनलाइन टूल्स, काउंटडाउन टाइमर, और रोजमर्रा की उपयोगिताएं।",
+    "keywords": "ऑनलाइन टूल्स, काउंटडाउन टाइमर, कैलकुलेटर, सरल उपयोगिताएं",
+    "calculate": "गणना करें",
+    "reset": "रीसेट करें",
+    "result": "परिणाम",
+    "copy": "कॉपी करें",
+    "copied": "कॉपी हो गया!",
+    "share": "साझा करें",
+    "download": "डाउनलोड करें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "tryAgain": "फिर से कोशिश करें",
+    "search": "खोजें",
+    "searchPlaceholder": "टूल्स खोजें...",
+    "noResults": "कोई परिणाम नहीं मिला",
+    "backToHome": "होम पर वापस जाएं",
+    "viewAll": "सभी देखें",
+    "readMore": "और पढ़ें",
+    "learnMore": "और जानें",
+    "getStarted": "शुरू करें",
+    "explore": "एक्सप्लोर करें",
+    "featured": "विशेष",
+    "popular": "लोकप्रिय",
+    "recent": "हाल के",
+    "all": "सभी",
+    "categories": "श्रेणियां",
+    "tools": "टूल्स",
+    "countdowns": "काउंटडाउन",
+    "names": "नाम",
+    "quotes": "उद्धरण"
+  },
+  "navigation": {
+    "home": "होम",
+    "tools": "टूल्स",
+    "countdowns": "काउंटडाउन",
+    "names": "नाम",
+    "quotes": "उद्धरण",
+    "about": "हमारे बारे में",
+    "contact": "संपर्क करें",
+    "privacy": "गोपनीयता नीति",
+    "terms": "सेवा की शर्तें"
+  },
+  "footer": {
+    "description": "गति और सरलता के लिए डिज़ाइन किए गए सरल ऑनलाइन टूल्स, काउंटडाउन टाइमर, और रोजमर्रा की उपयोगिताएं।",
+    "quickLinks": "त्वरित लिंक",
+    "legal": "कानूनी",
+    "social": "हमें फॉलो करें",
+    "copyright": "© 2024 Calcuzy.app. सभी अधिकार सुरक्षित।"
+  },
+  "homepage": {
+    "heroTitle": "रोजमर्रा की जिंदगी के लिए सरल ऑनलाइन टूल्स",
+    "heroSubtitle": "न्यूनतम। तेज़। खोज-अनुकूलित। राजस्व-तैयार।",
+    "heroDescription": "अपने रोजमर्रा के कामों को आसान बनाने के लिए डिज़ाइन किए गए सरल, शक्तिशाली टूल्स के हमारे संग्रह की खोज करें।",
+    "searchTitle": "अपना टूल खोजें",
+    "searchSubtitle": "40+ टूल्स के हमारे संग्रह के माध्यम से खोजें",
+    "categoriesTitle": "श्रेणियां ब्राउज़ करें",
+    "categoriesSubtitle": "अपनी जरूरतों के लिए सही टूल खोजें",
+    "featuredTitle": "विशेष टूल्स",
+    "featuredSubtitle": "सबसे लोकप्रिय और उपयोगी टूल्स",
+    "faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
+    "faqSubtitle": "Calcuzy के बारे में आपको जानने की जरूरत है सब कुछ"
+  },
+  "tools": {
+    "ageCalculator": {
+      "title": "आयु कैलकुलेटर",
+      "description": "वर्षों, महीनों और दिनों में अपनी सटीक आयु की गणना करें",
+      "placeholder": "अपनी जन्म तिथि दर्ज करें",
+      "result": "आप {{years}} वर्ष, {{months}} महीने और {{days}} दिन के हैं"
+    },
+    "bmiCalculator": {
+      "title": "बीएमआई कैलकुलेटर",
+      "description": "अपना बॉडी मास इंडेक्स और स्वास्थ्य श्रेणी की गणना करें",
+      "heightPlaceholder": "ऊंचाई दर्ज करें (सेमी)",
+      "weightPlaceholder": "वजन दर्ज करें (किग्रा)",
+      "result": "आपका बीएमआई {{bmi}} है ({{category}})"
+    },
+    "capitalGainsCalculator": {
+      "title": "कैपिटल गेन्स कैलकुलेटर",
+      "description": "अपने निवेश पर कैपिटल गेन्स टैक्स की गणना करें",
+      "purchasePricePlaceholder": "खरीद मूल्य",
+      "salePricePlaceholder": "बिक्री मूल्य",
+      "result": "कैपिटल गेन्स: {{amount}}"
+    },
+    "cryptoTaxCalculator": {
+      "title": "क्रिप्टो टैक्स कैलकुलेटर",
+      "description": "क्रिप्टोकरेंसी लेनदेन पर टैक्स की गणना करें",
+      "costBasisPlaceholder": "लागत आधार",
+      "salePricePlaceholder": "बिक्री मूल्य",
+      "result": "कर योग्य राशि: {{amount}}"
+    },
+    "dateDifference": {
+      "title": "दिनांक अंतर कैलकुलेटर",
+      "description": "दो तिथियों के बीच अंतर की गणना करें",
+      "fromDatePlaceholder": "से तिथि",
+      "toDatePlaceholder": "तक तिथि",
+      "result": "अंतर: {{days}} दिन"
+    },
+    "indexFundReturnCalculator": {
+      "title": "इंडेक्स फंड रिटर्न कैलकुलेटर",
+      "description": "इंडेक्स फंड निवेश से संभावित रिटर्न की गणना करें",
+      "initialAmountPlaceholder": "प्रारंभिक निवेश",
+      "monthlyContributionPlaceholder": "मासिक योगदान",
+      "result": "भविष्य मूल्य: {{amount}}"
+    },
+    "ovulationCalculator": {
+      "title": "ओव्यूलेशन कैलकुलेटर",
+      "description": "अपनी प्रजनन क्षमता खिड़की और ओव्यूलेशन तिथियों को ट्रैक करें",
+      "lastPeriodPlaceholder": "अंतिम मासिक धर्म तिथि",
+      "cycleLengthPlaceholder": "चक्र लंबाई (दिन)",
+      "result": "अगला ओव्यूलेशन: {{date}}"
+    },
+    "paintCostCalculator": {
+      "title": "पेंट लागत कैलकुलेटर",
+      "description": "अपनी परियोजना के लिए पेंट मात्रा और लागत का अनुमान लगाएं",
+      "areaPlaceholder": "पेंट करने के लिए क्षेत्र (वर्ग फीट)",
+      "result": "आवश्यक पेंट: {{gallons}} गैलन"
+    },
+    "passwordTools": {
+      "title": "पासवर्ड टूल्स",
+      "description": "मजबूत पासवर्ड जेनरेट करें और सुरक्षा जांचें",
+      "generatePassword": "पासवर्ड जेनरेट करें",
+      "checkStrength": "पासवर्ड शक्ति जांचें"
+    },
+    "propertyTaxEstimator": {
+      "title": "प्रॉपर्टी टैक्स अनुमानक",
+      "description": "वार्षिक प्रॉपर्टी टैक्स का अनुमान लगाएं",
+      "propertyValuePlaceholder": "प्रॉपर्टी मूल्य",
+      "taxRatePlaceholder": "टैक्स दर (%)",
+      "result": "वार्षिक टैक्स: {{amount}}"
+    },
+    "randomNumberGenerator": {
+      "title": "रैंडम नंबर जेनरेटर",
+      "description": "एक श्रेणी के भीतर रैंडम नंबर जेनरेट करें",
+      "minPlaceholder": "न्यूनतम",
+      "maxPlaceholder": "अधिकतम",
+      "generate": "नंबर जेनरेट करें"
+    },
+    "rentAffordabilityCalculator": {
+      "title": "रेंट वहनीयता कैलकुलेटर",
+      "description": "गणना करें कि आप कितना किराया वहन कर सकते हैं",
+      "incomePlaceholder": "मासिक आय",
+      "result": "किराया वहनीय: {{amount}}"
+    },
+    "unitConverter": {
+      "title": "यूनिट कनवर्टर",
+      "description": "विभिन्न मापन इकाइयों के बीच रूपांतरण करें",
+      "fromUnitPlaceholder": "से",
+      "toUnitPlaceholder": "तक",
+      "valuePlaceholder": "रूपांतरण के लिए मान"
+    },
+    "willGenerator": {
+      "title": "वसीयत जेनरेटर",
+      "description": "एक सरल वसीयतनामा बनाएं",
+      "fullNamePlaceholder": "पूरा नाम",
+      "beneficiaryPlaceholder": "लाभार्थी",
+      "generateWill": "वसीयत जेनरेट करें"
+    },
+    "ndaGenerator": {
+      "title": "एनडीए जेनरेटर",
+      "description": "एक गैर-प्रकटीकरण समझौता बनाएं",
+      "partyAPlaceholder": "प्रकट करने वाला पक्ष",
+      "partyBPlaceholder": "प्राप्त करने वाला पक्ष",
+      "generateNDA": "एनडीए जेनरेट करें"
+    }
+  },
+  "countdowns": {
+    "christmas": {
+      "title": "क्रिसमस काउंटडाउन",
+      "description": "क्रिसमस डे की उलटी गिनती"
+    },
+    "newYear": {
+      "title": "नए साल की काउंटडाउन",
+      "description": "नए साल के दिन की उलटी गिनती"
+    },
+    "halloween": {
+      "title": "हैलोवीन काउंटडाउन",
+      "description": "हैलोवीन की उलटी गिनती"
+    },
+    "thanksgiving": {
+      "title": "थैंक्सगिविंग काउंटडाउन",
+      "description": "थैंक्सगिविंग की उलटी गिनती"
+    },
+    "easter": {
+      "title": "ईस्टर काउंटडाउन",
+      "description": "ईस्टर रविवार की उलटी गिनती"
+    },
+    "blackFriday": {
+      "title": "ब्लैक फ्राइडे काउंटडाउन",
+      "description": "ब्लैक फ्राइडे की उलटी गिनती"
+    }
+  },
+  "names": {
+    "babyBoy": {
+      "title": "बेबी बॉय नेम्स",
+      "description": "अपने बेबी बॉय के लिए सही नाम खोजें"
+    },
+    "babyGirl": {
+      "title": "बेबी गर्ल नेम्स",
+      "description": "अपनी बेबी गर्ल के लिए सही नाम खोजें"
+    },
+    "dog": {
+      "title": "डॉग नेम्स",
+      "description": "अपने डॉग के लिए सही नाम खोजें"
+    },
+    "cat": {
+      "title": "कैट नेम्स",
+      "description": "अपनी कैट के लिए सही नाम खोजें"
+    },
+    "americanLast": {
+      "title": "अमेरिकन लास्ट नेम्स",
+      "description": "लोकप्रिय अमेरिकी उपनाम"
+    }
+  },
+  "quotes": {
+    "motivational": {
+      "title": "प्रेरक उद्धरण",
+      "description": "प्रेरक उद्धरण के साथ प्रेरित हों"
+    },
+    "love": {
+      "title": "लव कोट्स",
+      "description": "हर अवसर के लिए रोमांटिक उद्धरण"
+    },
+    "christmas": {
+      "title": "क्रिसमस कोट्स",
+      "description": "छुट्टी के मौसम के लिए त्योहारी उद्धरण"
+    },
+    "graduation": {
+      "title": "ग्रेजुएशन कोट्स",
+      "description": "स्नातकों के लिए प्रेरक उद्धरण"
+    },
+    "aesthetic": {
+      "title": "एस्थेटिक कोट्स",
+      "description": "सुंदर और कलात्मक उद्धरण"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "Calcuzy के बारे में",
+      "description": "हमारे मिशन और कहानी के बारे में और जानें"
+    },
+    "contact": {
+      "title": "संपर्क करें",
+      "description": "हमारी टीम से संपर्क करें"
+    },
+    "privacy": {
+      "title": "गोपनीयता नीति",
+      "description": "हम आपके डेटा और गोपनीयता की सुरक्षा कैसे करते हैं"
+    },
+    "terms": {
+      "title": "सेवा की शर्तें",
+      "description": "Calcuzy का उपयोग करने के लिए नियम और शर्तें"
+    }
+  },
+  "seo": {
+    "defaultTitle": "Calcuzy.app - सरल ऑनलाइन टूल्स, काउंटडाउन और रोजमर्रा की उपयोगिताएं",
+    "defaultDescription": "न्यूनतम। तेज़। खोज-अनुकूलित। राजस्व-तैयार। गति और सरलता के लिए डिज़ाइन किए गए सरल ऑनलाइन टूल्स, काउंटडाउन टाइमर, और रोजमर्रा की उपयोगिताएं।",
+    "toolsTitle": "सभी टूल्स - Calcuzy.app",
+    "toolsDescription": "40+ ऑनलाइन टूल्स, कैलकुलेटर, और उपयोगिताओं के हमारे पूरे संग्रह को ब्राउज़ करें।",
+    "countdownsTitle": "काउंटडाउन टाइमर - Calcuzy.app",
+    "countdownsDescription": "हमारे काउंटडाउन टाइमर के संग्रह के साथ छुट्टियों और विशेष अवसरों की उलटी गिनती करें।",
+    "namesTitle": "नाम जेनरेटर - Calcuzy.app",
+    "namesDescription": "बच्चों, पालतू जानवरों, और अधिक के लिए हमारे नाम जेनरेटर के संग्रह के साथ सही नाम खोजें।",
+    "quotesTitle": "उद्धरण संग्रह - Calcuzy.app",
+    "quotesDescription": "हमारे प्रेरक, प्रेम, और सौंदर्य उद्धरण के संग्रह के साथ प्रेरित हों।"
+  },
+  "errors": {
+    "404": {
+      "title": "पेज नहीं मिला",
+      "description": "आप जो पेज ढूंढ रहे हैं वह मौजूद नहीं है।",
+      "button": "होम पर जाएं"
+    },
+    "500": {
+      "title": "कुछ गलत हो गया",
+      "description": "आपके अनुरोध को संसाधित करते समय हमें एक त्रुटि का सामना करना पड़ा।",
+      "button": "फिर से कोशिश करें"
+    }
+  }
+}

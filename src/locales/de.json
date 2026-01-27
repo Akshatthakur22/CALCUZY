@@ -1,0 +1,282 @@
+{
+  "common": {
+    "siteName": "Calcuzy.app",
+    "tagline": "Einfache Online-Tools, Countdowns & Alltags-Utilities",
+    "description": "Minimal. Schnell. Such-optimiert. Umsatzbereit. Einfache Online-Tools, Countdown-Timer und Alltags-Utilities, die für Geschwindigkeit und Einfachheit entwickelt wurden.",
+    "keywords": "Online-Tools, Countdown-Timer, Taschenrechner, einfache Utilities",
+    "calculate": "Berechnen",
+    "reset": "Zurücksetzen",
+    "result": "Ergebnis",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "share": "Teilen",
+    "download": "Herunterladen",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "tryAgain": "Erneut versuchen",
+    "search": "Suchen",
+    "searchPlaceholder": "Tools suchen...",
+    "noResults": "Keine Ergebnisse gefunden",
+    "backToHome": "Zurück zur Startseite",
+    "viewAll": "Alle anzeigen",
+    "readMore": "Mehr lesen",
+    "learnMore": "Mehr erfahren",
+    "getStarted": "Loslegen",
+    "explore": "Erkunden",
+    "featured": "Empfohlen",
+    "popular": "Beliebt",
+    "recent": "Kürzlich",
+    "all": "Alle",
+    "categories": "Kategorien",
+    "tools": "Tools",
+    "countdowns": "Countdowns",
+    "names": "Namen",
+    "quotes": "Zitate"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "tools": "Tools",
+    "countdowns": "Countdowns",
+    "names": "Namen",
+    "quotes": "Zitate",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen"
+  },
+  "footer": {
+    "description": "Einfache Online-Tools, Countdown-Timer und Alltags-Utilities, die für Geschwindigkeit und Einfachheit entwickelt wurden.",
+    "quickLinks": "Schnelllinks",
+    "legal": "Rechtliches",
+    "social": "Folgen Sie uns",
+    "copyright": "© 2024 Calcuzy.app. Alle Rechte vorbehalten."
+  },
+  "homepage": {
+    "heroTitle": "Einfache Online-Tools für den Alltag",
+    "heroSubtitle": "Minimal. Schnell. Such-optimiert. Umsatzbereit.",
+    "heroDescription": "Entdecken Sie unsere Sammlung einfacher, leistungsstarker Tools, die entwickelt wurden, um Ihre täglichen Aufgaben zu erleichtern.",
+    "searchTitle": "Finden Sie Ihr Tool",
+    "searchSubtitle": "Durchsuchen Sie unsere Sammlung von 40+ Tools",
+    "categoriesTitle": "Kategorien durchsuchen",
+    "categoriesSubtitle": "Finden Sie das perfekte Tool für Ihre Bedürfnisse",
+    "featuredTitle": "Empfohlene Tools",
+    "featuredSubtitle": "Beliebteste und nützlichste Tools",
+    "faqTitle": "Häufig gestellte Fragen",
+    "faqSubtitle": "Alles, was Sie über Calcuzy wissen müssen"
+  },
+  "tools": {
+    "ageCalculator": {
+      "title": "Alter-Rechner",
+      "description": "Berechnen Sie Ihr genaues Alter in Jahren, Monaten und Tagen",
+      "placeholder": "Geben Sie Ihr Geburtsdatum ein",
+      "result": "Sie sind {{years}} Jahre, {{months}} Monate und {{days}} Tage alt"
+    },
+    "bmiCalculator": {
+      "title": "BMI-Rechner",
+      "description": "Berechnen Sie Ihren Body-Mass-Index und Gesundheitskategorie",
+      "heightPlaceholder": "Größe eingeben (cm)",
+      "weightPlaceholder": "Gewicht eingeben (kg)",
+      "result": "Ihr BMI ist {{bmi}} ({{category}})"
+    },
+    "capitalGainsCalculator": {
+      "title": "Kapitalgewinn-Rechner",
+      "description": "Berechnen Sie Kapitalertragsteuer auf Ihre Investitionen",
+      "purchasePricePlaceholder": "Kaufpreis",
+      "salePricePlaceholder": "Verkaufspreis",
+      "result": "Kapitalgewinne: {{amount}}"
+    },
+    "cryptoTaxCalculator": {
+      "title": "Krypto-Steuer-Rechner",
+      "description": "Berechnen Sie Steuern auf Kryptowährungstransaktionen",
+      "costBasisPlaceholder": "Kostenbasis",
+      "salePricePlaceholder": "Verkaufspreis",
+      "result": "Steuerpflichtiger Betrag: {{amount}}"
+    },
+    "dateDifference": {
+      "title": "Datumsdifferenz-Rechner",
+      "description": "Berechnen Sie die Differenz zwischen zwei Daten",
+      "fromDatePlaceholder": "Von Datum",
+      "toDatePlaceholder": "Bis Datum",
+      "result": "Unterschied: {{days}} Tage"
+    },
+    "indexFundReturnCalculator": {
+      "title": "Indexfonds-Rendite-Rechner",
+      "description": "Berechnen Sie potenzielle Renditen aus Indexfonds-Investitionen",
+      "initialAmountPlaceholder": "Anfangsinvestition",
+      "monthlyContributionPlaceholder": "Monatlicher Beitrag",
+      "result": "Zukunftswert: {{amount}}"
+    },
+    "ovulationCalculator": {
+      "title": "Eisprung-Rechner",
+      "description": "Verfolgen Sie Ihr Fruchtbarkeitsfenster und Eisprungdaten",
+      "lastPeriodPlaceholder": "Letzte Periode",
+      "cycleLengthPlaceholder": "Zykluslänge (Tage)",
+      "result": "Nächster Eisprung: {{date}}"
+    },
+    "paintCostCalculator": {
+      "title": "Farbkosten-Rechner",
+      "description": "Schätzen Sie Farbmengen und Kosten für Ihr Projekt",
+      "areaPlaceholder": "Zu streichende Fläche (qm)",
+      "result": "Benötigte Farbe: {{gallons}} Liter"
+    },
+    "passwordTools": {
+      "title": "Passwort-Tools",
+      "description": "Generieren Sie starke Passwörter und überprüfen Sie die Sicherheit",
+      "generatePassword": "Passwort generieren",
+      "checkStrength": "Passwortstärke prüfen"
+    },
+    "propertyTaxEstimator": {
+      "title": "Grundsteuer-Schätzer",
+      "description": "Schätzen Sie jährliche Grundsteuern",
+      "propertyValuePlaceholder": "Immobilienwert",
+      "taxRatePlaceholder": "Steuersatz (%)",
+      "result": "Jährliche Steuer: {{amount}}"
+    },
+    "randomNumberGenerator": {
+      "title": "Zufallszahlengenerator",
+      "description": "Generieren Sie Zufallszahlen in einem Bereich",
+      "minPlaceholder": "Minimum",
+      "maxPlaceholder": "Maximum",
+      "generate": "Zahl generieren"
+    },
+    "rentAffordabilityCalculator": {
+      "title": "Miet-Preis-Leistungs-Rechner",
+      "description": "Berechnen Sie, wie viel Miete Sie sich leisten können",
+      "incomePlaceholder": "Monatliches Einkommen",
+      "result": "Erschwingliche Miete: {{amount}}"
+    },
+    "unitConverter": {
+      "title": "Einheiten-Umrechner",
+      "description": "Konvertieren Sie zwischen verschiedenen Maßeinheiten",
+      "fromUnitPlaceholder": "Von",
+      "toUnitPlaceholder": "Nach",
+      "valuePlaceholder": "Umzurechnender Wert"
+    },
+    "willGenerator": {
+      "title": "Testament-Generator",
+      "description": "Erstellen Sie ein einfaches Testament",
+      "fullNamePlaceholder": "Vollständiger Name",
+      "beneficiaryPlaceholder": "Begünstigter",
+      "generateWill": "Testament erstellen"
+    },
+    "ndaGenerator": {
+      "title": "NDA-Generator",
+      "description": "Erstellen Sie einen Geheimhaltungsvertrag",
+      "partyAPlaceholder": "Offenlegende Partei",
+      "partyBPlaceholder": "Empfangende Partei",
+      "generateNDA": "NDA erstellen"
+    }
+  },
+  "countdowns": {
+    "christmas": {
+      "title": "Weihnachts-Countdown",
+      "description": "Countdown zu Weihnachten"
+    },
+    "newYear": {
+      "title": "Neujahrs-Countdown",
+      "description": "Countdown zum Neujahrstag"
+    },
+    "halloween": {
+      "title": "Halloween-Countdown",
+      "description": "Countdown zu Halloween"
+    },
+    "thanksgiving": {
+      "title": "Thanksgiving-Countdown",
+      "description": "Countdown zu Thanksgiving"
+    },
+    "easter": {
+      "title": "Oster-Countdown",
+      "description": "Countdown zu Ostersonntag"
+    },
+    "blackFriday": {
+      "title": "Black Friday Countdown",
+      "description": "Countdown zu Black Friday"
+    }
+  },
+  "names": {
+    "babyBoy": {
+      "title": "Jungennamen",
+      "description": "Finden Sie den perfekten Namen für Ihren Jungen"
+    },
+    "babyGirl": {
+      "title": "Mädchennamen",
+      "description": "Finden Sie den perfekten Namen für Ihr Mädchen"
+    },
+    "dog": {
+      "title": "Hundenamen",
+      "description": "Finden Sie den perfekten Namen für Ihren Hund"
+    },
+    "cat": {
+      "title": "Katzennamen",
+      "description": "Finden Sie den perfekten Namen für Ihre Katze"
+    },
+    "americanLast": {
+      "title": "Amerikanische Nachnamen",
+      "description": "Beliebte amerikanische Nachnamen"
+    }
+  },
+  "quotes": {
+    "motivational": {
+      "title": "Motivierende Zitate",
+      "description": "Lassen Sie sich mit motivierenden Zitaten inspirieren"
+    },
+    "love": {
+      "title": "Liebeszitate",
+      "description": "Romantische Zitate für jeden Anlass"
+    },
+    "christmas": {
+      "title": "Weihnachtszitate",
+      "description": "Festliche Zitate für die Feiertage"
+    },
+    "graduation": {
+      "title": "Abschlusszitate",
+      "description": "Inspirierende Zitate für Absolventen"
+    },
+    "aesthetic": {
+      "title": "Ästhetische Zitate",
+      "description": "Schöne und künstlerische Zitate"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "Über Calcuzy",
+      "description": "Erfahren Sie mehr über unsere Mission und Geschichte"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie unser Team"
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "description": "Wie wir Ihre Daten und Privatsphäre schützen"
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "description": "Bedingungen für die Nutzung von Calcuzy"
+    }
+  },
+  "seo": {
+    "defaultTitle": "Calcuzy.app - Einfache Online-Tools, Countdowns & Alltags-Utilities",
+    "defaultDescription": "Minimal. Schnell. Such-optimiert. Umsatzbereit. Einfache Online-Tools, Countdown-Timer und Alltags-Utilities, die für Geschwindigkeit und Einfachheit entwickelt wurden.",
+    "toolsTitle": "Alle Tools - Calcuzy.app",
+    "toolsDescription": "Durchsuchen Sie unsere komplette Sammlung von 40+ Online-Tools, Taschenrechnern und Utilities.",
+    "countdownsTitle": "Countdown-Timer - Calcuzy.app",
+    "countdownsDescription": "Countdown zu Feiertagen und besonderen Anlässen mit unserer Sammlung von Countdown-Timern.",
+    "namesTitle": "Namens-Generatoren - Calcuzy.app",
+    "namesDescription": "Finden Sie den perfekten Namen mit unserer Sammlung von Namens-Generatoren für Babys, Haustiere und mehr.",
+    "quotesTitle": "Zitate-Sammlung - Calcuzy.app",
+    "quotesDescription": "Lassen Sie sich mit unserer Sammlung von motivierenden, Liebes- und ästhetischen Zitaten inspirieren."
+  },
+  "errors": {
+    "404": {
+      "title": "Seite nicht gefunden",
+      "description": "Die Seite, die Sie suchen, existiert nicht.",
+      "button": "Zur Startseite"
+    },
+    "500": {
+      "title": "Etwas ist schief gelaufen",
+      "description": "Wir haben einen Fehler bei der Verarbeitung Ihrer Anfrage festgestellt.",
+      "button": "Erneut versuchen"
+    }
+  }
+}

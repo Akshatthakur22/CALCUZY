@@ -1,0 +1,282 @@
+{
+  "common": {
+    "siteName": "Calcuzy.app",
+    "tagline": "Herramientas en Línea Simples, Cuentas Regresivas y Utilidades Cotidianas",
+    "description": "Mínimo. Rápido. Optimizado para Búsqueda. Listo para Ingresos. Herramientas en línea simples, temporizadores de cuenta regresiva y utilidades cotidianas diseñadas para velocidad y simplicidad.",
+    "keywords": "herramientas en línea, temporizadores de cuenta regresiva, calculadoras, utilidades simples",
+    "calculate": "Calcular",
+    "reset": "Reiniciar",
+    "result": "Resultado",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "share": "Compartir",
+    "download": "Descargar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "tryAgain": "Intentar de Nuevo",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar herramientas...",
+    "noResults": "No se encontraron resultados",
+    "backToHome": "Volver al Inicio",
+    "viewAll": "Ver Todo",
+    "readMore": "Leer Más",
+    "learnMore": "Aprender Más",
+    "getStarted": "Comenzar",
+    "explore": "Explorar",
+    "featured": "Destacado",
+    "popular": "Popular",
+    "recent": "Reciente",
+    "all": "Todos",
+    "categories": "Categorías",
+    "tools": "Herramientas",
+    "countdowns": "Cuentas Regresivas",
+    "names": "Nombres",
+    "quotes": "Citas"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "tools": "Herramientas",
+    "countdowns": "Cuentas Regresivas",
+    "names": "Nombres",
+    "quotes": "Citas",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "footer": {
+    "description": "Herramientas en línea simples, temporizadores de cuenta regresiva y utilidades cotidianas diseñadas para velocidad y simplicidad.",
+    "quickLinks": "Enlaces Rápidos",
+    "legal": "Legal",
+    "social": "Síguenos",
+    "copyright": "© 2024 Calcuzy.app. Todos los derechos reservados."
+  },
+  "homepage": {
+    "heroTitle": "Herramientas en Línea Simples para la Vida Cotidiana",
+    "heroSubtitle": "Mínimo. Rápido. Optimizado para Búsqueda. Listo para Ingresos.",
+    "heroDescription": "Descubre nuestra colección de herramientas simples y poderosas diseñadas para facilitar tus tareas diarias.",
+    "searchTitle": "Encuentra tu Herramienta",
+    "searchSubtitle": "Busca en nuestra colección de 40+ herramientas",
+    "categoriesTitle": "Explorar Categorías",
+    "categoriesSubtitle": "Encuentra la herramienta perfecta para tus necesidades",
+    "featuredTitle": "Herramientas Destacadas",
+    "featuredSubtitle": "Herramientas más populares y útiles",
+    "faqTitle": "Preguntas Frecuentes",
+    "faqSubtitle": "Todo lo que necesitas saber sobre Calcuzy"
+  },
+  "tools": {
+    "ageCalculator": {
+      "title": "Calculadora de Edad",
+      "description": "Calcula tu edad exacta en años, meses y días",
+      "placeholder": "Ingresa tu fecha de nacimiento",
+      "result": "Tienes {{years}} años, {{months}} meses y {{days}} días"
+    },
+    "bmiCalculator": {
+      "title": "Calculadora de IMC",
+      "description": "Calcula tu Índice de Masa Corporal y categoría de salud",
+      "heightPlaceholder": "Ingresa altura (cm)",
+      "weightPlaceholder": "Ingresa peso (kg)",
+      "result": "Tu IMC es {{bmi}} ({{category}})"
+    },
+    "capitalGainsCalculator": {
+      "title": "Calculadora de Ganancias de Capital",
+      "description": "Calcula el impuesto sobre ganancias de capital de tus inversiones",
+      "purchasePricePlaceholder": "Precio de compra",
+      "salePricePlaceholder": "Precio de venta",
+      "result": "Ganancias de Capital: {{amount}}"
+    },
+    "cryptoTaxCalculator": {
+      "title": "Calculadora de Impuestos Cripto",
+      "description": "Calcula impuestos sobre transacciones de criptomonedas",
+      "costBasisPlaceholder": "Base de costo",
+      "salePricePlaceholder": "Precio de venta",
+      "result": "Monto Imponible: {{amount}}"
+    },
+    "dateDifference": {
+      "title": "Calculadora de Diferencia de Fechas",
+      "description": "Calcula la diferencia entre dos fechas",
+      "fromDatePlaceholder": "Fecha de inicio",
+      "toDatePlaceholder": "Fecha de fin",
+      "result": "Diferencia: {{days}} días"
+    },
+    "indexFundReturnCalculator": {
+      "title": "Calculadora de Retorno de Fondo Indexado",
+      "description": "Calcula retornos potenciales de inversiones en fondos indexados",
+      "initialAmountPlaceholder": "Inversión inicial",
+      "monthlyContributionPlaceholder": "Contribución mensual",
+      "result": "Valor Futuro: {{amount}}"
+    },
+    "ovulationCalculator": {
+      "title": "Calculadora de Ovulación",
+      "description": "Rastrea tu ventana de fertilidad y fechas de ovulación",
+      "lastPeriodPlaceholder": "Fecha del último período",
+      "cycleLengthPlaceholder": "Duración del ciclo (días)",
+      "result": "Próxima ovulación: {{date}}"
+    },
+    "paintCostCalculator": {
+      "title": "Calculadora de Costo de Pintura",
+      "description": "Estima la cantidad y costo de pintura para tu proyecto",
+      "areaPlaceholder": "Área a pintar (m²)",
+      "result": "Pintura necesaria: {{gallons}} litros"
+    },
+    "passwordTools": {
+      "title": "Herramientas de Contraseña",
+      "description": "Genera contraseñas seguras y verifica la seguridad",
+      "generatePassword": "Generar Contraseña",
+      "checkStrength": "Verificar Fuerza de Contraseña"
+    },
+    "propertyTaxEstimator": {
+      "title": "Estimador de Impuesto Predial",
+      "description": "Estima impuestos prediales anuales",
+      "propertyValuePlaceholder": "Valor de la propiedad",
+      "taxRatePlaceholder": "Tasa impositiva (%)",
+      "result": "Impuesto Anual: {{amount}}"
+    },
+    "randomNumberGenerator": {
+      "title": "Generador de Números Aleatorios",
+      "description": "Genera números aleatorios en un rango",
+      "minPlaceholder": "Mínimo",
+      "maxPlaceholder": "Máximo",
+      "generate": "Generar Número"
+    },
+    "rentAffordabilityCalculator": {
+      "title": "Calculadora de Asequibilidad de Renta",
+      "description": "Calcula cuánta renta puedes permitirte",
+      "incomePlaceholder": "Ingreso mensual",
+      "result": "Renta Asequible: {{amount}}"
+    },
+    "unitConverter": {
+      "title": "Convertidor de Unidades",
+      "description": "Convierte entre diferentes unidades de medida",
+      "fromUnitPlaceholder": "De",
+      "toUnitPlaceholder": "A",
+      "valuePlaceholder": "Valor a convertir"
+    },
+    "willGenerator": {
+      "title": "Generador de Testamento",
+      "description": "Crea un testamento simple",
+      "fullNamePlaceholder": "Nombre completo",
+      "beneficiaryPlaceholder": "Beneficiario",
+      "generateWill": "Generar Testamento"
+    },
+    "ndaGenerator": {
+      "title": "Generador de NDA",
+      "description": "Crea un acuerdo de no divulgación",
+      "partyAPlaceholder": "Parte divulgadora",
+      "partyBPlaceholder": "Parte receptora",
+      "generateNDA": "Generar NDA"
+    }
+  },
+  "countdowns": {
+    "christmas": {
+      "title": "Cuenta Regresiva de Navidad",
+      "description": "Cuenta regresiva hasta el día de Navidad"
+    },
+    "newYear": {
+      "title": "Cuenta Regresiva de Año Nuevo",
+      "description": "Cuenta regresiva hasta el día de Año Nuevo"
+    },
+    "halloween": {
+      "title": "Cuenta Regresiva de Halloween",
+      "description": "Cuenta regresiva hasta Halloween"
+    },
+    "thanksgiving": {
+      "title": "Cuenta Regresiva de Acción de Gracias",
+      "description": "Cuenta regresiva hasta Acción de Gracias"
+    },
+    "easter": {
+      "title": "Cuenta Regresiva de Pascua",
+      "description": "Cuenta regresiva hasta el domingo de Pascua"
+    },
+    "blackFriday": {
+      "title": "Cuenta Regresiva del Black Friday",
+      "description": "Cuenta regresiva hasta el Black Friday"
+    }
+  },
+  "names": {
+    "babyBoy": {
+      "title": "Nombres de Niño",
+      "description": "Encuentra el nombre perfecto para tu bebé niño"
+    },
+    "babyGirl": {
+      "title": "Nombres de Niña",
+      "description": "Encuentra el nombre perfecto para tu bebé niña"
+    },
+    "dog": {
+      "title": "Nombres de Perro",
+      "description": "Encuentra el nombre perfecto para tu perro"
+    },
+    "cat": {
+      "title": "Nombres de Gato",
+      "description": "Encuentra el nombre perfecto para tu gato"
+    },
+    "americanLast": {
+      "title": "Apellidos Americanos",
+      "description": "Apellidos americanos populares"
+    }
+  },
+  "quotes": {
+    "motivational": {
+      "title": "Citas Motivacionales",
+      "description": "Inspírate con citas motivacionales"
+    },
+    "love": {
+      "title": "Citas de Amor",
+      "description": "Citas románticas para cada ocasión"
+    },
+    "christmas": {
+      "title": "Citas de Navidad",
+      "description": "Citas festivas para la temporada navideña"
+    },
+    "graduation": {
+      "title": "Citas de Graduación",
+      "description": "Citas inspiradoras para graduados"
+    },
+    "aesthetic": {
+      "title": "Citas Estéticas",
+      "description": "Citas hermosas y artísticas"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "Acerca de Calcuzy",
+      "description": "Aprende más sobre nuestra misión e historia"
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "description": "Contáctanos con nuestro equipo"
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "description": "Cómo protegemos tus datos y privacidad"
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "description": "Términos y condiciones para usar Calcuzy"
+    }
+  },
+  "seo": {
+    "defaultTitle": "Calcuzy.app - Herramientas en Línea Simples, Cuentas Regresivas y Utilidades Cotidianas",
+    "defaultDescription": "Mínimo. Rápido. Optimizado para Búsqueda. Listo para Ingresos. Herramientas en línea simples, temporizadores de cuenta regresiva y utilidades cotidianas diseñadas para velocidad y simplicidad.",
+    "toolsTitle": "Todas las Herramientas - Calcuzy.app",
+    "toolsDescription": "Explora nuestra colección completa de 40+ herramientas en línea, calculadoras y utilidades.",
+    "countdownsTitle": "Temporizadores de Cuenta Regresiva - Calcuzy.app",
+    "countdownsDescription": "Cuenta regresiva hacia vacaciones y ocasiones especiales con nuestra colección de temporizadores.",
+    "namesTitle": "Generadores de Nombres - Calcuzy.app",
+    "namesDescription": "Encuentra el nombre perfecto con nuestra colección de generadores de nombres para bebés, mascotas y más.",
+    "quotesTitle": "Colección de Citas - Calcuzy.app",
+    "quotesDescription": "Inspírate con nuestra colección de citas motivacionales, de amor y estéticas."
+  },
+  "errors": {
+    "404": {
+      "title": "Página No Encontrada",
+      "description": "La página que buscas no existe.",
+      "button": "Ir al Inicio"
+    },
+    "500": {
+      "title": "Algo salió mal",
+      "description": "Encontramos un error al procesar tu solicitud.",
+      "button": "Intentar de Nuevo"
+    }
+  }
+}

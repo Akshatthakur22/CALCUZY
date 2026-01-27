@@ -16,7 +16,7 @@ export default function Navbar() {
           >
             <img 
               src="/logo.png" 
-              alt="Calcuzy Logo" 
+              alt="Calcuzy.app - Simple Online Tools and Calculators" 
               className="h-18 w-18"
             />
           </Link>

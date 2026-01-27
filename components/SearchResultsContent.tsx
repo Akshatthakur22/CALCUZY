@@ -57,6 +57,13 @@ const tools: Tool[] = [
   // Security Tools
   { name: 'Password Tools', description: 'Generate and test password strength', url: '/password-tools', category: 'Security Tools' },
   { name: 'Random Number Generator', description: 'Generate random numbers', url: '/random-number-generator', category: 'Generators' },
+  
+  // PDF Tools
+  { name: 'PDF Merger', description: 'Combine multiple PDF files into one', url: '/pdf-tools/pdf-merger', category: 'PDF Tools' },
+  { name: 'PDF Splitter', description: 'Split PDF files into multiple documents', url: '/pdf-tools/pdf-splitter', category: 'PDF Tools' },
+  { name: 'PDF Compressor', description: 'Compress PDF files to reduce size', url: '/pdf-tools/pdf-compressor', category: 'PDF Tools' },
+  { name: 'PDF to Word', description: 'Convert PDF files to Word documents', url: '/pdf-tools/pdf-to-word', category: 'PDF Tools' },
+  { name: 'Word to PDF', description: 'Convert Word documents to PDF files', url: '/pdf-tools/word-to-pdf', category: 'PDF Tools' },
 ]
 
 interface SearchResultsContentProps {
@@ -95,6 +102,17 @@ export default function SearchResultsContent({ query = '' }: SearchResultsConten
 
   const structuredData = {
     "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://calcuzy.app",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://calcuzy.app/tools?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+
+  const collectionData = {
+    "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": query ? `Search Results for "${query}"` : "All Online Tools",
     "description": query ? `Search results for "${query}" on Calcuzy` : "Browse all available online tools and calculators on Calcuzy",
@@ -116,6 +134,10 @@ export default function SearchResultsContent({ query = '' }: SearchResultsConten
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionData) }}
       />
       <Navbar />
       
@@ -178,14 +200,47 @@ export default function SearchResultsContent({ query = '' }: SearchResultsConten
 
           <AdUnit slot={2} />
 
-          {/* Browse by Category */}
+          {/* Enhanced Browse by Category */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-primary-text mb-8 text-center">
+            <h2 className="text-2xl font-bold text-primary-text mb-4 text-center">
               Browse by Category
             </h2>
+            <p className="text-center text-secondary-text mb-8 max-w-2xl mx-auto">
+              Explore our comprehensive tool collection organized by category
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categories.map((category, index) => {
                 const categoryTools = getCategoryTools(category)
+                const categoryIcons: { [key: string]: string } = {
+                  'Calculators': '🧮',
+                  'Countdowns': '⏰',
+                  'Finance Tools': '💰',
+                  'Health Tools': '🏥',
+                  'Home Tools': '🏠',
+                  'Legal Tools': '⚖️',
+                  'Name Generators': '📝',
+                  'Quotes & Content': '💬',
+                  'Security Tools': '🔒',
+                  'Generators': '🎲',
+                  'Converters': '🔄',
+                  'PDF Tools': '📄'
+                }
+                
+                const categoryDescriptions: { [key: string]: string } = {
+                  'Calculators': 'Age, BMI, financial, and specialized calculators',
+                  'Countdowns': 'Holiday and event countdown timers',
+                  'Finance Tools': 'Tax calculators, investment tools, and budget planners',
+                  'Health Tools': 'BMI, ovulation, and health tracking tools',
+                  'Home Tools': 'Mortgage, paint cost, and home improvement calculators',
+                  'Legal Tools': 'Will generator, NDA, and legal document templates',
+                  'Name Generators': 'Baby names, pet names, and business name generators',
+                  'Quotes & Content': 'Inspirational quotes and content creation tools',
+                  'Security Tools': 'Password generators and security utilities',
+                  'Generators': 'Random number generators and creative tools',
+                  'Converters': 'Unit converters and measurement tools',
+                  'PDF Tools': 'PDF merger, splitter, compressor, and converters'
+                }
+                
                 return (
                   <Link
                     key={index}
@@ -194,25 +249,37 @@ export default function SearchResultsContent({ query = '' }: SearchResultsConten
                   >
                     <Card animation="fade-in-up" delay={index * 100} className="h-full hover:scale-[1.02] hover:shadow-md transition-all duration-200 cursor-pointer">
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="heading-3 group-hover:text-accent transition-colors duration-200">{category}</h3>
+                        <div className="flex items-center">
+                          <div className="text-2xl mr-3">{categoryIcons[category] || '🛠️'}</div>
+                          <h3 className="heading-3 group-hover:text-accent transition-colors duration-200">{category}</h3>
+                        </div>
                         <div className="text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                           →
                         </div>
                       </div>
                       <p className="paragraph text-sm text-secondary-text mb-4">
-                        {categoryTools.length} tool{categoryTools.length !== 1 ? 's' : ''}
+                        {categoryDescriptions[category] || `Explore ${categoryTools.length} specialized tools`}
                       </p>
-                      <div className="space-y-1">
-                        {categoryTools.slice(0, 3).map((tool, toolIndex) => (
-                          <div key={toolIndex} className="text-sm text-secondary-text">
-                            • {tool.name}
-                          </div>
-                        ))}
-                        {categoryTools.length > 3 && (
-                          <span className="text-sm text-accent">
-                            +{categoryTools.length - 3} more
-                          </span>
-                        )}
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-accent">
+                          {categoryTools.length} tool{categoryTools.length !== 1 ? 's' : ''}
+                        </span>
+                        <div className="flex -space-x-1">
+                          {categoryTools.slice(0, 3).map((tool, toolIndex) => (
+                            <div key={toolIndex} className="w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center" title={tool.name}>
+                              <span className="text-xs text-accent font-medium">
+                                {tool.name.charAt(0)}
+                              </span>
+                            </div>
+                          ))}
+                          {categoryTools.length > 3 && (
+                            <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
+                              <span className="text-xs text-gray-600 font-medium">
+                                +{categoryTools.length - 3}
+                              </span>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </Card>
                   </Link>
