@@ -1,51 +1,47 @@
-import { redirect } from 'next/navigation'
-import { headers } from 'next/headers'
-import { Language, languages } from '@/src/lib/i18n'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { createMetadata } from '@/lib/metadata'
+import { Analytics } from '@vercel/analytics/react'
+import ErrorBoundary from '@/components/ErrorBoundary'
+import LoadingBoundary from '@/components/LoadingBoundary'
 
-// Detect browser language from Accept-Language header
-function detectBrowserLanguage(): Language {
-  try {
-    const headersList = headers()
-    const acceptLanguage = headersList.get('accept-language') || ''
-    
-    // Extract language codes from Accept-Language header
-    const preferredLanguages = acceptLanguage
-      .split(',')
-      .map(lang => lang.split(';')[0].trim().toLowerCase())
-    
-    // Find first supported language
-    for (const preferredLang of preferredLanguages) {
-      // Check exact match
-      if (languages.includes(preferredLang as Language)) {
-        return preferredLang as Language
-      }
-      
-      // Check for language prefix (e.g., 'en-US' -> 'en')
-      const langPrefix = preferredLang.split('-')[0]
-      if (languages.includes(langPrefix as Language)) {
-        return langPrefix as Language
-      }
-    }
-  } catch (error) {
-    // Fallback to English if header detection fails
-    console.warn('Failed to detect browser language:', error)
-  }
-  
-  return 'en' // Default fallback
-}
+const inter = Inter({ subsets: ['latin'] })
 
-// Root layout acts as a redirect handler
+export const metadata = createMetadata({
+  title: 'Calcuzy.app - Simple Online Tools, Countdowns & Everyday Utilities',
+  description: 'Minimal. Fast. Search-Optimized. Revenue-Ready. Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity.',
+  keywords: 'online tools, countdown timers, calculators, simple utilities',
+})
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  // This should never render children because we redirect
-  // But keeping the structure for Next.js requirements
   return (
-    <html>
-      <body>
-        {children}
+    <html lang="en" className="scroll-smooth">
+      <head>
+         <meta
+          name="google-adsense-account"
+          content="ca-pub-2612507905879561"
+        />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2612507905879561"
+          crossOrigin="anonymous"
+        ></script>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </head>
+      <body className={`${inter.className} bg-primary-bg text-primary-text antialiased`}>
+        <ErrorBoundary>
+          <LoadingBoundary>
+            {children}
+          </LoadingBoundary>
+        </ErrorBoundary>
+        <Analytics />
       </body>
     </html>
   )

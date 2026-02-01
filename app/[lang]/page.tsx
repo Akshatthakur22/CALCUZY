@@ -5,40 +5,26 @@ import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import SearchBar from '@/components/SearchBar'
 import { createMetadata } from '@/lib/metadata'
-import { Language, getDictionary, createTranslationFunction, getAlternateLanguages } from '@/src/lib/i18n'
 
-export async function generateMetadata({ params }: { params: { lang: Language } }) {
-  const { lang } = params
-  const dictionary = getDictionary(lang)
-  const alternates = getAlternateLanguages(`/${lang}`)
-  
-  return createMetadata({
-    title: dictionary.common.siteName + ' - ' + dictionary.common.tagline,
-    description: dictionary.common.description,
-    keywords: dictionary.common.keywords,
-    url: `/${lang}`,
-  }).metadataBase && {
-    alternates: {
-      canonical: `/${lang}`,
-      languages: alternates as Record<string, string>,
-    },
-  }
-}
+export const metadata = createMetadata({
+  title: 'Calcuzy - Your All-In-One Online Tools Platform',
+  description: 'Smart calculators, generators, converters, finance tools, legal tools, naming tools, and daily utilities — all free, fast, and beautifully designed.',
+  keywords: 'online tools platform, calculators, generators, converters, finance tools, legal tools, name generators, countdown timers, security tools, content tools',
+  url: 'https://calcuzy.app',
+  image: '/og-default.png',
+})
 
-export default async function HomePage({ params }: { params: { lang: Language } }) {
-  const { lang } = params
-  const dictionary = getDictionary(lang)
-  const t = createTranslationFunction(dictionary)
+export default function HomePage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": dictionary.common.siteName,
-    "description": dictionary.common.description,
-    "url": `https://calcuzy.app/${lang}`,
+    "name": "Calcuzy",
+    "description": "Your All-In-One Online Tools Platform - Smart calculators, generators, converters, finance tools, legal tools, naming tools, and daily utilities",
+    "url": "https://calcuzy.app",
     "potentialAction": [
       {
         "@type": "SearchAction",
-        "target": `https://calcuzy.app/${lang}?q={search_term_string}`,
+        "target": "https://calcuzy.app?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     ]
@@ -57,10 +43,12 @@ export default async function HomePage({ params }: { params: { lang: Language } 
         <section className="container section-responsive py-20">
           <div className="text-center max-w-4xl mx-auto fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-text mb-6 leading-tight">
-              {t('homepage.heroTitle')}
+              Your All-In-One
+              <br />
+              <span className="text-accent">Online Tools Platform</span>
             </h1>
             <p className="text-xl md:text-2xl text-secondary-text mb-12 max-w-3xl mx-auto leading-relaxed">
-              {t('homepage.heroDescription')}
+              Smart calculators, generators, converters, finance tools, legal tools, naming tools, and daily utilities — all free, fast, and beautifully designed.
             </p>
             
             <SearchBar />
@@ -72,9 +60,9 @@ export default async function HomePage({ params }: { params: { lang: Language } 
         {/* Categories Section */}
         <section className="container section-responsive py-16">
           <div className="text-center mb-12 fade-in">
-            <h2 className="text-4xl font-bold text-primary-text mb-4">{t('homepage.categoriesTitle')}</h2>
+            <h2 className="text-4xl font-bold text-primary-text mb-4">Explore Every Tool You Need</h2>
             <p className="text-xl text-secondary-text max-w-2xl mx-auto">
-              {t('homepage.categoriesSubtitle')}
+              From everyday calculations to specialized utilities, find everything in one place
             </p>
           </div>
           
@@ -82,81 +70,81 @@ export default async function HomePage({ params }: { params: { lang: Language } 
             <Card animation="fade-in-up" delay={100}>
               <div className="text-center">
                 <div className="text-4xl mb-4">🧮</div>
-                <h3 className="heading-3 mb-3">{t('common.tools')}</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.categoriesDescription')}</p>
-                <Link href={`/${lang}/age-calculator`} className="link-accent font-medium">{t('common.explore')} {t('common.tools')} →</Link>
+                <h3 className="heading-3 mb-3">Calculators</h3>
+                <p className="paragraph text-sm mb-4">Age, BMI, loan, mortgage, and more specialized calculators</p>
+                <Link href="/age-calculator" className="link-accent font-medium">Explore Calculators →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={200}>
               <div className="text-center">
                 <div className="text-4xl mb-4">⏰</div>
-                <h3 className="heading-3 mb-3">{t('common.countdowns')}</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.countdownsDescription')}</p>
-                <Link href={`/${lang}/days-until-christmas`} className="link-accent font-medium">{t('common.viewAll')} {t('common.countdowns')} →</Link>
+                <h3 className="heading-3 mb-3">Countdowns</h3>
+                <p className="paragraph text-sm mb-4">Track holidays, events, and important dates with precision</p>
+                <Link href="/days-until-christmas" className="link-accent font-medium">View Countdowns →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={300}>
               <div className="text-center">
                 <div className="text-4xl mb-4">⚖️</div>
-                <h3 className="heading-3 mb-3">{t('homepage.legalTools')}</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.legalGeneratorsDescription')}</p>
-                <Link href={`/${lang}/will-generator`} className="link-accent font-medium">{t('homepage.legalTools')} →</Link>
+                <h3 className="heading-3 mb-3">Legal Generators</h3>
+                <p className="paragraph text-sm mb-4">Will generator, lease agreements, and legal document templates</p>
+                <Link href="/will-generator" className="link-accent font-medium">Legal Tools →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={400}>
               <div className="text-center">
                 <div className="text-4xl mb-4">💰</div>
-                <h3 className="heading-3 mb-3">{t('homepage.financeTools')}</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.financeToolsDescription')}</p>
-                <Link href={`/${lang}/capital-gains-calculator`} className="link-accent font-medium">{t('homepage.financeTools')} →</Link>
+                <h3 className="heading-3 mb-3">Finance Tools</h3>
+                <p className="paragraph text-sm mb-4">Tax calculators, investment tools, and budget planners</p>
+                <Link href="/capital-gains-calculator" className="link-accent font-medium">Finance Tools →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={500}>
               <div className="text-center">
                 <div className="text-4xl mb-4">🏠</div>
-                <h3 className="heading-3 mb-3">{t('homepage.homeTools')}</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.homeRealEstateDescription')}</p>
-                <Link href={`/${lang}/paint-cost-calculator`} className="link-accent font-medium">{t('common.home')} {t('common.tools')} →</Link>
+                <h3 className="heading-3 mb-3">Home & Real Estate</h3>
+                <p className="paragraph text-sm mb-4">Mortgage calculators, paint cost, and home improvement tools</p>
+                <Link href="/paint-cost-calculator" className="link-accent font-medium">Home Tools →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={600}>
               <div className="text-center">
                 <div className="text-4xl mb-4">📝</div>
-                <h3 className="heading-3 mb-3">{t('common.names')}</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.namesDescription')}</p>
-                <Link href={`/${lang}/dog-names`} className="link-accent font-medium">{t('common.names')} {t('common.tools')} →</Link>
+                <h3 className="heading-3 mb-3">Name Generators</h3>
+                <p className="paragraph text-sm mb-4">Baby names, pet names, business names, and more</p>
+                <Link href="/dog-names" className="link-accent font-medium">Name Tools →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={700}>
               <div className="text-center">
                 <div className="text-4xl mb-4">🔒</div>
-                <h3 className="heading-3 mb-3">{t('homepage.securityTools')}</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.securityToolsDescription')}</p>
-                <Link href={`/${lang}/password-tools`} className="link-accent font-medium">{t('homepage.securityTools')} →</Link>
+                <h3 className="heading-3 mb-3">Security Tools</h3>
+                <p className="paragraph text-sm mb-4">Password generators, strength checkers, and encryption tools</p>
+                <Link href="/password-tools" className="link-accent font-medium">Security Tools →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={800}>
               <div className="text-center">
                 <div className="text-4xl mb-4">📄</div>
-                <h3 className="heading-3 mb-3">{t('homepage.pdfTools')}</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.pdfToolsDescription')}</p>
-                <Link href={`/${lang}/pdf-tools/pdf-merger`} className="link-accent font-medium">{t('homepage.pdfTools')} →</Link>
+                <h3 className="heading-3 mb-3">PDF Tools</h3>
+                <p className="paragraph text-sm mb-4">Merge, split, compress, and convert PDF files with ease</p>
+                <Link href="/pdf-tools/pdf-merger" className="link-accent font-medium">PDF Tools →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={900}>
               <div className="text-center">
                 <div className="text-4xl mb-4">💬</div>
-                <h3 className="heading-3 mb-3">{t('common.quotes')} & Content</h3>
-                <p className="paragraph text-sm mb-4">{t('homepage.quotesContentDescription')}</p>
-                <Link href={`/${lang}/motivational-quotes`} className="link-accent font-medium">{t('common.content')} {t('common.tools')} →</Link>
+                <h3 className="heading-3 mb-3">Quotes & Content</h3>
+                <p className="paragraph text-sm mb-4">Inspirational quotes, content generators, and writing tools</p>
+                <Link href="/motivational-quotes" className="link-accent font-medium">Content Tools →</Link>
               </div>
             </Card>
           </div>
@@ -167,65 +155,65 @@ export default async function HomePage({ params }: { params: { lang: Language } 
         {/* Trending Tools Section */}
         <section className="container section-responsive py-16">
           <div className="text-center mb-12 fade-in">
-            <h2 className="text-4xl font-bold text-primary-text mb-4">{t('homepage.featuredTitle')}</h2>
+            <h2 className="text-4xl font-bold text-primary-text mb-4">Trending Tools Today</h2>
             <p className="text-xl text-secondary-text max-w-2xl mx-auto">
-              {t('homepage.featuredSubtitle')}
+              The most popular tools people are using right now
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             <Card animation="fade-in-up" delay={100}>
-              <h3 className="heading-3 mb-3">{t('tools.ageCalculator.title')}</h3>
-              <p className="paragraph text-sm mb-4">{t('tools.ageCalculator.description')}</p>
-              <Link href={`/${lang}/age-calculator`} className="link-accent font-medium text-sm">{t('common.calculate')} {t('tools.ageCalculator.title').split(' ')[0]} →</Link>
+              <h3 className="heading-3 mb-3">Age Calculator</h3>
+              <p className="paragraph text-sm mb-4">Calculate exact age in years, months, and days</p>
+              <Link href="/age-calculator" className="link-accent font-medium text-sm">Calculate Age →</Link>
             </Card>
 
             <Card animation="fade-in-up" delay={200}>
-              <h3 className="heading-3 mb-3">{t('tools.bmiCalculator.title')}</h3>
-              <p className="paragraph text-sm mb-4">{t('tools.bmiCalculator.description')}</p>
-              <Link href={`/${lang}/bmi-calculator`} className="link-accent font-medium text-sm">{t('common.calculate')} BMI →</Link>
+              <h3 className="heading-3 mb-3">BMI Calculator</h3>
+              <p className="paragraph text-sm mb-4">Check your body mass index instantly</p>
+              <Link href="/bmi-calculator" className="link-accent font-medium text-sm">Calculate BMI →</Link>
             </Card>
 
             <Card animation="fade-in-up" delay={300}>
-              <h3 className="heading-3 mb-3">{t('tools.capitalGainsCalculator.title')}</h3>
-              <p className="paragraph text-sm mb-4">{t('tools.capitalGainsCalculator.description')}</p>
-              <Link href={`/${lang}/capital-gains-calculator`} className="link-accent font-medium text-sm">{t('common.calculate')} Gains →</Link>
+              <h3 className="heading-3 mb-3">Capital Gains Calculator</h3>
+              <p className="paragraph text-sm mb-4">Calculate tax on investment profits</p>
+              <Link href="/capital-gains-calculator" className="link-accent font-medium text-sm">Calculate Gains →</Link>
             </Card>
 
             <Card animation="fade-in-up" delay={400}>
-              <h3 className="heading-3 mb-3">{t('tools.cryptoTaxCalculator.title')}</h3>
-              <p className="paragraph text-sm mb-4">{t('tools.cryptoTaxCalculator.description')}</p>
-              <Link href={`/${lang}/crypto-tax-calculator`} className="link-accent font-medium text-sm">{t('common.calculate')} Tax →</Link>
+              <h3 className="heading-3 mb-3">Crypto Tax Calculator</h3>
+              <p className="paragraph text-sm mb-4">Simplify cryptocurrency tax calculations</p>
+              <Link href="/crypto-tax-calculator" className="link-accent font-medium text-sm">Calculate Tax →</Link>
             </Card>
 
             <Card animation="fade-in-up" delay={500}>
-              <h3 className="heading-3 mb-3">{t('tools.ovulationCalculator.title')}</h3>
-              <p className="paragraph text-sm mb-4">{t('tools.ovulationCalculator.description')}</p>
-              <Link href={`/${lang}/ovulation-calculator`} className="link-accent font-medium text-sm">{t('homepage.trackOvulation')} →</Link>
+              <h3 className="heading-3 mb-3">Ovulation Calculator</h3>
+              <p className="paragraph text-sm mb-4">Track fertility and calculate fertile days</p>
+              <Link href="/ovulation-calculator" className="link-accent font-medium text-sm">Track Ovulation →</Link>
             </Card>
 
             <Card animation="fade-in-up" delay={600}>
-              <h3 className="heading-3 mb-3">{t('tools.paintCostCalculator.title')}</h3>
-              <p className="paragraph text-sm mb-4">{t('tools.paintCostCalculator.description')}</p>
-              <Link href={`/${lang}/paint-cost-calculator`} className="link-accent font-medium text-sm">{t('common.calculate')} Paint →</Link>
+              <h3 className="heading-3 mb-3">Paint Cost Calculator</h3>
+              <p className="paragraph text-sm mb-4">Estimate paint needed for your project</p>
+              <Link href="/paint-cost-calculator" className="link-accent font-medium text-sm">Calculate Paint →</Link>
             </Card>
 
             <Card animation="fade-in-up" delay={700}>
-              <h3 className="heading-3 mb-3">{t('tools.willGenerator.title')}</h3>
-              <p className="paragraph text-sm mb-4">{t('tools.willGenerator.description')}</p>
-              <Link href={`/${lang}/will-generator`} className="link-accent font-medium text-sm">{t('tools.willGenerator.title').split(' ')[0]} →</Link>
+              <h3 className="heading-3 mb-3">Will Generator</h3>
+              <p className="paragraph text-sm mb-4">Create a legally sound will online</p>
+              <Link href="/will-generator" className="link-accent font-medium text-sm">Generate Will →</Link>
             </Card>
 
             <Card animation="fade-in-up" delay={800}>
-              <h3 className="heading-3 mb-3">{t('homepage.pdfTools')}</h3>
-              <p className="paragraph text-sm mb-4">{t('homepage.pdfToolsDescription')}</p>
-              <Link href={`/${lang}/pdf-tools/pdf-merger`} className="link-accent font-medium text-sm">{t('homepage.mergePdfs')} →</Link>
+              <h3 className="heading-3 mb-3">PDF Merger</h3>
+              <p className="paragraph text-sm mb-4">Combine multiple PDF files into one document</p>
+              <Link href="/pdf-tools/pdf-merger" className="link-accent font-medium text-sm">Merge PDFs →</Link>
             </Card>
 
             <Card animation="fade-in-up" delay={900}>
-              <h3 className="heading-3 mb-3">{t('tools.passwordTools.title')}</h3>
-              <p className="paragraph text-sm mb-4">{t('tools.passwordTools.description')}</p>
-              <Link href={`/${lang}/password-tools`} className="link-accent font-medium text-sm">{t('tools.passwordTools.title').split(' ')[0]} →</Link>
+              <h3 className="heading-3 mb-3">Password Tools</h3>
+              <p className="paragraph text-sm mb-4">Generate secure passwords and test strength</p>
+              <Link href="/password-tools" className="link-accent font-medium text-sm">Password Tools →</Link>
             </Card>
           </div>
         </section>
@@ -233,29 +221,29 @@ export default async function HomePage({ params }: { params: { lang: Language } 
         {/* Why Calcuzy Section */}
         <section className="container section-responsive py-16">
           <div className="text-center mb-12 fade-in">
-            <h2 className="text-4xl font-bold text-primary-text mb-4">{t('homepage.whyChooseCalcuzy')}</h2>
+            <h2 className="text-4xl font-bold text-primary-text mb-4">Why Choose Calcuzy?</h2>
             <p className="text-xl text-secondary-text max-w-2xl mx-auto">
-              {t('homepage.builtForSpeed')}
+              Built for speed, accuracy, and simplicity
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card animation="fade-in-up" delay={100} className="text-center">
               <div className="text-4xl mb-4">⚡</div>
-              <h3 className="heading-3 mb-3">{t('homepage.fast')}</h3>
-              <p className="paragraph text-sm">{t('homepage.fastDescription')}</p>
+              <h3 className="heading-3 mb-3">Fast</h3>
+              <p className="paragraph text-sm">Instant calculations and real-time results. No loading, no waiting.</p>
             </Card>
 
             <Card animation="fade-in-up" delay={200} className="text-center">
               <div className="text-4xl mb-4">✅</div>
-              <h3 className="heading-3 mb-3">{t('homepage.accurate')}</h3>
-              <p className="paragraph text-sm">{t('homepage.accurateDescription')}</p>
+              <h3 className="heading-3 mb-3">Accurate</h3>
+              <p className="paragraph text-sm">Verified formulas and precise calculations you can trust.</p>
             </Card>
 
             <Card animation="fade-in-up" delay={300} className="text-center">
               <div className="text-4xl mb-4">🆓</div>
-              <h3 className="heading-3 mb-3">{t('homepage.freeForever')}</h3>
-              <p className="paragraph text-sm">{t('homepage.freeForeverDescription')}</p>
+              <h3 className="heading-3 mb-3">Free Forever</h3>
+              <p className="paragraph text-sm">Ad-supported, no login required. Always free, always accessible.</p>
             </Card>
           </div>
         </section>
@@ -263,9 +251,9 @@ export default async function HomePage({ params }: { params: { lang: Language } 
         {/* Featured Categories */}
         <section className="container section-responsive py-16">
           <div className="text-center mb-12 fade-in">
-            <h2 className="text-4xl font-bold text-primary-text mb-4">{t('homepage.featuredCategories')}</h2>
+            <h2 className="text-4xl font-bold text-primary-text mb-4">Featured Categories</h2>
             <p className="text-xl text-secondary-text max-w-2xl mx-auto">
-              {t('homepage.featuredCategoriesDescription')}
+              Deep dives into our most comprehensive tool collections
             </p>
           </div>
           
@@ -273,65 +261,65 @@ export default async function HomePage({ params }: { params: { lang: Language } 
             <Card animation="fade-in-up" delay={100} className="p-8">
               <div className="flex items-center mb-4">
                 <div className="text-3xl mr-4">💰</div>
-                <h3 className="heading-3">{t('homepage.financeTools')}</h3>
+                <h3 className="heading-3">Finance Tools</h3>
               </div>
-              <p className="paragraph text-sm mb-6">{t('homepage.financeToolsLongDescription')}</p>
+              <p className="paragraph text-sm mb-6">Complete financial planning toolkit with tax calculators, investment tools, loan calculators, and budget planners. Make informed financial decisions with confidence.</p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagTaxCalculators')}</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagInvestmentTools')}</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagBudgetPlanners')}</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Tax Calculators</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Investment Tools</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Budget Planners</span>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={200} className="p-8">
               <div className="flex items-center mb-4">
                 <div className="text-3xl mr-4">⚖️</div>
-                <h3 className="heading-3">{t('homepage.legalTools')}</h3>
+                <h3 className="heading-3">Legal Tools</h3>
               </div>
-              <p className="paragraph text-sm mb-6">{t('homepage.legalToolsLongDescription')}</p>
+              <p className="paragraph text-sm mb-6">Professional legal document generators including wills, lease agreements, power of attorney forms, and more. Save thousands on legal fees with our validated templates.</p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagWillGenerator')}</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagLegalTemplates')}</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagDocumentTools')}</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Will Generator</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Legal Templates</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Document Tools</span>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={300} className="p-8">
               <div className="flex items-center mb-4">
                 <div className="text-3xl mr-4">🏠</div>
-                <h3 className="heading-3">{t('homepage.homeTools')}</h3>
+                <h3 className="heading-3">Home Tools</h3>
               </div>
-              <p className="paragraph text-sm mb-6">{t('homepage.homeToolsLongDescription')}</p>
+              <p className="paragraph text-sm mb-6">Everything for homeowners and renters. Mortgage calculators, paint cost estimators, room dimension planners, and home improvement budget tools.</p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagMortgageTools')}</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagPaintCalculator')}</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagHomePlanning')}</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Mortgage Tools</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Paint Calculator</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Home Planning</span>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={400} className="p-8">
               <div className="flex items-center mb-4">
                 <div className="text-3xl mr-4">📄</div>
-                <h3 className="heading-3">{t('homepage.pdfTools')}</h3>
+                <h3 className="heading-3">PDF Tools</h3>
               </div>
-              <p className="paragraph text-sm mb-6">{t('homepage.pdfToolsLongDescription')}</p>
+              <p className="paragraph text-sm mb-6">Complete PDF toolkit with merger, splitter, compressor, and converters. Handle all your PDF needs in one place with professional-grade tools.</p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagPdfMerger')}</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagPdfSplitter')}</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">{t('homepage.tagPdfConverter')}</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">PDF Merger</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">PDF Splitter</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">PDF Converter</span>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={500} className="p-8">
               <div className="flex items-center mb-4">
                 <div className="text-3xl mr-4">🤖</div>
-                <h3 className="heading-3">{t('homepage.aiTools')}</h3>
+                <h3 className="heading-3">AI Tools</h3>
               </div>
-              <p className="paragraph text-sm mb-6">{t('homepage.aiToolsLongDescription')}</p>
+              <p className="paragraph text-sm mb-6">Coming soon: Advanced AI-powered tools including content generators, data analyzers, prediction models, and intelligent automation utilities.</p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">{t('homepage.tagComingSoon')}</span>
-                <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">{t('homepage.tagAiPowered')}</span>
-                <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">{t('homepage.tagSmartTools')}</span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Coming Soon</span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">AI Powered</span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Smart Tools</span>
               </div>
             </Card>
           </div>
@@ -342,22 +330,24 @@ export default async function HomePage({ params }: { params: { lang: Language } 
           <div className="text-center fade-in">
             <div className="max-w-3xl mx-auto">
               <div className="text-6xl mb-6">🌍</div>
-              <h2 className="text-3xl font-bold text-primary-text mb-4">{t('homepage.trustedWorldwide')}</h2>
+              <h2 className="text-3xl font-bold text-primary-text mb-4">Trusted Worldwide</h2>
               <p className="text-xl text-secondary-text mb-8">
-                {t('homepage.trustedDescription')}
+                Calcuzy is used by people in 150+ countries.
+                <br />
+                100% free. No sign-up. No data tracking.
               </p>
               <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
                 <div>
                   <div className="text-3xl font-bold text-accent mb-2">10M+</div>
-                  <div className="text-sm text-secondary-text">{t('homepage.monthlyUsers')}</div>
+                  <div className="text-sm text-secondary-text">Monthly Users</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-accent mb-2">150+</div>
-                  <div className="text-sm text-secondary-text">{t('homepage.countries')}</div>
+                  <div className="text-sm text-secondary-text">Countries</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-accent mb-2">100+</div>
-                  <div className="text-sm text-secondary-text">{t('homepage.toolsAvailable')}</div>
+                  <div className="text-sm text-secondary-text">Tools Available</div>
                 </div>
               </div>
             </div>
@@ -369,7 +359,7 @@ export default async function HomePage({ params }: { params: { lang: Language } 
         {/* SEO Content Block */}
         <section className="container section-responsive py-16">
           <div className="max-w-4xl mx-auto fade-in">
-            <h2 className="text-3xl font-bold text-primary-text mb-6">{t('homepage.seoTitle')}</h2>
+            <h2 className="text-3xl font-bold text-primary-text mb-6">The Complete Online Tools Platform for Modern Life</h2>
             
             <div className="prose prose-lg max-w-none">
               <p className="paragraph mb-6">
@@ -418,48 +408,48 @@ export default async function HomePage({ params }: { params: { lang: Language } 
         {/* FAQ Section */}
         <section className="container section-responsive py-16">
           <div className="max-w-4xl mx-auto fade-in">
-            <h2 className="text-3xl font-bold text-primary-text mb-8 text-center">{t('homepage.faqTitle')}</h2>
+            <h2 className="text-3xl font-bold text-primary-text mb-8 text-center">Frequently Asked Questions</h2>
             
             <div className="space-y-6">
               <Card>
-                <h3 className="heading-3 mb-3">{t('homepage.faqWhatIsCalcuzy')}</h3>
+                <h3 className="heading-3 mb-3">What is Calcuzy?</h3>
                 <p className="paragraph text-sm">
-                  {t('homepage.faqWhatIsCalcuzyAnswer')}
+                  Calcuzy is your all-in-one online tools platform offering 100+ free tools including calculators, generators, converters, finance tools, legal document generators, and daily utilities. Everything is designed to be fast, accurate, and easy to use.
                 </p>
               </Card>
               
               <Card>
-                <h3 className="heading-3 mb-3">{t('homepage.faqAreToolsFree')}</h3>
+                <h3 className="heading-3 mb-3">Are these tools really free?</h3>
                 <p className="paragraph text-sm">
-                  {t('homepage.faqAreToolsFreeAnswer')}
+                  Yes, all tools on Calcuzy are completely free forever. We&apos;re supported by non-intrusive advertisements, so you don&apos;t need to pay, sign up, or provide any personal information to use any of our tools.
                 </p>
               </Card>
               
               <Card>
-                <h3 className="heading-3 mb-3">{t('homepage.faqHowAccurate')}</h3>
+                <h3 className="heading-3 mb-3">How accurate are the calculators?</h3>
                 <p className="paragraph text-sm">
-                  {t('homepage.faqHowAccurateAnswer')}
+                  Our calculators use verified formulas and are regularly updated to ensure accuracy. Financial tools incorporate current tax laws, health calculators follow medical guidelines, and all mathematical computations are precision-tested. However, always consult professionals for critical decisions.
                 </p>
               </Card>
               
               <Card>
-                <h3 className="heading-3 mb-3">{t('homepage.faqMoreTools')}</h3>
+                <h3 className="heading-3 mb-3">Will more tools be added?</h3>
                 <p className="paragraph text-sm">
-                  {t('homepage.faqMoreToolsAnswer')}
+                  Absolutely! We add new tools every month based on user feedback and trending needs. We&apos;re also developing AI-powered tools for future release. Check back regularly or follow our updates to discover new utilities.
                 </p>
               </Card>
               
               <Card>
-                <h3 className="heading-3 mb-3">{t('homepage.faqAccountRequired')}</h3>
+                <h3 className="heading-3 mb-3">Do I need to create an account?</h3>
                 <p className="paragraph text-sm">
-                  {t('homepage.faqAccountRequiredAnswer')}
+                  No account required. All tools work instantly without registration. We don&apos;t collect personal data, and all calculations happen locally in your browser for complete privacy.
                 </p>
               </Card>
               
               <Card>
-                <h3 className="heading-3 mb-3">{t('homepage.faqHowEarnMoney')}</h3>
+                <h3 className="heading-3 mb-3">How does Calcuzy earn money?</h3>
                 <p className="paragraph text-sm">
-                  {t('homepage.faqHowEarnMoneyAnswer')}
+                  Calcuzy is funded through advertisements displayed strategically on the site. This allows us to keep all tools free while maintaining high-quality service. We ensure ads are non-intrusive and don&apos;t interfere with tool functionality.
                 </p>
               </Card>
             </div>
