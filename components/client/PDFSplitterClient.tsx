@@ -468,9 +468,12 @@ export default function PDFSplitterClient() {
                   >
                     <div className="aspect-[3/4] bg-gray-50">
                       <img 
-                        src={page.thumbnail} 
+                        src={page.thumbnail}
                         alt={`Page ${page.pageNumber}`}
+                        width={120}
+                        height={160}
                         className="w-full h-full object-contain"
+                        style={{ objectFit: 'contain' }}
                       />
                     </div>
                     

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Navbar() {
@@ -14,10 +15,14 @@ export default function Navbar() {
             href="/" 
             className="flex items-center text-primary-text hover:text-accent transition-colors duration-200 focus-ring"
           >
-            <img 
-              src="/logo.png" 
-              alt="Calcuzy.app - Simple Online Tools and Calculators" 
+            <Image
+              src="/logo.png"
+              alt="Calcuzy.app - Simple Online Tools and Calculators"
+              width={72}
+              height={72}
               className="h-18 w-18"
+              priority
+              style={{ objectFit: 'contain' }}
             />
           </Link>
 

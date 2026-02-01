@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -10,7 +11,10 @@ export default function Footer() {
               <img 
                 src="/logo.png" 
                 alt="Calcuzy Logo" 
+                width={80} 
+                height={80} 
                 className="h-20 w-20"
+                style={{ objectFit: 'contain' }}
               />
             </div>
             <p className="text-sm text-gray-500 mb-4 leading-relaxed">

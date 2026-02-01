@@ -1,3 +1,9 @@
+<>
+  <>
+    <p className="paragraph text-sm mb-4">Calcuzy is your all-in-one online tools platform. It brings together calculators, generators, converters, finance tools, legal tools, naming tools, and daily utilities — all free, fast, and beautifully designed. It&apos;s the only site you need for smart calculations and daily tasks.</p>
+    <p className="paragraph text-sm mb-4">No sign-up, no data tracking, no hidden fees. Calcuzy&apos;s mission is to make advanced tools accessible to everyone, everywhere, for free.</p>
+  </>
+</>
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { createMetadata } from '@/lib/metadata'
@@ -46,10 +52,10 @@ export default function AboutPage() {
           </div>
           <p className="paragraph text-lg max-w-2xl mx-auto mb-6">
             Calcuzy.app is a simple idea that started on a random late night in my college room.<br/>
-            I'm Akshat Thakur, a 3rd-year B.Tech CSE student who enjoys building things that are clean, fast, and genuinely helpful. Calcuzy didn’t come from a big startup plan — it came from curiosity, experimentation, and the thought:
+            I&apos;m Akshat Thakur, a 3rd-year B.Tech CSE student who enjoys building things that are clean, fast, and genuinely helpful. Calcuzy didn&apos;t come from a big startup plan — it came from curiosity, experimentation, and the thought:
           </p>
           <blockquote className="italic text-primary-text/80 text-xl font-medium mb-4">
-            “What if simple tools, when done right, can actually reach thousands of people?”
+            &quot;What if simple tools, when done right, can actually reach thousands of people?&quot;
           </blockquote>
           <p className="paragraph text-lg max-w-2xl mx-auto mb-2">
             That one thought led to a few hours of coding…<br/>and Calcuzy was born.
@@ -63,8 +69,8 @@ export default function AboutPage() {
             <h2 className="heading-2">Who I Am</h2>
           </div>
           <p className="paragraph mb-2">
-            Hi, I'm Akshat, the solo developer behind Calcuzy.app.<br/>
-            I’ve been learning web development for less than a year, and this project became my playground to explore:
+            Hi, I&apos;m Akshat, the solo developer behind Calcuzy.app.<br/>
+            I&apos;ve been learning web development for less than a year, and this project became my playground to explore:
           </p>
           <ul className="list-disc ml-6 mb-2 text-primary-text/90">
             <li>SEO</li>
@@ -74,14 +80,14 @@ export default function AboutPage() {
             <li>and building something that lasts</li>
           </ul>
           <p className="paragraph">
-            I’ve always believed that small things done right can become big, and Calcuzy is my attempt to prove that.
+            &quot;Calcuzy.app is built by Akshat Thakur, a solo developer passionate about creating fast, simple, privacy-friendly online tools.&quot;,
           </p>
         </section>
 
         {/* Why I Built Calcuzy */}
         <section className="mb-12 fade-in-up">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-2xl">🎯</span>
+              &quot;A 3rd-year B.Tech CSE student who enjoys building clean, fast and useful tools for the internet.&quot;
             <h2 className="heading-2">Why I Built Calcuzy</h2>
           </div>
           <p className="paragraph mb-2">
@@ -159,8 +165,8 @@ export default function AboutPage() {
             <li>Everything remains free and accessible</li>
           </ul>
           <p className="paragraph">
-            I’m not trying to make Calcuzy “viral” overnight.<br/>
-            I’m trying to make it useful and trustworthy, even if growth is slow.
+            I&apos;m not trying to make Calcuzy &quot;viral&quot; overnight.<br/>
+            I&apos;m trying to make it useful and trustworthy, even if growth is slow.
           </p>
         </section>
 
@@ -197,7 +203,7 @@ export default function AboutPage() {
             A few hours of curiosity turned into a real platform. That night made me realize:
           </p>
           <blockquote className="italic text-primary-text/80 text-xl font-medium mb-4">
-            “Simple things, when polished with care, become powerful.”
+            &quot;Simple things, when polished with care, become powerful.&quot;
           </blockquote>
           <p className="paragraph">
             And that’s exactly how Calcuzy continues to grow.
@@ -211,12 +217,12 @@ export default function AboutPage() {
             <h2 className="heading-2">A Message From the Founder</h2>
           </div>
           <p className="paragraph mb-2">
-            Hi, I’m Akshat.<br/>
+            Hi, I&apos;m Akshat.<br/>
             I created Calcuzy as a personal project to learn, experiment, and build something meaningful.<br/>
             I believe everyday tools should be fast, simple, and honest — without forcing you to sign up or share data.
           </p>
           <p className="paragraph">
-            If you’re using Calcuzy right now, thank you.<br/>
+            If you&apos;re using Calcuzy right now, thank you.<br/>
             Your visits, feedback, and support motivate me to keep improving it every single day.
           </p>
         </section>
@@ -233,7 +239,7 @@ export default function AboutPage() {
           </p>
           <p className="paragraph">
             My goal is to turn Calcuzy into one of the most trusted free tool platforms online — built slowly, honestly, and with care.<br/>
-            And I’m excited to keep building.
+            And I&apos;m excited to keep building.
           </p>
         </section>
       </main>
