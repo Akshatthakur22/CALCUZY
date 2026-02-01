@@ -191,7 +191,7 @@ Domain setup: calcuzy.app
 Production optimization
 
 🖥️ Local Development
-git clone https://github.com/akshatgithub/calcuzy
+git clone https://github.com/Akshatthakur22/calcuzy
 cd calcuzy
 npm install
 npm run dev
@@ -206,9 +206,11 @@ vercel --prod
 
 👨🏻‍💻 Creator — Akshat Thakur
 📧 Email: calcuzyy@gmail.com
+🔗 LinkedIn: https://www.linkedin.com/in/akshatthakur22/
+🐦 Twitter/X: https://x.com/akshatt66612958
  (or your preferred email)
 🌐 Portfolio coming soon
-🐙 GitHub: https://github.com/akshatgithub
+🐙 GitHub: https://github.com/Akshatthakur22
 
 ⭐ If you like this project — give it a star!
 

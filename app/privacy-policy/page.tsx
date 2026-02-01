@@ -2,13 +2,13 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
-import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Privacy Policy - Calcuzy.app',
-  description: 'Read Calcuzy.app privacy policy. Learn how we protect your data, ensure complete privacy, and handle information securely.',
-  keywords: 'privacy policy, data protection, user privacy, calcuzy privacy',
+  description:
+    'Learn how Calcuzy.app protects your privacy. We do not collect personal data and all calculations happen locally in your browser.',
+  keywords: 'privacy policy, data protection, user privacy, calcuzy policy',
   url: 'https://Calcuzy.app/privacy-policy',
   image: '/og-default.png',
 })
@@ -34,183 +34,194 @@ export default function PrivacyPolicyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <Navbar />
-      
+
       <main className="container section-responsive">
-        <div className="text-center mb-16 slide-up">
-          <h1 className="heading-1 text-center mb-6">
-            Privacy Policy
-          </h1>
-          <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            At Calcuzy.app, your privacy is our highest priority. Learn how we 
-            protect your data and ensure complete anonymity when using our tools.
+
+        {/* --- HERO --- */}
+        <section className="text-center mb-16 fade-in-up">
+          <h1 className="heading-1 mb-6">Privacy Policy</h1>
+          <p className="paragraph max-w-3xl mx-auto">
+            At Calcuzy.app, your privacy matters. Our tools run instantly without collecting
+            personal information. This policy explains how we keep your usage safe, private,
+            and anonymous.
           </p>
-        </div>
+        </section>
 
-        <AdUnit slot={1} />
-
+        {/* --- MAIN CONTENT --- */}
         <div className="max-w-4xl mx-auto fade-in-up">
-          <div className="prose prose-lg max-w-none space-y-8">
-            <div>
-              <h2 className="heading-2 mb-6">Information We Collect</h2>
-              <p className="paragraph">
-                <strong>Calcuzy.app does not collect personal information.</strong> Our tools 
-                are designed to work entirely in your browser without requiring registration, 
-                email addresses, or any personal data. All calculations and processing 
-                happen locally on your device, ensuring complete privacy.
-              </p>
-              <p className="paragraph">
-                We may automatically collect certain technical information through our web hosting 
-                service, such as IP addresses, browser types, and device information. 
-                This data is aggregated and anonymous, used solely for improving our 
-                services and ensuring optimal performance.
-              </p>
-            </div>
+          <div className="prose prose-lg max-w-none space-y-10">
 
-            <div>
-              <h2 className="heading-2 mb-6">How We Use Information</h2>
+            {/* 1 */}
+            <section>
+              <h2 className="heading-2 mb-4">1. Introduction</h2>
               <p className="paragraph">
-                Anonymous technical data helps us understand how users interact with our 
-                tools, which features are most popular, and how we can improve the user 
-                experience. This information is never used to identify individual users or 
-                combined with any personal data.
+                Calcuzy.app is designed to offer simple online tools without collecting personal
+                data. All calculations and processing happen locally in your browser.
               </p>
               <p className="paragraph">
-                We use Google Analytics to analyze website traffic patterns and user behavior 
-                in aggregate form. This helps us identify which tools are most valuable 
-                and where we should focus our development efforts. No individual user 
-                data is ever shared with Google.
+                This Privacy Policy explains what minimal data is processed and how it is used.
               </p>
-            </div>
+            </section>
 
-            <div>
-              <h2 className="heading-2 mb-6">Cookies and Local Storage</h2>
+            {/* 2 */}
+            <section>
+              <h2 className="heading-2 mb-4">2. Information We Do Not Collect</h2>
+              <p className="paragraph"><strong>We do NOT collect:</strong></p>
+              <ul className="list-disc ml-6">
+                <li>Names or email addresses</li>
+                <li>Passwords or login details</li>
+                <li>Uploaded files</li>
+                <li>Calculation results</li>
+                <li>Personal identifiers</li>
+              </ul>
               <p className="paragraph">
-                Our tools may use browser cookies and local storage to remember your preferences 
-                and settings. This enhances your experience by saving calculation history, 
-                favorite tools, or display preferences. All storage is local to your 
-                browser and under your control.
+                You can use all tools anonymously with no account required.
               </p>
-              <p className="paragraph">
-                You can control or delete cookies and local data through your browser 
-                settings at any time. Our tools will continue to function even if 
-                you decline cookies, though some personalized features may be 
-                limited.
-              </p>
-            </div>
+            </section>
 
-            <div>
-              <h2 className="heading-2 mb-6">Third-Party Services</h2>
+            {/* 3 */}
+            <section>
+              <h2 className="heading-2 mb-4">3. Information Automatically Collected</h2>
+              <p className="paragraph">We may automatically collect anonymous technical data:</p>
+              <ul className="list-disc ml-6">
+                <li>Anonymized IP addresses</li>
+                <li>Browser/device type</li>
+                <li>Approximate location (city/country)</li>
+                <li>Pages visited & time spent</li>
+              </ul>
               <p className="paragraph">
-                Calcuzy.app displays advertisements through Google AdSense to keep our 
-                tools free. Google may place cookies for ad targeting and analytics 
-                purposes. We have no control over these third-party cookies.
+                This information is aggregated and cannot identify any user.
               </p>
-              <p className="paragraph">
-                Some tools may include links to external websites for additional information 
-                or resources. We are not responsible for the privacy practices of 
-                these external sites and encourage you to review their privacy policies.
-              </p>
-            </div>
+            </section>
 
-            <div>
-              <h2 className="heading-2 mb-6">Data Security</h2>
+            {/* 4 */}
+            <section>
+              <h2 className="heading-2 mb-4">4. Google Analytics (Anonymous Mode)</h2>
               <p className="paragraph">
-                We implement appropriate security measures to protect our website and services. 
-                All data transmission is encrypted using industry-standard protocols. We 
-                regularly review our security practices and update them as needed.
+                We use Google Analytics with anonymized IP to understand general traffic
+                patterns. No personal data is collected or shared.
               </p>
-              <p className="paragraph">
-                Since we don&apos;t collect personal data and all processing happens locally, 
-                there is minimal risk to your privacy. Your information never leaves 
-                your device unless you choose to share it.
-              </p>
-            </div>
+            </section>
 
-            <div>
-              <h2 className="heading-2 mb-6">Your Rights</h2>
+            {/* 5 */}
+            <section>
+              <h2 className="heading-2 mb-4">5. Google AdSense</h2>
               <p className="paragraph">
-                You have the right to access our tools without providing any personal 
-                information. You can use our services anonymously and delete any local 
-                data at any time.
+                To keep Calcuzy free, we display ads. Google may use cookies or identifiers
+                for personalization.
               </p>
               <p className="paragraph">
-                You have the right to understand what information is collected and how it&apos;s 
-                used. This privacy policy is designed to be transparent about our 
-                practices and your rights as a user.
+                You can manage ad personalization at:
+                <br />• google.com/settings/ads  
+                <br />• myadcenter.google.com
               </p>
               <p className="paragraph">
-                You have the right to contact us with questions or concerns about this 
-                privacy policy. We&apos;re committed to addressing any issues promptly 
-                and ensuring your trust in our services.
+                We do not store or access any advertising-related data.
               </p>
-            </div>
+            </section>
 
-            <div>
-              <h2 className="heading-2 mb-6">Children&apos;s Privacy</h2>
+            {/* 6 */}
+            <section>
+              <h2 className="heading-2 mb-4">6. Cookies & Local Storage</h2>
               <p className="paragraph">
-                Our services are not directed to children under 13, and we do not 
-                knowingly collect personal information from minors. We encourage parents to 
-                monitor their children&apos;s online activities and educate them about privacy 
-                best practices.
+                We may store simple preferences using local storage to enhance performance.
+                This data remains on your device.
               </p>
-            </div>
+              <p className="paragraph">
+                Cookies may be used by Google products. You can block or delete them anytime.
+              </p>
+            </section>
 
-            <div>
-              <h2 className="heading-2 mb-6">Policy Updates</h2>
+            {/* 7 */}
+            <section>
+              <h2 className="heading-2 mb-4">7. Third-Party Links</h2>
               <p className="paragraph">
-                We may update this privacy policy occasionally to reflect changes in our 
-                practices or legal requirements. Significant changes will be highlighted on 
-                our website, and we encourage users to review this policy periodically.
+                Some tools may link to external sites. We are not responsible for third-party
+                privacy practices.
               </p>
+            </section>
+
+            {/* 8 */}
+            <section>
+              <h2 className="heading-2 mb-4">8. Data Security</h2>
               <p className="paragraph">
-                This privacy policy was last updated on January 22, 2026, and 
-                reflects our current practices regarding data collection, use, and 
-                protection on Calcuzy.app.
+                We use HTTPS encryption. Since we do not store personal data, privacy risks
+                remain minimal.
               </p>
-            </div>
+            </section>
+
+            {/* 9 */}
+            <section>
+              <h2 className="heading-2 mb-4">9. Your Rights</h2>
+              <p className="paragraph">
+                Even without collecting personal data, you still have the right to:
+              </p>
+              <ul className="list-disc ml-6">
+                <li>Use Calcuzy anonymously</li>
+                <li>Delete local storage entries</li>
+                <li>Opt out of ad personalization</li>
+                <li>Request privacy support</li>
+              </ul>
+              <p className="paragraph">
+                Contact us anytime at <strong>calcuzyy@gmail.com</strong>.
+              </p>
+            </section>
+
+            {/* 10 */}
+            <section>
+              <h2 className="heading-2 mb-4">10. Children’s Privacy</h2>
+              <p className="paragraph">
+                Calcuzy is not for children under 13. We do not knowingly collect data from minors.
+              </p>
+            </section>
+
+            {/* 11 */}
+            <section>
+              <h2 className="heading-2 mb-4">11. Policy Updates</h2>
+              <p className="paragraph">
+                We may update this policy as new tools are added or laws change.
+              </p>
+            </section>
+
+            {/* 12 */}
+            <section>
+              <h2 className="heading-2 mb-4">12. Contact Information</h2>
+              <p className="paragraph">
+                For privacy questions:<br />
+                <strong>calcuzyy@gmail.com</strong><br />
+              </p>
+            </section>
           </div>
 
+          {/* RELATED LINKS */}
           <Card animation="fade-in-up" delay={200}>
-            <h2 className="heading-2 mb-6">Contact Us About Privacy</h2>
-            <p className="paragraph">
-              If you have questions or concerns about this privacy policy or our data 
-              practices, please contact us at <strong>privacy@Calcuzy.app</strong>. We&apos;re 
-              committed to addressing privacy issues promptly and transparently.
-            </p>
-            
-            <div className="mt-6">
-              <h3 className="heading-3 mb-3">Related Pages</h3>
-              <div className="grid-responsive-2 gap-4">
-                <Link href="/about" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-                  <div className="font-medium text-primary-text mb-1">About Us</div>
-                  <div className="text-sm text-secondary-text">Our mission and values</div>
-                </Link>
-                <Link href="/terms" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-                  <div className="font-medium text-primary-text mb-1">Terms of Service</div>
-                  <div className="text-sm text-secondary-text">Usage guidelines</div>
-                </Link>
-                <Link href="/contact" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-                  <div className="font-medium text-primary-text mb-1">Contact</div>
-                  <div className="text-sm text-secondary-text">Get in touch</div>
-                </Link>
-              </div>
+            <h2 className="heading-2 mb-6">Related Pages</h2>
+            <div className="grid-responsive-2 gap-4">
+              <Link href="/about" className="block p-4 border border-border rounded-lg hover:bg-card-hover hover:shadow-md transition-all">
+                <div className="font-medium text-primary-text mb-1">About Us</div>
+                <div className="text-sm text-secondary-text">Our mission and values</div>
+              </Link>
+
+              <Link href="/terms" className="block p-4 border border-border rounded-lg hover:bg-card-hover hover:shadow-md transition-all">
+                <div className="font-medium text-primary-text mb-1">Terms of Service</div>
+                <div className="text-sm text-secondary-text">Usage guidelines</div>
+              </Link>
+
+              <Link href="/contact" className="block p-4 border border-border rounded-lg hover:bg-card-hover hover:shadow-md transition-all">
+                <div className="font-medium text-primary-text mb-1">Contact</div>
+                <div className="text-sm text-secondary-text">Get in touch</div>
+              </Link>
             </div>
           </Card>
         </div>
 
-        <AdUnit slot={2} />
+        {/* EFFECTIVE DATE */}
+        <section className="max-w-4xl mx-auto mt-12 fade-in-up pb-10">
+          <h2 className="heading-2 mb-3">Effective Date</h2>
+          <p className="paragraph">This Privacy Policy is effective as of January 22, 2026.</p>
+        </section>
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <h2 className="heading-2 mb-6">Effective Date</h2>
-          <p className="paragraph">
-            This privacy policy is effective as of January 22, 2026, and governs 
-            your use of Calcuzy.app services. By continuing to use our tools, 
-            you acknowledge that you have read, understood, and agree to be bound by 
-            this policy.
-          </p>
-        </div>
       </main>
-
       <Footer />
     </div>
   )

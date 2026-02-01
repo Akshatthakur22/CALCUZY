@@ -1,16 +1,15 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
-import AdUnit from '@/components/AdUnit'
+import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Contact Calcuzy.app - Get in Touch',
-  description: 'Contact Calcuzy.app with feedback, suggestions, or questions. We welcome user input and ideas for new tools.',
-  keywords: 'contact calcuzy, feedback, suggestions, tool requests',
-  url: 'https://Calcuzy.app/contact',
-  image: '/og-default.png',
+  title: "Contact Calcuzy.app – Reach the Founder Directly",
+  description:
+    "Have feedback, tool ideas, or questions? Contact Calcuzy.app and speak directly with founder Akshat Thakur. I read and reply to every message personally.",
+    keywords: "contact calcuzy, calcuzy support, calcuzy feedback, contact akshat thakur, report bug calcuzy",
+  url: "https://calcuzy.app/contact",
+  image: "/og-default.png",
 })
 
 export default function ContactPage() {
@@ -18,209 +17,299 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Calcuzy.app",
-    "description": "Contact Calcuzy.app with feedback, suggestions, or questions",
-    "url": "https://Calcuzy.app/contact",
+    "url": "https://calcuzy.app/contact",
+    "description":
+      "Reach out to Calcuzy.app with questions, feedback, suggestions, or tool requests. Messages go directly to the founder.",
     "mainEntity": {
-      "@type": "Organization",
-      "name": "Calcuzy.app",
-      "url": "https://Calcuzy.app",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "availableLanguage": ["English"]
-      }
+      "@type": "Person",
+      "name": "Akshat Thakur",
+      "jobTitle": "Founder & Developer of Calcuzy.app",
+      "email": "mailto:calcuzyy@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/akshatthakur22/",
+        "https://github.com/Akshatthakur22",
+        "https://x.com/akshatt66612958",
+        "https://twitter.com/CalcuzyApp"
+      ]
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "mailto:calcuzyy@gmail.com",
+      "availableLanguage": ["English", "Hindi"]
     }
   }
 
   return (
-    <div className="min-h-screen bg-primary-bg fade-in">
+    <div className="min-h-screen bg-primary-bg fade-in flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+
       <Navbar />
-      
-      <main className="container section-responsive">
-        <div className="text-center mb-16 slide-up">
-          <h1 className="heading-1 text-center mb-6">
-            Contact Calcuzy.app
-          </h1>
-          <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Have feedback, suggestions, or questions? We&apos;d love to hear from you 
-            and continuously improve our tools based on user input and experiences.
+
+      <main className="flex-1 container section-responsive max-w-3xl mx-auto py-12">
+
+        {/* Hero Section */}
+      <section className="relative rounded-3xl overflow-hidden mb-16 shadow-md border border-border bg-card p-8 md:p-14 flex flex-col items-center justify-center transition-all duration-500">
+  <div className="relative z-10 flex flex-col items-center text-center">
+    <h1 className="font-extrabold text-3xl md:text-5xl tracking-tight text-primary-text mb-4">
+      Contact Us
+    </h1>
+
+    <p className="paragraph text-lg md:text-xl text-secondary-text max-w-2xl mx-auto mb-6 leading-relaxed">
+      If you have feedback, ideas, or questions — I’d genuinely love to hear from you.
+      As a solo developer, your message directly shapes the next improvements on Calcuzy.
+    </p>
+
+    <blockquote className="italic text-primary-text/80 text-xl font-medium border-l-4 border-border pl-4">
+      Your message doesn’t go to a support team — it goes straight to the creator.
+    </blockquote>
+  </div>
+</section>
+
+
+        {/* Founder Note */}
+        <section className="mb-12 fade-in">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">📨</span>
+            <h2 className="heading-2">A Note From the Founder</h2>
+          </div>
+          <p className="paragraph mb-2">
+            Hi, I’m Akshat — the creator and developer behind Calcuzy.app.<br />
+            I read every single message personally, whether it’s feedback, a bug report, or an idea for a new tool.
           </p>
-        </div>
+          <p className="paragraph">
+            Calcuzy grows because of users like you. Your input helps me decide what to build next.
+          </p>
+        </section>
 
-        <AdUnit slot={1} />
+        {/* Why Reach Out */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🧑‍💻</span>
+            <h2 className="heading-2">Why You Should Reach Out</h2>
+          </div>
+          <p className="paragraph mb-2">
+            Your message helps with:
+          </p>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>finding bugs I may not notice</li>
+            <li>deciding which new tools to build</li>
+            <li>improving UI, speed, and accessibility</li>
+            <li>understanding what real users actually need</li>
+          </ul>
+          <p className="paragraph">
+            Even a short message creates a big impact.
+          </p>
+        </section>
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <div className="grid-responsive-2 gap-8 mb-16">
-            <Card animation="fade-in-up" delay={100}>
-              <h2 className="heading-2 mb-6">Get in Touch</h2>
-              <p className="paragraph mb-6">
-                We value your feedback and use it to guide our development priorities. 
-                Whether you&apos;ve found a bug, have an idea for a new tool, or simply 
-                want to share your experience, your input helps us make Calcuzy.app better 
-                for everyone.
-              </p>
-              
-              <div className="space-y-4">
-                <div>
-                  <h3 className="heading-3 mb-2">Tool Feedback</h3>
-                  <p className="paragraph">
-                    Report bugs, suggest improvements, or share your experience with our 
-                    calculators and countdowns. Your detailed feedback helps us identify issues and 
-                    prioritize features that matter most to users.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="heading-3 mb-2">New Tool Ideas</h3>
-                  <p className="paragraph">
-                    Have an idea for a tool that would make everyday life easier? 
-                    We&apos;re always looking for practical utility suggestions that align with our mission 
-                    of simplicity and usefulness.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="heading-3 mb-2">General Questions</h3>
-                  <p className="paragraph">
-                    Questions about our privacy practices, data handling, or business 
-                    operations are welcome. We believe in transparency and happy to explain 
-                    how we work and why we make certain decisions.
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card animation="fade-in-up" delay={200}>
-              <h2 className="heading-2 mb-6">Contact Form</h2>
-              <p className="paragraph mb-6">
-                While we don&apos;t have a contact form backend, you can reach out through 
-                various channels. We read every message and respond to legitimate inquiries 
-                as quickly as possible.
-              </p>
-              
-              <div className="space-y-6">
-                <div>
-                  <h3 className="heading-3 mb-2">Email</h3>
-                  <p className="paragraph">
-                    Send us a detailed message at <strong>contact@Calcuzy.app</strong>. 
-                    Include specific information about your feedback or suggestion to help us 
-                    understand and respond appropriately.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="heading-3 mb-2">Response Time</h3>
-                  <p className="paragraph">
-                    We typically respond within 24-48 hours during business days. 
-                    While we can&apos;t implement every suggestion, we carefully consider all 
-                    user input in our planning and development process.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="heading-3 mb-2">What to Include</h3>
-                  <ul className="list-disc pl-6 space-y-2 mb-4">
-                    <li className="text-secondary-text">Specific tool or feature name</li>
-                    <li className="text-secondary-text">Detailed description of the issue or idea</li>
-                    <li className="text-secondary-text">Steps to reproduce any bugs (if applicable)</li>
-                    <li className="text-secondary-text">Your device and browser information</li>
-                    <li className="text-secondary-text">Any screenshots that help explain the issue</li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
+        {/* Contact Methods */}
+        <section className="mb-12 fade-in">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">📝</span>
+            <h2 className="heading-2">Best Ways to Contact Me</h2>
           </div>
 
-          <Card animation="fade-in-up" delay={300}>
-            <h2 className="heading-2 mb-6">Other Ways to Connect</h2>
-            <div className="grid-responsive-2 gap-6">
-              <div>
-                <h3 className="heading-3 mb-3">Social Media</h3>
-                <p className="paragraph mb-4">
-                  Follow us for updates, tips, and announcements about new tools 
-                  and features. We share useful content and engage with our community 
-                  through social platforms.
-                </p>
-                <div className="flex space-x-4">
-                  <Link href="#" className="text-accent hover:text-blue-600 transition-colors">
-                    Twitter
-                  </Link>
-                  <Link href="#" className="text-accent hover:text-blue-600 transition-colors">
-                    LinkedIn
-                  </Link>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="heading-3 mb-3">Community</h3>
-                <p className="paragraph mb-4">
-                  Join thousands of users who rely on Calcuzy.app for their everyday 
-                  calculation and countdown needs. Share your experiences and learn from others 
-                  in our growing community.
-                </p>
-                <div className="space-y-2">
-                  <Link href="/age-calculator" className="link-accent block">
-                    → Try our Age Calculator
-                  </Link>
-                  <Link href="/days-until-christmas" className="link-accent block">
-                    → Check the Christmas Countdown
-                  </Link>
-                </div>
-              </div>
+          {/* Email */}
+          <div className="mb-4">
+            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg mb-1">
+              📧 Email <span className="text-xs text-secondary-text">(Fastest Response)</span>
+            </span>
+            <p className="paragraph mb-1">Reach me anytime at:</p>
+            <a href="mailto:calcuzyy@gmail.com" className="text-accent underline font-medium text-lg">
+              calcuzyy@gmail.com
+            </a>
+
+            <div className="mt-4">
+              <div className="font-semibold mb-2">Connect with me:</div>
+              <ul className="list-disc ml-6">
+                <li>
+                  LinkedIn:{" "}
+                  <a
+                    href="https://www.linkedin.com/in/akshatthakur22/"
+                    className="text-accent underline"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Akshat Thakur
+                  </a>
+                </li>
+                <li>
+                  GitHub:{" "}
+                  <a
+                    href="https://github.com/Akshatthakur22"
+                    className="text-accent underline"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Akshatthakur22
+                  </a>
+                </li>
+                <li>
+                  Twitter/X:{" "}
+                  <a
+                    href="https://x.com/akshatt66612958"
+                    className="text-accent underline"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    @akshatt66612958
+                  </a>
+                </li>
+              </ul>
             </div>
-          </Card>
-        </div>
 
-        <AdUnit slot={2} />
+            <p className="text-sm text-secondary-text mt-1">
+              I usually reply within 24–48 hours on business days.
+            </p>
+          </div>
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
+          {/* Feedback */}
+          <div className="mb-4">
+            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg mb-1">
+              🛠 Tool Feedback / Bug Reports
+            </span>
+            <p className="paragraph mb-1">To help me fix things faster, please share:</p>
+            <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+              <li>tool name</li>
+              <li>what went wrong</li>
+              <li>steps to reproduce</li>
+              <li>device & browser (optional)</li>
+              <li>screenshot (if possible)</li>
+            </ul>
+          </div>
+
+          {/* Tool Suggestion */}
+          <div className="mb-4">
+            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg mb-1">
+              💡 Suggest a New Tool
+            </span>
+            <p className="paragraph mb-1">
+              Got an idea for a calculator, converter, or utility?
+              I love building tools that come directly from user suggestions.
+            </p>
+          </div>
+
+          {/* General Questions */}
+          <div className="mb-4">
+            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg mb-1">
+              ❓ General Questions
+            </span>
+            <p className="paragraph mb-1">You can ask me about:</p>
+            <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+              <li>privacy</li>
+              <li>how Calcuzy works</li>
+              <li>how tools are built</li>
+              <li>future features</li>
+              <li>SEO/tech questions</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Social Links */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🌐</span>
+            <h2 className="heading-2">Social Profiles</h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-center md:gap-8 gap-2 mb-2">
+            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg">
+              Twitter:
+            </span>
+            <a
+              href="https://twitter.com/CalcuzyApp"
+              target="_blank"
+              rel="noopener"
+              className="text-accent underline font-medium"
+            >
+              @CalcuzyApp
+            </a>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-center md:gap-8 gap-2 mb-2">
+            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg">
+              LinkedIn:
+            </span>
+            <span className="text-secondary-text">Coming soon</span>
+          </div>
+        </section>
+
+        {/* Community Starter Tools */}
+        <section className="mb-12 fade-in">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🤝</span>
+            <h2 className="heading-2">Start With These Tools</h2>
+          </div>
+
+          <div className="space-y-2">
+            <Link href="/age-calculator" className="link-accent block font-medium">
+              → Age Calculator
+            </Link>
+            <Link href="/bmi-calculator" className="link-accent block font-medium">
+              → BMI Calculator
+            </Link>
+            <Link href="/random-number-generator" className="link-accent block font-medium">
+              → Random Number Generator
+            </Link>
+            <Link href="/date-difference" className="link-accent block font-medium">
+              → Date Difference Calculator
+            </Link>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="mb-0 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">❓</span>
+            <h2 className="heading-2">FAQ</h2>
+          </div>
+
           <div className="space-y-6">
             <div>
-              <h3 className="heading-3 mb-2">How quickly do you respond?</h3>
-              <p className="paragraph">
-                We aim to respond to all inquiries within 24-48 hours during 
-                business days. Technical issues and bug reports are typically prioritized 
-                and addressed more quickly than general suggestions.
+              <span className="font-semibold text-primary-text text-lg mb-1">
+                How quickly do you respond?
+              </span>
+              <p className="paragraph mb-1">
+                Usually within 24–48 hours. Bug reports are prioritized.
               </p>
             </div>
-            
+
             <div>
-              <h3 className="heading-3 mb-2">Do you implement every suggestion?</h3>
-              <p className="paragraph">
-                We carefully review and consider all user feedback, though we can&apos;t 
-                implement every suggestion due to technical constraints, resource limitations, 
-                or conflicts with our mission of simplicity. All ideas are valued and 
-                help us understand user needs better.
+              <span className="font-semibold text-primary-text text-lg mb-1">
+                Do you implement every suggestion?
+              </span>
+              <p className="paragraph mb-1">
+                Not all — but I read every message and prioritize tools that help the most people.
               </p>
             </div>
-            
+
             <div>
-              <h3 className="heading-3 mb-2">Can I request a custom tool?</h3>
-              <p className="paragraph">
-                Yes! We consider custom tool requests, especially from organizations 
-                or educational institutions. Please contact us with detailed requirements 
-                and we&apos;ll evaluate feasibility based on our mission and resources.
+              <span className="font-semibold text-primary-text text-lg mb-1">
+                Can I request a custom tool?
+              </span>
+              <p className="paragraph mb-1">
+                Yes — especially if you're from a school, college, content team, or organization.
               </p>
             </div>
-            
+
             <div>
-              <h3 className="heading-3 mb-2">How do you choose which tools to build?</h3>
-              <p className="paragraph">
-                We prioritize tools based on user demand, search trends, and alignment 
-                with our mission of providing simple, practical utilities. Tools that 
-                solve everyday problems for the most people receive highest priority.
-              </p>
+              <span className="font-semibold text-primary-text text-lg mb-1">
+                How do you decide what to build next?
+              </span>
+              <p className="paragraph mb-1">I look at:</p>
+              <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+                <li>user requests</li>
+                <li>search trends</li>
+                <li>what’s simple & useful</li>
+                <li>what helps the most people</li>
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
       </main>
-
       <Footer />
     </div>
   )

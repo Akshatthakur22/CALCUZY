@@ -1,16 +1,14 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
-import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'About Calcuzy.app - Simple Online Tools & Utilities',
-  description: 'Learn about Calcuzy.app mission to provide simple, fast, and search-optimized online tools. Discover our story and commitment to user privacy.',
-  keywords: 'about calcuzy, online tools mission, simple utilities, privacy focused',
-  url: 'https://Calcuzy.app/about',
-  image: '/og-default.png',
+  title: "About Calcuzy.app – Story, Mission & Creator",
+  description:
+    "Calcuzy.app was created by Akshat Thakur, a 3rd-year CSE student who believes in building simple, fast and privacy-friendly online tools. Learn the story behind Calcuzy and its mission.",
+  keywords: "about calcuzy, calcuzy story, who created calcuzy, online tools mission, akshat thakur, utility tools",
+  url: "https://calcuzy.app/about",
+  image: "/og-default.png",
 })
 
 export default function AboutPage() {
@@ -18,269 +16,226 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Calcuzy.app",
-    "description": "Learn about Calcuzy.app mission to provide simple, fast, and search-optimized online tools",
-    "url": "https://Calcuzy.app/about",
+    "url": "https://calcuzy.app/about",
+    "description":
+      "Calcuzy.app is built by Akshat Thakur, a solo developer passionate about creating fast, simple, privacy-friendly online tools.",
     "mainEntity": {
-      "@type": "Organization",
-      "name": "Calcuzy.app",
-      "description": "Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity",
-      "url": "https://Calcuzy.app"
+      "@type": "Person",
+      "name": "Akshat Thakur",
+      "jobTitle": "Founder & Developer",
+      "url": "https://calcuzy.app",
+      "description":
+        "A 3rd-year B.Tech CSE student who enjoys building clean, fast and useful tools for the internet."
     }
   }
 
   return (
-    <div className="min-h-screen bg-primary-bg fade-in">
+    <div className="min-h-screen bg-primary-bg fade-in flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+
       <Navbar />
-      
-      <main className="container section-responsive">
-        <div className="text-center mb-16 slide-up">
-          <h1 className="heading-1 text-center mb-6">
-            About Calcuzy.app
-          </h1>
-          <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Discover our mission to provide simple, fast, and search-optimized online tools 
-            that make everyday calculations and countdowns effortless and accessible to everyone.
+
+      <main className="flex-1 container section-responsive max-w-3xl mx-auto py-12">
+        {/* Hero Section */}
+        <section className="text-center mb-16 slide-up">
+          <div className="text-4xl md:text-5xl font-bold mb-4 flex items-center justify-center gap-2">
+            <span role="img" aria-label="star"></span> About Us Page
+          </div>
+          <p className="paragraph text-lg max-w-2xl mx-auto mb-6">
+            Calcuzy.app is a simple idea that started on a random late night in my college room.<br/>
+            I'm Akshat Thakur, a 3rd-year B.Tech CSE student who enjoys building things that are clean, fast, and genuinely helpful. Calcuzy didn’t come from a big startup plan — it came from curiosity, experimentation, and the thought:
           </p>
-        </div>
+          <blockquote className="italic text-primary-text/80 text-xl font-medium mb-4">
+            “What if simple tools, when done right, can actually reach thousands of people?”
+          </blockquote>
+          <p className="paragraph text-lg max-w-2xl mx-auto mb-2">
+            That one thought led to a few hours of coding…<br/>and Calcuzy was born.
+          </p>
+        </section>
 
-        <AdUnit slot={1} />
-
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <div className="grid-responsive-2 gap-8 mb-16">
-            <Card animation="fade-in-up" delay={100}>
-              <h2 className="heading-2 mb-6">Who We Are</h2>
-              <p className="paragraph">
-                Calcuzy.app was founded with a simple mission: to create the most 
-                user-friendly online tools and utilities that help people solve everyday problems 
-                without complexity or confusion. We believe the best tools are often the simplest 
-                ones—fast, reliable, and completely free to use.
-              </p>
-              <p className="paragraph">
-                Our team is passionate about eliminating digital clutter and focusing on what 
-                truly matters: providing accurate results instantly without requiring registration, 
-                personal data, or complicated interfaces. Every tool we build follows our core 
-                principles of simplicity, speed, and privacy.
-              </p>
-            </Card>
-
-            <Card animation="fade-in-up" delay={200}>
-              <h2 className="heading-2 mb-6">What We Offer</h2>
-              <p className="paragraph">
-                Calcuzy.app provides a comprehensive suite of online tools designed for 
-                everyday use. Our countdown timers help you track important dates and holidays, while our 
-                calculators handle everything from age calculations to unit conversions and health metrics.
-              </p>
-              <p className="paragraph">
-                We also curate collections of popular names and inspirational quotes, helping you 
-                find the perfect name for your pet or baby, or get motivated with daily 
-                wisdom. All our tools work seamlessly across devices and browsers, ensuring you have 
-                access whenever and wherever you need them.
-              </p>
-            </Card>
+        {/* Who I Am */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🧑‍💻</span>
+            <h2 className="heading-2">Who I Am</h2>
           </div>
+          <p className="paragraph mb-2">
+            Hi, I'm Akshat, the solo developer behind Calcuzy.app.<br/>
+            I’ve been learning web development for less than a year, and this project became my playground to explore:
+          </p>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>SEO</li>
+            <li>Google AdSense monetization</li>
+            <li>scaling a simple idea</li>
+            <li>understanding how people use tools</li>
+            <li>and building something that lasts</li>
+          </ul>
+          <p className="paragraph">
+            I’ve always believed that small things done right can become big, and Calcuzy is my attempt to prove that.
+          </p>
+        </section>
 
-          <Card animation="fade-in-up" delay={300}>
-            <h2 className="heading-2 mb-6">Our Mission</h2>
-            <p className="paragraph">
-              Our mission is to democratize access to practical online tools by removing 
-              barriers like registration, payment, and technical complexity. We believe everyone 
-              deserves access to reliable utilities that just work—no learning curves, no hidden costs, 
-              and no privacy concerns.
-            </p>
-            <p className="paragraph">
-              We&apos;re committed to continuous improvement based on user feedback and emerging 
-              needs. Every feature we add is tested rigorously to ensure it meets our standards 
-              of simplicity, accuracy, and speed. Your trust is our most valuable asset, 
-              and we work daily to earn and maintain it through transparent practices and 
-              exceptional user experiences.
-            </p>
-          </Card>
-
-          <Card animation="fade-in-up" delay={400}>
-            <h2 className="heading-2 mb-6">Our Values</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="heading-3 mb-2">Simplicity First</h3>
-                <p className="paragraph">
-                  We prioritize clean interfaces and straightforward functionality over complex 
-                  features. Every tool should be intuitive enough that anyone can use it 
-                  immediately without instructions or tutorials.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="heading-3 mb-2">Privacy by Design</h3>
-                <p className="paragraph">
-                  We never collect personal data or store calculation results. Everything 
-                  happens locally in your browser, ensuring complete privacy and security 
-                  of your information.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="heading-3 mb-2">Speed & Reliability</h3>
-                <p className="paragraph">
-                  Our tools are optimized for instant results and 99.9% uptime. 
-                  We understand that when you need a calculator or countdown, you need it 
-                  to work immediately without delays or errors.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="heading-3 mb-2">Always Free</h3>
-                <p className="paragraph">
-                  All our tools are and will always be completely free. No premium features, 
-                  no hidden costs, and no limitations. We believe essential utilities should 
-                  be accessible to everyone regardless of ability to pay.
-                </p>
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        <AdUnit slot={2} />
-
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <h2 className="heading-2 mb-6">Popular Tools</h2>
-          <div className="grid-responsive-3">
-            <Link href="/age-calculator" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">🧮</div>
-                <div className="font-medium text-primary-text">Age Calculator</div>
-                <div className="text-sm text-secondary-text">Calculate exact age</div>
-              </div>
-            </Link>
-            
-            <Link href="/bmi-calculator" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">⚖️</div>
-                <div className="font-medium text-primary-text">BMI Calculator</div>
-                <div className="text-sm text-secondary-text">Health assessment tool</div>
-              </div>
-            </Link>
-            
-            <Link href="/unit-converter" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">🔄</div>
-                <div className="font-medium text-primary-text">Unit Converter</div>
-                <div className="text-sm text-secondary-text">Convert measurements</div>
-              </div>
-            </Link>
-            
-            <Link href="/random-number-generator" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">🎲</div>
-                <div className="font-medium text-primary-text">Random Number</div>
-                <div className="text-sm text-secondary-text">Generate random values</div>
-              </div>
-            </Link>
-            
-            <Link href="/date-difference" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">📅</div>
-                <div className="font-medium text-primary-text">Date Difference</div>
-                <div className="text-sm text-secondary-text">Calculate date intervals</div>
-              </div>
-            </Link>
-            
-            <Link href="/days-until-christmas" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">🎄</div>
-                <div className="font-medium text-primary-text">Christmas Countdown</div>
-                <div className="text-sm text-secondary-text">Holiday timer</div>
-              </div>
-            </Link>
-            
-            <Link href="/baby-boy-names" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">👶</div>
-                <div className="font-medium text-primary-text">Baby Names</div>
-                <div className="text-sm text-secondary-text">Name inspiration</div>
-              </div>
-            </Link>
-            
-            <Link href="/motivational-quotes" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">💬</div>
-                <div className="font-medium text-primary-text">Quotes</div>
-                <div className="text-sm text-secondary-text">Daily inspiration</div>
-              </div>
-            </Link>
-            
-            <Link href="/dog-names" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">🐕</div>
-                <div className="font-medium text-primary-text">Dog Names</div>
-                <div className="text-sm text-secondary-text">Pet name ideas</div>
-              </div>
-            </Link>
-            
-            <Link href="/american-last-names" className="block p-6 border border-border rounded-lg hover:bg-card-hover transition-all duration-200 hover:scale-[1.01] hover:shadow-md focus-ring">
-              <div className="text-center">
-                <div className="text-2xl mb-2">🇺🇸</div>
-                <div className="font-medium text-primary-text">Last Names</div>
-                <div className="text-sm text-secondary-text">Family surnames</div>
-              </div>
-            </Link>
+        {/* Why I Built Calcuzy */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🎯</span>
+            <h2 className="heading-2">Why I Built Calcuzy</h2>
           </div>
-        </div>
+          <p className="paragraph mb-2">
+            Calcuzy didn’t start because the world needed “another calculator website.”<br/>
+            It started because I wanted to learn — truly learn — how things like SEO, ads, traffic, UI, and user behaviour work in the real world.
+          </p>
+          <p className="paragraph mb-2">I built it because:</p>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>I wanted a long-term project that grows over time</li>
+            <li>I wanted to build clean, useful tools people can rely on</li>
+            <li>I wanted to see how far a simple idea can go with consistent work</li>
+            <li>And because I love the challenge of creating something from scratch</li>
+          </ul>
+          <p className="paragraph">
+            Calcuzy is not a one-month project — it’s something I plan to build slowly, improve constantly, and grow into a real online utility hub.
+          </p>
+        </section>
 
-        <AdUnit slot={3} />
-
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="heading-3 mb-2">Is Calcuzy.app really free?</h3>
-              <p className="paragraph">
-                Yes, all tools and features on Calcuzy.app are completely free to use. 
-                We don&apos;t require registration, payment, or any personal information. Our mission 
-                is to provide essential utilities to everyone without barriers.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">How do you make money?</h3>
-              <p className="paragraph">
-                We display advertisements through Google AdSense to keep our tools free. 
-                This allows us to maintain and improve our services without charging users. 
-                We&apos;re transparent about this and never prioritize ads over user experience.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Is my data safe?</h3>
-              <p className="paragraph">
-                Absolutely. We don&apos;t collect, store, or share any personal data. 
-                All calculations happen locally in your browser, ensuring complete privacy. 
-                We&apos;re committed to protecting your information and being transparent about our practices.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Can I request new tools?</h3>
-              <p className="paragraph">
-                Yes! We welcome user feedback and suggestions for new tools. 
-                Many of our current features were developed based on user requests. 
-                Contact us with your ideas—we read and consider every suggestion seriously.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">How often do you update?</h3>
-              <p className="paragraph">
-                We regularly update existing tools and add new features based on user 
-                feedback and trending needs. Major updates happen quarterly, with smaller 
-                improvements and bug fixes deployed as needed to ensure the best possible experience.
-              </p>
-            </div>
+        {/* What Calcuzy Offers */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🧰</span>
+            <h2 className="heading-2">What Calcuzy Offers</h2>
           </div>
-        </div>
+          <p className="paragraph mb-2">
+            Calcuzy is a collection of everyday tools — calculators, countdowns, converters, generators — designed to be:
+          </p>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>fast</li>
+            <li>simple</li>
+            <li>minimal</li>
+            <li>distraction-free</li>
+            <li>and available on any device</li>
+          </ul>
+          <p className="paragraph mb-2">
+            There are no logins, no complicated interfaces, no tracking beyond what’s necessary.<br/>
+            Just useful tools that work instantly.
+          </p>
+          <p className="paragraph">
+            Whether someone wants to calculate age, convert units, check BMI, generate a random number, or track an upcoming date — Calcuzy aims to make these tasks effortless.
+          </p>
+        </section>
+
+        {/* Mission */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🚀</span>
+            <h2 className="heading-2">Our Mission</h2>
+          </div>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>Become a reliable online toolbox for everyday users</li>
+            <li>Keep everything free forever</li>
+            <li>Prioritize privacy — no personal data collection</li>
+            <li>Make tools that work fast even on slower devices and networks</li>
+            <li>Build trust through simplicity and accuracy</li>
+          </ul>
+          <p className="paragraph">
+            I want Calcuzy to feel like a place people can depend on — not filled with pop-ups or distractions.<br/>
+            Just clear tools that do their job.
+          </p>
+        </section>
+
+        {/* What Makes Calcuzy Different */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">❤️</span>
+            <h2 className="heading-2">What Makes Calcuzy Different</h2>
+          </div>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>Every tool is tested manually</li>
+            <li>Feedback is taken seriously</li>
+            <li>Updates happen regularly</li>
+            <li>No dark patterns or forced interactions</li>
+            <li>Ads will never ruin the user experience</li>
+            <li>Everything remains free and accessible</li>
+          </ul>
+          <p className="paragraph">
+            I’m not trying to make Calcuzy “viral” overnight.<br/>
+            I’m trying to make it useful and trustworthy, even if growth is slow.
+          </p>
+        </section>
+
+        {/* Built by One Person */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🛠️</span>
+            <h2 className="heading-2">Built by One Person</h2>
+          </div>
+          <p className="paragraph mb-2">
+            Calcuzy is a solo project — designed, developed, maintained, and improved by me alone.<br/>
+            From coding to content to UI to SEO… it’s all done by a single pair of hands.
+          </p>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>decisions are fast</li>
+            <li>updates are personal</li>
+            <li>and every improvement is intentional</li>
+          </ul>
+        </section>
+
+        {/* Story */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🌙</span>
+            <h2 className="heading-2">The Story Behind Calcuzy</h2>
+          </div>
+          <p className="paragraph mb-2">
+            One random night, while experimenting with small ideas, I built a basic calculator tool.<br/>
+            Then another.<br/>
+            Then added a countdown.<br/>
+            Then a generator.
+          </p>
+          <p className="paragraph mb-2">
+            A few hours of curiosity turned into a real platform. That night made me realize:
+          </p>
+          <blockquote className="italic text-primary-text/80 text-xl font-medium mb-4">
+            “Simple things, when polished with care, become powerful.”
+          </blockquote>
+          <p className="paragraph">
+            And that’s exactly how Calcuzy continues to grow.
+          </p>
+        </section>
+
+        {/* Message from Founder */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🗣️</span>
+            <h2 className="heading-2">A Message From the Founder</h2>
+          </div>
+          <p className="paragraph mb-2">
+            Hi, I’m Akshat.<br/>
+            I created Calcuzy as a personal project to learn, experiment, and build something meaningful.<br/>
+            I believe everyday tools should be fast, simple, and honest — without forcing you to sign up or share data.
+          </p>
+          <p className="paragraph">
+            If you’re using Calcuzy right now, thank you.<br/>
+            Your visits, feedback, and support motivate me to keep improving it every single day.
+          </p>
+        </section>
+
+        {/* Looking Ahead */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🙌</span>
+            <h2 className="heading-2">Looking Ahead</h2>
+          </div>
+          <p className="paragraph mb-2">
+            Calcuzy is still growing.<br/>
+            More tools, cleaner UI, better performance, and more features are on the way.
+          </p>
+          <p className="paragraph">
+            My goal is to turn Calcuzy into one of the most trusted free tool platforms online — built slowly, honestly, and with care.<br/>
+            And I’m excited to keep building.
+          </p>
+        </section>
       </main>
 
       <Footer />

@@ -66,7 +66,7 @@ export default function HomePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card animation="fade-in-up" delay={100}>
               <div className="text-center">
                 <div className="text-4xl mb-4">🧮</div>
@@ -126,20 +126,11 @@ export default function HomePage() {
                 <div className="text-4xl mb-4">🔒</div>
                 <h3 className="heading-3 mb-3">Security Tools</h3>
                 <p className="paragraph text-sm mb-4">Password generators, strength checkers, and encryption tools</p>
-                <Link href="/password-tools" className="link-accent font-medium">Security Tools →</Link>
+                <Link href="/password-strength-checker" className="link-accent font-medium">Security Tools →</Link>
               </div>
             </Card>
 
             <Card animation="fade-in-up" delay={800}>
-              <div className="text-center">
-                <div className="text-4xl mb-4">📄</div>
-                <h3 className="heading-3 mb-3">PDF Tools</h3>
-                <p className="paragraph text-sm mb-4">Merge, split, compress, and convert PDF files with ease</p>
-                <Link href="/pdf-tools/pdf-merger" className="link-accent font-medium">PDF Tools →</Link>
-              </div>
-            </Card>
-
-            <Card animation="fade-in-up" delay={900}>
               <div className="text-center">
                 <div className="text-4xl mb-4">💬</div>
                 <h3 className="heading-3 mb-3">Quotes & Content</h3>
@@ -161,7 +152,7 @@ export default function HomePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card animation="fade-in-up" delay={100}>
               <h3 className="heading-3 mb-3">Age Calculator</h3>
               <p className="paragraph text-sm mb-4">Calculate exact age in years, months, and days</p>
@@ -205,15 +196,9 @@ export default function HomePage() {
             </Card>
 
             <Card animation="fade-in-up" delay={800}>
-              <h3 className="heading-3 mb-3">PDF Merger</h3>
-              <p className="paragraph text-sm mb-4">Combine multiple PDF files into one document</p>
-              <Link href="/pdf-tools/pdf-merger" className="link-accent font-medium text-sm">Merge PDFs →</Link>
-            </Card>
-
-            <Card animation="fade-in-up" delay={900}>
-              <h3 className="heading-3 mb-3">Password Tools</h3>
-              <p className="paragraph text-sm mb-4">Generate secure passwords and test strength</p>
-              <Link href="/password-tools" className="link-accent font-medium text-sm">Password Tools →</Link>
+              <h3 className="heading-3 mb-3">Password Strength Tool</h3>
+              <p className="paragraph text-sm mb-4">Test and improve your password security</p>
+              <Link href="/password-strength-checker" className="link-accent font-medium text-sm">Check Strength →</Link>
             </Card>
           </div>
         </section>
@@ -257,7 +242,7 @@ export default function HomePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Card animation="fade-in-up" delay={100} className="p-8">
               <div className="flex items-center mb-4">
                 <div className="text-3xl mr-4">💰</div>
@@ -298,19 +283,6 @@ export default function HomePage() {
             </Card>
 
             <Card animation="fade-in-up" delay={400} className="p-8">
-              <div className="flex items-center mb-4">
-                <div className="text-3xl mr-4">📄</div>
-                <h3 className="heading-3">PDF Tools</h3>
-              </div>
-              <p className="paragraph text-sm mb-6">Complete PDF toolkit with merger, splitter, compressor, and converters. Handle all your PDF needs in one place with professional-grade tools.</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">PDF Merger</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">PDF Splitter</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">PDF Converter</span>
-              </div>
-            </Card>
-
-            <Card animation="fade-in-up" delay={500} className="p-8">
               <div className="flex items-center mb-4">
                 <div className="text-3xl mr-4">🤖</div>
                 <h3 className="heading-3">AI Tools</h3>
