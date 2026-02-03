@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: "Contact Calcuzy.app – Reach the Founder Directly",
+  title: "Contact Calcuzy",
   description:
     "Have feedback, tool ideas, or questions? Contact Calcuzy.app and speak directly with founder Akshat Thakur. I read and reply to every message personally.",
     keywords: "contact calcuzy, calcuzy support, calcuzy feedback, contact akshat thakur, report bug calcuzy",

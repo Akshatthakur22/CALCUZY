@@ -1,43 +1,82 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import CapitalGainsCalculatorClient from '@/components/tools/CapitalGainsCalculatorClient'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import { VisualGauge } from '@/components/ToolWrapper'
 
 export const metadata = createMetadata({
-  title: 'Capital Gains Tax Calculator - Stock & Investment Tax | Calcuzy.app',
+  title: 'Capital Gains Tax Calculator',
   description: 'Calculate capital gains tax on stocks, investments, and assets. Short-term vs long-term tax rates with US federal tax brackets. Free investment tax calculator.',
-  keywords: 'capital gains calculator, stock tax calculator, investment tax, long-term capital gains, short-term capital gains, tax brackets',
-  url: 'https://Calcuzy.app/capital-gains-calculator',
+  keywords: 'capital gains calculator, stock tax calculator, investment tax, long-term capital gains, short-term capital gains, tax brackets 2024',
+  url: 'https://calcuzy.app/capital-gains-calculator',
   image: '/og-tools.png',
 })
 
 export default function CapitalGainsCalculatorPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "Capital Gains Tax Calculator",
-    "description": "Calculate capital gains tax on investments with short-term and long-term tax rates",
-    "url": "https://Calcuzy.app/capital-gains-calculator",
-    "provider": {
-      "@type": "Organization",
-      "name": "Calcuzy.app",
-      "url": "https://Calcuzy.app"
+  const structuredData = createToolSchema({
+    name: 'Capital Gains Tax Calculator',
+    description: 'Calculate capital gains tax on investments with short-term and long-term tax rates for US federal taxes',
+    url: 'https://calcuzy.app/capital-gains-calculator',
+    category: 'FinanceApplication',
+    features: ['Short-term tax calculation', 'Long-term tax calculation', '2024 US tax brackets', 'Visual ROI gauge', 'Shareable results']
+  })
+
+  const faqData = [
+    {
+      question: 'What is the difference between short-term and long-term capital gains?',
+      answer: 'Short-term capital gains apply to assets held for one year or less and are taxed at ordinary income rates (10-37%). Long-term capital gains apply to assets held for more than one year and receive preferential rates (0%, 15%, or 20% depending on income).'
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+    {
+      question: 'Do I have to pay capital gains tax if I reinvest the money?',
+      answer: 'Yes, capital gains tax is generally due when you sell an asset, regardless of whether you reinvest the proceeds. However, 1031 exchanges for real estate or investing in Opportunity Zones may offer tax deferral options.'
+    },
+    {
+      question: 'Can I offset capital gains with capital losses?',
+      answer: 'Yes, you can offset capital gains with capital losses. If your losses exceed your gains, you can deduct up to $3,000 of net capital losses against ordinary income annually, with remaining losses carried forward.'
+    },
+    {
+      question: 'What about state capital gains tax?',
+      answer: 'Most states also tax capital gains. States like California tax at ordinary income rates (up to 13.3%), while states like Florida, Texas, and Nevada have no state income tax on capital gains.'
+    },
+    {
+      question: 'How is the Net Investment Income Tax (NIIT) calculated?',
+      answer: 'The NIIT is an additional 3.8% tax on investment income for individuals with modified AGI above $200,000 (single) or $250,000 (married filing jointly). This applies on top of regular capital gains tax.'
     }
-  }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
+  const steps = [
+    { title: 'Enter Purchase Price', description: 'Input the original cost basis of your investment, including any commissions or fees paid when buying.', inputMode: 'decimal' },
+    { title: 'Enter Sale Price', description: 'Input the total amount you received (or expect to receive) from selling the asset.', inputMode: 'decimal' },
+    { title: 'Select Holding Period', description: 'Choose whether you held the asset for more than one year (long-term) or one year or less (short-term).' },
+    { title: 'Enter Annual Income', description: 'Input your annual taxable income to determine your applicable tax bracket and rate.', inputMode: 'numeric' },
+    { title: 'Calculate & Share', description: 'Click calculate to see your estimated tax, then copy or share your results.' }
+  ]
+
+  const tips = [
+    'Hold investments for over 1 year to qualify for lower long-term capital gains rates',
+    'Consider tax-loss harvesting to offset gains with losses before year-end',
+    'Use retirement accounts (401k, IRA) for investments with high turnover',
+    'Track your cost basis carefully, including reinvested dividends',
+    'Consult a tax professional for complex situations or large gains'
+  ]
+
+  const roiValue = 25; // Placeholder value for ROI. Replace with actual calculation logic.
 
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       
@@ -56,185 +95,58 @@ export default function CapitalGainsCalculatorPage() {
 
         <div className="max-w-4xl mx-auto fade-in-up">
           <CapitalGainsCalculatorClient />
+
+          {/* Add VisualGauge for ROI visualization */}
+          <div className="mt-8 flex flex-col md:flex-row items-center gap-4">
+            <VisualGauge
+              value={roiValue} // Replace with actual ROI value from state or props
+              max={100}
+              label="Return on Investment (ROI)"
+              className="w-full md:w-1/2"
+            />
+          </div>
         </div>
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={300}>
-            <h2 className="heading-2 mb-6">Understanding Capital Gains Tax</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-3">What are Capital Gains?</h3>
-                <p className="paragraph">
+        {/* Tool Info Section */}
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Capital Gains Tax Calculator"
+            description={
+              <>
+                <p className="mb-4">
                   Capital gains are profits realized from the sale of capital assets such as stocks, bonds, real estate, 
                   or other investments. The gain is calculated as the difference between the selling price and the 
                   original purchase price (cost basis), minus any selling expenses.
                 </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Short-term vs Long-term Capital Gains</h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Short-term Capital Gains</h4>
-                    <p className="paragraph mb-0">
-                      Assets held for one year or less are taxed at your ordinary income tax rate (10-37% depending on 
-                      your income bracket). These rates are typically higher than long-term rates.
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                  <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                    <h4 className="font-semibold text-amber-800 mb-2">Short-term Capital Gains</h4>
+                    <p className="text-sm text-amber-700">
+                      Assets held for one year or less are taxed at ordinary income rates (10-37%).
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Long-term Capital Gains</h4>
-                    <p className="paragraph mb-0">
-                      Assets held for more than one year receive preferential tax rates: 0% for low-income taxpayers, 
-                      15% for most taxpayers, and 20% for high-income taxpayers.
+                  <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                    <h4 className="font-semibold text-emerald-800 mb-2">Long-term Capital Gains</h4>
+                    <p className="text-sm text-emerald-700">
+                      Assets held over one year receive preferential rates (0%, 15%, or 20%).
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">US Federal Tax Rates (2024)</h3>
-                <div className="overflow-x-auto">
-                  <table className="min-w-full border border-gray-200 rounded-lg">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="border border-gray-200 px-4 py-2 text-left">Tax Rate</th>
-                        <th className="border border-gray-200 px-4 py-2 text-left">Short-term (Ordinary Income)</th>
-                        <th className="border border-gray-200 px-4 py-2 text-left">Long-term (Capital Gains)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="border border-gray-200 px-4 py-2">10%</td>
-                        <td className="border border-gray-200 px-4 py-2">Up to $11,000</td>
-                        <td className="border border-gray-200 px-4 py-2">Up to $44,000</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-200 px-4 py-2">12%</td>
-                        <td className="border border-gray-200 px-4 py-2">$11,001 - $44,725</td>
-                        <td className="border border-gray-200 px-4 py-2">$44,001 - $95,375</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-200 px-4 py-2">15%</td>
-                        <td className="border border-gray-200 px-4 py-2">$44,726 - $95,375</td>
-                        <td className="border border-gray-200 px-4 py-2">$95,376 - $182,050</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-200 px-4 py-2">20%</td>
-                        <td className="border border-gray-200 px-4 py-2">Over $578,125</td>
-                        <td className="border border-gray-200 px-4 py-2">Over $578,125</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Capital Gains Tax Formula</h3>
-                <div className="bg-gray-50 p-4 rounded-lg font-mono text-sm">
-                  Capital Gain = Sale Price - Cost Basis - Selling Expenses<br />
-                  Tax Amount = Capital Gain × Tax Rate<br />
-                  Net Proceeds = Sale Price - Tax Amount - Selling Expenses
-                </div>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Tax Planning Strategies</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Hold investments for more than one year to qualify for lower long-term rates</li>
-                  <li>Consider tax-loss harvesting to offset gains with losses</li>
-                  <li>Time sales to manage your annual income and tax bracket</li>
-                  <li>Utilize tax-advantaged accounts when possible</li>
-                  <li>Keep detailed records of all purchase and sale transactions</li>
-                </ul>
-              </div>
-            </div>
-          </Card>
+              </>
+            }
+            steps={steps}
+            faqs={faqData}
+            tips={tips}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={400}>
-            <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-2">What is the difference between short-term and long-term capital gains?</h3>
-                <p className="paragraph">
-                  Short-term capital gains apply to assets held for one year or less and are taxed at your ordinary 
-                  income tax rate. Long-term capital gains apply to assets held for more than one year and receive 
-                  preferential tax rates of 0%, 15%, or 20%.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">How is cost basis calculated?</h3>
-                <p className="paragraph">
-                  Cost basis is typically the original purchase price of an asset plus any commissions or fees paid. 
-                  For inherited assets, the cost basis is usually the fair market value at the time of inheritance.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Do I have to pay capital gains tax if I reinvest the money?</h3>
-                <p className="paragraph">
-                  Yes, capital gains tax is generally due when you sell an asset, regardless of whether you reinvest 
-                  the proceeds. However, certain investments like 1031 exchanges or opportunity zones may offer tax deferral.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What about state capital gains tax?</h3>
-                <p className="paragraph">
-                  Most states also tax capital gains, but rates and rules vary significantly. Some states have no income tax, 
-                  while others tax capital gains at the same rate as ordinary income. Check your state&apos;s specific regulations.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Can I offset capital gains with capital losses?</h3>
-                <p className="paragraph">
-                  Yes, you can offset capital gains with capital losses. If your losses exceed your gains, you can deduct 
-                  up to $3,000 of net capital losses against ordinary income, with remaining losses carried forward to future years.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What records should I keep for capital gains tax?</h3>
-                <p className="paragraph">
-                  Keep purchase and sale confirmations, broker statements, cost basis information, dividend reinvestment records, 
-                  and any documentation of improvements or expenses that affect your cost basis. Records should be kept for at least 3 years.
-                </p>
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={500}>
-            <h2 className="heading-2 mb-6">Related Financial Tools</h2>
-            <div className="grid-responsive-3 gap-6">
-              <Link href="/crypto-tax-calculator" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Crypto Tax Calculator</h3>
-                  <p className="text-sm text-gray-600">Calculate cryptocurrency taxes with FIFO, LIFO, and average cost methods</p>
-                </div>
-              </Link>
-              <Link href="/index-fund-return-calculator" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Index Fund Calculator</h3>
-                  <p className="text-sm text-gray-600">Calculate returns and growth for index fund investments</p>
-                </div>
-              </Link>
-              <Link href="/tools" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">All Financial Tools</h3>
-                  <p className="text-sm text-gray-600">Explore our complete collection of financial calculators</p>
-                </div>
-              </Link>
-            </div>
-          </Card>
+        {/* Related Tools */}
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/capital-gains-calculator" category="finance" />
         </div>
       </main>
 

@@ -1,40 +1,66 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
 import PaintCostCalculatorClient from '@/components/tools/PaintCostCalculatorClient'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Paint Cost Calculator - Room Painting Cost Estimator | Calcuzy.app',
+  title: 'Paint Cost Calculator',
   description: 'Calculate paint cost for rooms with our free paint calculator. Estimate paint needed, coverage area, and total cost for your painting project.',
   keywords: 'paint cost calculator, paint estimator, room painting cost, paint coverage calculator, how much paint needed, painting cost estimator',
-  url: 'https://Calcuzy.app/paint-cost-calculator',
+  url: 'https://calcuzy.app/paint-cost-calculator',
   image: '/og-tools.png',
 })
 
 export default function PaintCostCalculatorPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Paint Cost Calculator",
-    "description": "Calculate paint cost and coverage for room painting projects",
-    "url": "https://Calcuzy.app/paint-cost-calculator",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+  const structuredData = createToolSchema({
+    name: 'Paint Cost Calculator',
+    description: 'Calculate paint cost and coverage for room painting projects.',
+    url: 'https://calcuzy.app/paint-cost-calculator',
+    category: 'UtilityApplication'
+  })
+
+  const faqData = [
+    {
+      question: 'How much paint do I need for a 12x12 room?',
+      answer: 'For a standard 12x12 room with 8-foot ceilings, you\'ll typically need about 2-3 gallons of paint for two coats.'
+    },
+    {
+      question: 'Should I paint ceiling or walls first?',
+      answer: 'Professional painters typically paint the ceiling first, then walls, then trim to prevent drips.'
+    },
+    {
+      question: 'Do I need to prime before painting?',
+      answer: 'Primer is necessary when painting over dark colors, glossy surfaces, new drywall, or stained areas.'
+    },
+    {
+      question: 'How long does paint take to dry?',
+      answer: 'Most latex paints are dry to the touch in 1-2 hours and can be recoated in 4 hours.'
+    },
+    {
+      question: 'What\'s the difference between cheap and expensive paint?',
+      answer: 'Premium paints offer better coverage, durability, and color retention with higher-quality resins.'
+    },
+    {
+      question: 'How do I calculate paint for textured walls?',
+      answer: 'For textured surfaces, add 20-25% more paint. For heavily textured surfaces, you may need up to 50% more.'
     }
-  }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
 
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       
@@ -170,91 +196,54 @@ export default function PaintCostCalculatorPage() {
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={400}>
-            <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-2">How much paint do I need for a 12x12 room?</h3>
-                <p className="paragraph">
-                  For a standard 12x12 room with 8-foot ceilings, you&apos;ll typically need about 2-3 gallons 
-                  of paint for two coats of walls and ceiling. This accounts for standard door and window 
-                  openings. Always buy a little extra for touch-ups.
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Paint Cost Calculator"
+            description={
+              <>
+                <p className="mb-4">
+                  Calculate paint cost for your room with our comprehensive paint calculator. 
+                  Estimate paint needed, coverage area, and total cost for any painting project.
                 </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Should I paint ceiling or walls first?</h3>
-                <p className="paragraph">
-                  Professional painters typically paint the ceiling first, then walls, then trim. This prevents 
-                  paint drips from the ceiling from marring freshly painted walls. It&apos;s also easier to cut in 
-                  the wall-to-ceiling line when the ceiling is already painted.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Do I need to prime before painting?</h3>
-                <p className="paragraph">
-                  Primer is necessary when painting over dark colors, glossy surfaces, new drywall, or stained 
-                  areas. For repainting a similar color over a clean, matte surface, you might skip primer. 
-                  When in doubt, use primer for better results and potentially fewer topcoats.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">How long does paint take to dry?</h3>
-                <p className="paragraph">
-                  Most latex paints are dry to the touch in 1-2 hours and can be recoated in 4 hours. 
-                  Oil-based paints take longer, typically 6-8 hours to dry and 24 hours before recoating. 
-                  However, paint can take up to 30 days to fully cure and reach maximum hardness.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What&apos;s the difference between cheap and expensive paint?</h3>
-                <p className="paragraph">
-                  Premium paints offer better coverage, durability, color retention, and easier application. 
-                  They often contain more pigments and higher-quality resins. While more expensive upfront, 
-                  they may save money in the long run by requiring fewer coats and lasting longer between repaints.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">How do I calculate paint for textured walls?</h3>
-                <p className="paragraph">
-                  For textured surfaces like orange peel or knockdown textures, add 20-25% more paint to your 
-                  calculation. For heavily textured surfaces like popcorn ceilings or brick, you may need 
-                  up to 50% more paint. It&apos;s always better to have extra than to run out mid-project.
-                </p>
-              </div>
-            </div>
-          </Card>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2">🎨 Coverage</h4>
+                    <p className="text-sm text-blue-700">
+                      Calculate exact paint needed for walls and ceilings.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <h4 className="font-semibold text-green-800 mb-2">💰 Cost</h4>
+                    <p className="text-sm text-green-700">
+                      Get accurate cost estimates for your project.
+                    </p>
+                  </div>
+                  <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                    <h4 className="font-semibold text-amber-800 mb-2">📐 Precision</h4>
+                    <p className="text-sm text-amber-700">
+                      Account for doors, windows, and texture.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={[
+              { title: 'Enter Dimensions', description: 'Input your room length, width, and height.' },
+              { title: 'Customize Options', description: 'Set paint price, coverage, and number of coats.' },
+              { title: 'Get Estimate', description: 'View total area, paint needed, and cost breakdown.' }
+            ]}
+            faqs={faqData}
+            tips={[
+              'Buy paint in bulk for larger projects to get volume discounts',
+              'Use primer when painting over dark colors to reduce topcoat needs',
+              'Proper surface preparation reduces the need for extra coats',
+              'Look for seasonal sales and manufacturer rebates'
+            ]}
+          />
         </div>
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={500}>
-            <h2 className="heading-2 mb-6">Related Tools</h2>
-            <div className="grid-responsive-3 gap-6">
-              <Link href="/tools" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">All Calculators</h3>
-                  <p className="text-sm text-gray-600">Explore our complete collection of useful calculators</p>
-                </div>
-              </Link>
-              <Link href="/unit-converter" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Unit Converter</h3>
-                  <p className="text-sm text-gray-600">Convert between different units of measurement</p>
-                </div>
-              </Link>
-              <Link href="/random-number-generator" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Random Number Generator</h3>
-                  <p className="text-sm text-gray-600">Generate random numbers for various purposes</p>
-                </div>
-              </Link>
-            </div>
-          </Card>
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/paint-cost-calculator" category="calculators" />
         </div>
       </main>
 

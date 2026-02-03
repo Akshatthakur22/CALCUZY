@@ -1,43 +1,73 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import WillGeneratorClient from '@/components/tools/WillGeneratorClient'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Will Generator - Free Online Will Template | Calcuzy.app',
-  description: 'Create a simple last will and testament online with our free will generator. Generate a basic legal will template with beneficiaries, assets, and special wishes.',
-  keywords: 'will generator, last will and testament, free will template, legal will creator, online will generator, simple will form',
-  url: 'https://Calcuzy.app/will-generator',
-  image: '/og-legal.png',
+  title: 'Will Generator',
+  description: 'Create a simple last will and testament online. Free will generator with customizable beneficiaries, assets, and executor designation for estate planning.',
+  keywords: 'will generator, last will and testament, estate planning, legal document generator, will template, inheritance planning',
+  url: 'https://calcuzy.app/will-generator',
+  image: '/og-tools.png',
 })
 
 export default function WillGeneratorPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "Will Generator",
-    "description": "Create a simple last will and testament online with our free will generator",
-    "url": "https://Calcuzy.app/will-generator",
-    "provider": {
-      "@type": "Organization",
-      "name": "Calcuzy.app",
-      "url": "https://Calcuzy.app"
+  const structuredData = createToolSchema({
+    name: 'Will Generator',
+    description: 'Create a simple last will and testament with customizable beneficiaries and asset distribution',
+    url: 'https://calcuzy.app/will-generator',
+    category: 'UtilityApplication',
+    features: ['Asset distribution', 'Beneficiary designation', 'Executor appointment', 'PDF export', 'Simple estate planning']
+  })
+
+  const faqData = [
+    {
+      question: 'What is a will and why do I need one?',
+      answer: 'A will (or last will and testament) is a legal document that expresses your wishes for how your property should be distributed after death, who will care for minor children, and who will execute your estate. Without a will, state laws determine these decisions through intestacy rules, which may not reflect your wishes.'
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+    {
+      question: 'Is a will generated online legally valid?',
+      answer: 'An online will template provides a solid starting point, but legal validity depends on meeting your state/jurisdiction\'s requirements, including proper witnessing and notarization. Most states require two witnesses who are not beneficiaries. We strongly recommend consulting an estate planning attorney.'
+    },
+    {
+      question: 'What is an executor and how do I choose one?',
+      answer: 'An executor is the person responsible for managing your estate after death, including paying debts, filing taxes, and distributing assets. Choose someone trustworthy, organized, and capable of handling financial matters. Many people choose a spouse, adult child, or trusted friend.'
+    },
+    {
+      question: 'Can I change my will after creating it?',
+      answer: 'Yes, you can update your will anytime by creating a new will or adding a codicil (amendment). Major life events like marriage, divorce, births, or significant asset changes should trigger a will review. Keep your will current to reflect your latest wishes.'
     }
-  }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
+  const steps = [
+    { title: 'Enter Personal Information', description: 'Provide your full legal name, address, and basic identifying information.' },
+    { title: 'Name Your Executor', description: 'Designate someone to manage your estate and carry out your wishes.' },
+    { title: 'Add Beneficiaries & Assets', description: 'List your beneficiaries and specify how assets should be distributed.' },
+    { title: 'Generate & Download', description: 'Create your will template ready for review, witnessing, and signing.' }
+  ]
+
+  const tips = [
+    'Review and update your will after major life events (marriage, divorce, births, deaths)',
+    'Store the original signed will in a secure location like a safe or with your attorney',
+    'Inform your executor where to find your will and important documents',
+    'Consider naming alternate beneficiaries and a backup executor',
+    'Always have your will properly witnessed according to your state\'s requirements'
+  ]
 
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       
@@ -47,8 +77,8 @@ export default function WillGeneratorPage() {
             Will Generator
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Create a simple last will and testament online with our free will generator. 
-            Generate a basic legal document with beneficiaries, assets, and special wishes.
+            Create a simple last will and testament template. Designate beneficiaries, 
+            distribute assets, and name an executor for your estate.
           </p>
         </div>
 
@@ -60,163 +90,49 @@ export default function WillGeneratorPage() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={300}>
-            <h2 className="heading-2 mb-6">About Will Generation</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-3">What is a Last Will and Testament?</h3>
-                <p className="paragraph">
-                  A last will and testament is a legal document that specifies how your assets and property 
-                  should be distributed after your death. It allows you to name beneficiaries, designate an 
-                  executor to manage your estate, and provide instructions for your final wishes.
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Will Generator"
+            description={
+              <>
+                <p className="mb-4">
+                  A last will and testament is a legal document that outlines your wishes for the 
+                  distribution of your assets and the care of any minor children after your death. 
+                  Creating a will ensures your property goes to the people you choose rather than 
+                  being distributed according to state intestacy laws.
                 </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Essential Components of a Will</h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Testator Information</h4>
-                    <p className="paragraph mb-0">
-                      Your full legal name, address, and declaration that this document represents your last will.
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                    <h4 className="font-semibold text-purple-800 mb-2">👤 Executor</h4>
+                    <p className="text-sm text-purple-700">
+                      Manages your estate, pays debts, and distributes assets per your wishes.
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Beneficiary Designations</h4>
-                    <p className="paragraph mb-0">
-                      Clear identification of who will receive your assets, including names, relationships, and distribution percentages.
+                  <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <h4 className="font-semibold text-green-800 mb-2">💝 Beneficiaries</h4>
+                    <p className="text-sm text-green-700">
+                      The individuals or organizations who receive your assets.
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Asset Inventory</h4>
-                    <p className="paragraph mb-0">
-                      Comprehensive list of your assets including real estate, financial accounts, personal property, and investments.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Executor Appointment</h4>
-                    <p className="paragraph mb-0">
-                      Designation of a trusted person to manage your estate and ensure your wishes are carried out.
+                  <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                    <h4 className="font-semibold text-amber-800 mb-2">📋 Witnesses</h4>
+                    <p className="text-sm text-amber-700">
+                      Required for legal validity; usually 2 non-beneficiary adults.
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Legal Requirements for Valid Wills</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>The testator must be at least 18 years old and of sound mind</li>
-                  <li>The document must be in writing (handwritten or typed)</li>
-                  <li>It must be signed by the testator in the presence of witnesses</li>
-                  <li>Typically requires two or three disinterested witnesses</li>
-                  <li>Witnesses must also sign the document in the testator&apos;s presence</li>
-                  <li>Some states require notarization for self-proving wills</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">When to Update Your Will</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>After marriage or divorce</li>
-                  <li>Birth or adoption of children</li>
-                  <li>Death of a beneficiary or executor</li>
-                  <li>Significant changes in assets or property</li>
-                  <li>Moving to a different state</li>
-                  <li>Every 3-5 years for regular review</li>
-                </ul>
-              </div>
-            </div>
-          </Card>
+              </>
+            }
+            steps={steps}
+            faqs={faqData}
+            tips={tips}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={400}>
-            <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-2">Is this will generator legally binding?</h3>
-                <p className="paragraph">
-                  The will generated by our tool creates a basic template that can be legally valid when properly 
-                  executed according to your state&apos;s laws. However, this is not a substitute for legal advice. 
-                  We strongly recommend consulting with an attorney to ensure your will meets all legal requirements.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Do I need a lawyer to create a will?</h3>
-                <p className="paragraph">
-                  While simple wills can be created without a lawyer, complex estates, business interests, or 
-                  special family situations may require professional legal guidance. An attorney can help ensure 
-                  your will is properly drafted and executed according to state laws.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What happens if I die without a will?</h3>
-                <p className="paragraph">
-                  Dying without a will (intestate) means your assets will be distributed according to your state&apos;s 
-                  intestacy laws. This may not align with your wishes and can lead to lengthy court proceedings. 
-                  Having a will ensures your assets go to your chosen beneficiaries.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Can I change my will after creating it?</h3>
-                <p className="paragraph">
-                  Yes, you can modify your will at any time as long as you&apos;re mentally competent. Changes can be 
-                  made through a codicil (amendment) or by creating a new will that revokes previous versions. 
-                  Always ensure modifications follow the same legal requirements as the original will.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Should I store my will with a lawyer?</h3>
-                <p className="paragraph">
-                  Storing your will with an attorney provides secure storage and easy access for your executor. 
-                  Other options include safe deposit boxes, home safes, or the probate court in some jurisdictions. 
-                  Ensure your executor knows where to locate the original document.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What is the difference between a will and a trust?</h3>
-                <p className="paragraph">
-                  A will takes effect after death and goes through probate court, while a trust can avoid probate 
-                  and manage assets during your lifetime. Trusts offer more privacy and control but are typically 
-                  more complex and expensive to establish. Many people use both as part of comprehensive estate planning.
-                </p>
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={500}>
-            <h2 className="heading-2 mb-6">Related Legal Tools</h2>
-            <div className="grid-responsive-3 gap-6">
-              <Link href="/nda-generator" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">NDA Generator</h3>
-                  <p className="text-sm text-gray-600">Create non-disclosure agreements for business protection</p>
-                </div>
-              </Link>
-              <Link href="/tools" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">All Legal Tools</h3>
-                  <p className="text-sm text-gray-600">Explore our complete collection of legal document generators</p>
-                </div>
-              </Link>
-              <Link href="/age-calculator" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Age Calculator</h3>
-                  <p className="text-sm text-gray-600">Calculate exact age and important life milestones</p>
-                </div>
-              </Link>
-            </div>
-          </Card>
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/will-generator" category="generators" />
         </div>
       </main>
 

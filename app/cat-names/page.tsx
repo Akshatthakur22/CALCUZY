@@ -3,15 +3,50 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Cat Names – 100+ Popular Cat Names',
+  title: 'Cat Names',
   description: 'Find the perfect cat name from our list of 100+ popular cat names. Browse unique, cute, and classic names for male and female cats.',
   keywords: 'cat names, popular cat names, kitten names, cat name ideas',
+  url: 'https://calcuzy.app/cat-names',
+  image: '/og-names.png',
 })
 
 export default function CatNames() {
+  const structuredData = createToolSchema({
+    name: 'Cat Names',
+    description: 'Find the perfect cat name from our list of 100+ popular cat names for male, female, and unisex kittens.',
+    url: 'https://calcuzy.app/cat-names',
+    category: 'LifestyleApplication',
+    features: ['100+ cat names', 'Male names', 'Female names', 'Unisex names']
+  })
+
+  const faqData = [
+    {
+      question: 'How many cat names are in the list?',
+      answer: 'Our comprehensive list includes over 100 cat names, divided into male, female, and unisex categories.'
+    },
+    {
+      question: 'What makes a good cat name?',
+      answer: 'A good cat name is typically short (1-2 syllables), easy to pronounce, and distinctive enough for your cat to recognize.'
+    },
+    {
+      question: 'Should I choose a gender-specific name?',
+      answer: 'Gender-specific names can express your cat\'s personality, but unisex names like Shadow and Smokey work well for both genders.'
+    },
+    {
+      question: 'Can I change my cat\'s name later?',
+      answer: 'Yes, you can change your cat\'s name, though cats may take time to adjust. Consistency is key when making changes.'
+    },
+    {
+      question: 'Are these names good for training?',
+      answer: 'While cats respond differently than dogs to names, having a distinct name helps with identification and bonding.'
+    }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
   const maleNames = [
     'Oliver', 'Leo', 'Milo', 'Charlie', 'Max', 'Simba', 'Loki', 'Felix', 'Oscar', 'George', 'Louis',
     'Jack', 'Tiger', 'Shadow', 'Smokey', 'Binx', 'Jasper', 'Finn', 'Gizmo', 'Mochi', 'Toby',
@@ -31,6 +66,14 @@ export default function CatNames() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">

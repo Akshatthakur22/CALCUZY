@@ -1,16 +1,48 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Graduation Quotes – Inspiring Commencement Sayings',
   description: 'Find perfect graduation quotes from our collection of inspiring commencement sayings. Motivational messages for graduates and students.',
   keywords: 'graduation quotes, commencement quotes, inspiring graduation sayings',
 })
+
+const structuredData = createToolSchema({
+  name: 'Graduation Quotes Collection',
+  description: 'Find perfect graduation quotes from our collection of inspiring commencement sayings.',
+  url: 'https://calcuzy.app/graduation-quotes',
+  category: 'UtilityApplication'
+})
+
+const faqData = [
+  {
+    question: 'How many graduation quotes are in the collection?',
+    answer: 'Our comprehensive collection includes over 100 graduation quotes, organized into categories like achievement, future, and wisdom.'
+  },
+  {
+    question: 'Who are the most quoted graduation speakers?',
+    answer: 'The most quoted graduation speakers include Eleanor Roosevelt, Nelson Mandela, Steve Jobs, and Dr. Seuss.'
+  },
+  {
+    question: 'How can I use graduation quotes effectively?',
+    answer: 'Use graduation quotes in speeches, cards, yearbooks, or as personal affirmations. They work beautifully for social media posts celebrating graduation.'
+  },
+  {
+    question: 'Are graduation quotes good for all ages?',
+    answer: 'Yes, graduation quotes are suitable for all ages and educational levels, from kindergarten to advanced degrees.'
+  },
+  {
+    question: 'Can graduation quotes help with career planning?',
+    answer: 'Absolutely! Graduation quotes often contain wisdom about career success, goal setting, and professional development.'
+  }
+]
+
+const faqSchema = createFAQSchema(faqData)
 
 export default function GraduationQuotes() {
   const achievementQuotes = [
@@ -56,6 +88,14 @@ export default function GraduationQuotes() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">
@@ -109,123 +149,57 @@ export default function GraduationQuotes() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
-          <h2 className="heading-2 mb-6">About Graduation Quotes</h2>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="paragraph">
-              Graduation quotes capture the essence of achievement, hope, and the 
-              exciting journey ahead. Our collection of 100+ inspiring quotes celebrates 
-              the culmination of years of hard work and the beginning of new possibilities 
-              that await graduates as they step into their future.
-            </p>
-            
-            <p className="paragraph">
-              The best graduation quotes resonate because they speak to universal 
-              experiences of growth, perseverance, and the courage to embrace change. 
-              Whether from famous leaders, educators, or successful entrepreneurs, these 
-              words of wisdom remind graduates that their education has prepared them for 
-              greatness and that the future holds endless opportunities.
-            </p>
-            
-            <p className="paragraph">
-              Graduation quotes serve as powerful reminders that education is not just 
-              about acquiring knowledge, but about discovering one&apos;s potential and developing 
-              the confidence to pursue dreams. They encourage graduates to see challenges 
-              as opportunities and to maintain the curiosity that drives lifelong learning 
-              and personal growth.
-            </p>
-            
-            <h3 className="heading-3 mt-8 mb-4">The Power of Graduation Quotes</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li className="text-secondary-text"><strong>Inspiration:</strong> Motivating graduates to pursue their dreams</li>
-              <li className="text-secondary-text"><strong>Reflection:</strong> Celebrating academic achievements</li>
-              <li className="text-secondary-text"><strong>Guidance:</strong> Providing wisdom for the journey ahead</li>
-              <li className="text-secondary-text"><strong>Encouragement:</strong> Building confidence for future challenges</li>
-              <li className="text-secondary-text"><strong>Connection:</strong> Creating shared experiences for graduates</li>
-            </ul>
-            
-            <p className="paragraph">
-              Our graduation quotes collection is completely free to browse and includes 
-              quotes suitable for all graduation ceremonies, cards, speeches, or personal 
-              reflection. Whether you&apos;re a graduate, parent, educator, or simply 
-              seeking inspiration, you&apos;ll find the perfect words to mark this 
-              special occasion.
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="heading-3 mb-6">Related Quote Collections</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/motivational-quotes" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Motivational Quotes</div>
-                <div className="text-sm text-secondary-text">Inspiring quotes for success</div>
-              </Link>
-              <Link href="/love-quotes" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Love Quotes</div>
-                <div className="text-sm text-secondary-text">Romantic and heartfelt quotes</div>
-              </Link>
-            </div>
-          </div>
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Graduation Quotes"
+            description={
+              <>
+                <p className="mb-4">
+                  Graduation quotes capture the essence of achievement, hope, and the 
+                  exciting journey ahead. Our collection celebrates the culmination of 
+                  years of hard work and the beginning of new possibilities.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2">🎓 Achievement</h4>
+                    <p className="text-sm text-blue-700">
+                      Celebrate academic success and personal growth.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <h4 className="font-semibold text-green-800 mb-2">🚀 Future</h4>
+                    <p className="text-sm text-green-700">
+                      Embrace the exciting possibilities that await.
+                    </p>
+                  </div>
+                  <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                    <h4 className="font-semibold text-purple-800 mb-2">📚 Wisdom</h4>
+                    <p className="text-sm text-purple-700">
+                      Timeless advice for the journey ahead.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={[
+              { title: 'Browse Quotes', description: 'Explore our curated collection of graduation quotes.' },
+              { title: 'Find Your Favorite', description: 'Discover quotes that resonate with your achievement.' },
+              { title: 'Share & Celebrate', description: 'Use quotes in speeches, cards, or social media.' }
+            ]}
+            faqs={faqData}
+            tips={[
+              'Use graduation quotes in commencement speeches',
+              'Include quotes in graduation cards and yearbooks',
+              'Share quotes on social media to celebrate achievements',
+              'Use quotes as motivation during career transitions'
+            ]}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="heading-3 mb-2">How many graduation quotes are in the collection?</h3>
-              <p className="paragraph">
-                Our comprehensive collection includes over 100 graduation quotes, 
-                organized into categories like achievement, future, and wisdom. This provides 
-                plenty of inspiration for graduation ceremonies, cards, speeches, or 
-                personal reflection on this important milestone.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Who are the most quoted graduation speakers?</h3>
-              <p className="paragraph">
-                The most quoted graduation speakers include Eleanor Roosevelt, 
-                Nelson Mandela, Steve Jobs, and Dr. Seuss. These leaders and 
-                innovators have shared timeless wisdom about education, achievement, and 
-                the courage to pursue dreams that continues to inspire graduates worldwide.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">How can I use graduation quotes effectively?</h3>
-              <p className="paragraph">
-                Use graduation quotes in graduation speeches, cards, yearbooks, 
-                or as personal affirmations. They work beautifully for social media posts 
-                celebrating graduation, for inspiration during job searches, or as 
-                daily motivation during career transitions.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Are graduation quotes good for all ages?</h3>
-              <p className="paragraph">
-                Yes, graduation quotes are suitable for all ages and 
-                educational levels. Whether celebrating kindergarten graduation, high school 
-                completion, college degree, or advanced certifications, you&apos;ll find 
-                quotes that appropriately mark the significance of each achievement.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Can graduation quotes help with career planning?</h3>
-              <p className="paragraph">
-                Absolutely! Graduation quotes often contain wisdom about career 
-                success, goal setting, and professional development. They can provide 
-                perspective and motivation during job searches, career changes, or when 
-                facing professional challenges, reminding graduates of their potential and 
-                the importance of perseverance.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/graduation-quotes" category="generators" />
         </div>
       </main>
 

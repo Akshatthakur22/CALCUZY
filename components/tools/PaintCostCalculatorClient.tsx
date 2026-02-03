@@ -62,6 +62,7 @@ export default function PaintCostCalculatorClient() {
           </label>
           <input
             type="number"
+            inputMode="decimal"
             value={roomLength}
             onChange={(e) => setRoomLength(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -77,6 +78,7 @@ export default function PaintCostCalculatorClient() {
           </label>
           <input
             type="number"
+            inputMode="decimal"
             value={roomWidth}
             onChange={(e) => setRoomWidth(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -92,6 +94,7 @@ export default function PaintCostCalculatorClient() {
           </label>
           <input
             type="number"
+            inputMode="decimal"
             value={roomHeight}
             onChange={(e) => setRoomHeight(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"

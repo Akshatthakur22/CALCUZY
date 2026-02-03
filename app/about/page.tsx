@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: "About Calcuzy.app – Story, Mission & Creator",
+  title: "About Calcuzy",
   description:
     "Calcuzy.app was created by Akshat Thakur, a 3rd-year CSE student who believes in building simple, fast and privacy-friendly online tools. Learn the story behind Calcuzy and its mission.",
   keywords: "about calcuzy, calcuzy story, who created calcuzy, online tools mission, akshat thakur, utility tools",

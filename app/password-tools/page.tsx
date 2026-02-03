@@ -1,40 +1,73 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import PasswordToolsClient from '@/components/tools/PasswordToolsClient'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Password Strength Checker & Hash Generator | Calcuzy.app',
-  description: 'Check password strength and generate SHA-256 hashes with our free password security tools. Analyze password security and create secure hashes.',
-  keywords: 'password strength checker, password security, hash generator, SHA-256, password analyzer, secure password checker',
-  url: 'https://Calcuzy.app/password-tools',
+  title: 'Password Strength Checker & Hash Generator',
+  description: 'Check password strength and generate SHA-256 hashes with our free password security tools. Analyze password security, get improvement tips, and create secure hashes.',
+  keywords: 'password strength checker, password security, hash generator, SHA-256, password analyzer, secure password checker, password tips',
+  url: 'https://calcuzy.app/password-tools',
   image: '/og-tools.png',
 })
 
 export default function PasswordToolsPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Password Tools",
-    "description": "Check password strength and generate SHA-256 hashes for security",
-    "url": "https://Calcuzy.app/password-tools",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+  const structuredData = createToolSchema({
+    name: 'Password Strength Checker & Hash Generator',
+    description: 'Check password strength, get security recommendations, and generate SHA-256 hashes',
+    url: 'https://calcuzy.app/password-tools',
+    category: 'UtilityApplication',
+    features: ['Password strength analysis', 'Security recommendations', 'SHA-256 hash generation', 'Privacy-first design', 'No data storage']
+  })
+
+  const faqData = [
+    {
+      question: 'Is my password safe when using this tool?',
+      answer: 'Yes, your password is completely safe. Our password strength checker runs entirely in your browser using JavaScript. No passwords are ever sent to our servers, stored, or logged. All analysis happens locally on your device, ensuring complete privacy.'
+    },
+    {
+      question: 'What makes a password strong?',
+      answer: 'A strong password is at least 12 characters long, combines uppercase and lowercase letters, numbers, and special characters, avoids common words or patterns, and is unique to each account. Our tool checks all these factors and provides specific improvement suggestions.'
+    },
+    {
+      question: 'What is SHA-256 hashing and why would I use it?',
+      answer: 'SHA-256 is a cryptographic hash function that converts any input into a unique 64-character hexadecimal string. It\'s a one-way function – you can\'t reverse it to get the original text. Developers use it for password storage, file integrity verification, and digital signatures.'
+    },
+    {
+      question: 'Should I use this hash for storing passwords in my application?',
+      answer: 'For production password storage, use specialized algorithms like bcrypt, Argon2, or PBKDF2 with salt. Plain SHA-256 is vulnerable to rainbow table attacks. Our hash generator is useful for educational purposes, file verification, and understanding cryptographic concepts.'
     }
-  }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
+  const steps = [
+    { title: 'Enter Your Password', description: 'Type or paste a password into the input field. Your password never leaves your device.' },
+    { title: 'Review Strength Analysis', description: 'See the real-time strength meter and score based on length, complexity, and patterns.' },
+    { title: 'Check Improvement Tips', description: 'Review specific suggestions to make your password stronger and more secure.' },
+    { title: 'Generate Hash (Optional)', description: 'Click to generate a SHA-256 hash of your password for verification or educational purposes.' }
+  ]
+
+  const tips = [
+    'Use a password manager to generate and store unique passwords for each account',
+    'Enable two-factor authentication (2FA) wherever available for extra security',
+    'Avoid using personal information like birthdays, names, or phone numbers',
+    'Consider using passphrases – multiple random words strung together',
+    'Change passwords immediately if a service reports a data breach'
+  ]
 
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       
@@ -57,180 +90,44 @@ export default function PasswordToolsPage() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={300}>
-            <h2 className="heading-2 mb-6">About Password Security</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-3">Understanding Password Strength</h3>
-                <p className="paragraph">
-                  Password strength is a measure of how difficult a password is to guess or crack through 
-                  brute force attacks. Strong passwords typically combine length, complexity, and unpredictability. 
-                  Modern computing power can crack simple passwords in seconds, making strong password practices 
-                  essential for online security.
+        {/* Tool Info Section */}
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Password Security Tools"
+            description={
+              <>
+                <p className="mb-4">
+                  Password security is your first line of defense against unauthorized access. 
+                  Strong passwords protect your personal data, financial accounts, and digital identity 
+                  from hackers and automated attacks.
                 </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Components of a Strong Password</h3>
-                <div className="space-y-3">
-                  <div className="bg-green-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Length (12+ characters)</h4>
-                    <p className="paragraph mb-0">
-                      Longer passwords exponentially increase the time required to crack them. Each additional 
-                      character multiplies the complexity by the number of possible characters.
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2">🔒 Strength Checker</h4>
+                    <p className="text-sm text-blue-700">
+                      Analyzes length, character variety, patterns, and common weaknesses to score your password.
                     </p>
                   </div>
-                  <div className="bg-green-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Character Variety</h4>
-                    <p className="paragraph mb-0">
-                      Mix uppercase letters, lowercase letters, numbers, and special characters. This creates 
-                      a larger character set, making brute force attacks more difficult.
-                    </p>
-                  </div>
-                  <div className="bg-green-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Unpredictability</h4>
-                    <p className="paragraph mb-0">
-                      Avoid common patterns, dictionary words, personal information, and sequential characters. 
-                      Random combinations are much harder to guess than memorable phrases.
+                  <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                    <h4 className="font-semibold text-emerald-800 mb-2">🔐 Hash Generator</h4>
+                    <p className="text-sm text-emerald-700">
+                      Creates SHA-256 cryptographic hashes for verification, development, and security testing.
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Understanding Hash Functions</h3>
-                <p className="paragraph">
-                  A hash function is a mathematical algorithm that converts input data into a fixed-size 
-                  string of characters. SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash 
-                  function that produces a unique 256-bit (64-character) hash for any input. Hashes are 
-                  one-way functions - you can&apos;t reverse-engineer the original input from the hash.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Common Password Vulnerabilities</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Using personal information (birthdays, names, phone numbers)</li>
-                  <li>Common words and phrases (password, 123456, qwerty)</li>
-                  <li>Sequential or repeated characters (abcdef, 111111)</li>
-                  <li>Using the same password across multiple accounts</li>
-                  <li>Storing passwords in unencrypted text files</li>
-                  <li>Sharing passwords via email or messaging apps</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Password Security Best Practices</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Use unique passwords for each account</li>
-                  <li>Enable two-factor authentication (2FA) when available</li>
-                  <li>Use a reputable password manager for storage</li>
-                  <li>Change passwords regularly for sensitive accounts</li>
-                  <li>Avoid using public Wi-Fi for password-sensitive activities</li>
-                  <li>Be cautious of phishing attempts requesting password changes</li>
-                </ul>
-              </div>
-            </div>
-          </Card>
+              </>
+            }
+            steps={steps}
+            faqs={faqData}
+            tips={tips}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={400}>
-            <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-2">How secure is this password strength checker?</h3>
-                <p className="paragraph">
-                  Our password strength checker runs entirely in your browser using JavaScript. No passwords 
-                  are sent to our servers or stored anywhere. All calculations happen locally on your device, 
-                  ensuring your passwords remain private and secure.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What makes a password truly secure?</h3>
-                <p className="paragraph">
-                  A truly secure password is long (12+ characters), complex (mix of character types), 
-                  unique to each account, and unpredictable. The most secure approach is using a password 
-                  manager to generate and store random passwords for each account.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Why should I use a hash generator?</h3>
-                <p className="paragraph">
-                  Hash generators are useful for developers storing passwords securely, verifying file integrity, 
-                  and creating digital signatures. When storing passwords, always use salted hashes with proper 
-                  cryptographic algorithms like bcrypt or Argon2, not plain SHA-256.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Can passwords be cracked from their hashes?</h3>
-                <p className="paragraph">
-                  Yes, simple hashes can be cracked using rainbow tables and dictionary attacks. That&apos;s why 
-                  password storage should use salted hashes with slow algorithms like bcrypt. Our hash generator 
-                  is for educational purposes and verification, not for secure password storage.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">How often should I change my passwords?</h3>
-                <p className="paragraph">
-                  For high-security accounts, change passwords every 3-6 months or immediately if you suspect 
-                  a breach. For less critical accounts, annual changes may suffice. Always change passwords 
-                  after security incidents or when a service reports a data breach.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What is two-factor authentication (2FA)?</h3>
-                <p className="paragraph">
-                  2FA adds an extra layer of security by requiring two forms of identification: something 
-                  you know (password) and something you have (phone, authenticator app). Even if someone 
-                  steals your password, they can&apos;t access your account without the second factor.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Are password managers safe?</h3>
-                <p className="paragraph">
-                  Reputable password managers are generally very safe, using strong encryption and security 
-                  practices. They&apos;re much safer than reusing passwords or storing them in plain text. 
-                  Choose well-established providers with good security reputations and enable 2FA.
-                </p>
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={500}>
-            <h2 className="heading-2 mb-6">Related Security Tools</h2>
-            <div className="grid-responsive-3 gap-6">
-              <Link href="/tools" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">All Security Tools</h3>
-                  <p className="text-sm text-gray-600">Explore our complete collection of security utilities</p>
-                </div>
-              </Link>
-              <Link href="/random-number-generator" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Random Number Generator</h3>
-                  <p className="text-sm text-gray-600">Generate secure random numbers for various purposes</p>
-                </div>
-              </Link>
-              <Link href="/unit-converter" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Unit Converter</h3>
-                  <p className="text-sm text-gray-600">Convert between different units of measurement</p>
-                </div>
-              </Link>
-            </div>
-          </Card>
+        {/* Related Tools */}
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/password-tools" category="utility" />
         </div>
       </main>
 

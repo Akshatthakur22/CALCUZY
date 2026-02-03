@@ -1,43 +1,79 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import CryptoTaxCalculatorClient from '@/components/tools/CryptoTaxCalculatorClient'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Crypto Tax Calculator - Bitcoin & Cryptocurrency Capital Gains | Calcuzy.app',
+  title: 'Crypto Tax Calculator',
   description: 'Calculate cryptocurrency taxes, capital gains, and cost basis using FIFO, LIFO, or Average Cost methods. Free crypto tax calculator for Bitcoin, Ethereum, and altcoins.',
   keywords: 'crypto tax calculator, bitcoin tax, cryptocurrency capital gains, FIFO LIFO, crypto cost basis, crypto tax software',
-  url: 'https://Calcuzy.app/crypto-tax-calculator',
+  url: 'https://calcuzy.app/crypto-tax-calculator',
   image: '/og-tools.png',
 })
 
 export default function CryptoTaxCalculatorPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "Crypto Tax Calculator",
-    "description": "Calculate cryptocurrency taxes, capital gains, and cost basis using different accounting methods",
-    "url": "https://Calcuzy.app/crypto-tax-calculator",
-    "provider": {
-      "@type": "Organization",
-      "name": "Calcuzy.app",
-      "url": "https://Calcuzy.app"
+  const structuredData = createToolSchema({
+    name: 'Crypto Tax Calculator',
+    description: 'Calculate cryptocurrency taxes, capital gains, and cost basis using different accounting methods',
+    url: 'https://calcuzy.app/crypto-tax-calculator',
+    category: 'FinanceApplication',
+    features: ['FIFO calculation', 'LIFO calculation', 'Average Cost method', 'Multi-transaction support', 'Tax summary report']
+  })
+
+  const faqData = [
+    {
+      question: 'What is the difference between FIFO and LIFO for crypto taxes?',
+      answer: 'FIFO (First In, First Out) sells your oldest crypto first, often resulting in long-term capital gains. LIFO (Last In, First Out) sells your newest crypto first, which may result in short-term gains or losses depending on market conditions.'
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+    {
+      question: 'How does the IRS treat cryptocurrency?',
+      answer: 'The IRS treats cryptocurrency as property. Every sale, trade, or use of crypto is a taxable event. You must report capital gains or losses based on the difference between your cost basis and fair market value at the time of transaction.'
+    },
+    {
+      question: 'Do I need to report crypto if I just hold it?',
+      answer: 'No, simply holding cryptocurrency is not a taxable event. You only need to report when you sell, trade, spend, or receive crypto as income (mining, staking, airdrops).'
+    },
+    {
+      question: 'What records should I keep for crypto taxes?',
+      answer: 'Keep records of all transactions including dates, amounts, prices, fees, wallet addresses, and exchange statements. Document the fair market value at the time of each transaction.'
+    },
+    {
+      question: 'Can I deduct crypto losses on my taxes?',
+      answer: 'Yes, you can offset capital gains with crypto losses. If losses exceed gains, you can deduct up to $3,000 against ordinary income annually, with excess losses carried forward to future years.'
     }
-  }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
+  const steps = [
+    { title: 'Add Transactions', description: 'Enter your buy and sell transactions with dates, amounts, prices, and any fees paid.' },
+    { title: 'Select Cost Basis Method', description: 'Choose FIFO, LIFO, or Average Cost based on your tax strategy and preference.' },
+    { title: 'Review Calculations', description: 'The calculator matches sells with buys and calculates gains/losses for each transaction.' },
+    { title: 'Get Tax Summary', description: 'View your total capital gains, losses, and estimated tax liability.' },
+    { title: 'Export Results', description: 'Copy or share your tax summary for record-keeping or tax preparation.' }
+  ]
+
+  const tips = [
+    'Use FIFO for long-term holders to maximize long-term capital gains rates',
+    'Consider LIFO during market downturns to realize short-term losses',
+    'Track every transaction including swaps, which are taxable events',
+    'Document your cost basis for airdrops and mining rewards',
+    'Consider tax-loss harvesting before year-end to offset gains'
+  ]
 
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       
@@ -60,157 +96,44 @@ export default function CryptoTaxCalculatorPage() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={300}>
-            <h2 className="heading-2 mb-6">Understanding Crypto Tax Calculation</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-3">What is Crypto Tax?</h3>
-                <p className="paragraph">
+        {/* Tool Info Section */}
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Crypto Tax Calculator"
+            description={
+              <>
+                <p className="mb-4">
                   Cryptocurrency tax is calculated on capital gains when you sell, trade, or spend your digital assets. 
                   The IRS treats cryptocurrency as property, meaning every taxable event requires calculating the difference 
                   between your cost basis and the fair market value at the time of the transaction.
                 </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Cost Basis Methods Explained</h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">FIFO (First In, First Out)</h4>
-                    <p className="paragraph mb-0">
-                      The oldest cryptocurrency you purchased is sold first. This is the default method for most taxpayers 
-                      and often results in long-term capital gains for assets held over a year.
-                    </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2">FIFO</h4>
+                    <p className="text-sm text-blue-700">First In, First Out - sells oldest crypto first</p>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">LIFO (Last In, First Out)</h4>
-                    <p className="paragraph mb-0">
-                      The most recently purchased cryptocurrency is sold first. This can be beneficial during market downturns 
-                      as it may realize short-term losses that can offset other gains.
-                    </p>
+                  <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                    <h4 className="font-semibold text-amber-800 mb-2">LIFO</h4>
+                    <p className="text-sm text-amber-700">Last In, First Out - sells newest crypto first</p>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Average Cost</h4>
-                    <p className="paragraph mb-0">
-                      Calculates an average purchase price across all holdings. This method simplifies tracking and can 
-                      smooth out tax impacts over time.
-                    </p>
+                  <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                    <h4 className="font-semibold text-emerald-800 mb-2">Average Cost</h4>
+                    <p className="text-sm text-emerald-700">Uses average price across all purchases</p>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Tax Calculation Formula</h3>
-                <div className="bg-gray-50 p-4 rounded-lg font-mono text-sm">
-                  Capital Gain = Sale Price - Cost Basis - Transaction Fees<br />
-                  Tax Liability = Capital Gain × Tax Rate<br />
-                  Net Proceeds = Sale Price - Tax - Fees
-                </div>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Common Use Cases</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Trading cryptocurrencies on exchanges</li>
-                  <li>Selling crypto for fiat currency</li>
-                  <li>Using cryptocurrency to purchase goods or services</li>
-                  <li>Converting one cryptocurrency to another</li>
-                  <li>Earning cryptocurrency as income</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-3">Tips for Accurate Tax Reporting</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Keep detailed records of all transactions including dates, amounts, and fees</li>
-                  <li>Track your cost basis for each cryptocurrency purchase</li>
-                  <li>Consider the holding period for short-term vs long-term tax rates</li>
-                  <li>Document any crypto-to-crypto trades as taxable events</li>
-                  <li>Consult with a tax professional for complex situations</li>
-                </ul>
-              </div>
-            </div>
-          </Card>
+              </>
+            }
+            steps={steps}
+            faqs={faqData}
+            tips={tips}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={400}>
-            <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="heading-3 mb-2">Do I have to pay taxes on cryptocurrency?</h3>
-                <p className="paragraph">
-                  Yes, in most countries including the US, cryptocurrency is subject to capital gains tax when you sell, 
-                  trade, or spend it. However, simply holding cryptocurrency or transferring between your own wallets 
-                  is generally not a taxable event.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What&apos;s the difference between short-term and long-term capital gains?</h3>
-                <p className="paragraph">
-                  Short-term capital gains apply to assets held for one year or less and are taxed at your ordinary 
-                  income tax rate. Long-term capital gains apply to assets held for more than one year and receive 
-                  preferential tax rates (0%, 15%, or 20% depending on your income).
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">How do I calculate cost basis for cryptocurrency?</h3>
-                <p className="paragraph">
-                  Cost basis is the original purchase price of your cryptocurrency plus any transaction fees. Our calculator 
-                  supports FIFO, LIFO, and Average Cost methods to help you choose the most advantageous approach 
-                  for your tax situation.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">Are crypto-to-crypto trades taxable?</h3>
-                <p className="paragraph">
-                  Yes, trading one cryptocurrency for another is considered a taxable event. You must calculate the capital 
-                  gain based on the fair market value of the crypto you received at the time of the trade.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="heading-3 mb-2">What records should I keep for crypto taxes?</h3>
-                <p className="paragraph">
-                  Keep records of all transactions including dates, amounts, prices, fees, and the fair market value 
-                  at the time of each transaction. Exchange statements, wallet addresses, and any documentation of 
-                  lost or stolen crypto should also be preserved.
-                </p>
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <Card animation="fade-in-up" delay={500}>
-            <h2 className="heading-2 mb-6">Related Financial Tools</h2>
-            <div className="grid-responsive-3 gap-6">
-              <Link href="/capital-gains-calculator" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Capital Gains Calculator</h3>
-                  <p className="text-sm text-gray-600">Calculate stock and investment capital gains with tax optimization</p>
-                </div>
-              </Link>
-              <Link href="/index-fund-return-calculator" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">Index Fund Calculator</h3>
-                  <p className="text-sm text-gray-600">Calculate returns and growth for index fund investments</p>
-                </div>
-              </Link>
-              <Link href="/tools" className="block group">
-                <div className="p-6 border border-gray-200 rounded-lg hover:border-accent transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-accent">All Financial Tools</h3>
-                  <p className="text-sm text-gray-600">Explore our complete collection of financial calculators</p>
-                </div>
-              </Link>
-            </div>
-          </Card>
+        {/* Related Tools */}
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/crypto-tax-calculator" category="finance" />
         </div>
       </main>
 

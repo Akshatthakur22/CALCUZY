@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { ToolWrapper, ToolInput, ToolResult, ToolButton } from '@/components/ToolWrapper'
+import CopyButton from '@/components/CopyButton'
 
 export default function PasswordToolsClient() {
   const [password, setPassword] = useState('')
@@ -94,28 +96,26 @@ export default function PasswordToolsClient() {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">Password Strength Checker & Hash Generator</h2>
-      
+    <ToolWrapper>
       <div className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Enter Password to Test
-          </label>
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Type your password here..."
-          />
-        </div>
+        <ToolInput
+          id="password"
+          label="Enter Password to Test"
+          type="text"
+          value={password}
+          onChange={(val) => {
+            setPassword(val)
+            calculateStrength(val)
+          }}
+          placeholder="Type your password here..."
+          helpText="Your password is never stored or transmitted"
+        />
 
         {password && (
           <div className="space-y-4">
             <div>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-gray-700">Password Strength</span>
+                <span className="text-sm font-medium text-slate-700">Password Strength</span>
                 <span className="text-sm font-bold" style={{ 
                   color: strength.color.replace('bg-', '').replace('-500', '') === 'red' ? '#ef4444' :
                          strength.color.replace('bg-', '').replace('-500', '') === 'orange' ? '#f97316' :
@@ -125,7 +125,7 @@ export default function PasswordToolsClient() {
                   {strength.label}
                 </span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-3">
+              <div className="w-full bg-slate-200 rounded-full h-3">
                 <div 
                   className={`h-3 rounded-full transition-all duration-300 ${strength.color}`}
                   style={{ width: strength.width }}
@@ -134,9 +134,9 @@ export default function PasswordToolsClient() {
             </div>
 
             {getPasswordTips().length > 0 && (
-              <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                <h4 className="font-medium text-yellow-800 mb-2">Suggestions to improve:</h4>
-                <ul className="text-sm text-yellow-700 space-y-1">
+              <div className="p-4 bg-amber-50 rounded-xl border border-amber-100">
+                <h4 className="font-medium text-amber-800 mb-2">Suggestions to improve:</h4>
+                <ul className="text-sm text-amber-700 space-y-1">
                   {getPasswordTips().map((tip, index) => (
                     <li key={index} className="flex items-start">
                       <span className="mr-2">•</span>
@@ -149,33 +149,32 @@ export default function PasswordToolsClient() {
           </div>
         )}
 
-        <div className="border-t pt-6">
-          <button
+        <div className="border-t border-slate-100 pt-6">
+          <ToolButton 
             onClick={generateHash}
             disabled={!password}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
             Generate SHA-256 Hash
-          </button>
+          </ToolButton>
 
           {hashResult && (
-            <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-              <h4 className="font-medium text-gray-700 mb-2">SHA-256 Hash:</h4>
-              <div className="bg-white p-3 rounded border border-gray-200 break-all font-mono text-sm">
-                {hashResult}
+            <ToolResult 
+              copyText={hashResult}
+              copyLabel="SHA-256 Hash"
+              className="mt-4"
+            >
+              <div className="text-left">
+                <h4 className="font-medium text-slate-700 mb-2 text-center">SHA-256 Hash:</h4>
+                <div className="bg-white p-3 rounded-lg border border-slate-200 break-all font-mono text-xs">
+                  {hashResult}
+                </div>
               </div>
-              <button
-                onClick={() => navigator.clipboard.writeText(hashResult)}
-                className="mt-2 text-sm text-blue-600 hover:text-blue-700 font-medium"
-              >
-                Copy to Clipboard
-              </button>
-            </div>
+            </ToolResult>
           )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div className="p-4 bg-blue-50 rounded-lg">
+          <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
             <h4 className="font-medium text-blue-800 mb-2">Strong Password Tips:</h4>
             <ul className="text-sm text-blue-700 space-y-1">
               <li>• Use 12+ characters</li>
@@ -186,9 +185,9 @@ export default function PasswordToolsClient() {
             </ul>
           </div>
           
-          <div className="p-4 bg-green-50 rounded-lg">
-            <h4 className="font-medium text-green-800 mb-2">Security Best Practices:</h4>
-            <ul className="text-sm text-green-700 space-y-1">
+          <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+            <h4 className="font-medium text-emerald-800 mb-2">Security Best Practices:</h4>
+            <ul className="text-sm text-emerald-700 space-y-1">
               <li>• Enable two-factor authentication</li>
               <li>• Use a password manager</li>
               <li>• Update passwords regularly</li>
@@ -198,6 +197,6 @@ export default function PasswordToolsClient() {
           </div>
         </div>
       </div>
-    </div>
+    </ToolWrapper>
   )
 }

@@ -1,19 +1,63 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import DateDifferenceClient from '@/components/client/DateDifferenceClient'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Date Difference Calculator – Calculate Days Between Dates',
+  title: 'Date Difference Calculator',
   description: 'Calculate the exact number of days between two dates with our free date difference calculator. Perfect for planning and tracking important dates.',
   keywords: 'calculate days between dates, date difference, date calculator',
+  url: 'https://calcuzy.app/date-difference',
+  image: '/og-tools.png',
 })
 
 export default function DateDifference() {
+  const structuredData = createToolSchema({
+    name: 'Date Difference Calculator',
+    description: 'Calculate the exact number of days between two dates with our free date difference calculator.',
+    url: 'https://calcuzy.app/date-difference',
+    category: 'UtilityApplication',
+    features: ['Days calculation', 'Weeks and months', 'Leap year support', 'Past and future dates']
+  })
+
+  const faqData = [
+  {
+    question: 'How accurate is this date calculator?',
+    answer: 'Our date calculator is extremely accurate, accounting for leap years and varying month lengths for precise results.'
+  },
+  {
+    question: 'Can I calculate dates in the past?',
+    answer: 'Yes, you can calculate differences between any two dates, whether in the past, present, or future.'
+  },
+  {
+    question: 'What date format should I use?',
+    answer: 'Use the standard date format by selecting dates from the calendar picker. The calculator handles different input methods.'
+  },
+  {
+    question: 'Does this account for time zones?',
+    answer: 'The calculator uses your local timezone. For cross-timezone accuracy, ensure both dates are in the same timezone context.'
+  },
+  {
+    question: 'Is my data secure when using this calculator?',
+    answer: 'Yes, all calculations happen locally in your browser. We do not store any date information or results.'
+  }
+]
+
+  const faqSchema = createFAQSchema(faqData)
+
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">
@@ -33,113 +77,57 @@ export default function DateDifference() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
-          <h2 className="heading-2 mb-6">About Date Difference Calculator</h2>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="paragraph">
-              Our date difference calculator provides precise calculations between any two dates, 
-              showing the exact number of days, weeks, months, and years. This tool is 
-              essential for project planning, event coordination, and tracking important milestones 
-              in your personal and professional life.
-            </p>
-            
-            <p className="paragraph">
-              Date calculations are crucial for many real-world applications. From planning 
-              vacations and business projects to tracking pregnancy terms, calculating service 
-              periods, or measuring time until important deadlines, knowing the exact duration 
-              between dates helps with precise planning and organization.
-            </p>
-            
-            <p className="paragraph">
-              The calculator accounts for leap years and varying month lengths, ensuring 
-              accurate results regardless of which dates you select. This precision makes it reliable 
-              for both short-term and long-term date difference calculations, from days to 
-              decades.
-            </p>
-            
-            <h3 className="heading-3 mt-8 mb-4">Common Uses for Date Calculation</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li className="text-secondary-text">Planning vacation and travel itineraries</li>
-              <li className="text-secondary-text">Tracking project deadlines and milestones</li>
-              <li className="text-secondary-text">Calculating age and time elapsed</li>
-              <li className="text-secondary-text">Planning events and appointments</li>
-              <li className="text-secondary-text">Calculating service periods and subscriptions</li>
-            </ul>
-            
-            <p className="paragraph">
-              Our date difference calculator is completely free to use and provides instant 
-              results without requiring any registration or personal information. The tool works 
-              seamlessly on all devices and browsers for your convenience.
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="heading-3 mb-6">Related Tools</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/age-calculator" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Age Calculator</div>
-                <div className="text-sm text-secondary-text">Calculate your exact age</div>
-              </Link>
-              <Link href="/bmi-calculator" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">BMI Calculator</div>
-                <div className="text-sm text-secondary-text">Calculate body mass index</div>
-              </Link>
-            </div>
-          </div>
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Date Difference Calculator"
+            description={
+              <>
+                <p className="mb-4">
+                  Our date difference calculator provides precise calculations between any two dates, 
+                  showing the exact number of days, weeks, months, and years. Essential for project 
+                  planning, event coordination, and tracking important milestones.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2">📅 Precise</h4>
+                    <p className="text-sm text-blue-700">
+                      Accounts for leap years and varying month lengths.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <h4 className="font-semibold text-green-800 mb-2">⚡ Instant</h4>
+                    <p className="text-sm text-green-700">
+                      Get results immediately as you select dates.
+                    </p>
+                  </div>
+                  <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                    <h4 className="font-semibold text-purple-800 mb-2">🔒 Private</h4>
+                    <p className="text-sm text-purple-700">
+                      All calculations happen locally in your browser.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={[
+              { title: 'Select Start Date', description: 'Choose your first date from the calendar.' },
+              { title: 'Select End Date', description: 'Pick your second date to compare.' },
+              { title: 'View Results', description: 'See the difference in days, weeks, months, and years.' }
+            ]}
+            faqs={faqData}
+            tips={[
+              'Use for planning vacations and travel itineraries',
+              'Track project deadlines and milestones',
+              'Calculate age and time elapsed since events',
+              'Plan events and appointments with precision'
+            ]}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="heading-3 mb-2">How accurate is this date calculator?</h3>
-              <p className="paragraph">
-                Our date calculator is extremely accurate, accounting for leap years and varying 
-                month lengths. It provides precise results down to the exact day, making 
-                it suitable for official and planning purposes.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Can I calculate dates in the past?</h3>
-              <p className="paragraph">
-                Yes, you can calculate differences between any two dates, whether they&apos;re in 
-                the past, present, or future. The calculator will show negative results 
-                for past dates and positive results for future dates.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">What date format should I use?</h3>
-              <p className="paragraph">
-                Use the standard date format (MM/DD/YYYY) by selecting dates from the 
-                calendar picker. The calculator accepts any valid date format and automatically 
-                handles different input methods for your convenience.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Does this account for time zones?</h3>
-              <p className="paragraph">
-                The calculator uses your local timezone for date calculations. For accurate 
-                results across different time zones, ensure both dates are in the same 
-                timezone context or use UTC-based calculations.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Is my data secure when using this calculator?</h3>
-              <p className="paragraph">
-                Yes, your privacy is completely protected. All calculations happen locally 
-                in your browser, and we don&apos;t store any date information or results. 
-                Your calculations remain private and secure.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/date-difference" category="date-tools" />
         </div>
       </main>
 

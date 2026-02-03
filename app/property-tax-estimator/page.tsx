@@ -4,40 +4,59 @@ import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import PropertyTaxEstimatorClient from '@/components/tools/PropertyTaxEstimatorClient'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Property Tax Estimator - Calculate Annual Property Taxes | Calcuzy.app',
+  title: 'Property Tax Estimator',
   description: 'Estimate property taxes based on home value and local tax rates. Free property tax calculator with exemptions and monthly payment estimates.',
   keywords: 'property tax calculator, home tax estimator, real estate tax, county tax rates, property tax assessment',
-  url: 'https://Calcuzy.app/property-tax-estimator',
+  url: 'https://calcuzy.app/property-tax-estimator',
   image: '/og-tools.png',
 })
 
 export default function PropertyTaxEstimatorPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "Property Tax Estimator",
-    "description": "Calculate property taxes based on home value and local tax rates",
-    "url": "https://Calcuzy.app/property-tax-estimator",
-    "provider": {
-      "@type": "Organization",
-      "name": "Calcuzy.app",
-      "url": "https://Calcuzy.app"
+  const structuredData = createToolSchema({
+    name: 'Property Tax Estimator',
+    description: 'Calculate property taxes based on home value and local tax rates with exemption support',
+    url: 'https://calcuzy.app/property-tax-estimator',
+    category: 'FinanceApplication',
+    features: ['Property value analysis', 'Tax rate calculation', 'Exemption support', 'Monthly payment breakdown']
+  })
+
+  const faqData = [
+    {
+      question: 'How are property taxes calculated?',
+      answer: 'Property taxes are calculated by multiplying your property\'s assessed value by the local tax rate (mill rate). The assessed value may differ from market value depending on your jurisdiction.'
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+    {
+      question: 'What is a homestead exemption?',
+      answer: 'A homestead exemption reduces the taxable value of your primary residence. Amounts vary by state but typically range from $5,000 to $50,000, lowering your annual tax bill.'
+    },
+    {
+      question: 'How often are property taxes reassessed?',
+      answer: 'Assessment frequency varies by location. Some areas reassess annually, while others do so every 2-5 years or only when property ownership changes.'
+    },
+    {
+      question: 'Can I appeal my property tax assessment?',
+      answer: 'Yes, most jurisdictions allow property tax appeals. You typically need to file within 30-90 days of receiving your assessment notice and provide evidence of lower value.'
+    },
+    {
+      question: 'What are average property tax rates in the US?',
+      answer: 'Average US property tax rates range from 0.5% to 2.2% depending on the state. New Jersey has the highest rates around 2.2%, while Hawaii has the lowest around 0.3%.'
     }
-  }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
 
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       

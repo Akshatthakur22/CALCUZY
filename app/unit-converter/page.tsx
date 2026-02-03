@@ -1,23 +1,77 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import UnitConverterClient from '@/components/client/UnitConverterClient'
+import RelatedTools from '@/components/RelatedTools'
+import ToolInfo from '@/components/ToolInfo'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Unit Converter – Convert Between Units',
-  description: 'Convert between different units of measurement with our free unit converter. Supports length, weight, temperature, and more conversions.',
-  keywords: 'unit converter, convert units, measurement converter, length converter',
+  title: 'Unit Converter',
+  description: 'Convert between different units of measurement instantly. Free unit converter for length, weight, temperature, and volume. Metric to imperial and more.',
+  keywords: 'unit converter, measurement converter, length converter, weight converter, metric converter, imperial converter, cm to inches, kg to lbs',
+  url: 'https://calcuzy.app/unit-converter',
+  image: '/og-tools.png',
 })
 
 export default function UnitConverter() {
+  const structuredData = createToolSchema({
+    name: 'Unit Converter',
+    description: 'Convert between different units of measurement including length, weight, temperature, and volume',
+    url: 'https://calcuzy.app/unit-converter',
+    category: 'UtilityApplication',
+    features: ['Length conversion', 'Weight conversion', 'Metric to imperial', 'Instant results', 'High precision']
+  })
+
+  const faqData = [
+    {
+      question: 'How accurate are the unit conversions?',
+      answer: 'Our unit converter uses precise mathematical formulas based on international standards. Results are calculated to 6 decimal places for high precision, making it suitable for scientific, engineering, and everyday calculations.'
+    },
+    {
+      question: 'What unit categories are supported?',
+      answer: 'We support length (cm, inches, feet, meters, km), weight (kg, lbs, oz, grams, tons), and we\'re continuously adding more categories including temperature and volume conversions.'
+    },
+    {
+      question: 'Can I convert between metric and imperial units?',
+      answer: 'Yes, our converter fully supports conversions between metric (SI) and imperial (US customary) units. Convert centimeters to inches, kilograms to pounds, and many more cross-system conversions.'
+    },
+    {
+      question: 'Does this converter work offline?',
+      answer: 'Yes, once loaded, the unit converter works completely offline in your browser. All calculations are performed locally on your device, ensuring both privacy and availability without internet connection.'
+    }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
+  const steps = [
+    { title: 'Enter Value', description: 'Type the numerical value you want to convert in the input field.' },
+    { title: 'Select Source Unit', description: 'Choose the unit you\'re converting from (e.g., centimeters, kilograms).' },
+    { title: 'Select Target Unit', description: 'Choose the unit you want to convert to (e.g., inches, pounds).' },
+    { title: 'Get Result', description: 'Click Convert to see your precise result instantly.' }
+  ]
+
+  const tips = [
+    'Switch between length and weight by selecting units from different categories',
+    'Results are shown with 6 decimal places for maximum precision',
+    'Common conversions: 1 inch = 2.54 cm, 1 kg = 2.205 lbs, 1 mile = 1.609 km',
+    'All calculations happen in your browser – your data stays private'
+  ]
+
   return (
-    <div className="min-h-screen bg-primary-bg">
+    <div className="min-h-screen bg-primary-bg fade-in">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
-      <main className="container py-12">
-        <div className="text-center mb-12">
+      <main className="container section-responsive">
+        <div className="text-center mb-12 slide-up">
           <h1 className="heading-1 text-center mb-6">
             Unit Converter
           </h1>
@@ -33,110 +87,44 @@ export default function UnitConverter() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
-          <h2 className="heading-2 mb-6">About Unit Converter</h2>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="paragraph">
-              Our unit converter provides instant conversions between different units of measurement, 
-              making it easy to work with both metric and imperial systems. Whether you&apos;re converting 
-              length, weight, or other measurements, our tool delivers accurate results instantly.
-            </p>
-            
-            <p className="paragraph">
-              Unit conversion is essential in many everyday situations, from cooking and construction 
-              to international travel and scientific calculations. Our converter supports the most 
-              commonly used units across different measurement systems, ensuring you can work with 
-              any unit format you encounter.
-            </p>
-            
-            <p className="paragraph">
-              The converter handles complex conversions automatically, accounting for the precise 
-              mathematical relationships between different units. This eliminates the need for 
-              manual calculations and reduces the risk of conversion errors in your work.
-            </p>
-            
-            <h3 className="heading-3 mt-8 mb-4">Supported Unit Categories</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li className="text-secondary-text">Length: centimeters, inches, feet, meters, kilometers</li>
-              <li className="text-secondary-text">Weight: kilograms, pounds, ounces, grams, tons</li>
-              <li className="text-secondary-text">Temperature: Celsius, Fahrenheit, Kelvin</li>
-              <li className="text-secondary-text">Volume: liters, milliliters, gallons, cups</li>
-            </ul>
-            
-            <p className="paragraph">
-              Our unit converter is completely free to use and provides instant results without 
-              requiring any registration or personal information. The tool works on all devices 
-              and browsers, making it accessible whenever you need to convert measurements.
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="heading-3 mb-6">Related Tools</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/age-calculator" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Age Calculator</div>
-                <div className="text-sm text-secondary-text">Calculate your exact age</div>
-              </Link>
-              <Link href="/bmi-calculator" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">BMI Calculator</div>
-                <div className="text-sm text-secondary-text">Calculate body mass index</div>
-              </Link>
-            </div>
-          </div>
+        {/* Tool Info Section */}
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Unit Converter"
+            description={
+              <>
+                <p className="mb-4">
+                  Our unit converter provides instant, accurate conversions between different measurement systems. 
+                  Whether you&apos;re converting between metric and imperial units or working within the same system, 
+                  our tool delivers precise results for everyday needs and professional applications.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2">📏 Length Conversions</h4>
+                    <p className="text-sm text-blue-700">
+                      Centimeters, inches, feet, meters, kilometers – perfect for DIY, construction, and travel.
+                    </p>
+                  </div>
+                  <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                    <h4 className="font-semibold text-emerald-800 mb-2">⚖️ Weight Conversions</h4>
+                    <p className="text-sm text-emerald-700">
+                      Kilograms, pounds, ounces, grams, tons – ideal for cooking, shipping, and health tracking.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={steps}
+            faqs={faqData}
+            tips={tips}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="heading-3 mb-2">How accurate are the conversions?</h3>
-              <p className="paragraph">
-                Our unit converter uses precise mathematical formulas for all conversions, ensuring 
-                accurate results to several decimal places. The conversion factors are based on 
-                international standards and are regularly updated for accuracy.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Can I convert multiple units at once?</h3>
-              <p className="paragraph">
-                Currently, our converter handles one conversion at a time to maintain simplicity 
-                and clarity. You can easily perform multiple conversions by entering different 
-                values and selecting different unit pairs.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">What units are supported?</h3>
-              <p className="paragraph">
-                We support the most commonly used units in each category, including both metric 
-                and imperial systems. This includes centimeters, inches, feet, meters, kilometers 
-                for length, and kilograms, pounds, ounces, grams, tons for weight.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Is this converter suitable for scientific use?</h3>
-              <p className="paragraph">
-                Yes, our converter provides accurate results suitable for most scientific and 
-                engineering applications. However, for highly specialized scientific work, 
-                always verify critical calculations with domain-specific tools.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Does this work offline?</h3>
-              <p className="paragraph">
-                Once loaded, the converter functions completely offline in your browser. 
-                All calculations are performed locally, ensuring your privacy and enabling 
-                use even without an internet connection.
-              </p>
-            </div>
-          </div>
+        {/* Related Tools */}
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/unit-converter" category="utility" />
         </div>
       </main>
 

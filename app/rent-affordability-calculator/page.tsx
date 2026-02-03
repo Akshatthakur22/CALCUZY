@@ -4,40 +4,59 @@ import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import RentAffordabilityCalculatorClient from '@/components/tools/RentAffordabilityCalculatorClient'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Rent Affordability Calculator - How Much Rent Can I Afford? | Calcuzy.app',
+  title: 'Rent Affordability Calculator',
   description: 'Calculate how much rent you can afford based on income and expenses. Free rent affordability calculator with 30% rule and financial guidelines.',
   keywords: 'rent affordability calculator, how much rent can i afford, rent to income ratio, 30 rule rent, housing budget calculator',
-  url: 'https://Calcuzy.app/rent-affordability-calculator',
+  url: 'https://calcuzy.app/rent-affordability-calculator',
   image: '/og-tools.png',
 })
 
 export default function RentAffordabilityCalculatorPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "Rent Affordability Calculator",
-    "description": "Calculate how much rent you can afford based on income and expenses",
-    "url": "https://Calcuzy.app/rent-affordability-calculator",
-    "provider": {
-      "@type": "Organization",
-      "name": "Calcuzy.app",
-      "url": "https://Calcuzy.app"
+  const structuredData = createToolSchema({
+    name: 'Rent Affordability Calculator',
+    description: 'Calculate how much rent you can afford based on income and expenses with the 30% rule',
+    url: 'https://calcuzy.app/rent-affordability-calculator',
+    category: 'FinanceApplication',
+    features: ['30% rule calculation', 'Income-based analysis', 'Monthly budget breakdown', 'Financial guidelines']
+  })
+
+  const faqData = [
+    {
+      question: 'What is the 30% rule for rent?',
+      answer: 'The 30% rule suggests spending no more than 30% of your gross monthly income on rent. This helps ensure you have enough for other expenses, savings, and emergencies.'
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+    {
+      question: 'Should I include utilities in my rent budget?',
+      answer: 'Yes, ideally your total housing costs including utilities should stay within 30-35% of your income. Factor in average utility costs when calculating affordability.'
+    },
+    {
+      question: 'What if rent in my area exceeds 30% of my income?',
+      answer: 'In high-cost areas, many people spend 35-40% on rent. Consider roommates, further locations, or increasing income to improve affordability.'
+    },
+    {
+      question: 'How do landlords calculate rent affordability?',
+      answer: 'Most landlords require monthly income of 2.5-3x the rent amount. They verify income through pay stubs, tax returns, or employment letters.'
+    },
+    {
+      question: 'Is gross or net income used for rent calculations?',
+      answer: 'The 30% rule typically uses gross income (before taxes). However, using net income gives a more realistic picture of your actual budget.'
     }
-  }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
 
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       

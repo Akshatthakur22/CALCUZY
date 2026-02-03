@@ -1,18 +1,49 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Love Quotes – Romantic & Heartfelt Sayings',
   description: 'Find beautiful love quotes from our collection of romantic and heartfelt sayings. Perfect for expressing your feelings to loved ones.',
   keywords: 'love quotes, romantic quotes, heartfelt sayings, relationship quotes',
+  url: 'https://calcuzy.app/love-quotes',
+  image: '/og-quotes.png',
 })
 
 export default function LoveQuotes() {
+  const structuredData = createToolSchema({
+    name: 'Love Quotes Collection',
+    description: 'Collection of 100+ romantic and heartfelt love quotes',
+    url: 'https://calcuzy.app/love-quotes',
+    category: 'UtilityApplication',
+    features: ['100+ quotes', 'Romantic quotes', 'Relationship quotes', 'Free to use']
+  })
+
+  const faqData = [
+    {
+      question: 'How many love quotes are in the collection?',
+      answer: 'Our comprehensive collection includes over 100 love quotes, organized into categories like romantic, relationship, and inspirational themes.'
+    },
+    {
+      question: 'What makes a good love quote?',
+      answer: 'A good love quote captures the essence of romantic connection, emphasizing vulnerability, trust, and the courage to open your heart.'
+    },
+    {
+      question: 'How can I use love quotes?',
+      answer: 'Use love quotes in Valentine\'s Day cards, anniversary messages, wedding vows, or as daily affirmations of your relationship.'
+    },
+    {
+      question: 'Are love quotes suitable for all relationships?',
+      answer: 'Yes, love quotes are suitable for all types of relationships - new romance, long-term partnerships, family love, or friendship.'
+    }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
   const romanticQuotes = [
     'Love is composed of a single soul inhabiting two bodies. - Aristotle',
     'The best thing to hold onto in life is each other. - Audrey Hepburn',
@@ -57,6 +88,14 @@ export default function LoveQuotes() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">
@@ -110,126 +149,57 @@ export default function LoveQuotes() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
-          <h2 className="heading-2 mb-6">About Love Quotes</h2>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="paragraph">
-              Love quotes capture the essence of romance, connection, and the 
-              profound emotions that make relationships meaningful. Our collection of 100+ love 
-              quotes celebrates the beauty of human connection, the courage to be vulnerable, 
-              and the joy that comes from sharing your heart with someone special.
-            </p>
-            
-            <p className="paragraph">
-              The best love quotes resonate because they speak to universal 
-              experiences of the heart - the excitement of new romance, the comfort 
-              of long-term relationships, and the bittersweet beauty of love in all 
-              its forms. Whether from famous poets, philosophers, or everyday 
-              people, these words capture the feeling that makes life worth living.
-            </p>
-            
-            <p className="paragraph">
-              Love quotes serve as beautiful reminders that love is both 
-              powerful and gentle. They encourage us to be brave in our emotions, to 
-              cherish the connections we have, and to remember that the greatest 
-              adventure is opening your heart to another person. Love transforms ordinary 
-              moments into extraordinary memories.
-            </p>
-            
-            <h3 className="heading-3 mt-8 mb-4">The Power of Love Quotes</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li className="text-secondary-text"><strong>Connection:</strong> Building meaningful relationships</li>
-              <li className="text-secondary-text"><strong>Vulnerability:</strong> Opening your heart to another</li>
-              <li className="text-secondary-text"><strong>Courage:</strong> Being brave in love</li>
-              <li className="text-secondary-text"><strong>Growth:</strong> Learning and evolving together</li>
-              <li className="text-secondary-text"><strong>Appreciation:</strong> Valuing your partner</li>
-              <li className="text-secondary-text"><strong>Support:</strong> Being there through challenges</li>
-            </ul>
-            
-            <p className="paragraph">
-              Our love quotes collection is completely free to browse and includes 
-              quotes suitable for all occasions - anniversaries, Valentine&apos;s Day, 
-              wedding vows, or simply expressing your feelings. Whether you&apos;re 
-              seeking inspiration for a new relationship, celebrating existing love, or 
-              understanding the complexities of the heart, you&apos;ll find the perfect words 
-              to express your emotions.
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="heading-3 mb-6">Related Quote Collections</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/motivational-quotes" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Motivational Quotes</div>
-                <div className="text-sm text-secondary-text">Inspiring quotes for success</div>
-              </Link>
-              <Link href="/aesthetic-quotes" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Aesthetic Quotes</div>
-                <div className="text-sm text-secondary-text">Beautiful and inspiring quotes</div>
-              </Link>
-            </div>
-          </div>
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Love Quotes"
+            description={
+              <>
+                <p className="mb-4">
+                  Love quotes capture the essence of romance, connection, and the 
+                  profound emotions that make relationships meaningful. Our collection celebrates 
+                  the beauty of human connection and the joy of sharing your heart.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-pink-50 p-4 rounded-xl border border-pink-100">
+                    <h4 className="font-semibold text-pink-800 mb-2">💕 Romantic</h4>
+                    <p className="text-sm text-pink-700">
+                      Express deep feelings and passion for your partner.
+                    </p>
+                  </div>
+                  <div className="bg-red-50 p-4 rounded-xl border border-red-100">
+                    <h4 className="font-semibold text-red-800 mb-2">💑 Relationships</h4>
+                    <p className="text-sm text-red-700">
+                      Wisdom about building and nurturing lasting love.
+                    </p>
+                  </div>
+                  <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                    <h4 className="font-semibold text-purple-800 mb-2">✨ Inspirational</h4>
+                    <p className="text-sm text-purple-700">
+                      Uplifting messages about the power of love.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={[
+              { title: 'Browse Quotes', description: 'Explore our curated collection of love quotes.' },
+              { title: 'Find Your Match', description: 'Discover quotes that express your feelings.' },
+              { title: 'Share the Love', description: 'Use quotes in cards, messages, or vows.' }
+            ]}
+            faqs={faqData}
+            tips={[
+              'Use love quotes in Valentine\'s Day cards and messages',
+              'Include quotes in anniversary celebrations',
+              'Add quotes to wedding vows or speeches',
+              'Share quotes with your partner as daily reminders'
+            ]}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="heading-3 mb-2">How many love quotes are in the collection?</h3>
-              <p className="paragraph">
-                Our comprehensive collection includes over 100 love quotes, 
-                organized into categories like romantic, relationship, and inspirational 
-                themes. This provides plenty of inspiration for expressing your feelings, 
-                celebrating anniversaries, or simply sharing the beauty of love.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">What makes a good love quote?</h3>
-              <p className="paragraph">
-                A good love quote captures the essence of romantic connection, 
-                emphasizing vulnerability, trust, and the courage to open your heart. 
-                The best quotes speak to universal experiences of love that resonate 
-                across different cultures and time periods, making them timeless and 
-                meaningful.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">How can I use love quotes?</h3>
-              <p className="paragraph">
-                Use love quotes in Valentine&apos;s Day cards, anniversary 
-                messages, wedding vows, or as daily affirmations of your relationship. 
-                They work beautifully for social media posts about love, personal 
-                journaling, or simply expressing your feelings to someone special.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Are love quotes suitable for all relationships?</h3>
-              <p className="paragraph">
-                Yes, love quotes are suitable for all types of relationships 
-                - new romance, long-term partnerships, family love, or friendship. 
-                Our collection includes quotes that celebrate love in its many forms, 
-                making them appropriate for any stage of a relationship.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Can love quotes improve my relationship?</h3>
-              <p className="paragraph">
-                Absolutely! Love quotes can enhance relationships by promoting 
-                better communication, encouraging appreciation, and reminding partners 
-                of their importance. They provide perspective during challenges and 
-                celebrate the beauty of your unique connection, helping to strengthen 
-                your bond.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/love-quotes" category="generators" />
         </div>
       </main>
 

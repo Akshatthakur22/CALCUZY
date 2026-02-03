@@ -5,11 +5,11 @@ import Card from '@/components/Card'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Privacy Policy - Calcuzy.app',
+  title: 'Privacy Policy',
   description:
     'Learn how Calcuzy.app protects your privacy. We do not collect personal data and all calculations happen locally in your browser.',
   keywords: 'privacy policy, data protection, user privacy, calcuzy policy',
-  url: 'https://Calcuzy.app/privacy-policy',
+  url: 'https://calcuzy.app/privacy-policy',
   image: '/og-default.png',
 })
 
@@ -19,11 +19,11 @@ export default function PrivacyPolicyPage() {
     "@type": "WebPage",
     "name": "Privacy Policy",
     "description": "Calcuzy.app privacy policy explaining data protection and user privacy practices",
-    "url": "https://Calcuzy.app/privacy-policy",
+    "url": "https://calcuzy.app/privacy-policy",
     "mainEntity": {
       "@type": "Organization",
       "name": "Calcuzy.app",
-      "url": "https://Calcuzy.app"
+      "url": "https://calcuzy.app"
     }
   }
 

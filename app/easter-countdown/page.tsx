@@ -1,23 +1,76 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CountdownEaster from '@/components/client/CountdownEaster'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Easter 2026 Countdown – How Many Days Left?',
   description: 'Count down to Easter 2026 with our precise timer. See exactly how many days, hours, minutes, and seconds remain until Easter Sunday.',
   keywords: 'easter timer, easter countdown, days until easter, easter 2026',
+  url: 'https://calcuzy.app/easter-countdown',
+  image: '/og-countdowns.png',
 })
 
 export default function EasterCountdown() {
+  const structuredData = createToolSchema({
+    name: 'Easter Countdown Timer',
+    description: 'Count down to Easter 2026 with our precise timer',
+    url: 'https://calcuzy.app/easter-countdown',
+    category: 'UtilityApplication',
+    features: ['Real-time countdown', 'Days, hours, minutes, seconds', 'Automatic timezone sync', 'Easter planning']
+  })
+
+  const faqData = [
+    {
+      question: 'How many days until Easter 2026?',
+      answer: 'Our countdown timer shows the exact number of days, hours, minutes, and seconds remaining until April 5, 2026. The timer updates automatically every second.'
+    },
+    {
+      question: 'Why does Easter change dates every year?',
+      answer: 'Easter\'s date changes because it\'s based on the lunar calendar. It falls on the first Sunday after the first full moon following the spring equinox, which is why the date varies each year.'
+    },
+    {
+      question: 'What do people celebrate on Easter?',
+      answer: 'Easter celebrates the resurrection of Jesus Christ in Christian tradition. It\'s also celebrated with secular traditions like Easter egg hunts, decorating eggs, and family gatherings that symbolize spring and new life.'
+    },
+    {
+      question: 'What are common Easter traditions?',
+      answer: 'Common Easter traditions include attending church services, Easter egg hunts, decorating eggs, sharing special meals, giving Easter baskets, and spending time with family.'
+    }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
+  const steps = [
+    { title: 'View Countdown', description: 'See the real-time countdown to Easter Sunday with days, hours, minutes, and seconds.' },
+    { title: 'Plan Activities', description: 'Use the countdown to plan Easter egg hunts and family gatherings.' },
+    { title: 'Prepare Celebrations', description: 'Get ready for Easter brunch, baskets, and spring festivities.' }
+  ]
+
+  const tips = [
+    'Plan your Easter brunch menu and shopping list in advance',
+    'Buy Easter eggs and decorating supplies early for best selection',
+    'Consider making reservations for Easter church services',
+    'Prepare Easter baskets with age-appropriate treats and gifts'
+  ]
+
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
-      <main className="container py-12">
-        <div className="text-center mb-12">
+      <main className="container section-responsive">
+        <div className="text-center mb-12 slide-up">
           <h1 className="heading-1 text-center mb-6">
             Easter Countdown 2026
           </h1>
@@ -33,113 +86,48 @@ export default function EasterCountdown() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
-          <h2 className="heading-2 mb-6">About Easter Countdown</h2>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="paragraph">
-              Easter is one of the most important Christian holidays, celebrating the resurrection of 
-              Jesus Christ. Our countdown timer helps you track every moment leading up to this joyous 
-              celebration, whether you&apos;re planning Easter egg hunts, family gatherings, or simply 
-              anticipating the spiritual significance of the day.
-            </p>
-            
-            <p className="paragraph">
-              The date of Easter changes each year because it&apos;s based on the lunar calendar, falling 
-              on the first Sunday after the first full moon following the vernal equinox. In 2026, 
-              Easter Sunday falls on April 5th. This movable date means Easter can occur anytime 
-              between March 22nd and April 25th.
-            </p>
-            
-            <p className="paragraph">
-              Easter celebrations in the United States blend religious traditions with secular customs. 
-              Families attend church services, participate in Easter egg hunts, enjoy special meals, 
-              and share time with loved ones. The holiday symbolizes rebirth, renewal, and hope, 
-              making it a meaningful celebration for millions of Americans.
-            </p>
-            
-            <h3 className="heading-3 mt-8 mb-4">Popular Easter Traditions in the US</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li className="text-secondary-text">Easter egg hunts for children and families</li>
-              <li className="text-secondary-text">Decorating Easter eggs with colors and designs</li>
-              <li className="text-secondary-text">Attending sunrise church services on Easter morning</li>
-              <li className="text-secondary-text">Sharing special Easter meals with ham or lamb</li>
-              <li className="text-secondary-text">Giving Easter baskets filled with candy and treats</li>
-            </ul>
-            
-            <p className="paragraph">
-              Our countdown timer updates every second, ensuring you always know exactly how much time 
-              remains until Easter Sunday. Whether you&apos;re excited about the family traditions, the 
-              spiritual significance, or simply the spring celebration, this timer helps you stay 
-              connected to the Easter season.
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="heading-3 mb-6">Related Countdowns</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/days-until-christmas" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Christmas Countdown</div>
-                <div className="text-sm text-secondary-text">Major Christian holiday</div>
-              </Link>
-              <Link href="/thanksgiving-countdown" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Thanksgiving Countdown</div>
-                <div className="text-sm text-secondary-text">Fall holiday celebration</div>
-              </Link>
-            </div>
-          </div>
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Easter Countdown"
+            description={
+              <>
+                <p className="mb-4">
+                  Easter is one of the most important Christian holidays, celebrating the resurrection of 
+                  Jesus Christ. Our countdown timer helps you track every moment leading up to this joyous 
+                  celebration and spring festivities.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-pink-50 p-4 rounded-xl border border-pink-100">
+                    <h4 className="font-semibold text-pink-800 mb-2">🥚 Egg Hunts</h4>
+                    <p className="text-sm text-pink-700">
+                      Search for hidden Easter eggs with family and friends.
+                    </p>
+                  </div>
+                  <div className="bg-yellow-50 p-4 rounded-xl border border-yellow-100">
+                    <h4 className="font-semibold text-yellow-800 mb-2">🐰 Easter Baskets</h4>
+                    <p className="text-sm text-yellow-700">
+                      Give and receive baskets filled with treats and goodies.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <h4 className="font-semibold text-green-800 mb-2">🌸 Spring Renewal</h4>
+                    <p className="text-sm text-green-700">
+                      Celebrate new life and the arrival of spring season.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={steps}
+            faqs={faqData}
+            tips={tips}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="heading-3 mb-2">How many days until Easter 2026?</h3>
-              <p className="paragraph">
-                Our countdown timer shows the exact number of days, hours, minutes, and seconds 
-                remaining until April 5, 2026. The timer updates automatically every second.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Why does Easter change dates every year?</h3>
-              <p className="paragraph">
-                Easter&apos;s date changes because it&apos;s based on the lunar calendar and astronomical 
-                calculations. It falls on the first Sunday after the first full moon following the 
-                spring equinox, which is why the date varies each year.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">What do people celebrate on Easter?</h3>
-              <p className="paragraph">
-                Easter celebrates the resurrection of Jesus Christ in Christian tradition. It&apos;s also 
-                celebrated with secular traditions like Easter egg hunts, decorating eggs, and family 
-                gatherings that symbolize spring and new life.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">What are common Easter traditions?</h3>
-              <p className="paragraph">
-                Common Easter traditions include attending church services, Easter egg hunts, decorating 
-                eggs, sharing special meals, giving Easter baskets, and spending time with family. 
-                Many families also participate in community Easter events and activities.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">How accurate is this Easter countdown?</h3>
-              <p className="paragraph">
-                Our countdown timer is extremely accurate, updating every second and synchronized 
-                to your local timezone. It calculates the exact time remaining until midnight on 
-                Easter Sunday, April 5, 2026.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/easter-countdown" category="date-tools" />
         </div>
       </main>
 

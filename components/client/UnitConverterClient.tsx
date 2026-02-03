@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Card from '@/components/Card'
+import { ToolWrapper, ToolInput, ToolResult, ToolButton } from '@/components/ToolWrapper'
 
 export default function UnitConverterClient() {
   const [value, setValue] = useState('')
@@ -66,70 +66,53 @@ export default function UnitConverterClient() {
   const currentCategory = getCurrentCategory()
   const availableUnits = unitCategories[currentCategory as keyof typeof unitCategories]
 
+  const unitOptions = availableUnits.map(unit => ({ value: unit, label: unit }))
+
   return (
-    <Card className="max-w-2xl mx-auto mb-12">
+    <ToolWrapper>
       <div className="space-y-6">
-        <div>
-          <label className="block text-primary-text font-medium mb-2">
-            Value
-          </label>
-          <input
-            type="number"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder="Enter value to convert"
-            className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-            step="any"
+        <ToolInput
+          id="value-input"
+          label="Value"
+          type="number"
+          value={value}
+          onChange={(val) => setValue(val)}
+          placeholder="Enter value to convert"
+          inputMode="decimal"
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ToolInput
+            id="from-unit"
+            label="From Unit"
+            type="select"
+            value={fromUnit}
+            onChange={(val) => setFromUnit(val)}
+            options={unitOptions}
+          />
+
+          <ToolInput
+            id="to-unit"
+            label="To Unit"
+            type="select"
+            value={toUnit}
+            onChange={(val) => setToUnit(val)}
+            options={unitOptions}
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-primary-text font-medium mb-2">
-              From Unit
-            </label>
-            <select
-              value={fromUnit}
-              onChange={(e) => setFromUnit(e.target.value)}
-              className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-            >
-              {availableUnits.map(unit => (
-                <option key={unit} value={unit}>{unit}</option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-primary-text font-medium mb-2">
-              To Unit
-            </label>
-            <select
-              value={toUnit}
-              onChange={(e) => setToUnit(e.target.value)}
-              className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-            >
-              {availableUnits.map(unit => (
-                <option key={unit} value={unit}>{unit}</option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <button
-          onClick={convert}
-          className="w-full btn-primary"
-        >
+        <ToolButton onClick={convert}>
           Convert
-        </button>
+        </ToolButton>
 
         {result && (
-          <div className="p-4 bg-secondary-bg rounded-lg text-center">
-            <div className="text-lg font-medium text-primary-text">
+          <ToolResult copyText={result} copyLabel="Conversion Result">
+            <div className="text-lg font-medium text-slate-900 text-center">
               {result}
             </div>
-          </div>
+          </ToolResult>
         )}
       </div>
-    </Card>
+    </ToolWrapper>
   )
 }

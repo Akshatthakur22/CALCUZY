@@ -83,6 +83,7 @@ export default function AgeCalculatorClient() {
             max={today}
             aria-required="true"
             aria-describedby="birth-date-help"
+            autoFocus
           />
           <p id="birth-date-help" className="text-xs text-gray-500 mt-1">
             Select your birth date from the calendar

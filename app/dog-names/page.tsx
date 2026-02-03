@@ -3,15 +3,50 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Dog Names – 100+ Popular Dog Names',
+  title: 'Dog Names',
   description: 'Find the perfect dog name from our list of 100+ popular dog names. Browse unique, cute, and classic names for male and female dogs.',
   keywords: 'dog names, popular dog names, puppy names, dog name ideas',
+  url: 'https://calcuzy.app/dog-names',
+  image: '/og-names.png',
 })
 
 export default function DogNames() {
+  const structuredData = createToolSchema({
+    name: 'Dog Names',
+    description: 'Find the perfect dog name from our list of 100+ popular dog names for male, female, and unisex puppies.',
+    url: 'https://calcuzy.app/dog-names',
+    category: 'LifestyleApplication',
+    features: ['100+ dog names', 'Male names', 'Female names', 'Unisex names']
+  })
+
+  const faqData = [
+    {
+      question: 'How many dog names are in the list?',
+      answer: 'Our comprehensive list includes over 100 dog names, divided into male, female, and unisex categories.'
+    },
+    {
+      question: 'What makes a good dog name?',
+      answer: 'A good dog name is typically short (1-2 syllables), easy to pronounce, and doesn\'t sound like common training commands.'
+    },
+    {
+      question: 'Should I choose a gender-specific name?',
+      answer: 'Gender-specific names can express your dog\'s personality, but unisex names offer flexibility. Consider your dog\'s appearance and temperament.'
+    },
+    {
+      question: 'Can I change my dog\'s name later?',
+      answer: 'Yes, you can change your dog\'s name, though it\'s easier if done early. Dogs can learn new names with consistent training.'
+    },
+    {
+      question: 'Are these names good for training?',
+      answer: 'Most names in our list are training-friendly as they don\'t sound like common commands. Avoid names that rhyme with "no," "stay," or "come."'
+    }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
   const maleNames = [
     'Max', 'Charlie', 'Cooper', 'Buddy', 'Rocky', 'Duke', 'Bear', 'Zeus', 'Tucker', 'Leo', 'Oscar',
     'Winston', 'Finn', 'Gus', 'Bentley', 'Milo', 'Arlo', 'Jasper', 'Beau', 'River', 'Kai', 'Ace', 'Theo',
@@ -31,6 +66,14 @@ export default function DogNames() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">

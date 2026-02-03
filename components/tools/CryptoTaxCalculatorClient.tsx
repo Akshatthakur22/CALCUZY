@@ -147,6 +147,7 @@ export default function CryptoTaxCalculatorClient() {
               </select>
               <input
                 type="number"
+                inputMode="decimal"
                 value={transaction.amount || ''}
                 onChange={(e) => updateTransaction(index, 'amount', parseFloat(e.target.value) || 0)}
                 className="input-field"
@@ -155,6 +156,7 @@ export default function CryptoTaxCalculatorClient() {
               />
               <input
                 type="number"
+                inputMode="decimal"
                 value={transaction.price || ''}
                 onChange={(e) => updateTransaction(index, 'price', parseFloat(e.target.value) || 0)}
                 className="input-field"
@@ -163,6 +165,7 @@ export default function CryptoTaxCalculatorClient() {
               />
               <input
                 type="number"
+                inputMode="decimal"
                 value={transaction.fee || ''}
                 onChange={(e) => updateTransaction(index, 'fee', parseFloat(e.target.value) || 0)}
                 className="input-field"

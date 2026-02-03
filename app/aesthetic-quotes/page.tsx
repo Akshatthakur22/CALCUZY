@@ -1,16 +1,48 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Aesthetic Quotes – Beautiful Short Quotes',
   description: 'Find beautiful aesthetic quotes from our collection of inspiring short quotes. Perfect for social media and daily inspiration.',
   keywords: 'aesthetic quotes, short aesthetic quotes, beautiful quotes, inspiring quotes',
 })
+
+const structuredData = createToolSchema({
+  name: 'Aesthetic Quotes Collection',
+  description: 'Find beautiful aesthetic quotes from our collection of inspiring short quotes.',
+  url: 'https://calcuzy.app/aesthetic-quotes',
+  category: 'UtilityApplication'
+})
+
+const faqData = [
+  {
+    question: 'How many aesthetic quotes are in the collection?',
+    answer: 'Our comprehensive collection includes over 100 aesthetic quotes, organized into beauty, art, and life categories.'
+  },
+  {
+    question: 'What makes a quote aesthetic?',
+    answer: 'Aesthetic quotes are characterized by simplicity, emotional depth, and focus on beauty in its various forms.'
+  },
+  {
+    question: 'How can I use aesthetic quotes in my life?',
+    answer: 'Use aesthetic quotes as daily affirmations, in journaling, on social media, or as captions for photos.'
+  },
+  {
+    question: 'Are aesthetic quotes good for social media?',
+    answer: 'Yes, aesthetic quotes are perfect for social media as they are short, visually appealing, and emotionally resonant.'
+  },
+  {
+    question: 'Can aesthetic quotes improve my mood?',
+    answer: 'Yes, aesthetic quotes can improve your mood by promoting mindfulness and encouraging appreciation of beauty.'
+  }
+]
+
+const faqSchema = createFAQSchema(faqData)
 
 export default function AestheticQuotes() {
   const beautyQuotes = [
@@ -56,6 +88,14 @@ export default function AestheticQuotes() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">
@@ -109,122 +149,57 @@ export default function AestheticQuotes() {
 
         <AdUnit slot= {2} />
 
-        <div className="max-w-4xl mx-auto">
-          <h2 className="heading-2 mb-6">About Aesthetic Quotes</h2>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="paragraph">
-              Aesthetic quotes capture the essence of beauty in its purest form - 
-              simple, elegant, and profoundly meaningful. Our collection of 100+ aesthetic 
-              quotes explores beauty, art, and life through the lens of minimalism and 
-              emotional truth, celebrating the moments that make existence beautiful.
-            </p>
-            
-            <p className="paragraph">
-              The beauty of aesthetic quotes lies in their ability to distill complex 
-              emotions into simple, powerful words. These quotes remind us that beauty exists 
-              in imperfection, in authenticity, and in the courage to be vulnerable. They 
-              celebrate the art of living beautifully rather than just creating beautiful things.
-            </p>
-            
-            <p className="paragraph">
-              Aesthetic quotes about art and life emphasize the importance of 
-              creativity, self-expression, and finding meaning in our experiences. They 
-              encourage us to see the world through eyes of wonder, to appreciate the 
-              small moments that make life extraordinary, and to create beauty in our own 
-              unique way.
-            </p>
-            
-            <h3 className="heading-3 mt-8 mb-4">The Philosophy of Aesthetic Quotes</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li className="text-secondary-text"><strong>Simplicity:</strong> Finding beauty in minimalism and clarity</li>
-              <li className="text-secondary-text"><strong>Authenticity:</strong> Being true to oneself and others</li>
-              <li className="text-secondary-text"><strong>Imperfection:</strong> Seeing beauty in flaws and uniqueness</li>
-              <li className="text-secondary-text"><strong>Mindfulness:</strong> Appreciating the present moment</li>
-              <li className="text-secondary-text"><strong>Creativity:</strong> Expressing inner beauty through art</li>
-              <li className="text-secondary-text"><strong>Connection:</strong> Finding beauty in human relationships</li>
-            </ul>
-            
-            <p className="paragraph">
-              Our aesthetic quotes collection is completely free to browse and includes 
-              quotes suitable for all moments when you need inspiration about beauty, 
-              art, or the meaning of life. Whether you&apos;re seeking motivation 
-              for creative projects or simply want to appreciate the beauty around you, 
-              you&apos;ll find the perfect words to inspire your aesthetic journey.
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="heading-3 mb-6">Related Quote Collections</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/motivational-quotes" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Motivational Quotes</div>
-                <div className="text-sm text-secondary-text">Inspiring quotes for success</div>
-              </Link>
-              <Link href="/love-quotes" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Love Quotes</div>
-                <div className="text-sm text-secondary-text">Romantic and heartfelt quotes</div>
-              </Link>
-            </div>
-          </div>
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Aesthetic Quotes"
+            description={
+              <>
+                <p className="mb-4">
+                  Aesthetic quotes capture the essence of beauty in its purest form - 
+                  simple, elegant, and profoundly meaningful. Our collection explores 
+                  beauty, art, and life through the lens of minimalism and emotional truth.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-pink-50 p-4 rounded-xl border border-pink-100">
+                    <h4 className="font-semibold text-pink-800 mb-2">✨ Beauty</h4>
+                    <p className="text-sm text-pink-700">
+                      Quotes celebrating inner and outer beauty.
+                    </p>
+                  </div>
+                  <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                    <h4 className="font-semibold text-purple-800 mb-2">🎨 Art</h4>
+                    <p className="text-sm text-purple-700">
+                      Wisdom about creativity and self-expression.
+                    </p>
+                  </div>
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2">🌿 Life</h4>
+                    <p className="text-sm text-blue-700">
+                      Reflections on the beauty of existence.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={[
+              { title: 'Browse Quotes', description: 'Explore our curated collection of aesthetic quotes.' },
+              { title: 'Find Your Aesthetic', description: 'Discover quotes that resonate with your style.' },
+              { title: 'Share & Inspire', description: 'Use quotes on social media or in creative projects.' }
+            ]}
+            faqs={faqData}
+            tips={[
+              'Use aesthetic quotes as Instagram captions',
+              'Create wallpapers or prints with your favorites',
+              'Include quotes in journals or bullet journals',
+              'Share quotes to inspire your creative community'
+            ]}
+          />
         </div>
 
         <AdUnit slot= {3} />
 
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="heading-3 mb-2">How many aesthetic quotes are in the collection?</h3>
-              <p className="paragraph">
-                Our comprehensive collection includes over 100 aesthetic quotes, 
-                organized into categories like beauty, art, and life. This provides 
-                plenty of inspiration for appreciating the beauty in everyday moments 
-                and creative expression.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">What makes a quote aesthetic?</h3>
-              <p className="paragraph">
-                Aesthetic quotes are characterized by their simplicity, emotional 
-                depth, and focus on beauty in its various forms. They often emphasize 
-                minimalism, authenticity, and the appreciation of subtle beauty in 
-                everyday life, art, and human experience.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">How can I use aesthetic quotes in my life?</h3>
-              <p className="paragraph">
-                Use aesthetic quotes as daily affirmations, include them in 
-                journaling, share them on social media, use them as captions for photos, 
-                or create art inspired by these beautiful words. They work well for 
-                creative projects and mindful living.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Are aesthetic quotes good for social media?</h3>
-              <p className="paragraph">
-                Yes, aesthetic quotes are perfect for social media as they&apos;re 
-                typically short, visually appealing, and emotionally resonant. They work 
-                beautifully as Instagram captions, Twitter posts, or Pinterest pins, 
-                especially when paired with aesthetic photography or art.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Can aesthetic quotes improve my mood?</h3>
-              <p className="paragraph">
-                Yes, aesthetic quotes can significantly improve your mood by 
-                promoting mindfulness, encouraging appreciation of beauty, and providing 
-                gentle reminders to slow down and notice the beautiful moments in 
-                your daily life. They help cultivate a more positive and grateful mindset.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/aesthetic-quotes" category="generators" />
         </div>
       </main>
 

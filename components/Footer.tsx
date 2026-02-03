@@ -1,127 +1,124 @@
 import Link from 'next/link'
 
+const footerLinks = {
+  tools: [
+    { href: '/age-calculator', label: 'Age Calculator' },
+    { href: '/bmi-calculator', label: 'BMI Calculator' },
+    { href: '/date-difference', label: 'Date Difference' },
+    { href: '/unit-converter', label: 'Unit Converter' },
+    { href: '/random-number-generator', label: 'Random Number' },
+  ],
+  explore: [
+    { href: '/tools', label: 'All Tools' },
+    { href: '/countdowns', label: 'Countdowns' },
+    { href: '/names', label: 'Name Generators' },
+    { href: '/quotes', label: 'Quotes' },
+  ],
+  legal: [
+    { href: '/about', label: 'About Us' },
+    { href: '/contact', label: 'Contact' },
+    { href: '/privacy-policy', label: 'Privacy Policy' },
+    { href: '/terms', label: 'Terms of Service' },
+  ],
+}
+
 export default function Footer() {
   return (
-    <footer className="bg-secondary-bg border-t border-gray-200 mt-16 fade-in">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center mb-4">
-              <img 
-                src="/logo.png" 
-                alt="Calcuzy Logo" 
-                className="h-20 w-20"
-              />
-            </div>
-            <p className="text-sm text-gray-500 mb-4 leading-relaxed">
-              Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity. 
-              Minimal. Fast. Search-Optimized.
+    <footer className="bg-slate-50 border-t border-slate-200/60 mt-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        {/* Main Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          {/* Brand Column */}
+          <div className="col-span-2 md:col-span-1">
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-2 mb-4 group"
+            >
+              <span className="text-xl font-bold text-slate-900 tracking-tight group-hover:text-blue-500 transition-colors">
+                Calcuzy
+              </span>
+            </Link>
+            <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
+              100+ precision tools for everyday calculations. Simple, fast, and beautifully designed.
             </p>
           </div>
           
+          {/* Tools Column */}
           <div>
-            <h4 className="font-heading text-primary-text mb-4 text-sm">Tools</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  href="/age-calculator" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  Age Calculator
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/bmi-calculator" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  BMI Calculator
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/date-difference" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  Date Difference
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/unit-converter" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  Unit Converter
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/random-number-generator" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  Random Number Generator
-                </Link>
-              </li>
+            <h4 className="font-semibold text-slate-900 mb-4 text-sm tracking-wide uppercase">
+              Popular Tools
+            </h4>
+            <ul className="space-y-2.5">
+              {footerLinks.tools.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm text-slate-500 hover:text-blue-500 transition-colors duration-200 py-1 inline-block"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
+          {/* Explore Column */}
           <div>
-            <h4 className="font-heading text-primary-text mb-4 text-sm">Legal & Info</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  href="/about" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/contact" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/privacy-policy" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/terms" 
-                  className="text-sm text-gray-500 hover:text-accent transition-colors duration-200 focus-ring py-1 inline-block"
-                >
-                  Terms of Service
-                </Link>
-              </li>
+            <h4 className="font-semibold text-slate-900 mb-4 text-sm tracking-wide uppercase">
+              Explore
+            </h4>
+            <ul className="space-y-2.5">
+              {footerLinks.explore.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm text-slate-500 hover:text-blue-500 transition-colors duration-200 py-1 inline-block"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Legal Column */}
+          <div>
+            <h4 className="font-semibold text-slate-900 mb-4 text-sm tracking-wide uppercase">
+              Company
+            </h4>
+            <ul className="space-y-2.5">
+              {footerLinks.legal.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm text-slate-500 hover:text-blue-500 transition-colors duration-200 py-1 inline-block"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-200 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-500">
-              © 2024 Calcuzy.app. All rights reserved. Simple tools built beautifully.
+        {/* Bottom Bar */}
+        <div className="border-t border-slate-200/60 mt-10 pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-slate-400 text-center sm:text-left">
+              © {new Date().getFullYear()} Calcuzy.app · Made with precision
             </p>
-            <div className="flex flex-wrap items-center justify-center space-x-4 text-sm text-gray-500">
+            <div className="flex items-center gap-6 text-sm">
               <Link 
                 href="/privacy-policy" 
-                className="hover:text-accent transition-colors duration-200 focus-ring py-1"
+                className="text-slate-400 hover:text-blue-500 transition-colors duration-200"
               >
-                Privacy Policy
+                Privacy
               </Link>
-              <span className="text-gray-400">•</span>
               <Link 
                 href="/terms" 
-                className="hover:text-accent transition-colors duration-200 focus-ring py-1"
+                className="text-slate-400 hover:text-blue-500 transition-colors duration-200"
               >
-                Terms of Service
+                Terms
               </Link>
             </div>
           </div>

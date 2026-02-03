@@ -1,16 +1,48 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import ToolInfo from '@/components/ToolInfo'
+import RelatedTools from '@/components/RelatedTools'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Christmas Quotes – Holiday Wishes & Sayings',
+  title: 'Christmas Quotes | Heartwarming Holiday Wishes - Calcuzy',
   description: 'Find perfect Christmas quotes from our collection of holiday wishes and sayings. Heartwarming Christmas messages for cards and greetings.',
   keywords: 'christmas quotes, holiday wishes, christmas sayings, christmas messages',
 })
+
+const structuredData = createToolSchema({
+  name: 'Christmas Quotes Collection',
+  description: 'Find perfect Christmas quotes from our collection of holiday wishes and sayings.',
+  url: 'https://calcuzy.app/christmas-quotes',
+  category: 'UtilityApplication'
+})
+
+const faqData = [
+  {
+    question: 'How many Christmas quotes are in the collection?',
+    answer: 'Our comprehensive collection includes over 100 Christmas quotes, organized into traditional, inspirational, and family themes.'
+  },
+  {
+    question: 'What makes a good Christmas quote?',
+    answer: 'A good Christmas quote captures holiday spirit, emphasizing love, generosity, and human connection over material aspects.'
+  },
+  {
+    question: 'How can I use Christmas quotes?',
+    answer: 'Use Christmas quotes in holiday cards, social media posts, family gatherings, or as daily reminders of the holiday spirit.'
+  },
+  {
+    question: 'Are Christmas quotes religious?',
+    answer: 'Christmas quotes come from various perspectives - some religious, some secular, focusing on universal human values like love and family.'
+  },
+  {
+    question: 'Can Christmas quotes improve my holiday mood?',
+    answer: 'Yes, Christmas quotes can enhance your holiday mood by promoting generosity, encouraging gratitude, and celebrating the season.'
+  }
+]
+
+const faqSchema = createFAQSchema(faqData)
 
 export default function ChristmasQuotes() {
   const traditionalQuotes = [
@@ -56,6 +88,14 @@ export default function ChristmasQuotes() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">
@@ -109,125 +149,60 @@ export default function ChristmasQuotes() {
 
         <AdUnit slot={2} />
 
-        <div className="max-w-4xl mx-auto">
-          <h2 className="heading-2 mb-6">About Christmas Quotes</h2>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="paragraph">
-              Christmas quotes capture the essence of holiday spirit, love, and 
-              the joy of giving. Our collection of 100+ Christmas quotes celebrates 
-              the warmth, tradition, and meaningful connections that make this season 
-              truly special. These quotes remind us that Christmas is about more than 
-              just presents - it&apos;s about presence, love, and the magic of human 
-              connection.
-            </p>
-            
-            <p className="paragraph">
-              The best Christmas quotes resonate because they speak to universal 
-              experiences of family, generosity, and the childlike wonder that makes 
-              this holiday magical. Whether from classic literature, modern authors, or 
-              everyday wisdom, these words capture the feeling that Christmas brings out 
-              the best in humanity and reminds us of what truly matters.
-            </p>
-            
-            <p className="paragraph">
-              Christmas quotes serve as beautiful reminders that the holiday season 
-              is about opening our hearts, sharing our blessings, and creating memories 
-              that last a lifetime. They encourage us to focus on what brings 
-              genuine joy - not material gifts, but the gift of time spent 
-              with loved ones and the warmth of human connection.
-            </p>
-            
-            <h3 className="heading-3 mt-8 mb-4">The Spirit of Christmas Quotes</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li className="text-secondary-text"><strong>Generosity:</strong> Giving without expecting return</li>
-              <li className="text-secondary-text"><strong>Connection:</strong> Bringing people together</li>
-              <li className="text-secondary-text"><strong>Gratitude:</strong> Appreciating blessings and relationships</li>
-              <li className="text-secondary-text"><strong>Tradition:</strong> Honoring heritage and creating memories</li>
-              <li className="text-secondary-text"><strong>Love:</strong> The true meaning of Christmas</li>
-              <li className="text-secondary-text"><strong>Hope:</strong> Believing in better days ahead</li>
-            </ul>
-            
-            <p className="paragraph">
-              Our Christmas quotes collection is completely free to browse and includes 
-              quotes suitable for all holiday celebrations, cards, or family gatherings. 
-              Whether you&apos;re seeking inspiration for Christmas cards, social media posts, 
-              or simply want to embrace the holiday spirit, you&apos;ll find the perfect 
-              words to make this season meaningful.
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="heading-3 mb-6">Related Quote Collections</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/motivational-quotes" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Motivational Quotes</div>
-                <div className="text-sm text-secondary-text">Inspiring quotes for success</div>
-              </Link>
-              <Link href="/love-quotes" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Love Quotes</div>
-                <div className="text-sm text-secondary-text">Romantic and heartfelt quotes</div>
-              </Link>
-            </div>
-          </div>
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Christmas Quotes"
+            description={
+              <>
+                <p className="mb-4">
+                  Christmas quotes capture the essence of holiday spirit, love, and 
+                  the joy of giving. Our collection celebrates the warmth, tradition, and 
+                  meaningful connections that make this season truly special.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-red-50 p-4 rounded-xl border border-red-100">
+                    <h4 className="font-semibold text-red-800 mb-2">🎄 Traditional</h4>
+                    <p className="text-sm text-red-700">
+                      Classic holiday wisdom and timeless messages.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                    <h4 className="font-semibold text-green-800 mb-2">✨ Inspirational</h4>
+                    <p className="text-sm text-green-700">
+                      Uplifting quotes about the Christmas spirit.
+                    </p>
+                  </div>
+                  <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                    <h4 className="font-semibold text-amber-800 mb-2">👨‍👩‍👧‍👦 Family</h4>
+                    <p className="text-sm text-amber-700">
+                      Heartwarming quotes about togetherness.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={[
+              { title: 'Browse Quotes', description: 'Explore our curated collection of Christmas quotes.' },
+              { title: 'Find the Perfect Quote', description: 'Discover quotes that capture your holiday spirit.' },
+              { title: 'Share the Joy', description: 'Use quotes in cards, messages, or decorations.' }
+            ]}
+            faqs={faqData}
+            tips={[
+              'Use Christmas quotes in holiday greeting cards',
+              'Share quotes on social media during the season',
+              'Include quotes in family Christmas letters',
+              'Add quotes to gift tags for a personal touch'
+            ]}
+          />
         </div>
 
         <AdUnit slot={3} />
 
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="heading-2 mb-6">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="heading-3 mb-2">How many Christmas quotes are in the collection?</h3>
-              <p className="paragraph">
-                Our comprehensive collection includes over 100 Christmas quotes, 
-                organized into categories like traditional, inspirational, and family themes. 
-                This provides plenty of inspiration for holiday cards, social media posts, 
-                or simply sharing the Christmas spirit with loved ones.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">What makes a good Christmas quote?</h3>
-              <p className="paragraph">
-                A good Christmas quote captures the essence of holiday spirit, 
-                emphasizing love, generosity, and human connection over material aspects. 
-                The best quotes resonate with universal experiences of family, tradition, 
-                and the joy that comes from giving rather than receiving.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">How can I use Christmas quotes?</h3>
-              <p className="paragraph">
-                Use Christmas quotes in holiday cards, social media posts, 
-                family gatherings, or as daily reminders of the holiday spirit. 
-                They work beautifully for Instagram captions, Facebook posts, or personal 
-                reflection during the Christmas season.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Are Christmas quotes religious?</h3>
-              <p className="paragraph">
-                Christmas quotes come from various perspectives - some religious, 
-                some secular, and many focusing on universal human values like love, 
-                generosity, and family connection. Our collection includes quotes suitable 
-                for all beliefs and backgrounds.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="heading-3 mb-2">Can Christmas quotes improve my holiday mood?</h3>
-              <p className="paragraph">
-                Yes, Christmas quotes can significantly enhance your holiday mood 
-                by promoting generosity, encouraging gratitude, and reminding you of 
-                the true meaning of the season. They help cultivate a spirit 
-                of giving and connection that makes Christmas truly special.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools
+            currentTool="/christmas-quotes"
+            category="generators"
+          />
         </div>
       </main>
 

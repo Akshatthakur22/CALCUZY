@@ -5,7 +5,7 @@ import Card from '@/components/Card'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Terms of Service - Calcuzy.app',
+  title: 'Terms of Service',
   description: 'Official Terms of Service for Calcuzy.app. Understand acceptable use, disclaimers, responsibilities, and your rights while using our free online tools.',
   keywords: 'terms of service, calcuzy terms, user agreement, acceptable use',
   url: 'https://calcuzy.app/terms',

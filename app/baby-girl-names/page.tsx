@@ -4,15 +4,50 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Baby Girl Names – Popular Girl Names',
+  title: 'Baby Girl Names',
   description: 'Find the perfect baby girl name from our list of popular girl names. Browse beautiful, unique, and traditional names for baby girls.',
   keywords: 'baby girl names, popular girl names, girl name ideas, baby names',
+  url: 'https://calcuzy.app/baby-girl-names',
+  image: '/og-names.png',
 })
 
 export default function BabyGirlNames() {
+  const structuredData = createToolSchema({
+    name: 'Baby Girl Names',
+    description: 'Browse beautiful, unique, and traditional baby girl names with meanings and origins.',
+    url: 'https://calcuzy.app/baby-girl-names',
+    category: 'LifestyleApplication',
+    features: ['100+ girl names', 'Traditional names', 'Modern names', 'Unique names']
+  })
+
+  const faqData = [
+    {
+      question: 'How many baby girl names are in the list?',
+      answer: 'Our comprehensive list includes over 100 baby girl names, divided into traditional, modern, and unique categories.'
+    },
+    {
+      question: 'What makes a good baby girl name?',
+      answer: 'A good baby girl name is meaningful, easy to pronounce, and complements your family\'s heritage. It should be timeless with positive associations.'
+    },
+    {
+      question: 'Should I choose a popular or unique name?',
+      answer: 'Both have advantages. Popular names like Emma are familiar and well-liked, while unique names like Seraphina offer individuality.'
+    },
+    {
+      question: 'How do I ensure the name ages well?',
+      answer: 'Choose a name that\'s classic enough to remain stylish but not so trendy it becomes dated. Consider how it sounds at different life stages.'
+    },
+    {
+      question: 'Are these names culturally diverse?',
+      answer: 'Yes, our list includes names from various cultural backgrounds and origins, representing different traditions and languages.'
+    }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
   const traditionalNames = [
     'Emma', 'Olivia', 'Ava', 'Isabella', 'Sophia', 'Mia', 'Charlotte', 'Amelia', 'Harper', 'Evelyn',
     'Abigail', 'Emily', 'Elizabeth', 'Madison', 'Sofia', 'Avery', 'Ella', 'Madeline', 'Addison', 'Lily',
@@ -32,6 +67,14 @@ export default function BabyGirlNames() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">

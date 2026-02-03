@@ -4,15 +4,50 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'American Last Names – Common US Surnames',
+  title: 'American Last Names',
   description: 'Find popular American last names from our list of common US surnames. Browse traditional and modern American family names.',
   keywords: 'american last names, us surnames, common american names, family names',
+  url: 'https://calcuzy.app/american-last-names',
+  image: '/og-names.png',
 })
 
 export default function AmericanLastNames() {
+  const structuredData = createToolSchema({
+    name: 'American Last Names',
+    description: 'Find popular American last names from our list of common US surnames and family names.',
+    url: 'https://calcuzy.app/american-last-names',
+    category: 'LifestyleApplication',
+    features: ['100+ surnames', 'Common names', 'Traditional names', 'Modern names']
+  })
+
+  const faqData = [
+    {
+      question: 'How many American last names are in the list?',
+      answer: 'Our comprehensive list includes over 100 American last names, divided into common, traditional, and modern categories.'
+    },
+    {
+      question: 'What are the most common American last names?',
+      answer: 'The most common American last names include Smith, Johnson, Williams, Brown, and Jones, reflecting English heritage of early settlers.'
+    },
+    {
+      question: 'What origins do American last names have?',
+      answer: 'American last names come from diverse origins including English, Scottish, Irish, German, Italian, Spanish, and many other backgrounds.'
+    },
+    {
+      question: 'How do I research my American last name?',
+      answer: 'Research your American last name through genealogy websites, census records, immigration documents, and family histories.'
+    },
+    {
+      question: 'Can I change my American last name?',
+      answer: 'Yes, you can legally change your American last name through court petition. The process involves filing paperwork and attending a court hearing.'
+    }
+  ]
+
+  const faqSchema = createFAQSchema(faqData)
+
   const commonNames = [
     'Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez', 'Hernandez',
     'Lopez', 'Gonzalez', 'Wilson', 'Anderson', 'Thomas', 'Taylor', 'Moore', 'Jackson', 'Martin', 'Lee',
@@ -33,6 +68,14 @@ export default function AmericanLastNames() {
 
   return (
     <div className="min-h-screen bg-primary-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       <main className="container py-12">

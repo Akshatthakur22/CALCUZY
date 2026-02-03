@@ -71,6 +71,7 @@ export default function IndexFundReturnCalculatorClient() {
           </label>
           <input
             type="number"
+            inputMode="decimal"
             value={initialInvestment}
             onChange={(e) => setInitialInvestment(e.target.value)}
             className="input-field"
@@ -85,6 +86,7 @@ export default function IndexFundReturnCalculatorClient() {
           </label>
           <input
             type="number"
+            inputMode="decimal"
             value={monthlySIP}
             onChange={(e) => setMonthlySIP(e.target.value)}
             className="input-field"
@@ -99,6 +101,7 @@ export default function IndexFundReturnCalculatorClient() {
           </label>
           <input
             type="number"
+            inputMode="decimal"
             value={expectedReturn}
             onChange={(e) => setExpectedReturn(e.target.value)}
             className="input-field"
@@ -113,6 +116,7 @@ export default function IndexFundReturnCalculatorClient() {
           </label>
           <input
             type="number"
+            inputMode="numeric"
             value={years}
             onChange={(e) => setYears(e.target.value)}
             className="input-field"
