@@ -291,7 +291,7 @@ export default function ContactPage() {
                 Can I request a custom tool?
               </span>
               <p className="paragraph mb-1">
-                Yes — especially if you're from a school, college, content team, or organization.
+                Yes — especially if you&apos;re from a school, college, content team, or organization.
               </p>
             </div>
 

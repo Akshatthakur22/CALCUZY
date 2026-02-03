@@ -46,7 +46,7 @@ export default function AboutPage() {
           </div>
           <p className="paragraph text-lg max-w-2xl mx-auto mb-6">
             Calcuzy.app is a simple idea that started on a random late night in my college room.<br/>
-            I'm Akshat Thakur, a 3rd-year B.Tech CSE student who enjoys building things that are clean, fast, and genuinely helpful. Calcuzy didn’t come from a big startup plan — it came from curiosity, experimentation, and the thought:
+            I&apos;m Akshat Thakur, a 3rd-year B.Tech CSE student who enjoys building things that are clean, fast, and genuinely helpful. Calcuzy didn’t come from a big startup plan — it came from curiosity, experimentation, and the thought:
           </p>
           <blockquote className="italic text-primary-text/80 text-xl font-medium mb-4">
             “What if simple tools, when done right, can actually reach thousands of people?”
@@ -63,7 +63,7 @@ export default function AboutPage() {
             <h2 className="heading-2">Who I Am</h2>
           </div>
           <p className="paragraph mb-2">
-            Hi, I'm Akshat, the solo developer behind Calcuzy.app.<br/>
+            Hi, I&apos;m Akshat, the solo developer behind Calcuzy.app.<br/>
             I’ve been learning web development for less than a year, and this project became my playground to explore:
           </p>
           <ul className="list-disc ml-6 mb-2 text-primary-text/90">
