@@ -76,10 +76,11 @@ This project reflects advanced full-stack concepts including:
 
 ---
 
+
 ## 💻 Getting Started
 
 **1. Clone the repository**
-```bash
+bash
 git clone [https://github.com/akshatgithub/calcuzy](https://github.com/akshatgithub/calcuzy)
 2. Install dependencies
 
@@ -90,7 +91,10 @@ npm install
 
 Bash
 npm run dev
-📬 Let's Connect
+
+---
+
+## 📬 Let's Connect
 Akshat Thakur — Creator & Engineer
 
 Email: calcuzyy@gmail.com
