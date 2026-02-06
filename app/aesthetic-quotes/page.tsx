@@ -6,6 +6,8 @@ import AdUnit from '@/components/AdUnit'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import { ChevronDown, ChevronUp, Info, Palette, Type } from 'lucide-react'
+import ReadMore from '../../components/ReadMore'
 
 
 export const metadata = createMetadata({
@@ -50,10 +52,6 @@ const faqData = [
 
 
 const faqSchema = createFAQSchema(faqData)
-
-
-import { ChevronDown, ChevronUp, Info, Palette, Type } from 'lucide-react'
-import ReadMore from '../../components/ReadMore'
 
 
 function CuratorInsightCard() {
