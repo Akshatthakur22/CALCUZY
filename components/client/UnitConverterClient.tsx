@@ -1,118 +1,272 @@
 'use client'
 
-import { useState } from 'react'
-import { ToolWrapper, ToolInput, ToolResult, ToolButton } from '@/components/ToolWrapper'
+import { useState, useEffect } from 'react'
+import Card from '@/components/Card'
 
 export default function UnitConverterClient() {
   const [value, setValue] = useState('')
-  const [fromUnit, setFromUnit] = useState('cm')
-  const [toUnit, setToUnit] = useState('inches')
+  const [fromUnit, setFromUnit] = useState('meters')
+  const [toUnit, setToUnit] = useState('feet')
   const [result, setResult] = useState('')
+  const [error, setError] = useState('')
+  const [category, setCategory] = useState<'length' | 'weight' | 'temperature' | 'volume'>('length')
 
-  const conversions: { [key: string]: { [key: string]: number } } = {
-    cm: { inches: 0.393701, feet: 0.0328084, meters: 0.01, km: 0.00001 },
-    inches: { cm: 2.54, feet: 0.0833333, meters: 0.0254, km: 0.0000254 },
-    feet: { cm: 30.48, inches: 12, meters: 0.3048, km: 0.0003048 },
-    meters: { cm: 100, inches: 39.3701, feet: 3.28084, km: 0.001 },
-    km: { cm: 100000, inches: 39370.1, feet: 3280.84, meters: 1000 },
-    kg: { lbs: 2.20462, oz: 35.274, g: 1000, ton: 0.001 },
-    lbs: { kg: 0.453592, oz: 16, g: 453.592, ton: 0.000453592 },
-    oz: { kg: 0.0283495, lbs: 0.0625, g: 28.3495, ton: 0.0000283495 },
-    g: { kg: 0.001, lbs: 0.00220462, oz: 0.035274, ton: 0.000001 },
-    ton: { kg: 1000, lbs: 2204.62, oz: 35274, g: 1000000 }
+  const conversions: { [key: string]: { [key: string]: number | string } } = {
+    // Length units (base: meters)
+    'nanometers': { 'meters': 1e-9, 'kilometers': 1e-12, 'centimeters': 1e-7, 'millimeters': 1e-6, 'micrometers': 0.001, 'miles': 6.21371e-13, 'yards': 1.09361e-9, 'feet': 3.28084e-9, 'inches': 3.93701e-8 },
+    'micrometers': { 'meters': 1e-6, 'kilometers': 1e-9, 'centimeters': 0.0001, 'millimeters': 0.001, 'nanometers': 1000, 'miles': 6.21371e-10, 'yards': 1.09361e-6, 'feet': 3.28084e-6, 'inches': 3.93701e-5 },
+    'millimeters': { 'meters': 0.001, 'kilometers': 1e-6, 'centimeters': 0.1, 'nanometers': 1e6, 'micrometers': 1000, 'miles': 6.21371e-7, 'yards': 0.00109361, 'feet': 0.00328084, 'inches': 0.0393701 },
+    'centimeters': { 'meters': 0.01, 'kilometers': 1e-5, 'millimeters': 10, 'nanometers': 1e7, 'micrometers': 10000, 'miles': 6.21371e-6, 'yards': 0.0109361, 'feet': 0.0328084, 'inches': 0.393701 },
+    'meters': { 'centimeters': 100, 'millimeters': 1000, 'kilometers': 0.001, 'nanometers': 1e9, 'micrometers': 1e6, 'miles': 0.000621371, 'yards': 1.09361, 'feet': 3.28084, 'inches': 39.3701 },
+    'kilometers': { 'meters': 1000, 'centimeters': 100000, 'millimeters': 1000000, 'nanometers': 1e12, 'micrometers': 1e9, 'miles': 0.621371, 'yards': 1093.61, 'feet': 3280.84, 'inches': 39370.1 },
+    'inches': { 'meters': 0.0254, 'kilometers': 2.54e-5, 'centimeters': 2.54, 'millimeters': 25.4, 'nanometers': 2.54e7, 'micrometers': 25400, 'feet': 0.0833333, 'yards': 0.0277778, 'miles': 1.57828e-5 },
+    'feet': { 'meters': 0.3048, 'kilometers': 0.0003048, 'centimeters': 30.48, 'millimeters': 304.8, 'nanometers': 3.048e8, 'micrometers': 304800, 'inches': 12, 'yards': 0.333333, 'miles': 0.000189394 },
+    'yards': { 'meters': 0.9144, 'kilometers': 0.0009144, 'centimeters': 91.44, 'millimeters': 914.4, 'nanometers': 9.144e8, 'micrometers': 914400, 'inches': 36, 'feet': 3, 'miles': 0.000568182 },
+    'miles': { 'meters': 1609.34, 'kilometers': 1.60934, 'centimeters': 160934, 'millimeters': 1.609e6, 'nanometers': 1.609e12, 'micrometers': 1.609e9, 'inches': 63360, 'feet': 5280, 'yards': 1760 },
+    
+    // Weight units (base: kilograms)
+    'milligrams': { 'grams': 0.001, 'kilograms': 1e-6, 'ounces': 3.5274e-5, 'pounds': 2.2046e-6, 'stones': 1.5747e-7, 'tons': 1e-9 },
+    'grams': { 'milligrams': 1000, 'kilograms': 0.001, 'ounces': 0.035274, 'pounds': 0.00220462, 'stones': 0.000157473, 'tons': 1e-6 },
+    'kilograms': { 'grams': 1000, 'milligrams': 1e6, 'ounces': 35.274, 'pounds': 2.20462, 'stones': 0.157473, 'tons': 0.001 },
+    'ounces': { 'grams': 28.3495, 'kilograms': 0.0283495, 'milligrams': 28349.5, 'pounds': 0.0625, 'stones': 0.00446429, 'tons': 2.835e-5 },
+    'pounds': { 'grams': 453.592, 'kilograms': 0.453592, 'milligrams': 453592, 'ounces': 16, 'stones': 0.0714286, 'tons': 0.000453592 },
+    'stones': { 'grams': 6350.29, 'kilograms': 6.35029, 'milligrams': 6.350e6, 'ounces': 224, 'pounds': 14, 'tons': 0.00635029 },
+    'tons': { 'grams': 1e6, 'kilograms': 1000, 'milligrams': 1e9, 'ounces': 35274, 'pounds': 2204.62, 'stones': 157.473 },
+    
+    // Temperature units (special conversion)
+    'celsius': { 'fahrenheit': 'c_to_f', 'kelvin': 'c_to_k' },
+    'fahrenheit': { 'celsius': 'f_to_c', 'kelvin': 'f_to_k' },
+    'kelvin': { 'celsius': 'k_to_c', 'fahrenheit': 'k_to_f' },
+    
+    // Volume units (base: liters)
+    'milliliters': { 'liters': 0.001, 'gallons': 0.000264172, 'quarts': 0.00105669, 'pints': 0.00211338, 'cups': 0.00422675, 'fluid_ounces': 0.033814, 'tablespoons': 0.067628, 'teaspoons': 0.202884 },
+    'liters': { 'milliliters': 1000, 'gallons': 0.264172, 'quarts': 1.05669, 'pints': 2.11338, 'cups': 4.22675, 'fluid_ounces': 33.814, 'tablespoons': 67.628, 'teaspoons': 202.884 },
+    'gallons': { 'milliliters': 3785.41, 'liters': 3.78541, 'quarts': 4, 'pints': 8, 'cups': 16, 'fluid_ounces': 128, 'tablespoons': 256, 'teaspoons': 768 },
+    'quarts': { 'milliliters': 946.353, 'liters': 0.946353, 'gallons': 0.25, 'pints': 2, 'cups': 4, 'fluid_ounces': 32, 'tablespoons': 64, 'teaspoons': 192 },
+    'pints': { 'milliliters': 473.176, 'liters': 0.473176, 'gallons': 0.125, 'quarts': 0.5, 'cups': 2, 'fluid_ounces': 16, 'tablespoons': 32, 'teaspoons': 96 },
+    'cups': { 'milliliters': 236.588, 'liters': 0.236588, 'gallons': 0.0625, 'quarts': 0.25, 'pints': 0.5, 'fluid_ounces': 8, 'tablespoons': 16, 'teaspoons': 48 },
+    'fluid_ounces': { 'milliliters': 29.5735, 'liters': 0.0295735, 'gallons': 0.0078125, 'quarts': 0.03125, 'pints': 0.0625, 'cups': 0.125, 'tablespoons': 2, 'teaspoons': 6 },
+    'tablespoons': { 'milliliters': 14.7868, 'liters': 0.0147868, 'gallons': 0.00390625, 'quarts': 0.015625, 'pints': 0.03125, 'cups': 0.0625, 'fluid_ounces': 0.5, 'teaspoons': 3 },
+    'teaspoons': { 'milliliters': 4.92892, 'liters': 0.00492892, 'gallons': 0.00130208, 'quarts': 0.00520833, 'pints': 0.0104167, 'cups': 0.0208333, 'fluid_ounces': 0.166667, 'tablespoons': 0.333333 }
+  }
+
+  const unitCategories = {
+    length: ['nanometers', 'micrometers', 'millimeters', 'centimeters', 'meters', 'kilometers', 'inches', 'feet', 'yards', 'miles'],
+    weight: ['milligrams', 'grams', 'kilograms', 'ounces', 'pounds', 'stones', 'tons'],
+    temperature: ['celsius', 'fahrenheit', 'kelvin'],
+    volume: ['milliliters', 'liters', 'gallons', 'quarts', 'pints', 'cups', 'fluid_ounces', 'tablespoons', 'teaspoons']
+  }
+
+  const convertTemperature = (value: number, from: string, to: string): number => {
+    if (from === to) return value
+    
+    // Convert to Celsius first
+    let celsius: number
+    if (from === 'fahrenheit') {
+      celsius = (value - 32) * 5/9
+    } else if (from === 'kelvin') {
+      celsius = value - 273.15
+    } else {
+      celsius = value
+    }
+    
+    // Convert from Celsius to target
+    if (to === 'fahrenheit') {
+      return celsius * 9/5 + 32
+    } else if (to === 'kelvin') {
+      return celsius + 273.15
+    } else {
+      return celsius
+    }
   }
 
   const convert = () => {
     if (!value) {
-      setResult('Please enter a value to convert')
+      setResult('')
+      setError('')
       return
     }
 
     const numValue = parseFloat(value)
     if (isNaN(numValue)) {
-      setResult('Please enter a valid number')
+      setError('Please enter a valid number')
+      setResult('')
       return
     }
 
     if (fromUnit === toUnit) {
       setResult(`${numValue} ${fromUnit} = ${numValue} ${toUnit}`)
+      setError('')
       return
     }
 
-    const conversionFactor = conversions[fromUnit]?.[toUnit]
-    if (!conversionFactor) {
-      setResult('Conversion not available')
-      return
-    }
-
-    const convertedValue = numValue * conversionFactor
-    setResult(`${numValue} ${fromUnit} = ${convertedValue.toFixed(6)} ${toUnit}`)
-  }
-
-  const unitCategories = {
-    length: ['cm', 'inches', 'feet', 'meters', 'km'],
-    weight: ['kg', 'lbs', 'oz', 'g', 'ton']
-  }
-
-  const getCurrentCategory = () => {
-    for (const [category, units] of Object.entries(unitCategories)) {
-      if (units.includes(fromUnit) || units.includes(toUnit)) {
-        return category
+    try {
+      let convertedValue: number
+      
+      if (category === 'temperature') {
+        convertedValue = convertTemperature(numValue, fromUnit, toUnit)
+      } else {
+        const conversionFactor = conversions[fromUnit]?.[toUnit]
+        if (!conversionFactor) {
+          setError('Conversion not available')
+          setResult('')
+          return
+        }
+        if (typeof conversionFactor === 'number') {
+          convertedValue = numValue * conversionFactor
+        } else {
+          setError('Conversion not available')
+          setResult('')
+          return
+        }
       }
+
+      const formattedResult = convertedValue < 0.01 || convertedValue > 1000000 
+        ? convertedValue.toExponential(6)
+        : convertedValue.toFixed(6).replace(/\.?0+$/, '')
+
+      setResult(`${numValue} ${fromUnit} = ${formattedResult} ${toUnit}`)
+      setError('')
+    } catch (error) {
+      setError('Conversion failed')
+      setResult('')
     }
-    return 'length'
   }
 
-  const currentCategory = getCurrentCategory()
-  const availableUnits = unitCategories[currentCategory as keyof typeof unitCategories]
+  const swapUnits = () => {
+    setFromUnit(toUnit)
+    setToUnit(fromUnit)
+  }
 
-  const unitOptions = availableUnits.map(unit => ({ value: unit, label: unit }))
+  const availableUnits = unitCategories[category]
+
+  useEffect(() => {
+    convert()
+  }, [value, fromUnit, toUnit, category])
+
+  useEffect(() => {
+    // Reset units when category changes
+    const availableUnits = unitCategories[category]
+    if (!availableUnits.includes(fromUnit)) {
+      setFromUnit(availableUnits[0])
+    }
+    if (!availableUnits.includes(toUnit)) {
+      setToUnit(availableUnits[1] || availableUnits[0])
+    }
+  }, [category, fromUnit, toUnit])
 
   return (
-    <ToolWrapper>
+    <Card className="max-w-4xl mx-auto mb-12">
       <div className="space-y-6">
-        <ToolInput
-          id="value-input"
-          label="Value"
-          type="number"
-          value={value}
-          onChange={(val) => setValue(val)}
-          placeholder="Enter value to convert"
-          inputMode="decimal"
-        />
+        {/* Category Selection */}
+        <div>
+          <label className="block text-primary-text font-medium mb-3">
+            Category
+          </label>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {Object.keys(unitCategories).map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setCategory(cat as any)}
+                className={`p-3 rounded-lg border-2 transition-all capitalize ${
+                  category === cat 
+                    ? 'border-accent bg-accent/10 text-accent' 
+                    : 'border-border hover:border-accent/50'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <ToolInput
-            id="from-unit"
-            label="From Unit"
-            type="select"
-            value={fromUnit}
-            onChange={(val) => setFromUnit(val)}
-            options={unitOptions}
-          />
-
-          <ToolInput
-            id="to-unit"
-            label="To Unit"
-            type="select"
-            value={toUnit}
-            onChange={(val) => setToUnit(val)}
-            options={unitOptions}
+        {/* Value Input */}
+        <div>
+          <label className="block text-primary-text font-medium mb-2">
+            Value
+          </label>
+          <input
+            type="number"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Enter value to convert"
+            className="input-field"
+            step="any"
+            autoFocus
           />
         </div>
 
-        <ToolButton onClick={convert}>
-          Convert
-        </ToolButton>
+        {/* Unit Selection */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-primary-text font-medium mb-2">
+              From
+            </label>
+            <select
+              value={fromUnit}
+              onChange={(e) => setFromUnit(e.target.value)}
+              className="input-field"
+            >
+              {availableUnits.map((unit) => (
+                <option key={unit} value={unit}>
+                  {unit}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        {result && (
-          <ToolResult copyText={result} copyLabel="Conversion Result">
-            <div className="text-lg font-medium text-slate-900 text-center">
+          <div>
+            <label className="block text-primary-text font-medium mb-2">
+              To
+            </label>
+            <select
+              value={toUnit}
+              onChange={(e) => setToUnit(e.target.value)}
+              className="input-field"
+            >
+              {availableUnits.map((unit) => (
+                <option key={unit} value={unit}>
+                  {unit}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* Swap Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={swapUnits}
+            className="p-2 border border-border rounded-lg hover:bg-card-hover transition-colors"
+            title="Swap units"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Error Message */}
+        {error && (
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+            <div className="flex items-center">
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              {error}
+            </div>
+          </div>
+        )}
+
+        {/* Result */}
+        {result && !error && (
+          <div className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200 text-center fade-in">
+            <div className="text-2xl font-bold text-accent">
               {result}
             </div>
-          </ToolResult>
+          </div>
         )}
       </div>
-    </ToolWrapper>
+    </Card>
   )
 }

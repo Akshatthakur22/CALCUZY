@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Card from '@/components/Card'
 import CopyButton from '@/components/CopyButton'
 
@@ -44,20 +44,15 @@ export default function BMICalculatorClient() {
     }
     
     let cat = ''
-    let variant = 'default'
 
     if (bmi < 18.5) {
       cat = 'Underweight'
-      variant = 'warning'
     } else if (bmi < 25) {
       cat = 'Normal weight'
-      variant = 'success'
     } else if (bmi < 30) {
       cat = 'Overweight'
-      variant = 'warning'
     } else {
       cat = 'Obese'
-      variant = 'error'
     }
 
     setBmiValue(bmi)
@@ -86,6 +81,12 @@ export default function BMICalculatorClient() {
       default: return 'bg-slate-50 border-slate-100'
     }
   }
+
+  useEffect(() => {
+    if (weight && height) {
+      calculateBMI()
+    }
+  }, [weight, height, unit])
 
   return (
     <Card className="max-w-2xl mx-auto mb-12">

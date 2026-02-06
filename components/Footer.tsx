@@ -24,22 +24,23 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200/60 mt-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        {/* Main Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {/* Brand Column */}
-          <div className="col-span-2 md:col-span-1">
-            <Link 
-              href="/" 
-              className="inline-flex items-center gap-2 mb-4 group"
-            >
-              <span className="text-xl font-bold text-slate-900 tracking-tight group-hover:text-blue-500 transition-colors">
-                Calcuzy
-              </span>
-            </Link>
-            <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
-              100+ precision tools for everyday calculations. Simple, fast, and beautifully designed.
+    <footer className="bg-secondary-bg border-t border-gray-200 mt-16 fade-in">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="col-span-1 md:col-span-2">
+            <div className="flex items-center mb-4">
+              <img 
+                src="/logo.png" 
+                alt="Calcuzy Logo" 
+                width={80} 
+                height={80} 
+                className="h-20 w-20"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <p className="text-sm text-gray-500 mb-4 leading-relaxed">
+              Simple online tools, countdown timers, and everyday utilities designed for speed and simplicity. 
+              Minimal. Fast. Search-Optimized.
             </p>
           </div>
           

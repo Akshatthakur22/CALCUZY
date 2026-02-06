@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Card from '@/components/Card'
 import Skeleton from '@/components/Skeleton'
 
@@ -9,6 +9,40 @@ export default function AgeCalculatorClient() {
   const [currentDate, setCurrentDate] = useState('')
   const [result, setResult] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const getZodiacSign = (date: Date): string => {
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+    
+    if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return 'Aries ♈'
+    if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) return 'Taurus ♉'
+    if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) return 'Gemini ♊'
+    if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) return 'Cancer ♋'
+    if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) return 'Leo ♌'
+    if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) return 'Virgo ♍'
+    if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) return 'Libra ♎'
+    if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) return 'Scorpio ♏'
+    if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) return 'Sagittarius ♐'
+    if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return 'Capricorn ♑'
+    if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) return 'Aquarius ♒'
+    return 'Pisces ♓'
+  }
+
+  const getChineseZodiac = (year: number): string => {
+    const zodiacs = ['Rat 🐀', 'Ox 🐂', 'Tiger 🐅', 'Rabbit 🐇', 'Dragon 🐲', 'Snake 🐍', 
+                    'Horse 🐴', 'Goat 🐑', 'Monkey 🐵', 'Rooster 🐓', 'Dog 🐕', 'Pig 🐖']
+    return zodiacs[(year - 4) % 12]
+  }
+
+  const getDayOfWeek = (date: Date): string => {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    return days[date.getDay()]
+  }
+
+  const isLeapYear = (year: number): boolean => {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)
+  }
 
   const calculateAge = async () => {
     if (!birthDate || !currentDate) {
@@ -62,6 +96,18 @@ export default function AgeCalculatorClient() {
   }
 
   const today = new Date().toISOString().split('T')[0]
+
+  useEffect(() => {
+    // Set current date to today by default
+    setCurrentDate(today)
+  }, [today])
+
+  useEffect(() => {
+    // Auto-calculate when both dates are selected
+    if (birthDate && currentDate) {
+      calculateAge()
+    }
+  }, [birthDate, currentDate, calculateAge])
 
   return (
     <Card className="max-w-2xl mx-auto mb-12 fade-in-up">
