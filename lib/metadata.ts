@@ -9,7 +9,7 @@ interface MetadataConfig {
   noIndex?: boolean
 }
 
-interface ToolSchemaConfig {
+export interface ToolSchemaConfig {
   name: string
   description: string
   url: string

@@ -1,0 +1,101 @@
+{
+  "name": "Calcuzy - All-in-One Calculator Tools",
+  "short_name": "Calcuzy",
+  "description": "Free online calculators, generators, converters, and utilities. 100+ precision tools for finance, health, legal, and everyday use.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["finance", "health", "productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "BMI Calculator",
+      "short_name": "BMI",
+      "description": "Calculate your Body Mass Index",
+      "url": "/bmi-calculator",
+      "icons": [{ "src": "/icons/bmi-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Age Calculator",
+      "short_name": "Age",
+      "description": "Calculate exact age in years, months, days",
+      "url": "/age-calculator",
+      "icons": [{ "src": "/icons/age-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Capital Gains Calculator",
+      "short_name": "Tax Calc",
+      "description": "Calculate capital gains tax on investments",
+      "url": "/capital-gains-calculator",
+      "icons": [{ "src": "/icons/tax-96.png", "sizes": "96x96" }]
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "splash_pages": null,
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-1.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/desktop-1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
