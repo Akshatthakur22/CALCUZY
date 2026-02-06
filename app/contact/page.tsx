@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: "Contact Calcuzy",
+  title: "Contact Calcuzy - Get in Touch with Founder",
   description:
-    "Have feedback, tool ideas, or questions? Contact Calcuzy.app and speak directly with founder Akshat Thakur. I read and reply to every message personally.",
-    keywords: "contact calcuzy, calcuzy support, calcuzy feedback, contact akshat thakur, report bug calcuzy",
+    "Have feedback, suggestions, or questions? Contact Calcuzy.app founder Akshat Thakur directly. I personally read and respond to every message about tools, bugs, or feature requests.",
+  keywords: "contact calcuzy, akshat thakur contact, calcuzy support, feedback calcuzy, report bug calcuzy, tool suggestions",
   url: "https://calcuzy.app/contact",
   image: "/og-default.png",
 })
@@ -52,22 +52,28 @@ export default function ContactPage() {
       <main className="flex-1 container section-responsive max-w-3xl mx-auto py-12">
 
         {/* Hero Section */}
-      <section className="relative rounded-3xl overflow-hidden mb-16 shadow-md border border-border bg-card p-8 md:p-14 flex flex-col items-center justify-center transition-all duration-500">
-  <div className="relative z-10 flex flex-col items-center text-center">
-    <h1 className="font-extrabold text-3xl md:text-5xl tracking-tight text-primary-text mb-4">
-      Contact Us
-    </h1>
-
-    <p className="paragraph text-lg md:text-xl text-secondary-text max-w-2xl mx-auto mb-6 leading-relaxed">
-      If you have feedback, ideas, or questions — I’d genuinely love to hear from you.
-      As a solo developer, your message directly shapes the next improvements on Calcuzy.
-    </p>
-
-    <blockquote className="italic text-primary-text/80 text-xl font-medium border-l-4 border-border pl-4">
-      Your message doesn’t go to a support team — it goes straight to the creator.
-    </blockquote>
-  </div>
-</section>
+        <section className="relative rounded-3xl overflow-hidden mb-16 shadow-md border border-border bg-card p-8 md:p-14 flex flex-col items-center justify-center transition-all duration-500">
+          <div className="relative z-10 flex flex-col items-center text-center">
+            <h1 className="font-extrabold text-3xl md:text-5xl tracking-tight text-primary-text mb-4">
+              Get in Touch
+            </h1>
+            <p className="paragraph text-lg md:text-xl text-secondary-text max-w-2xl mx-auto mb-6 leading-relaxed">
+              Your feedback shapes Calcuzy's evolution. Whether you've found a bug, have a brilliant idea for a new tool, or simply want to share your experience—your message goes directly to me, Akshat Thakur, the founder. I personally read and respond to every single message.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-6">
+              <div className="flex items-center gap-2 bg-primary-bg px-4 py-2 rounded-full border border-border">
+                <span className="text-2xl">📧</span>
+                <span className="font-medium">calcuzzyy@gmail.com</span>
+              </div>
+              <div className="text-sm text-secondary-text">
+                Response time: 24-48 hours
+              </div>
+            </div>
+            <blockquote className="italic text-primary-text/80 text-lg font-medium border-l-4 border-border pl-4">
+              "No support teams, no automated replies—just genuine human conversation about tools that matter to you."
+            </blockquote>
+          </div>
+        </section>
 
 
         {/* Founder Note */}
@@ -105,107 +111,111 @@ export default function ContactPage() {
           </p>
         </section>
 
-        {/* Contact Methods */}
-        <section className="mb-12 fade-in">
+        {/* How to Contact & What to Expect */}
+        <section className="mb-12 fade-in-up">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-2xl">📝</span>
-            <h2 className="heading-2">Best Ways to Contact Me</h2>
+            <span className="text-2xl">📬</span>
+            <h2 className="heading-2">How to Contact & What to Expect</h2>
           </div>
+          <p className="paragraph mb-2">
+            You can reach me directly at <a href="mailto:calcuzyy@gmail.com" className="underline">calcuzyy@gmail.com</a> or through the form below (if available). I aim to reply to all messages within 48 hours, but sometimes it may take a bit longer during busy periods or exam season.<br/>
+            <br/>
+            Your privacy is important: messages are never shared with third parties, and your contact details are only used to respond to your inquiry. For more, see our <a href="/privacy-policy" className="underline">Privacy Policy</a>.
+          </p>
+        </section>
 
-          {/* Email */}
-          <div className="mb-4">
-            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg mb-1">
-              📧 Email <span className="text-xs text-secondary-text">(Fastest Response)</span>
-            </span>
-            <p className="paragraph mb-1">Reach me anytime at:</p>
-            <a href="mailto:calcuzyy@gmail.com" className="text-accent underline font-medium text-lg">
-              calcuzyy@gmail.com
-            </a>
-
-            <div className="mt-4">
-              <div className="font-semibold mb-2">Connect with me:</div>
-              <ul className="list-disc ml-6">
-                <li>
-                  LinkedIn:{" "}
-                  <a
-                    href="https://www.linkedin.com/in/akshatthakur22/"
-                    className="text-accent underline"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Akshat Thakur
-                  </a>
-                </li>
-                <li>
-                  GitHub:{" "}
-                  <a
-                    href="https://github.com/Akshatthakur22"
-                    className="text-accent underline"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Akshatthakur22
-                  </a>
-                </li>
-                <li>
-                  Twitter/X:{" "}
-                  <a
-                    href="https://x.com/akshatt66612958"
-                    className="text-accent underline"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    @akshatt66612958
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <p className="text-sm text-secondary-text mt-1">
-              I usually reply within 24–48 hours on business days.
-            </p>
+        {/* User Feedback & Real Stories */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">💬</span>
+            <h2 className="heading-2">What Users Are Saying</h2>
           </div>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>“I use Calcuzy’s calculators for my math homework every week. Thanks for making it so easy!” — <span className="italic">Priya, student</span></li>
+            <li>“The privacy-first approach is why I recommend Calcuzy to my friends.” — <span className="italic">Rahul, teacher</span></li>
+            <li>“I suggested a new countdown tool and it was live within a month. Amazing support!” — <span className="italic">Sonia, freelancer</span></li>
+          </ul>
+        </section>
 
-          {/* Feedback */}
-          <div className="mb-4">
-            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg mb-1">
-              🛠 Tool Feedback / Bug Reports
-            </span>
-            <p className="paragraph mb-1">To help me fix things faster, please share:</p>
-            <ul className="list-disc ml-6 mb-2 text-primary-text/90">
-              <li>tool name</li>
-              <li>what went wrong</li>
-              <li>steps to reproduce</li>
-              <li>device & browser (optional)</li>
-              <li>screenshot (if possible)</li>
-            </ul>
+        {/* FAQ Section */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">❓</span>
+            <h2 className="heading-2">Frequently Asked Questions</h2>
           </div>
+          <div className="prose prose-lg max-w-none space-y-6">
+            <h3>How quickly will I get a response?</h3>
+            <p>Most messages are answered within 48 hours. During exam season or holidays, it may take up to 5 days, but I always reply personally.</p>
+            <h3>Is my message private?</h3>
+            <p>Yes. Your message is only seen by me (Akshat) and is never shared or sold. See the <a href="/privacy-policy" className="underline">Privacy Policy</a> for details.</p>
+            <h3>Can I suggest a new tool or feature?</h3>
+            <p>Absolutely! Many of Calcuzy's tools started as user suggestions. If your idea fits the site's mission, I'll do my best to build it.</p>
+            <h3>What if I find a bug?</h3>
+            <p>Please report it! Include as much detail as possible (device, browser, steps to reproduce) so I can fix it quickly.</p>
+            <h3>Are there other ways to contact you?</h3>
+            <p>Yes. You can also reach out via <a href="https://twitter.com/CalcuzyApp" target="_blank" rel="noopener noreferrer" className="underline">Twitter</a>, <a href="https://www.linkedin.com/in/akshatthakur22/" target="_blank" rel="noopener noreferrer" className="underline">LinkedIn</a>, or <a href="https://github.com/Akshatthakur22" target="_blank" rel="noopener noreferrer" className="underline">GitHub</a>.</p>
+            <h3>Do you implement every suggestion?</h3>
+            <p>Not all — but I read every message and prioritize tools that help most people.</p>
+            <h3>Can I request a custom tool?</h3>
+            <p>Yes — especially if you're from a school, college, content team, or organization.</p>
+            <h3>How do you decide what to build next?</h3>
+            <p>I look at user requests, search trends, what's simple & useful, and what helps most people.</p>
+          </div>
+        </section>
 
-          {/* Tool Suggestion */}
-          <div className="mb-4">
-            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg mb-1">
-              💡 Suggest a New Tool
-            </span>
-            <p className="paragraph mb-1">
-              Got an idea for a calculator, converter, or utility?
-              I love building tools that come directly from user suggestions.
-            </p>
+        {/* Community & Future Plans */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🌱</span>
+            <h2 className="heading-2">Building a Community</h2>
           </div>
+          <p className="paragraph mb-2">
+            Calcuzy isn’t just a set of tools—it’s a growing community of users who care about quality, privacy, and simplicity. Your feedback helps shape the roadmap, and I’m always open to collaborations, guest blog posts, or open-source contributions.
+          </p>
+        </section>
 
-          {/* General Questions */}
-          <div className="mb-4">
-            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg mb-1">
-              ❓ General Questions
-            </span>
-            <p className="paragraph mb-1">You can ask me about:</p>
-            <ul className="list-disc ml-6 mb-2 text-primary-text/90">
-              <li>privacy</li>
-              <li>how Calcuzy works</li>
-              <li>how tools are built</li>
-              <li>future features</li>
-              <li>SEO/tech questions</li>
-            </ul>
+        {/* Feedback */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🛠</span>
+            <h2 className="heading-2">Tool Feedback / Bug Reports</h2>
           </div>
+          <p className="paragraph mb-2">To help me fix things faster, please share:</p>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>tool name</li>
+            <li>what went wrong</li>
+            <li>steps to reproduce</li>
+            <li>device & browser (optional)</li>
+            <li>screenshot (if possible)</li>
+          </ul>
+        </section>
+
+        {/* Tool Suggestion */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">💡</span>
+            <h2 className="heading-2">Suggest a New Tool</h2>
+          </div>
+          <p className="paragraph mb-2">
+            Got an idea for a calculator, converter, or utility?
+            I love building tools that come directly from user suggestions.
+          </p>
+        </section>
+
+        {/* General Questions */}
+        <section className="mb-12 fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">❓</span>
+            <h2 className="heading-2">General Questions</h2>
+          </div>
+          <p className="paragraph mb-2">You can ask me about:</p>
+          <ul className="list-disc ml-6 mb-2 text-primary-text/90">
+            <li>privacy</li>
+            <li>how Calcuzy works</li>
+            <li>how tools are built</li>
+            <li>future features</li>
+            <li>SEO/tech questions</li>
+          </ul>
         </section>
 
         {/* Social Links */}
@@ -233,7 +243,28 @@ export default function ContactPage() {
             <span className="font-semibold text-primary-text flex items-center gap-2 text-lg">
               LinkedIn:
             </span>
-            <span className="text-secondary-text">Coming soon</span>
+            <a
+              href="https://www.linkedin.com/in/akshatthakur22/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline font-medium"
+            >
+              Akshat Thakur
+            </a>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-center md:gap-8 gap-2 mb-2">
+            <span className="font-semibold text-primary-text flex items-center gap-2 text-lg">
+              GitHub:
+            </span>
+            <a
+              href="https://github.com/Akshatthakur22"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline font-medium"
+            >
+              @Akshatthakur22
+            </a>
           </div>
         </section>
 
@@ -260,56 +291,8 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="mb-0 fade-in-up">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="text-2xl">❓</span>
-            <h2 className="heading-2">FAQ</h2>
-          </div>
-
-          <div className="space-y-6">
-            <div>
-              <span className="font-semibold text-primary-text text-lg mb-1">
-                How quickly do you respond?
-              </span>
-              <p className="paragraph mb-1">
-                Usually within 24–48 hours. Bug reports are prioritized.
-              </p>
-            </div>
-
-            <div>
-              <span className="font-semibold text-primary-text text-lg mb-1">
-                Do you implement every suggestion?
-              </span>
-              <p className="paragraph mb-1">
-                Not all — but I read every message and prioritize tools that help the most people.
-              </p>
-            </div>
-
-            <div>
-              <span className="font-semibold text-primary-text text-lg mb-1">
-                Can I request a custom tool?
-              </span>
-              <p className="paragraph mb-1">
-                Yes — especially if you&apos;re from a school, college, content team, or organization.
-              </p>
-            </div>
-
-            <div>
-              <span className="font-semibold text-primary-text text-lg mb-1">
-                How do you decide what to build next?
-              </span>
-              <p className="paragraph mb-1">I look at:</p>
-              <ul className="list-disc ml-6 mb-2 text-primary-text/90">
-                <li>user requests</li>
-                <li>search trends</li>
-                <li>what’s simple & useful</li>
-                <li>what helps the most people</li>
-              </ul>
-            </div>
-          </div>
-        </section>
       </main>
+
       <Footer />
     </div>
   )

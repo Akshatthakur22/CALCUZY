@@ -4,12 +4,14 @@ import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
+import RelatedToolsBento, { generatorRelatedTools } from '@/components/RelatedToolsBento'
+import HowItWorks, { generatorHowItWorks } from '@/components/HowItWorks'
 import { createMetadata, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Baby Boy Names – Popular American Boy Names',
-  description: 'Find perfect baby boy name from our list of popular American boy names. Browse unique, traditional, and modern names for your baby boy.',
-  keywords: 'baby boy names, popular boy names, american boy names, baby name ideas',
+  title: 'PROVEN Baby Boy Names: 100+ FREE 2026 Names',
+  description: 'INSTANT access to 100+ PROVEN baby boy names for 2026. FREE list of popular, unique & strong American boy names with meanings. Your complete naming solution.',
+  keywords: 'baby boy names, popular boy names, american boy names, baby name ideas, unique boy names, traditional boy names, modern boy names, 2026 baby names',
   url: 'https://calcuzy.app/baby-boy-names',
   image: '/og-names.png',
 })
@@ -32,6 +34,10 @@ export default function BabyBoyNames() {
   }
 
   const faqData = [
+    {
+      question: 'What are the most popular baby boy names for 2026?',
+      answer: 'The most popular baby boy names for 2026 include Liam, Noah, Oliver, Ethan, and Lucas. Traditional names like William and James remain strong, while modern choices like Leo and Ezra are rising rapidly. These names reflect current trends toward shorter, distinctive names with strong vowel sounds.'
+    },
     {
       question: 'How many baby boy names are in this list?',
       answer: 'Our comprehensive list includes over 100 baby boy names, divided into traditional, modern, and strong categories. This provides plenty of options for finding the perfect name for your new son.'
@@ -57,20 +63,32 @@ export default function BabyBoyNames() {
   const faqSchema = createFAQSchema(faqData)
 
   const steps = [
-    { title: 'Browse Categories', description: 'Explore our Traditional, Modern, and Strong name categories to find styles that resonate with you.' },
-    { title: 'Save Your Favorites', description: 'Note down names you love and say them aloud with your last name to test the flow.' },
-    { title: 'Research Meanings', description: 'Look up the origin and meaning of names that interest you for deeper connection.' },
-    { title: 'Share with Family', description: 'Discuss top choices with your partner and family to gather feedback and opinions.' },
-    { title: 'Make Your Choice', description: 'Trust your instincts and choose a name that feels right for your baby boy.' }
+    { title: 'Browse Categories', description: 'Explore traditional, modern, and strong name categories to find your preferred style.' },
+    { title: 'Consider Meanings', description: 'Research name meanings and origins to choose a name with significance.' },
+    { title: 'Test Pronunciation', description: 'Say the name aloud with your last name to check flow and rhythm.' },
+    { title: 'Check Initials', description: 'Ensure the initials work well together and avoid awkward combinations.' }
   ]
 
   const tips = [
-    'Say the full name with your last name to test flow',
-    'Consider potential nicknames and initials (avoid awkward acronyms)',
-    'Think about the meaning and origin of the name',
-    'Check popularity trends in your area if uniqueness matters',
-    'Select a name that ages well from childhood to adulthood'
+    'Consider family heritage and cultural significance when choosing',
+    'Test how the name sounds with your last name for proper flow',
+    'Think about potential nicknames and whether you like them',
+    'Check the meaning and origin to ensure it aligns with your values',
+    'Consider how the name will age from childhood to adulthood'
   ]
+
+  const comprehensiveNamingGuide = (
+    <div className="prose prose-lg max-w-none space-y-6">
+      <p className="paragraph">
+        Choosing the perfect name for your baby boy is one of the most meaningful decisions you'll make as a parent. A name becomes your child's identity, influences how others perceive them, and can impact their confidence and social interactions. Our comprehensive guide combines cultural insights, naming psychology, and practical considerations to help you select a name that resonates with your family values while setting your son up for success.
+      </p>
+      
+      <h3 className="text-xl font-semibold text-slate-800 mb-4">The Psychology Behind Baby Boy Names</h3>
+      <p className="paragraph mb-6">
+        Research in developmental psychology shows that names significantly influence children's self-perception and social development. Studies indicate that children with easily pronounceable names tend to have higher confidence in social settings, while names with positive meanings can create subtle psychological advantages. The "name-letter effect" demonstrates that people often form unconscious associations with names based on their first letter—names starting with positive letters like "A" (Alexander, Andrew) are often perceived more favorably than those starting with less positive letters.
+      </p>
+    </div>
+  )
 
   const traditionalNames = [
     'Liam', 'Noah', 'Oliver', 'Ethan', 'Lucas', 'Mason', 'Logan', 'Jacob', 'William', 'James', 'Benjamin',
@@ -151,10 +169,9 @@ export default function BabyBoyNames() {
 
         <div className="max-w-4xl mx-auto mb-12">
           <Card animation="fade-in-up" delay={300}>
-            <h2 className="heading-2 mb-6">Strong & Powerful Boy Names</h2>
+            <h2 className="heading-2 mb-6">Strong Baby Boy Names</h2>
             <p className="paragraph mb-6">
-              Powerful and meaningful names that convey strength and character. These strong 
-              boy names are perfect for parents seeking impactful name choices.
+              Strong and powerful names carry significant weight and meaning, often reflecting parents' hopes for their son's future character and success. These names typically have deep historical roots, strong phonetic presence, and convey qualities like leadership, wisdom, or protection. In many cultures, strong boy names are chosen specifically for their ability to empower the child throughout life, serving as both a daily identifier and a source of confidence.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {strongNames.map((name, index) => (
@@ -165,8 +182,67 @@ export default function BabyBoyNames() {
             </div>
           </Card>
         </div>
+        
+        {/* Comprehensive Naming Guide */}
+        <section className="mb-12">
+          <h2 className="font-semibold text-lg mb-6">Complete Guide to Choosing Baby Boy Names</h2>
+          
+          <div className="prose prose-lg max-w-none space-y-6">
+            <p className="paragraph">
+              Choosing the perfect name for your baby boy is one of the most meaningful decisions you'll make as a parent. A name becomes your child's identity, influences how others perceive them, and can impact their confidence and social interactions. Our comprehensive guide combines cultural insights, naming psychology, and practical considerations to help you select a name that resonates with your family values while setting your son up for success.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">The Psychology Behind Baby Boy Names</h3>
+            <p className="paragraph mb-6">
+              Research in developmental psychology shows that names significantly influence children's self-perception and social development. Studies indicate that children with easily pronounceable names tend to have higher confidence in social settings, while names with positive meanings can create subtle psychological advantages. The "name-letter effect" demonstrates that people often form unconscious associations with names based on their first letter—names starting with positive letters like "A" (Alexander, Andrew) are often perceived more favorably than those starting with less positive letters.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">Cultural Considerations and Global Naming Trends</h3>
+            <p className="paragraph mb-6">
+              Modern naming practices reflect increasingly global perspectives. While traditional Western names remain popular, there's growing appreciation for names from diverse cultural backgrounds—Japanese names like Kenji, African names like Kwame, and Hispanic names like Santiago. Additionally, 2026 trends show parents moving toward gender-neutral names for boys, nature-inspired names, and vintage names that feel both classic and fresh. This shift reflects broader cultural awareness and desire for names that transcend traditional boundaries.
+            </p>
+            
+            <div className="bg-purple-50 p-6 rounded-lg border border-purple-100 mb-6">
+              <h4 className="font-semibold text-purple-900 mb-3">Expert Naming Strategies for 2026</h4>
+              <ul className="space-y-3 text-purple-800">
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500 font-bold mt-1">•</span>
+                  <span><strong>Test the Flow:</strong> Say the complete name with your last name multiple times to check rhythm and avoid awkward combinations.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500 font-bold mt-1">•</span>
+                  <span><strong>Consider Initials:</strong> Think about how the initials will look on monograms and professional documents.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500 font-bold mt-1">•</span>
+                  <span><strong>Cultural Sensitivity:</strong> Research names' cultural meanings and pronunciation to ensure respect for heritage and avoid unintended associations.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500 font-bold mt-1">•</span>
+                  <span><strong>Future-Proofing:</strong> Consider how the name will serve your child from childhood through professional life.</span>
+                </li>
+              </ul>
+            </div>
+            
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">Historical Evolution of Boy Names</h3>
+            <p className="paragraph mb-6">
+              The practice of naming boys has evolved dramatically throughout history. Ancient civilizations often chose names reflecting gods, virtues, or natural elements. Medieval times saw the rise of saint names and occupational surnames becoming first names. The Victorian era emphasized elaborate, multi-syllable names, while the 20th century saw cycles of shortened names (Jim, Bill) and then revival of classical names. Today's naming landscape combines all these influences, with parents drawing from historical patterns while adapting to contemporary sensibilities.
+            </p>
+            
+            <p className="paragraph">
+              Remember that the best baby boy name is one that feels right to your family and carries the hopes and dreams you have for your son. Take time to consider how the name sounds, its meaning, its cultural significance, and how it will serve your child throughout different life stages. Your thoughtful choice will become part of your son's identity and story.
+            </p>
+          </div>
+        </section>
 
         <AdUnit slot={2} />
+
+        {/* How It Works Section */}
+        <HowItWorks 
+          title="How Our Baby Boy Names Generator Works"
+          steps={generatorHowItWorks}
+          className="bg-slate-50/50"
+        />
 
         {/* Tool Info Section */}
         <div className="mt-16 fade-in-up">
@@ -175,10 +251,7 @@ export default function BabyBoyNames() {
             description={
               <>
                 <p className="mb-4">
-                  Choosing the perfect baby boy name is one of the most exciting decisions 
-                  you&apos;ll make as a parent. Our comprehensive list of 100+ strong boy names includes 
-                  timeless classics, modern trends, and powerful options that convey strength 
-                  and character.
+                  Choosing the perfect baby boy name is one of the most exciting decisions you'll make as a parent. Our comprehensive list of 100+ strong boy names includes timeless classics, modern trends, and powerful options that convey strength and character.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                   <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
@@ -209,10 +282,18 @@ export default function BabyBoyNames() {
           <RelatedTools currentTool="/baby-boy-names" category="generators" customTools={[
             { name: 'Baby Girl Names', href: '/baby-girl-names', description: 'Find baby girl names', icon: '👧' },
             { name: 'Dog Names', href: '/dog-names', description: 'Browse dog name ideas', icon: '🐕' },
-            { name: 'Cat Names', href: '/cat-names', description: 'Find the perfect cat name', icon: '🐱' },
+            { name: 'Cat Names', href: '/cat-names', description: 'Find perfect cat name', icon: '🐱' },
             { name: 'American Last Names', href: '/american-last-names', description: 'Browse popular last names', icon: '📜' }
           ]} />
         </div>
+
+        {/* Related Tools Bento Footer */}
+        <RelatedToolsBento 
+          currentTool="/baby-boy-names"
+          tools={generatorRelatedTools}
+          title="More Generator Tools To Explore"
+          className="bg-slate-50/50"
+        />
       </main>
 
       <Footer />

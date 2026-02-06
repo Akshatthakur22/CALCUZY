@@ -5,9 +5,9 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'All Tools',
-  description: 'Browse all free online tools. Calculators, converters, generators, and utilities for finance, health, legal, home improvement, and more.',
-  keywords: 'online tools, calculators, converters, generators, free tools, utility tools',
+  title: 'All Tools - Complete Collection of 100+ Free Online Tools',
+  description: 'Explore our comprehensive collection of 100+ free online tools including calculators, converters, generators, and utilities for finance, health, legal, home improvement, and more. All tools are free, fast, and privacy-focused.',
+  keywords: 'online tools, calculators, converters, generators, free tools, utility tools, financial calculators, health calculators, legal documents',
   url: 'https://calcuzy.app/tools',
   image: '/og-default.png',
 })
@@ -128,6 +128,37 @@ export default function ToolsPage() {
 
         <AdUnit slot={1} format="horizontal" />
 
+        {/* Hero Content */}
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                Complete Collection of Free Online Tools
+              </h1>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Welcome to Calcuzy's comprehensive toolkit featuring 100+ professional-grade online tools. Whether you're calculating finances, planning projects, managing health, or organizing daily life, our privacy-first platform provides instant, accurate results without compromising your data security.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                  <div className="text-3xl mb-3">🔒</div>
+                  <h3 className="font-semibold text-blue-900 mb-2">100% Private</h3>
+                  <p className="text-sm text-blue-700">All calculations happen in your browser. No data storage, no tracking.</p>
+                </div>
+                <div className="bg-green-50 rounded-xl p-6 border border-green-100">
+                  <div className="text-3xl mb-3">⚡</div>
+                  <h3 className="font-semibold text-green-900 mb-2">Lightning Fast</h3>
+                  <p className="text-sm text-green-700">Instant results with optimized performance and no loading delays.</p>
+                </div>
+                <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                  <div className="text-3xl mb-3">🎯</div>
+                  <h3 className="font-semibold text-purple-900 mb-2">Professional Grade</h3>
+                  <p className="text-sm text-purple-700">Built with industry standards and expert-backed algorithms.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Tools by Category */}
         <section className="py-8 md:py-12">
           <div className="container mx-auto px-4">
@@ -184,6 +215,105 @@ export default function ToolsPage() {
         </section>
 
         <AdUnit slot={2} format="rectangle" />
+
+        {/* Comprehensive Content Section */}
+        <section className="py-12 md:py-16 bg-slate-50/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
+                Why Choose Calcuzy's Online Tools?
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Industry-Leading Accuracy</h3>
+                  <p className="text-slate-600 mb-4 leading-relaxed">
+                    Every tool in our collection is developed using industry-standard algorithms and validated against professional benchmarks. Our financial calculators incorporate current tax laws and market practices, while our health tools follow WHO and CDC guidelines. This commitment to accuracy ensures you can rely on our results for important decisions.
+                  </p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Expert-reviewed algorithms and formulas</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Regular updates with latest standards</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Professional-grade precision</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Privacy-First Architecture</h3>
+                  <p className="text-slate-600 mb-4 leading-relaxed">
+                    Unlike many online tool platforms, we never store your personal information or track your usage. All calculations happen directly in your browser using client-side processing. This means your sensitive financial data, health information, and personal details never leave your device, providing complete privacy and security.
+                  </p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>100% client-side processing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>No data collection or storage</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>GDPR and privacy law compliant</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Comprehensive Tool Coverage</h3>
+                  <p className="text-slate-600 mb-4 leading-relaxed">
+                    Our platform covers every major category of online tools you might need. From complex financial calculations like crypto tax and capital gains to everyday utilities like age calculators and unit converters, we've consolidated everything you need in one convenient location. This eliminates the need to bookmark multiple sites or switch between different applications.
+                  </p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>100+ specialized tools across 10+ categories</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Regular additions based on user feedback</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Tools for personal and professional use</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Mobile-Optimized Experience</h3>
+                  <p className="text-slate-600 mb-4 leading-relaxed">
+                    Every tool is fully responsive and optimized for mobile devices. Whether you're calculating BMI at the gym, determining investment returns during your commute, or generating legal documents from your home office, our tools work seamlessly across all devices. This mobile-first approach ensures you have access to professional tools wherever and whenever you need them.
+                  </p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Fully responsive design</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Touch-optimized interfaces</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Instant loading on any device</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Quick Links */}
         <section className="py-12 md:py-16 bg-slate-50/50">

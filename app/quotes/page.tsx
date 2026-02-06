@@ -5,9 +5,9 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Inspirational Quotes',
-  description: 'Free collection of inspirational quotes and motivational sayings. Motivational quotes, love quotes, graduation quotes, Christmas quotes and aesthetic quotes for daily inspiration.',
-  keywords: 'inspirational quotes, motivational quotes, love quotes, graduation quotes, daily inspiration, positive quotes',
+  title: 'Inspirational Quotes - 500+ Motivational, Love & Holiday Quotes',
+  description: 'Discover our comprehensive collection of 500+ inspirational quotes including motivational, love, graduation, Christmas, and aesthetic quotes. Find daily inspiration, heartfelt messages, and meaningful sayings for every occasion.',
+  keywords: 'inspirational quotes, motivational quotes, love quotes, graduation quotes, christmas quotes, daily inspiration, positive quotes, life quotes',
   url: 'https://calcuzy.app/quotes',
   image: '/og-default.png',
 })
@@ -98,10 +98,56 @@ export default function QuotesPage() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight tracking-tight">
                 Inspirational Quotes
               </h1>
-              <p className="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                Find daily inspiration with our curated collection of quotes. 
-                From motivational wisdom to heartfelt expressions, discover the perfect words.
-              </p>
+              <div className="prose prose-lg max-w-none mb-8">
+                <p className="paragraph">
+                  Quotes have the power to inspire, motivate, and transform perspectives throughout human history. From ancient wisdom to modern insights, our comprehensive collection brings together the most impactful sayings across multiple categories—motivational, love, graduation, Christmas, and aesthetic quotes. These carefully curated collections serve as daily inspiration, social media content, and material for important life moments, helping people find the perfect words for any situation or emotion.
+                </p>
+                
+                <div className="bg-orange-50 p-6 rounded-lg border border-orange-100 mb-8">
+                  <h3 className="text-xl font-semibold text-orange-900 mb-4">The Power of Inspirational Quotes</h3>
+                  <p className="paragraph mb-6">
+                    Inspirational quotes tap into fundamental human needs for encouragement, hope, and meaning. Research in positive psychology shows that regular exposure to uplifting quotes can improve resilience, boost motivation, and enhance overall well-being. These quotes work by reframing challenges, highlighting strengths, and reminding people of their inherent potential. In today's fast-paced world, where stress and uncertainty are common, inspirational quotes serve as mental anchors that help maintain focus and optimism during difficult times.
+                  </p>
+                  
+                  <h3 className="text-xl font-semibold text-orange-900 mb-4">Categories and Their Psychological Impact</h3>
+                  <div className="grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                      <p><strong>Motivational Quotes:</strong> Activate achievement mindset, build confidence, and overcome obstacles</p>
+                      <p className="text-orange-700">Ideal for goal setting, habit formation, and personal development</p>
+                    </div>
+                    <div>
+                      <p><strong>Love Quotes:</strong> Foster emotional connection, express affection, and strengthen relationships</p>
+                      <p className="text-orange-700">Perfect for relationships, anniversaries, and emotional expression</p>
+                    </div>
+                    <div>
+                      <p><strong>Graduation Quotes:</strong> Mark transitions, celebrate achievements, and inspire future success</p>
+                      <p className="text-orange-700">Ideal for ceremonies, commencement speeches, and life milestones</p>
+                    </div>
+                    <div>
+                      <p><strong>Christmas Quotes:</strong> Spread joy, generosity, and holiday spirit</p>
+                      <p className="text-orange-700">Perfect for seasonal celebrations, family gatherings, and holiday cards</p>
+                    </div>
+                    <div>
+                      <p><strong>Aesthetic Quotes:</strong> Appreciate beauty, art, and visual harmony</p>
+                      <p className="text-orange-700">Ideal for creative projects, social media, and artistic expression</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-semibold text-slate-800 mb-4">Modern Applications and Digital Age</h3>
+                <p className="paragraph mb-6">
+                  In the digital era, quotes have found new life through social media, blogs, and digital communication platforms. Memes, quote graphics, and shareable text formats have transformed how inspirational content spreads, creating viral trends and cultural phenomena. The digital age has democratized quote sharing, allowing anyone to become both consumer and creator of inspirational content. This evolution has led to the rise of quote influencers, digital quote communities, and AI-generated inspirational messages that reflect contemporary communication styles and values.
+                </p>
+                
+                <h3 className="text-xl font-semibold text-slate-800 mb-4">Historical Evolution and Cultural Significance</h3>
+                <p className="paragraph mb-6">
+                  The tradition of sharing wisdom through quotes spans millennia, from ancient proverbs and religious texts to modern secular expressions. Classical philosophers like Aristotle, Confucius, and Marcus Aurelius established foundations of Western quote culture, while Eastern traditions contributed profound sayings from Buddha, Lao Tzu, and other spiritual leaders. Each era has adapted quotes to reflect contemporary values and challenges, from medieval religious wisdom to Enlightenment rationalism, to modern psychological insights and social commentary.
+                </p>
+                
+                <p className="paragraph">
+                  Whether you're seeking daily motivation, words to express love, inspiration for a major life transition, or simply want to share wisdom on social media, our collection provides quotes that resonate with diverse human experiences and emotions. Remember that the most powerful quotes are those that speak to your current situation while offering perspective that helps you grow and connect with others more meaningfully.
+                </p>
+              </div>
             </div>
           </div>
         </section>

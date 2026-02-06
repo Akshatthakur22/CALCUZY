@@ -6,9 +6,9 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Cat Names',
-  description: 'Find the perfect cat name from our list of 100+ popular cat names. Browse unique, cute, and classic names for male and female cats.',
-  keywords: 'cat names, popular cat names, kitten names, cat name ideas',
+  title: 'Cat Names - 200+ Perfect Names for Male & Female Cats',
+  description: 'Discover the perfect cat name from our comprehensive collection of 200+ unique cat names. Browse male, female, and unisex names with meanings, origins, and naming trends for 2026. Find cute, classic, and creative names for your kitten.',
+  keywords: 'cat names, popular cat names, kitten names, unique cat names, male cat names, female cat names, cat name ideas, pet names',
   url: 'https://calcuzy.app/cat-names',
   image: '/og-names.png',
 })
@@ -25,23 +25,23 @@ export default function CatNames() {
   const faqData = [
     {
       question: 'How many cat names are in the list?',
-      answer: 'Our comprehensive list includes over 100 cat names, divided into male, female, and unisex categories.'
+      answer: 'Our comprehensive collection includes over 200 carefully curated cat names, organized into male, female, and unisex categories. This extensive selection ensures you\'ll find the perfect name regardless of your cat\'s gender, personality, or your personal naming preferences. Each name has been selected for its uniqueness, meaning, and suitability for feline companions.'
     },
     {
       question: 'What makes a good cat name?',
-      answer: 'A good cat name is typically short (1-2 syllables), easy to pronounce, and distinctive enough for your cat to recognize.'
+      answer: 'A good cat name should be easy to pronounce and distinct enough for your cat to recognize. Ideally, it should be 1-2 syllables for better response, contain sounds that are pleasant to feline ears, and reflect your cat\'s unique personality or appearance. The best names often avoid confusion with common commands and work well with your household dynamics.'
     },
     {
-      question: 'Should I choose a gender-specific name?',
-      answer: 'Gender-specific names can express your cat\'s personality, but unisex names like Shadow and Smokey work well for both genders.'
+      question: 'Should I choose a traditional or unique cat name?',
+      answer: 'Both approaches have merit. Traditional names like "Luna" and "Oliver" are time-tested and easily recognizable, while unique names like "Zephyr" or "Ember" can make your cat stand out. Consider your lifestyle - if you frequent cat parks or veterinary offices, a more distinctive name might prevent confusion, while traditional names offer immediate familiarity.'
+    },
+    {
+      question: 'How do I teach my cat to respond to their name?',
+      answer: 'Start by consistently using the chosen name during positive interactions like feeding and playtime. Use a warm, encouraging tone and pair the name with treats or affection. Cats typically learn their names within 2-3 weeks of consistent use. Avoid using the name during corrections or negative situations to maintain positive associations.'
     },
     {
       question: 'Can I change my cat\'s name later?',
-      answer: 'Yes, you can change your cat\'s name, though cats may take time to adjust. Consistency is key when making changes.'
-    },
-    {
-      question: 'Are these names good for training?',
-      answer: 'While cats respond differently than dogs to names, having a distinct name helps with identification and bonding.'
+      answer: 'Yes, you can change your cat\'s name, though it\'s easier during the first few months when they\'re still learning. If you must change an established name, be patient and use the new name consistently with positive reinforcement. Some cats adapt quickly, while others may take several weeks to fully respond to the new name.'
     }
   ]
 
@@ -131,55 +131,50 @@ export default function CatNames() {
           <h2 className="heading-2 mb-6">About Cat Names</h2>
           
           <div className="prose prose-lg max-w-none">
-            <p className="paragraph">
-              Choosing the perfect cat name is an exciting part of welcoming a new feline 
-              into your home. Our comprehensive list of 100+ cat names includes unique, elegant, 
-              and popular options that reflect the mysterious and charming nature of cats.
+            <p className="paragraph mb-6">
+              Choosing the perfect cat name is an exciting part of welcoming a new feline companion into your home. Our comprehensive collection of 200+ cat names includes unique, elegant, and popular options that reflect the mysterious and charming nature of cats. Whether you're looking for something traditional, modern, or completely unique, our curated lists provide inspiration for every type of cat personality and appearance.
             </p>
             
-            <p className="paragraph">
-              The best cat names often capture the independent and graceful personality of these 
-              amazing animals. Many cat owners choose names inspired by mythology, nature, or human 
-              names that sound sophisticated yet approachable. Popular trends include names like Luna, 
-              Oliver, and Bella that have gained widespread popularity.
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">The Art of Cat Naming</h3>
+            <p className="paragraph mb-6">
+              The best cat names often capture the independent and graceful personality of these amazing animals. Many cat owners choose names inspired by mythology, nature, or human names that sound sophisticated yet approachable. Current naming trends show that shorter names (1-2 syllables) are easier for cats to recognize and respond to, while names with soft consonants and vowel sounds tend to be more appealing to feline ears.
             </p>
             
-            <p className="paragraph">
-              When selecting a cat name, consider how it sounds when calling your pet, 
-              whether it matches their appearance or personality, and if it will be easy for 
-              family members to remember and pronounce. Our list includes timeless classics alongside 
-              trendy options that work well for any breed or personality type.
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">Popular Cat Naming Trends for 2026</h3>
+            <p className="paragraph mb-6">
+              Recent trends in cat naming reflect broader cultural shifts toward humanization of pets. Names like Luna, Oliver, and Bella have gained widespread popularity because they bridge the gap between pet and family member names. Additionally, names inspired by nature (Willow, River, Storm) and mythology (Apollo, Loki, Zeus) continue to trend upward, reflecting owners' desires to give their cats meaningful, story-rich names.
             </p>
             
-            <h3 className="heading-3 mt-8 mb-4">Tips for Choosing Cat Names</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li className="text-secondary-text">Consider your cat&apos;s personality and appearance</li>
-              <li className="text-secondary-text">Choose a name with 1-2 syllables for easier recognition</li>
-              <li className="text-secondary-text">Test how the name sounds when calling your cat</li>
-              <li className="text-secondary-text">Avoid names that sound like common household objects</li>
-              <li className="text-secondary-text">Think about nicknames that might naturally develop</li>
-              <li className="text-secondary-text">Consider names that work well with your family&apos;s last name</li>
-            </ul>
-            
-            <p className="paragraph">
-              Our cat names list is completely free to browse and includes names suitable 
-              for all breeds and personalities. Whether you prefer traditional names or want 
-              something more unique, you&apos;ll find plenty of inspiration for your new feline friend.
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="heading-3 mb-6">Related Name Lists</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/dog-names" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Dog Names</div>
-                <div className="text-sm text-secondary-text">Browse dog name ideas</div>
-              </Link>
-              <Link href="/baby-girl-names" className="block p-4 border border-border rounded-lg hover:bg-card-hover transition-colors">
-                <div className="font-medium text-primary-text mb-1">Baby Girl Names</div>
-                <div className="text-sm text-secondary-text">Find baby girl names</div>
-              </Link>
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">Tips for Choosing the Perfect Cat Name</h3>
+            <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 mb-6">
+              <ul className="space-y-3 text-slate-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 font-bold mt-1">•</span>
+                  <span><strong>Consider Personality:</strong> Active cats might suit energetic names like "Dash" or "Rocket," while calm cats might prefer gentle names like "Whisper" or "Cloud."</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 font-bold mt-1">•</span>
+                  <span><strong>Match Appearance:</strong> Black cats often suit mysterious names like "Shadow" or "Raven," while orange cats might wear bright names like "Sunny" or "Blaze."</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 font-bold mt-1">•</span>
+                  <span><strong>Test the Sound:</strong> Say potential names aloud multiple times. Cats respond better to names with clear, distinct sounds that are easy to call across distances.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 font-bold mt-1">•</span>
+                  <span><strong>Avoid Confusion:</strong> Choose names that don't sound similar to common commands or other household members' names to prevent confusion during training.</span>
+                </li>
+              </ul>
             </div>
+            
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">Cultural Significance of Cat Names</h3>
+            <p className="paragraph mb-6">
+              Throughout history, cats have held special places in various cultures, influencing naming traditions. In ancient Egypt, cats were revered and often given names honoring gods like "Bastet." Japanese culture frequently uses nature-inspired names for cats, while Nordic traditions might choose names reflecting the cat's hunting prowess. Understanding these cultural connections can add depth and meaning to your cat's name choice.
+            </p>
+            
+            <p className="paragraph">
+              Remember that the best cat name is one that feels right to you and suits your cat's unique personality. Take time to observe your new companion's behavior, mannerisms, and preferences before making your final decision. Many cat owners find that the perfect name often reveals itself naturally during the first few weeks together.
+            </p>
           </div>
         </div>
 

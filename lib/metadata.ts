@@ -210,6 +210,47 @@ export function createFAQSchema(faqs: { question: string; answer: string }[]) {
 }
 
 /**
+ * Generates CalculateAction JSON-LD schema for calculator tools
+ * This schema helps Google understand calculation actions and can enable rich snippets
+ */
+export function createCalculateActionSchema({
+  name,
+  description,
+  url,
+  inputType = "number",
+  outputType = "number"
+}: {
+  name: string
+  description: string
+  url: string
+  inputType?: string
+  outputType?: string
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CalculateAction",
+    "name": name,
+    "description": description,
+    "url": url,
+    "object": {
+      "@type": "Thing",
+      "name": "Input Value",
+      "additionalType": inputType
+    },
+    "result": {
+      "@type": "Thing",
+      "name": "Calculated Result",
+      "additionalType": outputType
+    },
+    "agent": {
+      "@type": "Organization",
+      "name": "Calcuzy",
+      "url": "https://calcuzy.app"
+    }
+  }
+}
+
+/**
  * Generates BreadcrumbList schema for navigation
  */
 export function createBreadcrumbSchema(

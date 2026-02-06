@@ -5,9 +5,9 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Baby Names & Pet Names',
-  description: 'Find the perfect name with our curated collections. Baby boy names, baby girl names, dog names, cat names, and American last names. Free name inspiration.',
-  keywords: 'baby names, pet names, dog names, cat names, last names, name ideas, name inspiration',
+  title: 'Baby Names & Pet Names - 1000+ Name Ideas for Families',
+  description: 'Explore our comprehensive collection of 1000+ baby names and pet names. Find perfect baby boy names, baby girl names, dog names, cat names, and American last names. Expert-curated name lists with meanings, origins, and naming trends.',
+  keywords: 'baby names, pet names, dog names, cat names, last names, name ideas, name inspiration, baby boy names, baby girl names',
   url: 'https://calcuzy.app/names',
   image: '/og-default.png',
 })
@@ -98,10 +98,48 @@ export default function NamesPage() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight tracking-tight">
                 Baby Names & Pet Names
               </h1>
-              <p className="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                Discover the perfect name with our curated collections. 
-                From baby names to pet names, find inspiration for your loved ones.
-              </p>
+              <div className="prose prose-lg max-w-none mb-8">
+                <p className="paragraph">
+                  The art of naming is one of humanity's oldest and most meaningful traditions, reflecting cultural values, family heritage, and personal aspirations. Our comprehensive collection brings together thousands of carefully curated names for babies, pets, and families, serving as both inspiration and practical resource for one of life's most important decisions. Whether you're welcoming a newborn, adopting a pet, or exploring your family heritage, our name collections provide the perfect blend of tradition, meaning, and contemporary appeal.
+                </p>
+                
+                <div className="bg-purple-50 p-6 rounded-lg border border-purple-100 mb-8">
+                  <h3 className="text-xl font-semibold text-purple-900 mb-4">The Psychology and Cultural Impact of Names</h3>
+                  <p className="paragraph mb-6">
+                    Research shows that names significantly influence identity formation, social perception, and even life outcomes. The "name-letter effect" demonstrates how initial letters can create unconscious associations, while cultural names connect individuals to their heritage and community. Studies indicate that people with easily pronounceable names often report higher confidence and better social experiences. Our collections consider these psychological factors, providing names that are not only beautiful but also beneficial to the person's life journey.
+                  </p>
+                  
+                  <h3 className="text-xl font-semibold text-purple-900 mb-4">Global Naming Traditions and Modern Trends</h3>
+                  <p className="paragraph mb-6">
+                    Modern naming practices reflect increasing globalization and cultural appreciation. While traditional Western names remain popular, there's growing interest in names from diverse backgrounds—Japanese names like Kenji and Yuki, African names like Kwame and Amara, and Nordic names like Freya and Bjorn. Additionally, 2026 trends show parents moving toward gender-neutral names, nature-inspired choices, and vintage names that feel both timeless and fresh. This evolution reflects broader cultural awareness and desire for names that honor heritage while fitting contemporary global society.
+                  </p>
+                  
+                  <h3 className="text-xl font-semibold text-purple-900 mb-4">Types of Names and Their Significance</h3>
+                  <div className="grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                      <p><strong>Baby Names:</strong> Mark new beginnings, family legacy, and parental hopes</p>
+                      <p className="text-purple-700">Includes traditional, modern, and cultural options with meanings and origins</p>
+                    </div>
+                    <div>
+                      <p><strong>Pet Names:</strong> Reflect personality, create bonds, and show companionship</p>
+                      <p className="text-purple-700">Dog and cat names that match appearance, temperament, and breed characteristics</p>
+                    </div>
+                    <div>
+                      <p><strong>Last Names:</strong> Connect to ancestry, family history, and cultural identity</p>
+                      <p className="text-purple-700">American surnames with origins, meanings, and historical significance</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-semibold text-slate-800 mb-4">Expert Naming Strategies and Considerations</h3>
+                <p className="paragraph mb-6">
+                  Choosing the perfect name requires thoughtful consideration of multiple factors. Our expert recommendations include testing names with your last name to ensure good flow, considering potential nicknames, researching cultural meanings and pronunciations, and thinking about how the name will serve the person throughout different life stages—from childhood to professional settings. We also advise checking popularity trends in your region to balance uniqueness with familiarity, and considering how the name might be perceived in different cultural contexts.
+                </p>
+                
+                <p className="paragraph">
+                  Whether you're expecting a baby, adopting a pet, or exploring your family history, our comprehensive name collections provide inspiration, guidance, and practical tools to help you make this important decision with confidence. Remember that the best name is one that feels right to your family, honors your heritage, and will serve your loved one well throughout their life journey.
+                </p>
+              </div>
             </div>
           </div>
         </section>
