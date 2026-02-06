@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import Card from '@/components/Card'
 
 interface ConversionHistory {
@@ -21,7 +21,7 @@ export default function UnitConverterClient() {
   const [error, setError] = useState('')
   const [category, setCategory] = useState<'length' | 'weight' | 'temperature' | 'volume'>('length')
 
-  const conversions: { [key: string]: { [key: string]: number | string } } = {
+  const conversions: { [key: string]: { [key: string]: number | string } } = useMemo(() => ({
     // Length units (base: meters)
     'nanometers': { 'meters': 1e-9, 'kilometers': 1e-12, 'centimeters': 1e-7, 'millimeters': 1e-6, 'micrometers': 0.001, 'miles': 6.21371e-13, 'yards': 1.09361e-9, 'feet': 3.28084e-9, 'inches': 3.93701e-8 },
     'micrometers': { 'meters': 1e-6, 'kilometers': 1e-9, 'centimeters': 0.0001, 'millimeters': 0.001, 'nanometers': 1000, 'miles': 6.21371e-10, 'yards': 1.09361e-6, 'feet': 3.28084e-6, 'inches': 3.93701e-5 },
@@ -58,14 +58,14 @@ export default function UnitConverterClient() {
     'fluid_ounces': { 'milliliters': 29.5735, 'liters': 0.0295735, 'gallons': 0.0078125, 'quarts': 0.03125, 'pints': 0.0625, 'cups': 0.125, 'tablespoons': 2, 'teaspoons': 6 },
     'tablespoons': { 'milliliters': 14.7868, 'liters': 0.0147868, 'gallons': 0.00390625, 'quarts': 0.015625, 'pints': 0.03125, 'cups': 0.0625, 'fluid_ounces': 0.5, 'teaspoons': 3 },
     'teaspoons': { 'milliliters': 4.92892, 'liters': 0.00492892, 'gallons': 0.00130208, 'quarts': 0.00520833, 'pints': 0.0104167, 'cups': 0.0208333, 'fluid_ounces': 0.166667, 'tablespoons': 0.333333 }
-  }
+  }), [])
 
-  const unitCategories = {
+  const unitCategories = useMemo(() => ({
     length: ['nanometers', 'micrometers', 'millimeters', 'centimeters', 'meters', 'kilometers', 'inches', 'feet', 'yards', 'miles'],
     weight: ['milligrams', 'grams', 'kilograms', 'ounces', 'pounds', 'stones', 'tons'],
     temperature: ['celsius', 'fahrenheit', 'kelvin'],
     volume: ['milliliters', 'liters', 'gallons', 'quarts', 'pints', 'cups', 'fluid_ounces', 'tablespoons', 'teaspoons']
-  }
+  }), [])
 
   const convertTemperature = (value: number, from: string, to: string): number => {
     if (from === to) return value
@@ -90,7 +90,7 @@ export default function UnitConverterClient() {
     }
   }
 
-  const convert = () => {
+  const convert = useCallback(() => {
     if (!value) {
       setResult('')
       setError('')
@@ -153,7 +153,7 @@ export default function UnitConverterClient() {
       setError('Conversion failed')
       setResult('')
     }
-  }
+  }, [value, fromUnit, toUnit, category, conversions])
 
   const swapUnits = () => {
     setFromUnit(toUnit)
@@ -172,7 +172,7 @@ export default function UnitConverterClient() {
 
   useEffect(() => {
     convert()
-  }, [value, fromUnit, toUnit, category])
+  }, [value, fromUnit, toUnit, category, convert])
 
   useEffect(() => {
     // Reset units when category changes
@@ -183,7 +183,7 @@ export default function UnitConverterClient() {
     if (!availableUnits.includes(toUnit)) {
       setToUnit(availableUnits[1] || availableUnits[0])
     }
-  }, [category])
+  }, [category, fromUnit, toUnit, unitCategories])
 
   const availableUnits = unitCategories[category]
 

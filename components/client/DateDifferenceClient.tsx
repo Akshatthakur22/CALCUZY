@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Card from '@/components/Card'
 
 interface DateResult {
@@ -31,7 +31,7 @@ export default function DateDifferenceClient() {
     setEndDate(today)
   }, [today])
 
-  const calculateDateDifference = () => {
+  const calculateDateDifference = useCallback(() => {
     setError('')
     setResult(null)
 
@@ -102,7 +102,7 @@ export default function DateDifferenceClient() {
       seconds,
       percentageOfYear
     })
-  }
+  }, [startDate, endDate, startTime, endTime, includeTime])
 
   const swapDates = () => {
     setStartDate(endDate)
@@ -144,7 +144,7 @@ export default function DateDifferenceClient() {
     if (startDate && endDate) {
       calculateDateDifference()
     }
-  }, [startDate, endDate, startTime, endTime, includeTime])
+  }, [startDate, endDate, startTime, endTime, includeTime, calculateDateDifference])
 
   return (
     <Card className="max-w-4xl mx-auto mb-12">

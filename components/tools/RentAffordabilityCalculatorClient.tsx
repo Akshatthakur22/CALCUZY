@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Card from '@/components/Card'
 
 interface CalculationResult {
@@ -40,7 +40,7 @@ export default function RentAffordabilityCalculatorClient() {
 
   const totalExpenses = expenses.reduce((sum, exp) => sum + exp.amount, 0)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const income = parseFloat(monthlyIncome) || 0
     const rent = parseFloat(desiredRent) || 0
     const percentage = parseFloat(rentPercentage) || 30
@@ -79,7 +79,7 @@ export default function RentAffordabilityCalculatorClient() {
       emergencyFund
     })
     setError('')
-  }
+  }, [monthlyIncome, desiredRent, totalExpenses, rentPercentage, savingsGoal])
 
   const addExpense = () => {
     const newExpense: ExpenseCategory = {
@@ -132,7 +132,7 @@ export default function RentAffordabilityCalculatorClient() {
     if (monthlyIncome && desiredRent) {
       calculate()
     }
-  }, [monthlyIncome, desiredRent, totalExpenses, rentPercentage])
+  }, [monthlyIncome, desiredRent, totalExpenses, rentPercentage, calculate])
 
   return (
     <Card className="max-w-4xl mx-auto mb-12">

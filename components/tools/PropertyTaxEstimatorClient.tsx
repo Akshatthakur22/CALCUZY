@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import Card from '@/components/Card'
 
 interface CalculationResult {
@@ -35,7 +35,7 @@ export default function PropertyTaxEstimatorClient() {
   const [error, setError] = useState('')
   const [showAdvanced, setShowAdvanced] = useState(false)
 
-  const sampleTaxRates: TaxRate[] = [
+  const sampleTaxRates = useMemo(() => [
     { state: 'California', county: 'Los Angeles', rate: 1.25, description: 'Average rate including local assessments' },
     { state: 'Texas', county: 'Harris', rate: 2.18, description: 'No state income tax, higher property taxes' },
     { state: 'Florida', county: 'Miami-Dade', rate: 0.98, description: 'Below national average' },
@@ -44,9 +44,9 @@ export default function PropertyTaxEstimatorClient() {
     { state: 'Arizona', county: 'Maricopa', rate: 0.62, description: 'Low property tax rates' },
     { state: 'New Jersey', county: 'Essex', rate: 2.42, description: 'Highest rates in the nation' },
     { state: 'Colorado', county: 'Denver', rate: 0.69, description: 'Moderate rates with growth limits' }
-  ]
+  ], [])
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const value = parseFloat(propertyValue) || 0
     const rate = parseFloat(customRate || taxRate) || 0
     const exempt = parseFloat(exemptions) || 0
@@ -87,7 +87,7 @@ export default function PropertyTaxEstimatorClient() {
       comparisonData
     })
     setError('')
-  }
+  }, [propertyValue, customRate, taxRate, exemptions, sampleTaxRates])
 
   const applyLocationRate = (location: TaxRate) => {
     setCustomRate(location.rate.toString())
@@ -114,7 +114,7 @@ export default function PropertyTaxEstimatorClient() {
     if (propertyValue && (customRate || taxRate)) {
       calculate()
     }
-  }, [propertyValue, customRate, taxRate, exemptions])
+  }, [propertyValue, customRate, taxRate, exemptions, calculate])
 
   return (
     <Card className="max-w-4xl mx-auto mb-12">

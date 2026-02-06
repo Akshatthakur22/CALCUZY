@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Card from '@/components/Card'
 
 interface BMIResult {
@@ -49,7 +49,7 @@ export default function BMICalculatorClient() {
     }
   }
 
-  const calculateBMI = () => {
+  const calculateBMI = useCallback(() => {
     setError('')
     setResult(null)
     
@@ -121,7 +121,7 @@ export default function BMICalculatorClient() {
       color: categoryInfo.color,
       description: categoryInfo.description
     })
-  }
+  }, [weight, height, heightFeet, heightInches, unit, heightInput])
 
   const resetCalculator = () => {
     setWeight('')
@@ -148,7 +148,7 @@ export default function BMICalculatorClient() {
       setResult(null)
       setError('')
     }
-  }, [weight, height, heightFeet, heightInches, unit, heightInput])
+  }, [weight, height, heightFeet, heightInches, unit, heightInput, calculateBMI])
 
   return (
     <Card className="max-w-2xl mx-auto mb-12">

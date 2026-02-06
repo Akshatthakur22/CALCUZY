@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 import { useState, useCallback, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import Card from '@/components/Card'
@@ -467,7 +469,7 @@ export default function PDFSplitterClient() {
                     } ${draggedPage === page.pageNumber ? 'opacity-50' : ''}`}
                   >
                     <div className="aspect-[3/4] bg-gray-50">
-                      <img 
+                      <Image 
                         src={page.thumbnail}
                         alt={`Page ${page.pageNumber}`}
                         width={120}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Card from '@/components/Card'
 import Skeleton from '@/components/Skeleton'
 
@@ -61,7 +61,7 @@ export default function AgeCalculatorClient() {
     return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)
   }
 
-  const calculateAge = async () => {
+  const calculateAge = useCallback(async () => {
     if (!birthDate || !currentDate) {
       setError('Please select both birth date and current date')
       return
@@ -134,7 +134,7 @@ export default function AgeCalculatorClient() {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [birthDate, currentDate])
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -154,7 +154,7 @@ export default function AgeCalculatorClient() {
     if (birthDate && currentDate) {
       calculateAge()
     }
-  }, [birthDate, currentDate])
+  }, [birthDate, currentDate, calculateAge])
 
   return (
     <Card className="max-w-4xl mx-auto mb-12 fade-in-up">
