@@ -7,7 +7,6 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import { createToolSchema, createFAQSchema } from '@/lib/metadata'
 import { useState } from 'react'
-import { ShieldCheck } from 'lucide-react'
 
 function ReadMore({ children }: { children: React.ReactNode }) {
   const [expanded, setExpanded] = useState(false)
@@ -142,7 +141,10 @@ export default function AgeCalculator() {
         <AdUnit slot={1} />
 
         <div className="flex items-center gap-2 mb-4 max-w-2xl mx-auto">
-          <ShieldCheck className="text-green-600" size={20} />
+          <svg className="text-green-600" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            <path d="M12 2v4m0 4v2m0-8v2"/>
+          </svg>
           <span className="text-xs text-green-700 font-medium">Privacy Verified: Calculated locally in-browser via V8 Engine. No server-side storage.</span>
         </div>
 
