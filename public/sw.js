@@ -1,24 +1,35 @@
 // Service Worker for Calcuzy.app
 // Provides offline functionality and performance optimization
 
-const CACHE_NAME = 'calcuzy-v1'
-const STATIC_CACHE = 'calcuzy-static-v1'
-const DYNAMIC_CACHE = 'calcuzy-dynamic-v1'
+const CACHE_NAME = 'calcuzy-v2'
+const STATIC_CACHE = 'calcuzy-static-v2'
+const DYNAMIC_CACHE = 'calcuzy-dynamic-v2'
+const RUNTIME_CACHE = 'calcuzy-runtime-v2'
 
 // Assets to cache for offline functionality
 const STATIC_ASSETS = [
   '/',
   '/tools',
-  '/capital-gains-calculator',
-  '/bmi-calculator',
+  '/countdowns',
+  '/names',
+  '/quotes',
+  '/about',
+  '/privacy-policy',
+  '/terms',
+  '/contact',
   '/age-calculator',
-  '/manifest.json',
+  '/bmi-calculator',
+  '/capital-gains-calculator',
+  '/crypto-tax-calculator',
+  '/will-generator',
+  '/site.webmanifest',
   '/favicon.ico',
   '/favicon-16x16.png',
   '/favicon-32x32.png',
   '/apple-touch-icon.png',
   '/logo.png',
-  // Critical CSS and JS files will be cached automatically
+  '/icon-192.png',
+  '/icon-512.png',
 ]
 
 // Install event - cache static assets
@@ -44,7 +55,10 @@ self.addEventListener('activate', (event) => {
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
-            if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+            if (cacheName !== STATIC_CACHE && 
+                cacheName !== DYNAMIC_CACHE && 
+                cacheName !== RUNTIME_CACHE &&
+                !cacheName.startsWith('calcuzy-')) {
               console.log('Service Worker: Deleting old cache:', cacheName)
               return caches.delete(cacheName)
             }
@@ -63,41 +77,52 @@ self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (request.method !== 'GET') return
 
-  // Skip external requests
-  if (url.origin !== location.origin) return
+  // Skip external requests except for critical APIs
+  if (url.origin !== location.origin && !isAllowedExternal(url)) return
 
-  // Strategy: Cache First for static assets, Network First for API calls
+  // Handle different request types with appropriate strategies
   if (isStaticAsset(request.url)) {
-    event.respondWith(cacheFirst(request))
+    event.respondWith(cacheFirst(request, STATIC_CACHE))
   } else if (isAPIRequest(request.url)) {
-    event.respondWith(networkFirst(request))
+    event.respondWith(networkFirst(request, DYNAMIC_CACHE))
+  } else if (isPageRequest(request.url)) {
+    event.respondWith(staleWhileRevalidate(request, DYNAMIC_CACHE))
   } else {
-    event.respondWith(staleWhileRevalidate(request))
+    event.respondWith(networkOnly(request))
   }
 })
 
 // Cache strategies
-function cacheFirst(request) {
+function cacheFirst(request, cacheName = STATIC_CACHE) {
   return caches.match(request)
     .then((response) => {
-      return response || fetch(request)
+      if (response) {
+        return response
+      }
+      return fetch(request)
         .then((response) => {
           // Cache successful responses
           if (response.ok) {
-            caches.open(STATIC_CACHE)
+            caches.open(cacheName)
               .then((cache) => cache.put(request, response.clone()))
           }
           return response
         })
+        .catch(() => {
+          // Return offline fallback for pages
+          if (request.mode === 'navigate') {
+            return caches.match('/offline.html')
+          }
+        })
     })
 }
 
-function networkFirst(request) {
+function networkFirst(request, cacheName = DYNAMIC_CACHE) {
   return fetch(request)
     .then((response) => {
       // Cache successful API responses
       if (response.ok) {
-        caches.open(DYNAMIC_CACHE)
+        caches.open(cacheName)
           .then((cache) => cache.put(request, response.clone()))
       }
       return response
@@ -108,19 +133,35 @@ function networkFirst(request) {
     })
 }
 
-function staleWhileRevalidate(request) {
-  return caches.open(DYNAMIC_CACHE)
+function staleWhileRevalidate(request, cacheName = DYNAMIC_CACHE) {
+  return caches.open(cacheName)
     .then((cache) => {
       return cache.match(request)
         .then((response) => {
           const fetchPromise = fetch(request)
             .then((networkResponse) => {
-              cache.put(request, networkResponse.clone())
+              if (networkResponse.ok) {
+                cache.put(request, networkResponse.clone())
+              }
               return networkResponse
+            })
+            .catch(() => {
+              // If network fails and no cached response, show offline page
+              if (!response && request.mode === 'navigate') {
+                return caches.match('/offline.html')
+              }
             })
           return response || fetchPromise
         })
     })
+}
+
+function networkOnly(request) {
+  return fetch(request).catch(() => {
+    if (request.mode === 'navigate') {
+      return caches.match('/offline.html')
+    }
+  })
 }
 
 // Helper functions
@@ -136,11 +177,42 @@ function isStaticAsset(url) {
          url.includes('.svg') ||
          url.includes('.ico') ||
          url.includes('.woff') ||
-         url.includes('.woff2')
+         url.includes('.woff2') ||
+         url.includes('.webp')
 }
 
 function isAPIRequest(url) {
-  return url.includes('/api/') || url.includes('workers')
+  return url.includes('/api/') || 
+         url.includes('workers') ||
+         url.includes('vercel') ||
+         url.includes('analytics')
+}
+
+function isPageRequest(url) {
+  const urlObj = new URL(url)
+  return urlObj.pathname === '/' ||
+         urlObj.pathname.startsWith('/tools') ||
+         urlObj.pathname.startsWith('/countdowns') ||
+         urlObj.pathname.startsWith('/names') ||
+         urlObj.pathname.startsWith('/quotes') ||
+         urlObj.pathname.startsWith('/about') ||
+         urlObj.pathname.startsWith('/privacy') ||
+         urlObj.pathname.startsWith('/terms') ||
+         urlObj.pathname.startsWith('/contact') ||
+         urlObj.pathname.includes('-calculator') ||
+         urlObj.pathname.includes('-generator')
+}
+
+function isAllowedExternal(url) {
+  const allowedDomains = [
+    'fonts.googleapis.com',
+    'fonts.gstatic.com',
+    'www.googletagmanager.com',
+    'pagead2.googlesyndication.com',
+    'www.google-analytics.com',
+    'vercel.live'
+  ]
+  return allowedDomains.includes(url.hostname)
 }
 
 // Background sync for offline calculations

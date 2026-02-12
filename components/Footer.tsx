@@ -81,7 +81,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
           {/* Legal Column */}
           <div>
             <h4 className="font-semibold text-slate-900 mb-4 text-sm tracking-wide uppercase">

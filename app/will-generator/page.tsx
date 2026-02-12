@@ -11,7 +11,7 @@ export const metadata = createMetadata({
   description: 'Professional will generator with advanced estate planning strategies, legal document expertise, and comprehensive inheritance planning. Expert-crafted tool with trust creation, tax optimization, and probate guidance.',
   keywords: 'will generator, estate planning, legal document creation, inheritance planning, trust creation, tax optimization, probate guidance, asset distribution',
   url: 'https://calcuzy.app/will-generator',
-  image: '/og-tools.png',
+  image: '/og/og-legal.svg',
 })
 
 export default function WillGeneratorPage() {

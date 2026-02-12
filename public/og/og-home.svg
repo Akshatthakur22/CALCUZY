@@ -1,0 +1,79 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#F3F4F6;stop-opacity:0.95" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Main card -->
+  <rect x="60" y="115" width="1080" height="400" rx="20" fill="url(#cardGradient)"/>
+  
+  <!-- Ruler icon -->
+  <g transform="translate(100, 255)">
+    <rect x="0" y="0" width="80" height="20" rx="2" fill="#6B7280"/>
+    <rect x="10" y="5" width="2" height="10" fill="#1F2937"/>
+    <rect x="20" y="5" width="2" height="10" fill="#1F2937"/>
+    <rect x="30" y="5" width="2" height="10" fill="#1F2937"/>
+    <rect x="40" y="5" width="2" height="10" fill="#1F2937"/>
+    <rect x="50" y="5" width="2" height="10" fill="#1F2937"/>
+    <rect x="60" y="5" width="2" height="10" fill="#1F2937"/>
+    <rect x="70" y="5" width="2" height="10" fill="#1F2937"/>
+  </g>
+  
+  <!-- Paint brush icon -->
+  <g transform="translate(220, 245)">
+    <rect x="30" y="0" width="20" height="60" rx="10" fill="#EF4444"/>
+    <rect x="25" y="55" width="30" height="15" rx="5" fill="#6B7280"/>
+    <rect x="35" y="10" width="10" height="20" rx="5" fill="#F59E0B"/>
+  </g>
+  
+  <!-- Home icon -->
+  <g transform="translate(340, 245)">
+    <path d="M40 0 L60 20 L60 50 L45 50 L45 35 L35 35 L35 50 L20 50 L20 20 Z" fill="#F59E0B"/>
+    <rect x="30" y="40" width="20" height="10" fill="#6B7280"/>
+  </g>
+  
+  <!-- Main content -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">
+    Home &amp; Project Calculators
+  </text>
+  
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" opacity="0.9">
+    Paint Cost • Unit Conversion • Project Planning
+  </text>
+  
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="18" fill="#1F2937" text-anchor="middle">
+    Essential tools for home improvement and projects
+  </text>
+  
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="18" fill="#1F2937" text-anchor="middle">
+    Paint Cost Estimator • Unit Converter • Random Number Generator
+  </text>
+  
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="18" fill="#1F2937" text-anchor="middle">
+    Date Calculator • Project Planning • Measurement Tools
+  </text>
+  
+  <!-- Logo -->
+  <text x="600" y="570" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+    Calcuzy.app
+  </text>
+  <text x="600" y="595" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" opacity="0.8">
+    Free • Fast • Accurate Project Tools
+  </text>
+</svg>

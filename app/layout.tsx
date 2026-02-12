@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import LoadingBoundary from '@/components/LoadingBoundary'
 import { ToastProvider } from '@/components/Toast'
+import ServiceWorkerProvider from '@/components/ServiceWorkerProvider'
 import Script from "next/script"
 
 // Optimized font loading with display: swap for better LCP
@@ -48,12 +49,29 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* Theme color for PWA */}
+        <meta name="theme-color" content="#667eea" />
+        
+        {/* Apple touch bar icon */}
+        <link rel="apple-touch-startup-image" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Calcuzy" />
+        
+        {/* Microsoft PWA */}
+        <meta name="msapplication-TileColor" content="#667eea" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
 
       <body className={`${inter.className} bg-white text-slate-900 antialiased`}>
         <ErrorBoundary>
           <LoadingBoundary>
             <ToastProvider>
+              <ServiceWorkerProvider />
               {children}
             </ToastProvider>
           </LoadingBoundary>

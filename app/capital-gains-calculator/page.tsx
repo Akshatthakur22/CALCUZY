@@ -7,7 +7,8 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import RelatedToolsBento, { financeRelatedTools } from '@/components/RelatedToolsBento'
 import HowItWorks, { calculatorHowItWorks } from '@/components/HowItWorks'
-import { createMetadata, createToolSchema, createFAQSchema, createCalculateActionSchema } from '@/lib/metadata'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createMetadata, createToolSchema, createFAQSchema, createCalculateActionSchema, createBreadcrumbSchema } from '@/lib/metadata'
 import { VisualGauge } from '@/components/ToolWrapper'
 import ReadMore from '../../components/ReadMore'
 
@@ -16,7 +17,7 @@ export const metadata = createMetadata({
   description: 'FREE PROVEN capital gains tax calculator with INSTANT 2026 calculations. Expert tax planning & investment optimization. Maximize your returns today.',
   keywords: 'capital gains calculator, tax planning strategies, investment optimization, long-term capital gains, short-term capital gains, tax loss harvesting, 2026 tax calculator',
   url: 'https://calcuzy.app/capital-gains-calculator',
-  image: '/og-tools.png',
+  image: '/og/og-finance.svg',
 })
 
 export default function CapitalGainsCalculatorPage() {
@@ -27,6 +28,13 @@ export default function CapitalGainsCalculatorPage() {
     category: 'FinanceApplication',
     features: ['Short-term tax calculation', 'Long-term tax calculation', '2024 US tax brackets', 'Visual ROI gauge', 'Shareable results']
   })
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://calcuzy.app' },
+    { name: 'Tools', url: 'https://calcuzy.app/tools' },
+    { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
+    { name: 'Capital Gains Calculator', url: 'https://calcuzy.app/capital-gains-calculator' }
+  ])
 
   const calculateActionSchema = createCalculateActionSchema({
     name: 'Calculate Capital Gains Tax',
@@ -84,6 +92,10 @@ export default function CapitalGainsCalculatorPage() {
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <script
@@ -97,6 +109,13 @@ export default function CapitalGainsCalculatorPage() {
       <Navbar />
       
       <main className="container section-responsive">
+        <Breadcrumbs 
+          items={[
+            { name: 'Tools', url: '/tools' },
+            { name: 'Finance', url: '/tools#finance' },
+            { name: 'Capital Gains Calculator', url: '/capital-gains-calculator' }
+          ]}
+        />
         <div className="text-center mb-16 slide-up">
           <h1 className="heading-1 text-center mb-6">
             Capital Gains Tax Calculator: Expert Tax Planning Strategies (2026)

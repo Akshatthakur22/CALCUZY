@@ -1,0 +1,79 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#F3F4F6;stop-opacity:0.95" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Main card -->
+  <rect x="60" y="115" width="1080" height="400" rx="20" fill="url(#cardGradient)"/>
+  
+  <!-- Calculator icon -->
+  <g transform="translate(100, 235)">
+    <rect x="0" y="0" width="80" height="100" rx="8" fill="#3B82F6"/>
+    <rect x="10" y="10" width="60" height="20" rx="4" fill="#1E40AF"/>
+    <circle cx="25" cy="50" r="8" fill="white"/>
+    <circle cx="55" cy="50" r="8" fill="white"/>
+    <circle cx="25" cy="75" r="8" fill="white"/>
+    <circle cx="55" cy="75" r="8" fill="white"/>
+  </g>
+  
+  <!-- Chart icon -->
+  <g transform="translate(220, 265)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#10B981"/>
+    <rect x="10" y="40" width="8" height="10" fill="white"/>
+    <rect x="25" y="30" width="8" height="20" fill="white"/>
+    <rect x="40" y="20" width="8" height="30" fill="white"/>
+    <rect x="55" y="10" width="8" height="40" fill="white"/>
+  </g>
+  
+  <!-- Money icon -->
+  <g transform="translate(340, 265)">
+    <circle cx="40" cy="30" r="30" fill="#F59E0B"/>
+    <text x="40" y="38" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">$</text>
+  </g>
+  
+  <!-- Main content -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">
+    Financial Calculators
+  </text>
+  
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" opacity="0.9">
+    Tax Planning • Investment Analysis • Budget Optimization
+  </text>
+  
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="18" fill="#1F2937" text-anchor="middle">
+    Professional financial tools for smart money management
+  </text>
+  
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="18" fill="#1F2937" text-anchor="middle">
+    Capital Gains • Crypto Tax • Property Tax • Rent Affordability
+  </text>
+  
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="18" fill="#1F2937" text-anchor="middle">
+    Index Fund Returns • Loan Calculators • Retirement Planning
+  </text>
+  
+  <!-- Logo -->
+  <text x="600" y="570" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+    Calcuzy.app
+  </text>
+  <text x="600" y="595" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" opacity="0.8">
+    Free • Fast • Accurate Financial Tools
+  </text>
+</svg>

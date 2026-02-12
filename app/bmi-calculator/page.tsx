@@ -4,24 +4,32 @@ import BMICalculatorClient from '@/components/client/BMICalculatorClient'
 import RelatedTools from '@/components/RelatedTools'
 import ToolInfo from '@/components/ToolInfo'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'BMI Calculator - Free Body Mass Index Calculator | WHO & CDC Standards',
+  title: 'BMI Calculator',
   description: 'Calculate your Body Mass Index (BMI) instantly with our free health tool. Get accurate results based on WHO and CDC guidelines, understand health categories, and track your wellness journey. No data storage, 100% private.',
-  keywords: 'BMI calculator, body mass index, healthy weight calculator, BMI chart, WHO BMI standards, CDC BMI guidelines, health assessment',
+  keywords: 'BMI calculator, body mass index, health calculator, weight assessment, WHO BMI, CDC BMI, health screening, wellness tool',
   url: 'https://calcuzy.app/bmi-calculator',
-  image: '/og-tools.png',
+  image: '/og/og-default.png'
 })
 
 export default function BMICalculator() {
   const structuredData = createToolSchema({
     name: 'BMI Calculator',
-    description: 'Calculate your Body Mass Index (BMI) online with our free health tool',
+    description: 'Calculate your Body Mass Index (BMI) instantly with our free health tool. Get accurate results based on WHO and CDC guidelines, understand health categories, and track your wellness journey.',
     url: 'https://calcuzy.app/bmi-calculator',
     category: 'HealthApplication',
-    features: ['Metric and Imperial units', 'Instant BMI calculation', 'Health category classification', 'WHO standards']
+    features: ['Metric and Imperial units', 'Instant BMI calculation', 'Health category classification', 'WHO standards', 'Privacy-focused calculations', 'Adult BMI assessments']
   })
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://calcuzy.app' },
+    { name: 'Tools', url: 'https://calcuzy.app/tools' },
+    { name: 'Health', url: 'https://calcuzy.app/tools#health' },
+    { name: 'BMI Calculator', url: 'https://calcuzy.app/bmi-calculator' }
+  ])
 
   const expertFaqData = [
     {
@@ -46,7 +54,9 @@ export default function BMICalculator() {
     }
   ]
 
-  const expertFaqSchema = createFAQSchema(expertFaqData)
+  const faqSchema = createFAQSchema(expertFaqData)
+
+  // Remove howToSchema as it doesn't exist in the current metadata API
 
   const steps = [
     { title: 'Select Unit System', description: 'Choose between Metric (kg, m) or Imperial (lbs, inches) based on your preference.' },
@@ -68,15 +78,26 @@ export default function BMICalculator() {
     <div className="min-h-screen bg-primary-bg fade-in">
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(expertFaqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       
       <main className="container section-responsive">
+        <Breadcrumbs 
+          items={[
+            { name: 'Tools', url: '/tools' },
+            { name: 'Health', url: '/tools#health' },
+            { name: 'BMI Calculator', url: '/bmi-calculator' }
+          ]}
+        />
         <div className="text-center mb-12 slide-up">
           <h1 className="heading-1 text-center mb-6">
             BMI Calculator

@@ -13,7 +13,7 @@ export const metadata = createMetadata({
   description: 'Professional paint cost calculator with advanced DIY project guides, surface preparation techniques, and professional painting strategies. Expert-crafted tool with coverage optimization, cost analysis, and industry standards.',
   keywords: 'paint cost calculator, DIY painting guide, professional painting techniques, surface preparation, paint coverage optimization, cost analysis, painting project planning',
   url: 'https://calcuzy.app/paint-cost-calculator',
-  image: '/og-tools.png',
+  image: '/og/og-home.svg',
 })
 
 export default function PaintCostCalculatorPage() {
