@@ -6,10 +6,10 @@ import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Terms of Service - Calcuzy Usage Guidelines',
-  description: 'Official Terms of Service for Calcuzy.app. Understand acceptable use, user responsibilities, disclaimers, and your rights while using our 40+ free online tools and calculators.',
+  description: 'Official Terms of Service for Calcuzy.app. Understand acceptable use, user responsibilities, disclaimers, and your rights while using our 31 free online tools and calculators.',
   keywords: 'terms of service, calcuzy terms, user agreement, acceptable use, online tools terms, calculator terms',
   url: 'https://calcuzy.app/terms',
-  image: '/og-default.png',
+  image: '/og/og-default.svg',
 })
 
 export default function TermsPage() {
@@ -38,7 +38,7 @@ export default function TermsPage() {
         <section className="text-center mb-16 slide-up">
           <h1 className="heading-1 mb-6">Terms of Service</h1>
           <p className="paragraph text-lg max-w-3xl mx-auto mb-6">
-            Welcome to Calcuzy.app! By using our 40+ free online tools, you agree to these straightforward terms designed to protect both you and us. We believe in transparency, fairness, and creating tools that respect your intelligence and privacy. If you don't agree with these terms, please discontinue use—no hard feelings, just honest boundaries.
+            Welcome to Calcuzy.app! By using our 31 free online tools, you agree to these straightforward terms designed to protect both you and us. We believe in transparency, fairness, and creating tools that respect your intelligence and privacy. If you don't agree with these terms, please discontinue use—no hard feelings, just honest boundaries.
           </p>
           <div className="bg-card p-6 rounded-lg border border-border mt-6 max-w-2xl mx-auto">
             <div className="flex items-center gap-3 mb-3">

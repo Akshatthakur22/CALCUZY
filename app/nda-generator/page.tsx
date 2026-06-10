@@ -4,65 +4,86 @@ import AdUnit from '@/components/AdUnit'
 import NDAGeneratorClient from '@/components/tools/NDAGeneratorClient'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
+import HowItWorks from '@/components/HowItWorks'
+import YMYLDisclaimer from '@/components/YMYLDisclaimer'
 import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
-import ReadMore from '../../components/ReadMore'
 
 export const metadata = createMetadata({
-  title: 'NDA Generator: Expert Legal Document Creation & Business Protection Guide (2026)',
-  description: 'Professional NDA generator with advanced legal templates, business protection strategies, and comprehensive confidentiality agreements. Expert-crafted NDAs with enforceability analysis, jurisdiction-specific guidance, and industry-specific clauses.',
-  keywords: 'NDA generator, non-disclosure agreement, legal document protection, business confidentiality, trade secret protection, legal templates, enforceability analysis, jurisdiction guidance',
+  title: 'NDA Generator',
+  description: 'Draft a basic unilateral non-disclosure agreement template. Enter party names, term, and purpose—then copy the text for attorney review. Not legal advice.',
+  keywords: 'NDA generator, non-disclosure agreement, confidentiality agreement template, NDA template, business NDA',
   url: 'https://calcuzy.app/nda-generator',
-  image: '/og-tools.png',
+  image: '/og/og-tools.svg',
 })
 
 export default function NDAGeneratorPage() {
   const structuredData = createToolSchema({
     name: 'NDA Generator',
-    description: 'Generate custom Non-Disclosure Agreement templates with customizable terms and confidentiality clauses',
+    description: 'Generate a basic unilateral non-disclosure agreement template with customizable term, purpose, and return-of-materials option.',
     url: 'https://calcuzy.app/nda-generator',
     category: 'UtilityApplication',
-    features: ['Unilateral & mutual NDAs', 'Custom duration terms', 'Confidentiality clauses', 'PDF export', 'Business-ready templates']
+    features: ['Unilateral NDA template', 'Custom duration', 'Purpose field', 'Return materials option', 'Copy to clipboard']
   })
 
   const faqData = [
     {
-      question: 'How do jurisdictional differences affect NDA enforceability across international borders?',
-      answer: 'International NDA enforceability varies significantly by legal system. Common law jurisdictions (US, UK, Canada) generally enforce NDAs with reasonable scope, while civil law countries (Germany, France) may require more specific definitions. EU GDPR regulations impact data protection clauses, requiring explicit consent provisions. Asian jurisdictions often impose stricter limitations on duration and scope. Cross-border NDAs must include governing law clauses and consider international arbitration provisions for effective enforcement.'
+      question: 'What is a non-disclosure agreement (NDA)?',
+      answer: 'An NDA is a contract where one or both parties agree not to share certain confidential information. Businesses use NDAs before sharing trade secrets, product plans, financial data, or other sensitive details during discussions.'
     },
     {
-      question: 'What advanced confidentiality clauses provide maximum trade secret protection?',
-      answer: 'Comprehensive NDAs should include "trade secret" definitions aligned with the Uniform Trade Secrets Act (UTSA), "permitted disclosure" exceptions for legal requirements, "return/destruction" obligations upon termination, and "injunctive relief" provisions for breach prevention. Advanced clauses incorporate "survival periods" for confidential information, "non-circumvention" restrictions, and "non-solicitation" provisions for employee protection. These elements create multi-layered protection strategies.'
+      question: 'What does this generator create?',
+      answer: 'A basic unilateral NDA: one disclosing party shares information with one receiving party. You enter names, agreement length, purpose of disclosure, and whether materials must be returned. The tool outputs plain text you can copy—not a signed or state-specific legal document.'
     },
     {
-      question: 'How do industry-specific NDA requirements vary across technology, healthcare, and manufacturing sectors?',
-      answer: 'Technology NDAs require "source code" protection, "algorithm" confidentiality, and "IP assignment" provisions. Healthcare NDAs must comply with HIPAA regulations, include "PHI protection" clauses, and address "FDA disclosure" requirements. Manufacturing NDAs focus on "process specifications", "supplier relationships", and "quality control" procedures. Each sector has unique regulatory frameworks that shape NDA requirements and enforceability standards.'
+      question: 'Is an NDA from this tool legally binding?',
+      answer: 'Not automatically. Enforceability depends on your state or country, how clearly confidential information is defined, whether terms are reasonable, and proper signing. Have a qualified attorney review and customize the template before use.'
     },
     {
-      question: 'What mathematical models assess NDA risk exposure and breach probability?',
-      answer: 'The "Confidentiality Risk Assessment Model" (CRAM) uses weighted factors including information sensitivity (35%), jurisdictional enforceability (25%), counterparty reliability (20%), and agreement specificity (15%). CRAM scores above 0.75 indicate strong protection, while scores below 0.50 suggest high breach risk. Machine learning analysis of 10,000+ NDA breaches shows specific clause combinations that reduce litigation probability by 67%.'
+      question: 'What is the difference between unilateral and mutual NDAs?',
+      answer: 'A unilateral NDA protects information flowing one way (one discloser, one recipient). A mutual NDA applies when both sides share secrets. This generator produces a unilateral template only; mutual agreements usually need lawyer-drafted terms.'
     },
     {
-      question: 'How do emerging technologies like AI and blockchain impact NDA drafting and enforcement?',
-      answer: 'AI-generated content requires "algorithmic training data" protection clauses and "model output" confidentiality provisions. Blockchain smart contracts enable "automated enforcement" of NDAs through "trigger-based" release of escrowed information. "Zero-knowledge proofs" can verify confidentiality compliance without revealing protected information. These technologies are transforming NDA implementation from manual enforcement to automated compliance monitoring.'
+      question: 'What should I customize before signing?',
+      answer: 'Fill in governing law (state or country), define confidential information specifically, set a reasonable term, and add industry-specific clauses if needed (employment, healthcare, IP). Both parties should sign and date the final version.'
+    },
+    {
+      question: 'Can an NDA hide illegal activity?',
+      answer: 'No. NDAs cannot legally prevent reporting crimes, harassment, or whistleblowing protected by law. Courts may refuse to enforce agreements that are overly broad or against public policy.'
     }
   ]
 
   const faqSchema = createFAQSchema(faqData)
 
   const steps = [
-    { title: 'Jurisdictional Analysis', description: 'Select governing law and arbitration provisions based on international enforceability analysis and cross-border compliance requirements.' },
-    { title: 'Industry-Specific Configuration', description: 'Apply sector-tailored clauses for technology, healthcare, or manufacturing with regulatory compliance integration.' },
-    { title: 'Risk Assessment Integration', description: 'Implement CRAM scoring and mathematical risk models to optimize protection levels and breach probability reduction.' },
-    { title: 'Advanced Clause Architecture', description: 'Deploy multi-layered protection strategies with UTSA compliance and trade secret optimization.' }
+    { title: 'Name the parties', description: 'Enter the disclosing party (sharing secrets) and receiving party (learning them).' },
+    { title: 'Set term and purpose', description: 'Choose agreement duration and describe why information is being shared.' },
+    { title: 'Return of materials', description: 'Optionally require return of confidential documents when the NDA ends.' },
+    { title: 'Generate and copy', description: 'Create the template, copy the text, and complete placeholders like governing state.' },
+    { title: 'Attorney review', description: 'Have a lawyer adapt the NDA to your jurisdiction and situation before signing.' }
   ]
 
   const tips = [
-    'Apply CRAM scoring above 0.75 for strong protection; scores below 0.50 indicate high breach risk requiring additional safeguards',
-    'Include "liquidated damages" and "attorney\'s fees" clauses to reduce litigation probability by 67% based on breach analysis',
-    'Implement "audit rights" provisions and "third-party beneficiary" clauses for extended protection coverage',
-    'Configure jurisdiction-specific clauses for international enforcement: common law vs civil law vs Asian legal systems',
-    'Integrate sector-specific compliance: HIPAA for healthcare, GDPR for EU operations, SEC for financial services',
-    'Deploy "non-circumvention" and "non-solicitation" provisions for comprehensive business relationship protection'
+    'Define “confidential information” as specifically as possible for your deal',
+    'Choose a term that matches how long the information stays sensitive',
+    'Specify governing law—replace the [State] placeholder with your jurisdiction',
+    'Keep signed copies and note what was shared and when',
+    'For mutual sharing, both sides disclosing—use a lawyer-drafted mutual NDA',
+    'This template is a starting point, not a substitute for legal advice'
+  ]
+
+  const howItWorksSteps = [
+    {
+      title: 'Enter deal details',
+      description: 'Provide party names, duration, purpose, and return-of-materials preference.'
+    },
+    {
+      title: 'Generate the template',
+      description: 'The tool assembles a standard unilateral NDA with common confidentiality clauses.'
+    },
+    {
+      title: 'Review with counsel',
+      description: 'Copy the text, fill in governing law, and have an attorney review before signing.'
+    }
   ]
 
   return (
@@ -80,82 +101,44 @@ export default function NDAGeneratorPage() {
       <main className="container section-responsive">
         <div className="text-center mb-16 slide-up">
           <h1 className="heading-1 text-center mb-6">
-            NDA Generator: Expert Legal Document Creation & Business Protection (2026)
+            NDA Generator
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Welcome to the definitive 2026 NDA generator, combining advanced legal document creation with comprehensive business protection strategies. Our expert-crafted tool encompasses jurisdictional analysis, industry-specific clauses, and mathematical risk assessment models to create enforceable confidentiality agreements that protect your intellectual property and business interests.
+            Create a basic unilateral non-disclosure agreement template for one-way sharing of confidential information. Fill in party names, term, and purpose, then copy the text for review by a qualified attorney—not legal advice.
           </p>
         </div>
 
-        <ReadMore>
-          <section className="prose max-w-4xl mx-auto py-10">
-            <h2>International Jurisdictional Analysis: Global NDA Enforceability</h2>
-            <p className="mb-4 text-gray-700">
-              International NDA enforceability varies significantly across legal systems, creating complex challenges for global business operations. Common law jurisdictions (US, UK, Canada) generally enforce NDAs with reasonable scope and clear definitions, relying on precedent-based interpretation. Civil law countries (Germany, France, Japan) often require more specific definitions and may impose stricter limitations on duration and scope. EU GDPR regulations significantly impact data protection clauses, requiring explicit consent provisions and "right to be forgotten" considerations that must be integrated into modern NDAs.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Asian jurisdictions demonstrate varying approaches to confidentiality enforcement. China's courts increasingly recognize NDAs but require careful consideration of "state secrets" laws and foreign investment regulations. Singapore and Hong Kong maintain common law traditions with strong NDA enforcement. Cross-border NDAs must include sophisticated governing law clauses, international arbitration provisions, and choice of forum considerations to ensure effective enforcement across multiple jurisdictions. These complexities necessitate jurisdiction-specific tailoring for maximum protection.
-            </p>
-            <h2>Advanced Confidentiality Architecture: Multi-Layered Protection Strategies</h2>
-            <p className="mb-4 text-gray-700">
-              Comprehensive NDA construction requires sophisticated clause architecture aligned with the Uniform Trade Secrets Act (UTSA) and international trade secret protection frameworks. Advanced agreements incorporate "trade secret" definitions that meet UTSA criteria, including independent economic value, reasonable efforts to maintain secrecy, and acquisition through improper means. "Permitted disclosure" exceptions must be carefully drafted to include legal requirements, court orders, and regulatory obligations while maintaining maximum protection.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Modern NDAs should include "return/destruction" obligations upon termination, "injunctive relief" provisions for breach prevention, and "survival periods" for confidential information that extends beyond agreement termination. "Non-circumvention" restrictions prevent parties from bypassing each other for business opportunities, while "non-solicitation" provisions protect employee relationships and customer connections. These elements create comprehensive protection strategies that address both immediate and long-term confidentiality concerns.
-            </p>
-            <h2>Industry-Specific Compliance: Sector-Tailored NDA Requirements</h2>
-            <p className="mb-4 text-gray-700">
-              Technology sector NDAs require specialized provisions for "source code" protection, "algorithm" confidentiality, and "IP assignment" mechanisms. Software development agreements must address "open source" contamination risks and "derivative works" ownership. AI and machine learning NDAs need "training data" protection clauses and "model output" confidentiality provisions that address unique intellectual property challenges in artificial intelligence development.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Healthcare NDAs must comply with HIPAA regulations, include "PHI protection" clauses, and address "FDA disclosure" requirements for clinical trials and medical device development. Manufacturing NDAs focus on "process specifications," "supplier relationships," and "quality control" procedures. Financial services NDAs incorporate "SEC compliance" considerations and "insider trading" prevention provisions. Each sector's regulatory framework shapes specific NDA requirements that must be integrated for comprehensive protection.
-            </p>
-            <h2>Mathematical Risk Assessment: Quantitative NDA Protection Analysis</h2>
-            <p className="mb-4 text-gray-700">
-              The "Confidentiality Risk Assessment Model" (CRAM) represents a breakthrough in quantitative NDA analysis, using weighted factors including information sensitivity (35%), jurisdictional enforceability (25%), counterparty reliability (20%), and agreement specificity (15%). CRAM scores above 0.75 indicate strong protection with low breach probability, while scores below 0.50 suggest high-risk situations requiring additional safeguards. This mathematical approach transforms NDA evaluation from subjective assessment to data-driven risk management.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Machine learning analysis of over 10,000 NDA breaches reveals specific clause combinations that reduce litigation probability by 67%. "Liquidated damages" provisions, "attorney's fees" clauses, and "specific performance" remedies significantly enhance enforceability. "Audit rights" provisions enable verification of compliance, while "third-party beneficiary" clauses extend protection to related entities. These evidence-based strategies create statistically superior protection outcomes.
-            </p>
-          </section>
-        </ReadMore>
-
-        <AdUnit slot={1} />
-
-        {/* Deep Dive: What is an NDA? */}
-        <details className="mb-6 bg-white rounded-lg shadow p-6">
-          <summary className="font-semibold text-lg cursor-pointer">Deep Dive: What is an NDA?</summary>
-          <div className="mt-4 text-base text-primary-text/90">
-            <p>
-              <strong>What is a Non-Disclosure Agreement?</strong> An NDA is a legal contract that protects sensitive information shared between parties. It is essential for business negotiations, employment, partnerships, and intellectual property protection.<br /><br />
-              <strong>Types of NDAs:</strong> <br />
-              <ul className="list-disc ml-6 mt-2">
-                <li><strong>Unilateral NDA:</strong> One party discloses confidential information (e.g., employer-employee).</li>
-                <li><strong>Mutual NDA:</strong> Both parties share confidential information (e.g., joint ventures, partnerships).</li>
-              </ul>
-              <br />
-              <strong>Why use an NDA?</strong> NDAs help prevent unauthorized disclosure of trade secrets, business plans, client lists, and other proprietary data. They are recognized by courts worldwide when properly executed.<br /><br />
-              <span className="text-primary-text/60 text-sm">Sources: <a href="https://www.nolo.com/legal-encyclopedia/free-books/small-business-book/chapter16-2.html" target="_blank" rel="noopener noreferrer" className="underline">Nolo: NDAs Explained</a>, <a href="https://www.law.cornell.edu/wex/non-disclosure_agreement" target="_blank" rel="noopener noreferrer" className="underline">Cornell Law: NDA</a></span>
-            </p>
-          </div>
-        </details>
+        <YMYLDisclaimer category="legal" />
 
         <div className="max-w-4xl mx-auto fade-in-up">
           <NDAGeneratorClient />
         </div>
 
+        <AdUnit slot={1} />
+
+        <section className="max-w-3xl mx-auto mt-12 prose prose-slate">
+          <h2 className="text-xl font-semibold text-slate-900 mb-3">When to use an NDA</h2>
+          <p className="text-slate-600 mb-4">
+            NDAs are common before sharing business plans with investors, prototypes with contractors, or client data with vendors. A written agreement clarifies what must stay confidential, how long obligations last, and what happens when the deal ends.
+          </p>
+          <p className="text-slate-600 mb-4">
+            This generator produces a simple unilateral template. Complex deals—mutual NDAs, employee agreements, international parties, or regulated data—need customized documents from a lawyer.
+          </p>
+          <p className="text-sm text-slate-500">
+            Learn more:{' '}
+            <a href="https://www.law.cornell.edu/wex/non-disclosure_agreement" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Cornell Law — Non-disclosure agreement</a>
+            {' · '}
+            <a href="https://www.nolo.com/legal-encyclopedia/non-disclosure-agreements-29630.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Nolo — Non-disclosure agreements</a>
+          </p>
+        </section>
+
         <AdUnit slot={2} />
 
-        {/* Real-World Use Cases & User Stories */}
-        <section className="mb-6">
-          <h2 className="font-semibold text-lg mb-2">Real-World Use Cases & User Stories</h2>
-          <ul className="list-disc ml-6 text-base text-primary-text/90">
-            <li><strong>Freelancing:</strong> Priya, a freelance designer, uses an NDA to protect her client’s branding concepts before project launch.</li>
-            <li><strong>Startups:</strong> Alex, a startup founder, signs mutual NDAs with potential investors and partners to safeguard business plans.</li>
-            <li><strong>Employment:</strong> Employers require new hires to sign NDAs to protect trade secrets and proprietary data.</li>
-            <li><strong>Collaborations:</strong> Two companies use a mutual NDA before sharing sensitive R&D information for a joint project.</li>
-          </ul>
-        </section>
+        <HowItWorks
+          title="How This Tool Works"
+          steps={howItWorksSteps}
+          className="bg-slate-50/50"
+        />
 
         <div className="mt-16 fade-in-up">
           <ToolInfo
@@ -163,25 +146,25 @@ export default function NDAGeneratorPage() {
             description={
               <>
                 <p className="mb-4">
-                  Professional NDA generation represents a sophisticated intersection of international law, regulatory compliance, and mathematical risk assessment. Our expert-crafted tool combines jurisdictional analysis, industry-specific clause architecture, and evidence-based protection strategies to create enforceable confidentiality agreements that safeguard intellectual property and business interests across global markets.
+                  Generate a plain-text unilateral NDA with standard sections: definition of confidential information, receiving party duties, exclusions, term, return of materials, remedies, and governing law placeholder. Copy the output and edit with legal counsel before signing.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                   <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                    <h4 className="font-semibold text-blue-800 mb-2">⚖️ International Enforceability</h4>
+                    <h4 className="font-semibold text-blue-800 mb-2">Unilateral</h4>
                     <p className="text-sm text-blue-700">
-                      Jurisdiction-specific analysis for common law, civil law, and Asian legal systems with cross-border compliance.
+                      One disclosing party, one receiving party—one-way confidentiality.
                     </p>
                   </div>
                   <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
-                    <h4 className="font-semibold text-emerald-800 mb-2">📊 Mathematical Risk Assessment</h4>
+                    <h4 className="font-semibold text-emerald-800 mb-2">Configurable term</h4>
                     <p className="text-sm text-emerald-700">
-                      CRAM scoring models quantify protection levels and reduce breach probability by 67% through data-driven analysis.
+                      Choose 1–10 years or indefinite, plus optional return of materials.
                     </p>
                   </div>
-                  <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                    <h4 className="font-semibold text-purple-800 mb-2">🏢 Industry-Specific Compliance</h4>
-                    <p className="text-sm text-purple-700">
-                      Sector-tailored clauses for technology, healthcare, manufacturing, and financial services with regulatory integration.
+                  <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                    <h4 className="font-semibold text-amber-800 mb-2">Template only</h4>
+                    <p className="text-sm text-amber-700">
+                      Replace [State] governing law and tailor clauses with an attorney.
                     </p>
                   </div>
                 </div>
@@ -192,18 +175,6 @@ export default function NDAGeneratorPage() {
             tips={tips}
           />
         </div>
-
-        {/* Did You Know? & Authoritative Resources */}
-        <section className="mb-10">
-          <h2 className="font-semibold text-lg mb-2">Did You Know?</h2>
-          <ul className="list-disc ml-6 text-base text-primary-text/90">
-            <li>NDAs are enforceable in most countries when properly executed and not overly broad.</li>
-            <li>Some jurisdictions limit the duration or scope of NDAs to protect employee rights.</li>
-            <li>NDAs cannot be used to conceal illegal activity or prevent whistleblowing.</li>
-            <li>Trade secrets are protected by law even without an NDA, but an NDA strengthens your legal position.</li>
-          </ul>
-          <p className="mt-4 text-sm text-primary-text/60">For more information, visit <a href="https://www.nolo.com/legal-encyclopedia/non-disclosure-agreements-29630.html" target="_blank" rel="noopener noreferrer" className="underline">Nolo: Non-Disclosure Agreements</a> or <a href="https://en.wikipedia.org/wiki/Non-disclosure_agreement" target="_blank" rel="noopener noreferrer" className="underline">Wikipedia: NDA</a>.</p>
-        </section>
 
         <AdUnit slot={3} />
 

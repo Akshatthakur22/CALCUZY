@@ -22,7 +22,7 @@ const inter = Inter({
 export const metadata = createMetadata({
   title: 'Calcuzy - Your All-In-One Online Tools Platform',
   description:
-    'Free online calculators, generators, converters, and utilities. 100+ precision tools for finance, health, legal, and everyday use.',
+    'Free online calculators, generators, converters, and utilities. 31 tools for finance, health, legal, and everyday use.',
   keywords: 'online tools, calculators, generators, converters, BMI calculator, age calculator, will generator, countdown timers',
   url: 'https://calcuzy.app',
 })
@@ -39,7 +39,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         
         {/* DNS prefetch for analytics */}
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
@@ -63,7 +62,7 @@ export default function RootLayout({
         {/* Preload critical images for LCP */}
         <link
           rel="preload"
-          href="/logo.png"
+          href="/logo.svg"
           as="image"
           type="image/png"
         />
@@ -137,13 +136,6 @@ export default function RootLayout({
             });
           `}
         </Script>
-
-        {/* AdSense - loaded lazily to not block LCP */}
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2612507905879561"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
 
         {/* Performance monitoring script */}
         <Script id="performance-monitor" strategy="afterInteractive">

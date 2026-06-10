@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/swc-darwin-arm64": "^14.2.5",
     "@vercel/analytics": "^1.6.1",
     "autoprefixer": "^10.4.23",
     "framer-motion": "^12.33.0",

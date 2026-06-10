@@ -1,9 +1,9 @@
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Age Calculator: Precise Chronological Age in Years, Months, & Days',
-  description: 'Calculate exact age with Gregorian leap-cycle accuracy. A professional-grade tool for legal, medical, and personal milestone tracking. 100% private.',
-  keywords: 'age from date, calculate age, age calculator, birthday calculator, chronological age, leap year, ISO 8601, legal age, medical age',
+  title: 'Age Calculator',
+  description: 'Calculate exact age in years, months, and days from your birth date. Pick any target date, including today. Free, instant, and private—runs in your browser.',
+  keywords: 'age calculator, calculate age, birthday calculator, age in years months days, chronological age, leap year',
   url: 'https://calcuzy.app/age-calculator',
-  image: '/og-tools.png',
+  image: '/og/og-tools.svg',
 })

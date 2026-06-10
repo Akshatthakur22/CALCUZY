@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   description: 'Explore our comprehensive collection of 1000+ baby names and pet names. Find perfect baby boy names, baby girl names, dog names, cat names, and American last names. Expert-curated name lists with meanings, origins, and naming trends.',
   keywords: 'baby names, pet names, dog names, cat names, last names, name ideas, name inspiration, baby boy names, baby girl names',
   url: 'https://calcuzy.app/names',
-  image: '/og-default.png',
+  image: '/og/og-names.svg',
 })
 
 const nameCategories = [

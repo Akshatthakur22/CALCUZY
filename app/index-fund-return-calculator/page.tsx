@@ -5,6 +5,7 @@ import AdUnit from '@/components/AdUnit'
 import IndexFundReturnCalculatorClient from '@/components/tools/IndexFundReturnCalculatorClient'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
+import YMYLDisclaimer from '@/components/YMYLDisclaimer'
 import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
@@ -12,7 +13,7 @@ export const metadata = createMetadata({
   description: 'Calculate index fund returns, SIP investments, and compound annual growth rate (CAGR). Free investment growth calculator with monthly contributions.',
   keywords: 'index fund calculator, SIP calculator, CAGR calculator, investment returns, compound interest, mutual fund calculator',
   url: 'https://calcuzy.app/index-fund-return-calculator',
-  image: '/og-tools.png',
+  image: '/og/og-tools.svg',
 })
 
 export default function IndexFundReturnCalculatorPage() {
@@ -87,6 +88,8 @@ export default function IndexFundReturnCalculatorPage() {
             Supports lump sum investments, monthly SIPs, and CAGR calculations.
           </p>
         </div>
+
+        <YMYLDisclaimer category="finance" />
 
         <AdUnit slot={1} />
 

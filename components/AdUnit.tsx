@@ -1,3 +1,5 @@
+import { ADS_ENABLED } from '@/lib/ads-config'
+
 interface AdUnitProps {
   slot: number
   format?: 'horizontal' | 'rectangle' | 'vertical' | 'responsive'
@@ -49,6 +51,10 @@ const formatConfig = {
 }
 
 export default function AdUnit({ slot, format = 'responsive', className = '' }: AdUnitProps) {
+  if (!ADS_ENABLED) {
+    return null
+  }
+
   const config = formatConfig[format]
 
   return (

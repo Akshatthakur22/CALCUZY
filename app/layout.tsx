@@ -6,6 +6,7 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 import LoadingBoundary from '@/components/LoadingBoundary'
 import { ToastProvider } from '@/components/Toast'
 import ServiceWorkerProvider from '@/components/ServiceWorkerProvider'
+import CalculatorClickTracker from '@/components/CalculatorClickTracker'
 import Script from "next/script"
 
 // Optimized font loading with display: swap for better LCP
@@ -19,7 +20,7 @@ const inter = Inter({
 export const metadata = createMetadata({
   title: 'Calcuzy - Your All-In-One Online Tools Platform',
   description:
-    'Free online calculators, generators, converters, and utilities. 100+ precision tools for finance, health, legal, and everyday use.',
+    'Free online calculators, generators, converters, and utilities. 31 tools for finance, health, legal, and everyday use.',
   keywords: 'online tools, calculators, generators, converters, BMI calculator, age calculator, will generator, countdown timers',
   url: 'https://calcuzy.app',
 })
@@ -36,7 +37,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         
         {/* DNS prefetch for analytics */}
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
@@ -45,19 +45,17 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-2612507905879561" />
 
         {/* Icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
         
         {/* PWA Manifest */}
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
         
         {/* Theme color for PWA */}
         <meta name="theme-color" content="#667eea" />
         
         {/* Apple touch bar icon */}
-        <link rel="apple-touch-startup-image" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-startup-image" href="/logo.svg" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Calcuzy" />
@@ -72,6 +70,7 @@ export default function RootLayout({
           <LoadingBoundary>
             <ToastProvider>
               <ServiceWorkerProvider />
+              <CalculatorClickTracker />
               {children}
             </ToastProvider>
           </LoadingBoundary>
@@ -89,16 +88,10 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-JFXJRQZ7SQ', {
               page_path: window.location.pathname,
+              anonymize_ip: true,
             });
           `}
         </Script>
-
-        {/* AdSense - loaded lazily to not block LCP */}
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2612507905879561"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
 
         <Analytics />
       </body>

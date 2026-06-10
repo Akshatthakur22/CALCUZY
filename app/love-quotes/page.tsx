@@ -12,7 +12,8 @@ export const metadata = createMetadata({
   description: 'Professional love quotes collection with relationship psychology research, emotional intelligence insights, and attachment theory analysis. Discover 1000+ quotes with scientific backing for healthy relationships and emotional connection.',
   keywords: 'love quotes, relationship psychology, emotional intelligence, attachment theory, healthy relationships, romantic psychology, connection science, love research',
   url: 'https://calcuzy.app/love-quotes',
-  image: '/og-quotes.png',
+  image: '/og/og-quotes.svg',
+  noIndex: true,
 })
 
 export default function LoveQuotes() {

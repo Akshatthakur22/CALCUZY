@@ -1,3 +1,5 @@
+import { ADS_ENABLED } from '@/lib/ads-config'
+
 interface AdPlaceholderProps {
   slot: number
   size?: 'leaderboard' | 'rectangle' | 'banner'
@@ -23,6 +25,10 @@ const sizeConfig = {
 }
 
 export default function AdPlaceholder({ slot, size = 'banner', className = '' }: AdPlaceholderProps) {
+  if (!ADS_ENABLED) {
+    return null
+  }
+
   const config = sizeConfig[size]
   
   return (

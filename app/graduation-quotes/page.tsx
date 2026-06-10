@@ -12,7 +12,8 @@ export const metadata = createMetadata({
   description: 'Professional graduation quotes collection with career development strategies, professional insights, and expert guidance. Discover 1000+ quotes with career planning advice and success psychology research.',
   keywords: 'graduation quotes, career development, professional guidance, commencement quotes, career planning, success psychology, professional insights, career advice',
   url: 'https://calcuzy.app/graduation-quotes',
-  image: '/og-quotes.png',
+  image: '/og/og-quotes.svg',
+  noIndex: true,
 })
 
 const structuredData = createToolSchema({

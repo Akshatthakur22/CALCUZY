@@ -4,68 +4,99 @@ import DateDifferenceClient from '@/components/client/DateDifferenceClient'
 import AdUnit from '@/components/AdUnit'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
-import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import HowItWorks from '@/components/HowItWorks'
+import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Date Difference Calculator - Calculate Days Between Dates',
-  description: 'Calculate the exact number of days, weeks, months, and years between two dates with our free date calculator. Perfect for planning events, tracking deadlines, calculating age differences, and project timelines.',
-  keywords: 'calculate days between dates, date difference, date calculator, days between dates calculator, date duration calculator, time between dates',
+  title: 'Date Difference Calculator',
+  description: 'Calculate days, weeks, months, and years between two dates. Optional time-of-day precision, quick presets, and leap-year-aware Gregorian calendar math—all in your browser.',
+  keywords: 'date difference calculator, days between dates, date calculator, time between dates, calendar calculator',
   url: 'https://calcuzy.app/date-difference',
-  image: '/og-tools.png',
+  image: '/og/og-tools.svg',
 })
 
 export default function DateDifference() {
   const structuredData = createToolSchema({
     name: 'Date Difference Calculator',
-    description: 'Calculate the exact number of days between two dates with our free date difference calculator.',
+    description: 'Calculate the difference between two dates in years, months, days, and total days using the Gregorian calendar.',
     url: 'https://calcuzy.app/date-difference',
     category: 'UtilityApplication',
-    features: ['Days calculation', 'Weeks and months', 'Leap year support', 'Past and future dates']
+    features: ['Days and total day count', 'Years, months, days breakdown', 'Optional time precision', 'Quick presets', 'Leap year support']
   })
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://calcuzy.app' },
+    { name: 'Tools', url: 'https://calcuzy.app/tools' },
+    { name: 'Calculators', url: 'https://calcuzy.app/tools#calculators' },
+    { name: 'Date Difference Calculator', url: 'https://calcuzy.app/date-difference' }
+  ])
 
   const faqData = [
     {
-      question: 'How accurate is this date calculator?',
-      answer: 'Our date calculator provides extremely accurate results using industry-standard algorithms that account for leap years, varying month lengths, and Gregorian calendar rules. The calculations are precise to the second and handle dates across centuries, making it suitable for both everyday planning and historical research. We use JavaScript\'s built-in Date object for reliable time calculations, ensuring consistency across different browsers and devices.'
+      question: 'How does this calculator work?',
+      answer: 'Pick a start date and end date. The tool computes the span as years, months, and days (with a total day count) using standard Gregorian calendar rules, including leap years and varying month lengths. You can optionally include start and end times for sub-day precision.'
     },
     {
-      question: 'What time units does this calculator support?',
-      answer: 'Our calculator displays results in multiple time units including days, weeks, months, and years. This flexibility allows you to understand time spans in the most relevant unit for your specific need—whether you\'re planning a vacation in days, tracking a project timeline in months, or calculating someone\'s age in years. The automatic unit conversion makes the tool versatile for both casual and professional applications.'
+      question: 'What units does it show?',
+      answer: 'Results display years, months, days, and total days between the two dates. With “Include time” enabled, the underlying calculation also accounts for hours and minutes, which can affect the total day count for partial days.'
     },
     {
-      question: 'Can this calculator handle historical dates?',
-      answer: 'Yes, our date calculator accurately handles historical dates across centuries, including those before the Gregorian calendar reform. The algorithm accounts for calendar changes, leap year rules, and different calendar systems, making it suitable for genealogical research, historical analysis, and academic studies. Whether you\'re calculating dates from the 1800s or ancient times, the tool provides accurate results based on the appropriate calendar system for that period.'
+      question: 'Does it exclude weekends or holidays?',
+      answer: 'No. This tool counts all calendar days. It does not calculate business days, working days, or exclude holidays. Use a dedicated business-day calculator if you need that.'
     },
     {
-      question: 'How does this handle time zones?',
-      answer: 'Our calculator operates in your local timezone, providing results that reflect your current time zone settings. For international collaboration, we recommend confirming the time zone context with other participants, as the date difference can vary significantly across time zones. The tool shows the calculation method used and allows you to specify different time zones if needed for cross-timezone planning.'
+      question: 'How are time zones handled?',
+      answer: 'Date-only mode treats each date in your browser’s local timezone (start of day to end of day). When you include time, hours and minutes are also interpreted locally. It does not let you pick different time zones for each date.'
     },
     {
-      question: 'What calendar systems does this support?',
-      answer: 'Our calculator is primarily based on the Gregorian calendar system, which is the international standard for civil and business use. It automatically handles leap years according to Gregorian rules. While it doesn\'t natively support lunar, Hebrew, or other cultural calendars, the mathematical foundations allow for adaptation to these systems if needed for specific cultural or religious applications.'
+      question: 'Can I use historical dates?',
+      answer: 'Any dates supported by your browser’s date picker can be used. The math follows the modern Gregorian calendar—it does not adjust for Julian-to-Gregorian transitions or non-Gregorian calendar systems used in some regions historically.'
     },
     {
-      question: 'Can I calculate working days between dates?',
-      answer: 'Yes, our calculator can exclude weekends and holidays from date calculations. This feature is particularly useful for business planning, project management, and calculating delivery timelines. You can toggle this option based on your specific needs—whether you\'re planning business operations that only occur on weekdays, or need to include weekends for personal planning.'
-    },
-    {
-      question: 'How do I use this for financial planning?',
-      answer: 'For financial planning, our calculator helps with investment period calculations, loan term analysis, interest accrual tracking, and retirement planning. Calculate the exact duration between investment start and end dates, determine holding periods for tax purposes, or plan savings goals with precise timelines. The business day exclusion feature is particularly valuable for calculating business days versus calendar days in financial contracts.'
-    },
-    {
-      question: 'Is this suitable for academic research?',
-      answer: 'Absolutely! Our date calculator is ideal for academic research, including historical analysis, demographic studies, and statistical research. Calculate precise time periods for historical events, analyze generational time spans, or determine age distributions in population studies. The accuracy and multiple time unit support make it valuable for research papers, thesis work, and educational planning across various disciplines.'
-    },
-    {
-      question: 'Can I share the results?',
-      answer: 'Yes, our calculator includes easy sharing options for social media, email, or messaging. You can share date calculations with colleagues for project coordination, send age calculations to family members for celebration planning, or post timeline visualizations for presentations. The shareable format makes it convenient for collaborative planning and communication.'
+      question: 'Is my data stored?',
+      answer: 'No. Dates and results are calculated entirely in your browser. Nothing is sent to our servers.'
     }
   ]
 
   const faqSchema = createFAQSchema(faqData)
 
+  const steps = [
+    { title: 'Choose dates', description: 'Select a start date and end date, or use a quick preset (week, month, year, etc.).' },
+    { title: 'Add time (optional)', description: 'Enable “Include time” for hour- and minute-level precision between datetimes.' },
+    { title: 'Calculate', description: 'Results update automatically when both dates are set, or click Calculate Difference.' },
+    { title: 'Read the breakdown', description: 'View years, months, days, and total days—or swap dates to reverse the range.' }
+  ]
+
+  const tips = [
+    'Use presets like “Year to Date” for common reporting ranges',
+    'Enable time mode when the gap is less than one full day',
+    'Swap dates quickly with the swap button if you picked them reversed',
+    'For project deadlines in business days only, this tool counts every calendar day',
+    'Pair with our age calculator if you need age in years, months, and days from a birth date'
+  ]
+
+  const howItWorksSteps = [
+    {
+      title: 'Select a date range',
+      description: 'Pick start and end dates manually or from quick presets.'
+    },
+    {
+      title: 'Compute the gap',
+      description: 'The tool subtracts dates using calendar logic and optional time-of-day values.'
+    },
+    {
+      title: 'View the breakdown',
+      description: 'See years, months, days, and total elapsed days between the two points.'
+    }
+  ]
+
   return (
-    <div className="min-h-screen bg-primary-bg">
+    <div className="min-h-screen bg-primary-bg fade-in">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -76,77 +107,47 @@ export default function DateDifference() {
       />
       <Navbar />
       
-      <main className="container py-12">
-        <div className="text-center mb-12">
+      <main className="container section-responsive">
+        <Breadcrumbs
+          items={[
+            { name: 'Tools', url: '/tools' },
+            { name: 'Calculators', url: '/tools#calculators' },
+            { name: 'Date Difference', url: '/date-difference' }
+          ]}
+        />
+        <div className="text-center mb-12 slide-up">
           <h1 className="heading-1 text-center mb-6">
             Date Difference Calculator
           </h1>
           <p className="paragraph text-center max-w-2xl mx-auto mb-8">
-            Calculate the exact number of days between two dates. Perfect for planning events, 
-            tracking deadlines, or calculating time periods.
+            Find how many days, weeks, months, and years lie between two dates. Use quick presets, optional time precision, and calendar-based math—all processed locally in your browser.
           </p>
         </div>
 
+        <DateDifferenceClient />
+
         <AdUnit slot={1} />
 
-        <DateDifferenceClient />
+        <section className="max-w-3xl mx-auto mt-12 prose prose-slate">
+          <h2 className="text-xl font-semibold text-slate-900 mb-3">Common uses</h2>
+          <p className="text-slate-600 mb-4">
+            Date difference calculations help with project timelines, countdowns, contract lengths, time since an event, and planning milestones. This tool counts calendar days on the Gregorian calendar—it is not a business-day or holiday-aware calculator.
+          </p>
+          <p className="text-slate-600 mb-4">
+            For age from a birth date, try our{' '}
+            <a href="/age-calculator/" className="text-blue-600 hover:underline">age calculator</a>
+            . For holiday countdowns, see our{' '}
+            <a href="/countdowns/" className="text-blue-600 hover:underline">countdown timers</a>.
+          </p>
+        </section>
 
         <AdUnit slot={2} />
 
-        <section className="mb-12">
-          <h2 className="font-semibold text-lg mb-6">Complete Guide to Date Calculations & Time Management</h2>
-          
-          <div className="prose prose-lg max-w-none space-y-6">
-            <p className="paragraph">
-              Date calculation is more than just mathematics—it's a fundamental skill for planning, organizing, and understanding time relationships. Our date difference calculator provides precise measurements between any two dates, helping you visualize time spans, plan projects, and make informed decisions about everything from personal goals to business deadlines. Understanding date calculations empowers better time management, historical analysis, and strategic planning across personal and professional contexts.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Practical Applications in Daily Life</h3>
-            <p className="paragraph mb-6">
-              Date calculations serve countless everyday purposes that enhance productivity and organization. Calculate exact ages for birthdays and anniversaries, plan vacation durations with precision, determine project timelines for work deadlines, track fitness progress over time, or calculate historical periods for research. These calculations help transform abstract time concepts into concrete, actionable information that supports better decision-making and goal achievement.
-            </p>
-            
-            <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 mb-6">
-              <h4 className="font-semibold text-blue-900 mb-3">Common Use Cases</h4>
-              <div className="grid md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <p><strong>Personal Planning:</strong> Birthday countdowns, age calculations, anniversary tracking</p>
-                  <p className="text-blue-700">Perfect for personal milestones, family events, and memory keeping</p>
-                </div>
-                <div>
-                  <p><strong>Professional Use:</strong> Project timelines, deadline calculations, business planning</p>
-                  <p className="text-blue-700">Essential for work scheduling, contract management, and strategic planning</p>
-                </div>
-                <div>
-                  <p><strong>Financial Planning:</strong> Investment periods, loan terms, retirement planning</p>
-                  <p className="text-blue-700">Critical for financial calculations, interest computations, and savings goals</p>
-                </div>
-                <div>
-                  <p><strong>Academic Use:</strong> Semester planning, research timelines, historical analysis</p>
-                  <p className="text-blue-700">Important for education planning, study scheduling, and academic research</p>
-                </div>
-                <div>
-                  <p><strong>Health & Fitness:</strong> Age tracking, fitness progress, goal setting</p>
-                  <p className="text-blue-700">Valuable for workout planning, diet tracking, and health monitoring</p>
-                </div>
-              </div>
-            </div>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Understanding Time Measurement Systems</h3>
-            <p className="paragraph mb-6">
-              Different cultures and disciplines have developed various systems for measuring and calculating time. The Gregorian calendar, used by most of the world today, evolved from Julian calendar modifications and provides standardized date calculations. Other systems include lunar calendars used in many Asian cultures, the Hebrew calendar with religious significance, and various fiscal calendars for financial planning. Understanding these different systems helps in international business, historical research, and cultural appreciation of time measurement diversity.
-              </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Mathematical Foundations and Calendar Systems</h3>
-            <p className="paragraph mb-6">
-              Accurate date calculation relies on understanding leap years, varying month lengths, and calendar system rules. The Gregorian calendar adds a leap day every four years to maintain synchronization with solar years, while lunar calendars follow different patterns for month lengths. Our calculator handles these complexities automatically, providing correct results whether you're calculating across centuries, months, or days. This mathematical precision ensures reliable results for any time-sensitive calculation or planning need.
-              </p>
-            
-            <p className="paragraph">
-              Whether you're planning a major life event, managing a complex project, or simply curious about time relationships between dates, our date difference calculator provides the accuracy and insights needed to make informed decisions. Understanding these calculations helps you better appreciate the passage of time and use it more effectively in your personal and professional life.
-            </p>
-          </div>
-        </section>
+        <HowItWorks
+          title="How This Calculator Works"
+          steps={howItWorksSteps}
+          className="bg-slate-50/50"
+        />
 
         <div className="mt-16 fade-in-up">
           <ToolInfo
@@ -154,44 +155,33 @@ export default function DateDifference() {
             description={
               <>
                 <p className="mb-4">
-                  Our date difference calculator provides precise calculations between any two dates, 
-                  showing the exact number of days, weeks, months, and years. Essential for project 
-                  planning, event coordination, and tracking important milestones.
+                  Select two dates to measure the time between them. The calculator reports a years-months-days breakdown plus total days, with optional time-of-day inputs for finer gaps. Leap years and month lengths are handled automatically.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                   <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                    <h4 className="font-semibold text-blue-800 mb-2">📅 Precise</h4>
+                    <h4 className="font-semibold text-blue-800 mb-2">Calendar days</h4>
                     <p className="text-sm text-blue-700">
-                      Accounts for leap years and varying month lengths.
+                      Counts every day—not business days or holidays.
                     </p>
                   </div>
                   <div className="bg-green-50 p-4 rounded-xl border border-green-100">
-                    <h4 className="font-semibold text-green-800 mb-2">⚡ Instant</h4>
+                    <h4 className="font-semibold text-green-800 mb-2">Optional time</h4>
                     <p className="text-sm text-green-700">
-                      Get results immediately as you select dates.
+                      Toggle time inputs when hours and minutes matter.
                     </p>
                   </div>
                   <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                    <h4 className="font-semibold text-purple-800 mb-2">🔒 Private</h4>
+                    <h4 className="font-semibold text-purple-800 mb-2">Private</h4>
                     <p className="text-sm text-purple-700">
-                      All calculations happen locally in your browser.
+                      Calculations run locally—nothing is uploaded.
                     </p>
                   </div>
                 </div>
               </>
             }
-            steps={[
-              { title: 'Select Start Date', description: 'Choose your first date from the calendar.' },
-              { title: 'Select End Date', description: 'Pick your second date to compare.' },
-              { title: 'View Results', description: 'See the difference in days, weeks, months, and years.' }
-            ]}
+            steps={steps}
             faqs={faqData}
-            tips={[
-              'Use for planning vacations and travel itineraries',
-              'Track project deadlines and milestones',
-              'Calculate age and time elapsed since events',
-              'Plan events and appointments with precision'
-            ]}
+            tips={tips}
           />
         </div>
 

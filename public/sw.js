@@ -22,14 +22,8 @@ const STATIC_ASSETS = [
   '/capital-gains-calculator',
   '/crypto-tax-calculator',
   '/will-generator',
-  '/site.webmanifest',
-  '/favicon.ico',
-  '/favicon-16x16.png',
-  '/favicon-32x32.png',
-  '/apple-touch-icon.png',
-  '/logo.png',
-  '/icon-192.png',
-  '/icon-512.png',
+  '/manifest.json',
+  '/logo.svg',
 ]
 
 // Install event - cache static assets
@@ -230,8 +224,8 @@ self.addEventListener('push', (event) => {
       event.waitUntil(
         self.registration.showNotification('Calculation Complete', {
           body: 'Your capital gains calculation is ready.',
-          icon: '/icon-192.png',
-          badge: '/favicon-32x32.png',
+          icon: '/logo.svg',
+          badge: '/logo.svg',
           tag: 'calculation'
         })
       )

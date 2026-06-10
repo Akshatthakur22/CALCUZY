@@ -12,7 +12,8 @@ export const metadata = createMetadata({
   description: 'Professional motivational quotes collection with success psychology research, behavioral science insights, and performance optimization strategies. Discover 1000+ quotes with scientific backing for achievement, perseverance, and personal growth.',
   keywords: 'motivational quotes, success psychology, behavioral science, achievement motivation, performance optimization, growth mindset, resilience research, goal attainment',
   url: 'https://calcuzy.app/motivational-quotes',
-  image: '/og-quotes.png',
+  image: '/og/og-quotes.svg',
+  noIndex: true,
 })
 
 export default function MotivationalQuotes() {

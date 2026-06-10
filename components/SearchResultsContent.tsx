@@ -37,7 +37,7 @@ const tools: Tool[] = [
   { name: 'Black Friday Countdown', description: 'Count down to Black Friday', url: '/black-friday-countdown', category: 'Countdowns' },
   
   // Legal Tools
-  { name: 'Will Generator', description: 'Create a legally sound will online', url: '/will-generator', category: 'Legal Tools' },
+  { name: 'Will Generator', description: 'Create a basic will template online', url: '/will-generator', category: 'Legal Tools' },
   { name: 'NDA Generator', description: 'Generate non-disclosure agreements', url: '/nda-generator', category: 'Legal Tools' },
   
   // Name Generators

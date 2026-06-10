@@ -15,7 +15,8 @@ export const metadata = createMetadata({
   description: 'Professional, research-backed guide to aesthetic quotes with 1000+ expertly curated sayings. Explore the science, history, and psychology behind visual inspiration. Includes design principles, cultural significance, and modern applications for 2026.',
   keywords: 'aesthetic quotes, visual inspiration, design science, aesthetic meaning, visual harmony, art quotes, creative inspiration, design principles, color theory',
   url: 'https://calcuzy.app/aesthetic-quotes',
-  image: '/og-quotes.png',
+  image: '/og/og-quotes.svg',
+  noIndex: true,
 })
 
 

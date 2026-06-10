@@ -12,7 +12,7 @@ export const metadata = createMetadata({
   description: 'Professional password security tools with advanced cybersecurity expertise, cryptographic analysis, and enterprise-grade security insights. Expert-crafted tools with threat modeling, cryptographic algorithms, and security best practices.',
   keywords: 'password security tools, cybersecurity expertise, cryptographic analysis, threat modeling, enterprise security, password strength analysis, cryptographic algorithms, security best practices',
   url: 'https://calcuzy.app/password-tools',
-  image: '/og-tools.png',
+  image: '/og/og-tools.svg',
 })
 
 export default function PasswordToolsPage() {

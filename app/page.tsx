@@ -78,7 +78,7 @@ export const metadata: Metadata = createMetadata({
   description: 'Smart calculators, generators, converters, finance tools, legal tools, naming tools, and daily utilities — all free, fast, and beautifully designed.',
   keywords: 'online tools platform, calculators, generators, converters, finance tools, legal tools, name generators, countdown timers, security tools, content tools, BMI calculator, age calculator, will generator, capital gains calculator',
   url: 'https://calcuzy.app',
-  image: '/og-default.png',
+  image: '/og/og-default.svg',
 })
 
 export default function HomePage() {
@@ -86,18 +86,8 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Calcuzy",
-    "description": "Your All-In-One Online Tools Platform - Smart calculators, generators, converters, finance tools, legal tools, naming tools, and daily utilities",
+    "description": "Free online tools platform with 31 calculators, generators, and utilities",
     "url": "https://calcuzy.app",
-    "potentialAction": [
-      {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://calcuzy.app/tools?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    ],
     "sameAs": [
       "https://twitter.com/calcuzy",
       "https://github.com/calcuzy"
@@ -109,8 +99,8 @@ export default function HomePage() {
     "@type": "Organization",
     "name": "Calcuzy",
     "url": "https://calcuzy.app",
-    "logo": "https://calcuzy.app/logo.png",
-    "description": "Free online tools platform with 100+ calculators, generators, and utilities"
+    "logo": "https://calcuzy.app/logo.svg",
+    "description": "Free online tools platform with 31 calculators, generators, and utilities"
   }
 
   return (
@@ -139,14 +129,14 @@ export default function HomePage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full mb-8">
                 <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-                <span className="text-sm font-medium text-blue-600">100+ Free Tools Available</span>
+                <span className="text-sm font-medium text-blue-600">31 Free Tools Available</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-[1.1] tracking-tighter">
                 One Place. Every Tool.
               </h1>
               <p className="text-lg md:text-xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Stop jumping between tabs. Access 100+ precision calculators, converters, and generators in one distraction-free workspace.
+                Stop jumping between tabs. Access 31 free calculators, converters, and generators in one distraction-free workspace.
               </p>
               
               {/* Premium Search Bar */}

@@ -11,7 +11,7 @@ export const metadata = createMetadata({
   description: 'Find perfect Christmas quotes from our collection of 150+ heartwarming holiday wishes. Browse traditional, inspirational, and family Christmas quotes for cards, messages, and celebrations. Share the joy of the season.',
   keywords: 'christmas quotes, holiday wishes, christmas sayings, christmas messages, holiday quotes, festive quotes, christmas card messages',
   url: 'https://calcuzy.app/christmas-quotes',
-  image: '/og-quotes.png',
+  image: '/og/og-quotes.svg',
 })
 
 const structuredData = createToolSchema({

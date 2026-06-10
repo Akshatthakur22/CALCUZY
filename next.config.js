@@ -33,12 +33,14 @@ const nextConfig = {
       },
     },
   },
-  // Webpack configuration for advanced optimization
-  webpack: (config, { isServer }) => {
+  // Webpack configuration for advanced optimization (production only)
+  webpack: (config, { isServer, dev }) => {
+    if (dev) return config
+
     // Tree shaking optimization
     config.optimization.usedExports = true
     config.optimization.sideEffects = false
-    
+
     // Code splitting for better bundle management
     if (!isServer) {
       config.optimization.splitChunks = {
@@ -60,10 +62,9 @@ const nextConfig = {
         },
       }
     }
-    
-    // Minimize bundle size
+
     config.optimization.minimize = true
-    
+
     return config
   },
   // Enable compression for static export

@@ -34,7 +34,7 @@ const tools: Tool[] = [
   { name: 'Black Friday Countdown', description: 'Count down to Black Friday', url: '/black-friday-countdown', category: 'Countdowns', icon: '🛍️' },
   
   // Legal Tools
-  { name: 'Will Generator', description: 'Create a legally sound will online', url: '/will-generator', category: 'Legal Tools', icon: '📜' },
+  { name: 'Will Generator', description: 'Create a basic will template online', url: '/will-generator', category: 'Legal Tools', icon: '📜' },
   { name: 'NDA Generator', description: 'Generate non-disclosure agreements', url: '/nda-generator', category: 'Legal Tools', icon: '📋' },
   
   // Name Generators
@@ -168,7 +168,7 @@ export default function GlassSearchBar() {
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleKeyDown}
               onFocus={() => query.length >= 2 && setIsOpen(true)}
-              placeholder="Search 100+ tools..."
+              placeholder="Search 31 tools..."
               className="flex-1 px-4 py-5 bg-transparent text-slate-900 text-lg placeholder-slate-400 focus:outline-none"
               autoComplete="off"
             />

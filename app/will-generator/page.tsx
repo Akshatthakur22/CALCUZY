@@ -4,12 +4,14 @@ import AdUnit from '@/components/AdUnit'
 import WillGeneratorClient from '@/components/tools/WillGeneratorClient'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
+import HowItWorks from '@/components/HowItWorks'
+import YMYLDisclaimer from '@/components/YMYLDisclaimer'
 import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Will Generator: Expert Estate Planning & Legal Document Creation Guide (2026)',
-  description: 'Professional will generator with advanced estate planning strategies, legal document expertise, and comprehensive inheritance planning. Expert-crafted tool with trust creation, tax optimization, and probate guidance.',
-  keywords: 'will generator, estate planning, legal document creation, inheritance planning, trust creation, tax optimization, probate guidance, asset distribution',
+  title: 'Will Generator',
+  description: 'Draft a basic last will and testament template with beneficiaries, assets, and an executor. Free starting point for simple estates—not a substitute for an attorney.',
+  keywords: 'will generator, last will and testament, basic will template, estate planning, beneficiary designation, executor appointment',
   url: 'https://calcuzy.app/will-generator',
   image: '/og/og-legal.svg',
 })
@@ -17,50 +19,70 @@ export const metadata = createMetadata({
 export default function WillGeneratorPage() {
   const structuredData = createToolSchema({
     name: 'Will Generator',
-    description: 'Create a simple last will and testament with customizable beneficiaries and asset distribution',
+    description: 'Create a simple last will and testament template with beneficiaries, asset bequests, and an executor designation.',
     url: 'https://calcuzy.app/will-generator',
     category: 'UtilityApplication',
-    features: ['Asset distribution', 'Beneficiary designation', 'Executor appointment', 'PDF export', 'Simple estate planning']
+    features: ['Beneficiary percentages', 'Specific asset bequests', 'Executor appointment', 'Special wishes', 'Copy to clipboard']
   })
 
   const faqData = [
     {
-      question: 'How do advanced estate planning strategies integrate with will creation for optimal wealth preservation?',
-      answer: 'Advanced estate planning combines will creation with strategic trust structures, tax optimization techniques, and asset protection mechanisms. Revocable living trusts provide flexibility while maintaining control, irrevocable trusts offer asset protection from creditors, and charitable remainder trusts generate income tax deductions. The "Estate Optimization Model" (EOM) suggests combining will-based distribution with trust structures for estates above $5M, reducing estate taxes by 40-60% while maintaining family harmony and control.'
+      question: 'What is a last will and testament?',
+      answer: 'A will is a legal document that states who should receive your property after you die and who should manage your estate (the executor). Without a valid will, state intestacy laws typically decide how assets are distributed—which may not match your wishes.'
     },
     {
-      question: 'What mathematical models predict estate tax impact and optimal inheritance distribution strategies?',
-      answer: 'The "Inheritance Tax Optimization Model" (ITOM) incorporates federal exemption calculations, state tax variations, and asset appreciation projections to minimize tax burden. ITOM suggests strategic gifting strategies using annual exclusion amounts ($17,000 per recipient) and 5-year rolling periods to reduce taxable estate value. Machine learning analysis of 10,000+ estate plans reveals specific distribution patterns that maximize after-tax inheritance while maintaining family dynamics and minimizing probate litigation costs.'
+      question: 'Is a will from this tool legally binding?',
+      answer: 'No guarantee. This tool produces a basic text template only. Whether a will is valid depends on your state\'s requirements for signing, witnesses, notarization, and content. Complex situations—minor children, blended families, business interests, or large estates—usually need an attorney-drafted will.'
     },
     {
-      question: 'How do digital asset considerations affect modern estate planning and will creation?',
-      answer: 'Digital assets including cryptocurrency, domain names, social media accounts, and digital intellectual property require specialized estate planning strategies. Digital assets stored on exchanges need private key management and clear beneficiary instructions. Digital estate planning must address access methods, recovery procedures, and valuation challenges for volatile assets. Modern wills should include specific digital asset provisions and consider using digital estate planning services for complex digital portfolios.'
+      question: 'What does this generator include?',
+      answer: 'You can enter your name, name an executor, list beneficiaries with percentage shares, add specific asset bequests, and note special wishes (such as funeral preferences). The tool outputs plain text you can copy and review with a legal professional.'
     },
     {
-      question: 'What advanced executor selection criteria and succession planning ensure effective estate administration?',
-      answer: 'Advanced executor selection requires evaluating financial literacy, organizational skills, and emotional intelligence alongside trustworthiness. Succession planning should include backup executors, co-executor arrangements, and professional trustee appointments for complex estates. The "Executor Performance Model" (EPM) suggests selecting executors with combined financial management experience and interpersonal skills, reducing estate administration costs by 35% and improving beneficiary satisfaction by 67% compared to single executor appointments.'
+      question: 'Why do witnesses matter?',
+      answer: 'Most US states require a will to be signed in the presence of witnesses—often two adults who are not beneficiaries. Some states also allow or require notarization or self-proving affidavits. Requirements vary by state; check your state bar or a local attorney before signing.'
     },
     {
-      question: 'How do international estate planning considerations affect will creation for cross-border assets?',
-      answer: 'International estate planning requires understanding multiple legal systems, tax treaties, and jurisdictional variations in inheritance laws. Cross-border assets may be subject to double taxation without proper planning, requiring foreign-situs trusts and treaty-based tax optimization. International wills must comply with both home and destination country legal requirements, often necessitating dual-will strategies. Understanding Hague Convention rules and foreign probate procedures ensures international asset transfer efficiency and legal validity across jurisdictions.'
+      question: 'What does this tool not cover?',
+      answer: 'This template does not create trusts, name guardians for minor children, handle digital asset access, or provide tax or probate planning. Assets with beneficiary designations (life insurance, 401(k)s, IRAs) pass outside your will. An estate planning attorney can address gaps this template cannot.'
+    },
+    {
+      question: 'When should I hire an estate planning attorney?',
+      answer: 'Consider professional help if you have minor children, own a business, hold property in multiple states, have a high net worth, need a trust, or want to minimize estate taxes. An attorney can ensure your documents meet state law and reflect your full situation.'
     }
   ]
 
   const faqSchema = createFAQSchema(faqData)
 
   const steps = [
-    { title: 'Enter Personal Information', description: 'Provide your full legal name, address, and basic identifying information.' },
-    { title: 'Name Your Executor', description: 'Designate someone to manage your estate and carry out your wishes.' },
-    { title: 'Add Beneficiaries & Assets', description: 'List your beneficiaries and specify how assets should be distributed.' },
-    { title: 'Generate & Download', description: 'Create your will template ready for review, witnessing, and signing.' }
+    { title: 'Enter your name', description: 'Provide your full legal name as it should appear on the document.' },
+    { title: 'Name an executor', description: 'Choose someone trustworthy to pay debts and distribute assets according to your wishes.' },
+    { title: 'Add beneficiaries', description: 'List who inherits your estate and assign percentage shares (ideally totaling 100%).' },
+    { title: 'List specific assets', description: 'Optionally bequeath particular items such as a home, vehicle, or personal property.' },
+    { title: 'Generate and review', description: 'Copy the template, fill in placeholders like city/state, sign with witnesses per your state\'s rules, and have an attorney review if needed.' }
   ]
 
   const tips = [
-    'Review and update your will after major life events (marriage, divorce, births, deaths)',
-    'Store the original signed will in a secure location like a safe or with your attorney',
-    'Inform your executor where to find your will and important documents',
-    'Consider naming alternate beneficiaries and a backup executor',
-    'Always have your will properly witnessed according to your state\'s requirements'
+    'Review and update your will after marriage, divorce, births, deaths, or major asset changes',
+    'Store the original signed will in a secure place and tell your executor where to find it',
+    'Name a backup executor in case your first choice cannot serve',
+    'Beneficiary designations on retirement accounts and life insurance override your will—keep them updated',
+    'Consult an estate planning attorney for complex estates, minor children, or state-specific requirements'
+  ]
+
+  const howItWorksSteps = [
+    {
+      title: 'Fill in your details',
+      description: 'Add your name, executor, beneficiaries, optional assets, and any special wishes.'
+    },
+    {
+      title: 'Generate the template',
+      description: 'The tool assembles a basic last will and testament with standard articles and witness lines.'
+    },
+    {
+      title: 'Review before signing',
+      description: 'Copy the text, complete placeholders, and follow your state\'s signing and witness rules—or have a lawyer review first.'
+    }
   ]
 
   return (
@@ -81,86 +103,70 @@ export default function WillGeneratorPage() {
             Will Generator
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Planning for the future is one of the most caring things you can do for your loved ones. A last will and testament ensures your wishes are honored, your assets are distributed as you intend, and your family is protected from unnecessary stress or disputes. Whether you’re just starting your estate plan or updating an existing will, our tool helps you create a clear, legally-sound document tailored to your needs.<br /><br />
-            <strong>Who needs a will?</strong> Everyone—regardless of age, wealth, or family situation—should have a will. It’s especially important for parents, homeowners, business owners, and anyone with specific wishes for their property or dependents. Don’t leave these important decisions up to state law—take control and provide peace of mind for those you care about.
+            A last will and testament can help you state who receives your property and who manages your estate. This free tool drafts a basic will template you can use as a starting point—it is not legal advice and may not meet your state&apos;s requirements without review by a qualified attorney.
           </p>
         </div>
 
-        <AdUnit slot={1} />
+        <YMYLDisclaimer category="legal" />
 
         <div className="max-w-4xl mx-auto fade-in-up">
           <WillGeneratorClient />
         </div>
 
+        <AdUnit slot={1} />
+
+        <section className="max-w-3xl mx-auto mt-12 prose prose-slate">
+          <h2 className="text-xl font-semibold text-slate-900 mb-3">What a basic will can do</h2>
+          <p className="text-slate-600 mb-4">
+            A will names an executor to settle your estate, directs how remaining assets are divided among beneficiaries, and can include specific gifts (such as jewelry or a vehicle) and personal wishes. After death, the will is typically submitted to probate court so the executor can pay debts and distribute property.
+          </p>
+          <p className="text-slate-600 mb-4">
+            Many adults benefit from having a will, especially parents, homeowners, and anyone with clear preferences for their property. State law applies if you die without one. This generator is best for simple situations; trusts, guardianship clauses, and tax planning require professional guidance.
+          </p>
+        </section>
+
         <AdUnit slot={2} />
+
+        <HowItWorks
+          title="How This Tool Works"
+          steps={howItWorksSteps}
+          className="bg-slate-50/50"
+        />
 
         <div className="mt-16 fade-in-up">
           <ToolInfo
-            title="Will Generator: More Than Just a Template"
+            title="Will Generator"
             description={
               <>
                 <p className="mb-4">
-                  <strong>What is a will and why is it important?</strong> A last will and testament is a legal document that spells out your wishes for the distribution of your property, the care of minor children, and the appointment of an executor to manage your estate. Without a will, state intestacy laws decide who inherits your assets—often in ways you wouldn’t expect. Having a will gives you control, clarity, and peace of mind.<br /><br />
-                  <strong>How does a will work?</strong> After your death, your will is submitted to probate court, where your executor is authorized to pay debts, file taxes, and distribute assets as you’ve directed. Wills can be simple or complex, but all must meet your state’s legal requirements for validity (usually including signatures and witnesses).
+                  Use this tool to assemble a plain-text will template with standard sections: executor appointment, beneficiary shares, optional specific bequests, and special wishes. All input stays in your browser until you generate and copy the document.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                   <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                    <h4 className="font-semibold text-purple-800 mb-2">👤 Executor</h4>
+                    <h4 className="font-semibold text-purple-800 mb-2">Executor</h4>
                     <p className="text-sm text-purple-700">
-                      Manages your estate, pays debts, files taxes, and distributes assets per your wishes. Choose someone trustworthy and organized.
+                      Manages your estate, pays debts, and distributes assets. Choose someone organized and trustworthy.
                     </p>
                   </div>
                   <div className="bg-green-50 p-4 rounded-xl border border-green-100">
-                    <h4 className="font-semibold text-green-800 mb-2">💝 Beneficiaries</h4>
+                    <h4 className="font-semibold text-green-800 mb-2">Beneficiaries</h4>
                     <p className="text-sm text-green-700">
-                      The individuals, charities, or organizations who receive your assets. You can also name alternate beneficiaries.
+                      People or organizations who receive your estate. Percentages should total 100%.
                     </p>
                   </div>
                   <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
-                    <h4 className="font-semibold text-amber-800 mb-2">📋 Witnesses</h4>
+                    <h4 className="font-semibold text-amber-800 mb-2">Witnesses</h4>
                     <p className="text-sm text-amber-700">
-                      Most states require two adult witnesses (not beneficiaries) for legal validity. Some also require notarization.
+                      Most states require two adult witnesses at signing. Rules vary—verify locally before you sign.
                     </p>
                   </div>
                 </div>
-                <div className="mt-8">
-                  <h3 className="heading-3 mb-3">Real-World Use Cases</h3>
-                  <ul className="list-disc list-inside text-gray-700">
-                    <li><strong>Young parents:</strong> Name guardians for minor children and ensure their financial security.</li>
-                    <li><strong>Blended families:</strong> Clarify inheritance for children from previous relationships.</li>
-                    <li><strong>Single adults:</strong> Decide who receives your property and personal items.</li>
-                    <li><strong>Retirees:</strong> Update your will to reflect changing assets and family circumstances.</li>
-                    <li><strong>Business owners:</strong> Plan for succession and the transfer of business interests.</li>
-                  </ul>
-                </div>
-                <div className="mt-8">
-                  <h3 className="heading-3 mb-3">Expert Tips for a Secure Will</h3>
-                  <ul className="list-disc list-inside text-gray-700">
-                    <li>Review and update your will after major life events (marriage, divorce, births, deaths).</li>
-                    <li>Store the original signed will in a secure location and inform your executor where to find it.</li>
-                    <li>Consider naming alternate beneficiaries and a backup executor.</li>
-                    <li>Consult an estate planning attorney for complex situations or large estates.</li>
-                    <li>Always follow your state’s legal requirements for signing and witnessing.</li>
-                  </ul>
-                </div>
-                <div className="bg-blue-50 p-4 rounded-lg mt-8">
-                  <h3 className="heading-3 mb-2">Did You Know?</h3>
-                  <ul className="list-disc list-inside text-blue-900">
-                    <li>More than half of American adults do not have a will (AARP, 2023).</li>
-                    <li>Without a will, state law decides who inherits your property—even if you have a partner or stepchildren.</li>
-                    <li>Handwritten wills (holographic wills) are valid in some states, but not all.</li>
-                    <li>Wills do not cover everything—retirement accounts and life insurance pass by beneficiary designation, not by will.</li>
-                  </ul>
-                </div>
-                <div className="mt-8">
-                  <h3 className="heading-3 mb-2">References</h3>
-                  <ol className="list-decimal list-inside text-gray-700">
-                    <li>AARP. (2023). <a href="https://www.aarp.org/money/estate-planning/info-2023/why-you-need-a-will.html" target="_blank" rel="noopener">Why You Need a Will</a></li>
-                    <li>Nolo. (2023). <a href="https://www.nolo.com/legal-encyclopedia/free-books/estate-planning-book/chapter2-2.html" target="_blank" rel="noopener">Estate Planning Basics</a></li>
-                    <li>American Bar Association. (2023). <a href="https://www.americanbar.org/groups/real_property_trust_estate/resources/estate_planning/" target="_blank" rel="noopener">Estate Planning Resources</a></li>
-                    <li>USA.gov. (2023). <a href="https://www.usa.gov/wills" target="_blank" rel="noopener">Wills and Estate Planning</a></li>
-                  </ol>
-                </div>
+                <p className="text-sm text-slate-500 mt-6">
+                  Further reading:{' '}
+                  <a href="https://www.usa.gov/wills" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">USA.gov — Wills and estate planning</a>
+                  {' · '}
+                  <a href="https://www.americanbar.org/groups/real_property_trust_estate/resources/estate_planning/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">American Bar Association — Estate planning</a>
+                </p>
               </>
             }
             steps={steps}

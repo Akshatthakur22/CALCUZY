@@ -5,11 +5,11 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'All Tools - Complete Collection of 100+ Free Online Tools',
-  description: 'Explore our comprehensive collection of 100+ free online tools including calculators, converters, generators, and utilities for finance, health, legal, home improvement, and more. All tools are free, fast, and privacy-focused.',
+  title: 'All Tools - Complete Collection of 31 Free Online Tools',
+  description: 'Explore our collection of 31 free online tools including calculators, converters, generators, and utilities for finance, health, legal, home improvement, and more. All tools are free, fast, and privacy-focused.',
   keywords: 'online tools, calculators, converters, generators, free tools, utility tools, financial calculators, health calculators, legal documents',
   url: 'https://calcuzy.app/tools',
-  image: '/og-default.png',
+  image: '/og/og-default.svg',
 })
 
 const toolCategories = [
@@ -112,7 +112,7 @@ export default function ToolsPage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full mb-6">
                 <span className="text-lg">🛠️</span>
-                <span className="text-sm font-medium text-blue-600">100+ Free Tools</span>
+                <span className="text-sm font-medium text-blue-600">31 Free Tools</span>
               </div>
               
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight tracking-tight">
@@ -132,17 +132,17 @@ export default function ToolsPage() {
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                 Complete Collection of Free Online Tools
-              </h1>
+              </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Welcome to Calcuzy's comprehensive toolkit featuring 100+ professional-grade online tools. Whether you're calculating finances, planning projects, managing health, or organizing daily life, our privacy-first platform provides instant, accurate results without compromising your data security.
+                Welcome to Calcuzy&apos;s toolkit featuring 31 free online tools. Whether you&apos;re calculating finances, planning projects, managing health, or organizing daily life, our privacy-first platform provides instant results—your calculator inputs stay in your browser.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
                   <div className="text-3xl mb-3">🔒</div>
                   <h3 className="font-semibold text-blue-900 mb-2">100% Private</h3>
-                  <p className="text-sm text-blue-700">All calculations happen in your browser. No data storage, no tracking.</p>
+                  <p className="text-sm text-blue-700">Calculator inputs stay in your browser. We use basic analytics to improve the site.</p>
                 </div>
                 <div className="bg-green-50 rounded-xl p-6 border border-green-100">
                   <div className="text-3xl mb-3">⚡</div>
@@ -152,7 +152,7 @@ export default function ToolsPage() {
                 <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
                   <div className="text-3xl mb-3">🎯</div>
                   <h3 className="font-semibold text-purple-900 mb-2">Professional Grade</h3>
-                  <p className="text-sm text-purple-700">Built with industry standards and expert-backed algorithms.</p>
+                  <p className="text-sm text-purple-700">Built with standard formulas and published guidelines where applicable.</p>
                 </div>
               </div>
             </div>
@@ -277,7 +277,7 @@ export default function ToolsPage() {
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>100+ specialized tools across 10+ categories</span>
+                      <span>31 specialized tools across multiple categories</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>

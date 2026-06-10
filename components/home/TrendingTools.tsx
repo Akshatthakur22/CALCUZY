@@ -42,7 +42,7 @@ const trendingTools: TrendingTool[] = [
   },
   {
     name: 'Will Generator',
-    description: 'Create a legally sound will online',
+    description: 'Create a basic will template online',
     href: '/will-generator',
     icon: '📜',
     category: 'Legal'

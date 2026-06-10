@@ -12,7 +12,7 @@ export const metadata = createMetadata({
   description: 'Professional unit converter with advanced measurement systems expertise, scientific precision analysis, and practical application guides. Expert-crafted tool with SI units, imperial systems, and engineering-grade accuracy.',
   keywords: 'unit converter, measurement systems, SI units, imperial units, scientific precision, engineering applications, metric conversions, practical guides',
   url: 'https://calcuzy.app/unit-converter',
-  image: '/og-tools.png',
+  image: '/og/og-tools.svg',
 })
 
 export default function UnitConverter() {

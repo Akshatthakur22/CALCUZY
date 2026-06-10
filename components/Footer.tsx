@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
               <img 
-                src="/logo.png" 
+                src="/logo.svg" 
                 alt="Calcuzy Logo" 
                 width={80} 
                 height={80} 

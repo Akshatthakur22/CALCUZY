@@ -11,7 +11,7 @@ export const metadata = createMetadata({
   description: 'Generate random numbers instantly with customizable range and quantity. Perfect for games, contests, statistics, random selection, and decision making. Cryptographically secure, mobile-friendly, and completely free.',
   keywords: 'random number generator, generate random numbers, random number tool, lottery number generator, dice roller, random picker, number generator',
   url: 'https://calcuzy.app/random-number-generator',
-  image: '/og-tools.png',
+  image: '/og/og-tools.svg',
 })
 
 export default function RandomNumberGenerator() {

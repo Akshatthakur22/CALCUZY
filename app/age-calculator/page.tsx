@@ -5,17 +5,18 @@ import AdUnit from '@/components/AdUnit'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import HowItWorks from '@/components/HowItWorks'
 import { createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
-import { useState } from 'react'
 
+export { metadata } from './metadata'
 
 export default function AgeCalculator() {
   const structuredData = createToolSchema({
     name: 'Age Calculator',
-    description: 'Calculate your exact age in years, months, and days with our free age calculator',
+    description: 'Calculate exact age in years, months, and days from a birth date and target date.',
     url: 'https://calcuzy.app/age-calculator',
     category: 'UtilityApplication',
-    features: ['Years, months, days breakdown', 'Leap year support', 'Instant calculation', 'Privacy-focused']
+    features: ['Years, months, days breakdown', 'Leap year support', 'Any target date', 'Privacy-focused']
   })
 
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -27,43 +28,61 @@ export default function AgeCalculator() {
 
   const faqData = [
     {
-      question: 'How does the calculator handle the transition between the Julian and Gregorian calendars for historical dates?',
-      answer: "Our tool is optimized for post-1582 Gregorian dates. For historical genealogy before the 'Calendar Act' of 1752 (in the UK/US), users should manually adjust for the 11-day shift."
+      question: 'How does this age calculator work?',
+      answer: 'Enter your date of birth and a target date (today by default). The tool subtracts the birth date from the target date and reports the difference as years, months, and days, adjusting for varying month lengths and leap years.'
     },
     {
-      question: "Why does the 'Age in Days' sometimes vary between different online tools?",
-      answer: "Many tools use an 'Average Year' ($365.25$ days). Calcuzy uses 'Calendar Specificity,' counting the exact leap days that occurred during your specific lifetime."
+      question: 'Does it account for leap years?',
+      answer: 'Yes. The calculation uses the standard Gregorian calendar, so February 29 and other month-length differences are handled when counting years, months, and days between two dates.'
     },
     {
-      question: 'Can this tool be used for “Age of Majority” legal verification?',
-      answer: 'Yes. It provides the precise chronological delta required to determine if an individual has reached the legal age for voting, driving, or contract signing.'
+      question: 'Can I calculate age as of a past or future date?',
+      answer: 'Yes. Change the target date to see how old someone was or will be on a specific day—for example, age on a wedding date or eligibility cutoff. The birth date cannot be after the target date.'
     },
     {
-      question: "How is the 'remaining days' calculated in a month?",
-      answer: "We use the Reference Month approach, where the number of days in the month immediately preceding the target date is used to calculate the fractional remainder."
+      question: 'Why might my result differ from another calculator?',
+      answer: 'Most age tools should agree on years, months, and days when using the same two dates. Small differences can occur if a tool uses approximations (such as average month length) instead of calendar-based subtraction.'
     },
     {
-      question: 'Is there a limit to how far back the birth date can go?',
-      answer: 'The tool supports dates back to the year 1900, covering all living human spans and most modern genealogical records.'
+      question: 'Can I use this for legal age verification?',
+      answer: 'This gives a chronological age for reference only. Legal age of majority, voting, driving, or contracts depends on jurisdiction and specific rules. Use official documents and legal guidance for formal verification.'
+    },
+    {
+      question: 'Is my data stored?',
+      answer: 'No. Dates and results are processed in your browser. Nothing is sent to our servers.'
     }
   ]
 
   const faqSchema = createFAQSchema(faqData)
 
   const steps = [
-    { title: 'Enter Birth Date', description: 'Select your date of birth using the calendar picker.' },
-    { title: 'Set Target Date', description: 'Choose the date to calculate your age as of (defaults to today).' },
-    { title: 'View Results', description: 'See your exact age in years, months, and days instantly.' },
-    { title: 'Review Details', description: 'Check additional age information and milestones.' },
-    { title: 'Share or Save', description: 'Copy results for forms or share with others.' }
+    { title: 'Enter birth date', description: 'Select your date of birth using the calendar picker.' },
+    { title: 'Set target date', description: 'Choose the date to calculate age as of—defaults to today.' },
+    { title: 'Calculate', description: 'Click Calculate or wait for automatic results when both dates are set.' },
+    { title: 'Read your age', description: 'View the breakdown in years, months, and days.' }
   ]
 
   const tips = [
-    'Use this for official forms requiring exact age calculations',
-    'The calculator accounts for leap years automatically',
-    'Great for tracking children\'s developmental milestones',
-    'Calculate age at any future or past date',
-    'All calculations happen locally for complete privacy'
+    'Useful for forms, milestones, and “age on date” questions',
+    'Leap years are handled automatically in the calendar math',
+    'Set a future target date to see age on an upcoming birthday or event',
+    'For legal purposes, rely on official ID and local rules—not this tool alone',
+    'All calculations run locally in your browser'
+  ]
+
+  const howItWorksSteps = [
+    {
+      title: 'Pick two dates',
+      description: 'Choose a birth date and the date you want age calculated as of.'
+    },
+    {
+      title: 'Subtract calendar-style',
+      description: 'Years, months, and days are computed with borrow logic for uneven months.'
+    },
+    {
+      title: 'See the breakdown',
+      description: 'Results show your age as years, months, and days—not a single total-days count.'
+    }
   ]
 
   return (
@@ -93,38 +112,74 @@ export default function AgeCalculator() {
           <h1 className="heading-1 text-center mb-6">
             Age Calculator
           </h1>
-          <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Calculate your exact age in years, months, and days. Simply enter your birth date 
-            and current date to get precise age calculations instantly.
+          <p className="paragraph text-center max-w-2xl mx-auto mb-8">
+            Find your exact age in years, months, and days. Enter a birth date and any target date—today by default. Calculations run in your browser and nothing is stored.
           </p>
-        </div>
-
-        
-        <AdUnit slot={1} />
-
-        <div className="flex items-center gap-2 mb-4 max-w-2xl mx-auto">
-          <svg className="text-green-600" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            <path d="M12 2v4m0 4v2m0-8v2"/>
-          </svg>
-          <span className="text-xs text-green-700 font-medium">Privacy Verified: Calculated locally in-browser via V8 Engine. No server-side storage.</span>
         </div>
 
         <AgeCalculatorClient />
 
+        <AdUnit slot={1} />
+
+        <section className="max-w-3xl mx-auto mt-12 prose prose-slate">
+          <h2 className="text-xl font-semibold text-slate-900 mb-3">When to use an age calculator</h2>
+          <p className="text-slate-600 mb-4">
+            An age calculator answers “how old am I?” or “how old was I on a given date?” by counting full years, then months, then days between two calendar dates. It is handy for school forms, event planning, genealogy notes, and milestone tracking.
+          </p>
+          <p className="text-slate-600 mb-4">
+            Results are chronological age only. Legal eligibility (voting, contracts, benefits) may depend on rules in your country or state—confirm with official sources when it matters.
+          </p>
+        </section>
+
         <AdUnit slot={2} />
 
-        <ToolInfo
-          title="Age Calculator"
-          description="Calcuzy provides an analytical breakdown of lifespan duration using ISO-compliant date-delta logic, essential for legal filings and developmental tracking."
-          steps={steps}
-          tips={tips}
-          faqs={faqData}
+        <HowItWorks
+          title="How This Calculator Works"
+          steps={howItWorksSteps}
+          className="bg-slate-50/50"
         />
+
+        <div className="mt-16 fade-in-up">
+          <ToolInfo
+            title="Age Calculator"
+            description={
+              <>
+                <p className="mb-4">
+                  Enter a birth date and target date to get a years-months-days breakdown. The tool uses standard calendar subtraction so month lengths and leap years are reflected in the result.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2">Any target date</h4>
+                    <p className="text-sm text-blue-700">
+                      Calculate age as of today or any other valid date you choose.
+                    </p>
+                  </div>
+                  <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                    <h4 className="font-semibold text-emerald-800 mb-2">Leap years</h4>
+                    <p className="text-sm text-emerald-700">
+                      Gregorian calendar rules are used when counting between dates.
+                    </p>
+                  </div>
+                  <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 className="font-semibold text-slate-800 mb-2">Private</h4>
+                    <p className="text-sm text-slate-700">
+                      Dates stay in your browser—no account or server storage.
+                    </p>
+                  </div>
+                </div>
+              </>
+            }
+            steps={steps}
+            tips={tips}
+            faqs={faqData}
+          />
+        </div>
 
         <AdUnit slot={3} />
 
-        <RelatedTools currentTool="/age-calculator" category="calculators" />
+        <div className="max-w-4xl mx-auto mt-12 fade-in-up">
+          <RelatedTools currentTool="/age-calculator" category="calculators" />
+        </div>
       </main>
       <Footer />
     </div>

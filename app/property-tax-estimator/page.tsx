@@ -6,13 +6,14 @@ import AdUnit from '@/components/AdUnit'
 import PropertyTaxEstimatorClient from '@/components/tools/PropertyTaxEstimatorClient'
 import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
 import ReadMore from '../../components/ReadMore'
+import YMYLDisclaimer from '@/components/YMYLDisclaimer'
 
 export const metadata = createMetadata({
   title: 'Property Tax Estimator: Expert Real Estate Investment & Tax Planning Guide (2026)',
   description: 'Professional property tax calculator with advanced real estate insights, investment analysis, and tax planning strategies. Expert-crafted tool with assessment modeling, exemption optimization, and ROI calculations.',
   keywords: 'property tax estimator, real estate investment, tax planning strategies, assessment modeling, exemption optimization, ROI calculations, property tax analysis',
   url: 'https://calcuzy.app/property-tax-estimator',
-  image: '/og-tools.png',
+  image: '/og/og-tools.svg',
 })
 
 export default function PropertyTaxEstimatorPage() {
@@ -70,6 +71,8 @@ export default function PropertyTaxEstimatorPage() {
             Welcome to the definitive 2026 property tax estimator, combining advanced real estate investment analysis with comprehensive tax planning strategies. Our expert-crafted tool encompasses assessment modeling, exemption optimization, and ROI calculations to provide sophisticated guidance for homeowners, investors, and financial planners navigating the complex landscape of property taxation.
           </p>
         </div>
+
+        <YMYLDisclaimer category="finance" />
 
         <ReadMore>
           <section className="prose max-w-4xl mx-auto py-10">

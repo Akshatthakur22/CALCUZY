@@ -27,7 +27,7 @@ export function PreloadCriticalResources() {
       {/* Preload critical images for LCP */}
       <link
         rel="preload"
-        href="/logo.png"
+        href="/logo.svg"
         as="image"
         type="image/png"
       />
@@ -38,7 +38,6 @@ export function PreloadCriticalResources() {
       
       {/* DNS prefetch for non-critical resources */}
       <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-      <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     </>
   )
 }

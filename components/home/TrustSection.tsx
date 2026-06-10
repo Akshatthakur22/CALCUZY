@@ -1,8 +1,8 @@
 export default function TrustSection() {
   const stats = [
-    { value: '10M+', label: 'Monthly Users' },
-    { value: '150+', label: 'Countries' },
-    { value: '100+', label: 'Tools Available' }
+    { value: '31', label: 'Free Tools' },
+    { value: '100%', label: 'Browser-Local Calculations' },
+    { value: '0', label: 'Sign-ups Required' }
   ]
 
   const features = [
@@ -23,12 +23,12 @@ export default function TrustSection() {
           <div className="relative z-10 text-center">
             <div className="text-5xl md:text-6xl mb-6">🌍</div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              Trusted Worldwide
+              Built for Everyday Use
             </h2>
             <p className="text-lg text-slate-500 mb-12 max-w-xl mx-auto leading-relaxed">
-              Calcuzy is used by people in 150+ countries.
+              Free calculators, converters, and utilities in one place.
               <br className="hidden md:block" />
-              100% free. No sign-up. No data tracking.
+              No sign-up required. Your calculation inputs stay in your browser.
             </p>
             
             {/* Stats */}

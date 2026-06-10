@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { getOpenGraphImageType, OG_IMAGES } from './og-images'
 
 interface MetadataConfig {
   title: string
@@ -27,7 +28,7 @@ export function createMetadata({
   description,
   keywords = "",
   url = "",
-  image = "/og-default.png",
+  image = OG_IMAGES.default,
   noIndex = false,
 }: MetadataConfig): Metadata {
   // High-CTR title format for tool pages
@@ -74,7 +75,7 @@ export function createMetadata({
           width: 1200,
           height: 630,
           alt: title,
-          type: 'image/png',
+          type: getOpenGraphImageType(image),
         },
       ],
     },
@@ -100,7 +101,7 @@ export function createMetadata({
       ],
     },
 
-    manifest: '/site.webmanifest',
+    manifest: '/manifest.json',
     
     // Additional meta for US market
     other: {
@@ -144,13 +145,6 @@ export function createToolSchema({
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1250",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     ...(features.length > 0 && {
       "featureList": features.join(", ")
     })
@@ -185,7 +179,7 @@ export function createWebPageSchema({
       "name": "Calcuzy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://calcuzy.app/logo.png"
+        "url": "https://calcuzy.app/logo.svg"
       }
     }
   }

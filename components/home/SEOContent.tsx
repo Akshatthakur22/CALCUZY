@@ -28,7 +28,7 @@ export default function SEOContent() {
               <Link href="/will-generator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
                 legal will for estate planning
               </Link>
-              , each tool is meticulously designed with accuracy and user experience in mind. Our platform serves millions of users worldwide, from students and professionals to homeowners and entrepreneurs, all relying on our tools to make informed decisions quickly and confidently.
+              , each tool is built for accuracy and ease of use. Calcuzy is a solo-built project designed for students, professionals, and anyone who needs a quick, reliable calculator or converter without signing up.
             </p>
             
             <h3 className="text-xl font-semibold text-slate-800 mb-4">Comprehensive Calculator Suite for Every Need</h3>
@@ -88,17 +88,17 @@ export default function SEOContent() {
               <Link href="/nda-generator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
                 NDA generators for business protection
               </Link>
-              . These tools provide legally-sound templates that can be customized to specific needs, saving users thousands in legal fees while ensuring proper documentation.
+              . These tools provide basic document templates for getting started—they are not a substitute for advice from a qualified attorney.
             </p>
             
             <h3 className="text-xl font-semibold text-slate-800 mb-4">Privacy-First Approach to Online Tools</h3>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              Unlike many online tool platforms, Calcuzy operates on a privacy-first principle. All calculations and data processing happen directly in your browser, ensuring that sensitive information never leaves your device. This approach is particularly crucial for financial calculations, health assessments, and legal document generation, where data privacy is paramount. We never store personal information, require no registrations, and maintain complete transparency about our data practices.
+              Unlike many online tool platforms, Calcuzy runs calculations in your browser whenever possible, so sensitive inputs do not need to be sent to our servers. We do not require accounts, and we describe our limited analytics practices in our Privacy Policy.
             </p>
             
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Expert-Backed Content and Continuous Improvement</h3>
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">Clear Formulas and Practical Guides</h3>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              Each tool on Calcuzy is developed with input from industry experts, healthcare professionals, financial advisors, and legal specialists. Our content is regularly updated to reflect the latest standards, regulations, and best practices. For instance, our BMI calculator incorporates WHO and CDC guidelines, our financial tools use current tax laws, and our legal generators are reviewed by legal professionals to ensure compliance and accuracy.
+              Each tool uses published formulas and widely accepted guidelines where applicable. For example, our BMI calculator references WHO and CDC categories, and our finance tools are intended as educational starting points—not professional tax or financial advice. We improve tools over time based on feedback and updated public guidance.
             </p>
             
             <h3 className="text-xl font-semibold text-slate-800 mb-4">Mobile-Optimized Design for On-the-Go Access</h3>
@@ -112,11 +112,11 @@ export default function SEOContent() {
             </p>
             
             <p className="text-slate-600 leading-relaxed">
-              Calcuzy represents the future of online utilities – a comprehensive, intelligent, and user-friendly platform that adapts to evolving user needs. As we continue to expand our tool library and incorporate cutting-edge technologies, we remain committed to our core values of accuracy, accessibility, and user privacy. Join millions of users worldwide who have discovered the convenience and reliability of having all their{' '}
+              Calcuzy is an independent project focused on useful, privacy-conscious online tools. We continue to expand the collection and welcome feedback through our contact page. Browse our{' '}
               <Link href="/tools" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                online tools in one place
+                full tools directory
               </Link>
-              .
+              {' '}to find calculators, converters, and generators in one place.
             </p>
           </div>
         </div>

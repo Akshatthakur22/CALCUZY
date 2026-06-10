@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   description: 'Discover our comprehensive collection of 500+ inspirational quotes including motivational, love, graduation, Christmas, and aesthetic quotes. Find daily inspiration, heartfelt messages, and meaningful sayings for every occasion.',
   keywords: 'inspirational quotes, motivational quotes, love quotes, graduation quotes, christmas quotes, daily inspiration, positive quotes, life quotes',
   url: 'https://calcuzy.app/quotes',
-  image: '/og-default.png',
+  image: '/og/og-quotes.svg',
 })
 
 const quoteCategories = [

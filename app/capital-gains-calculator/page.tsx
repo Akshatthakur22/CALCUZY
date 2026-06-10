@@ -1,21 +1,19 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import CapitalGainsCalculatorClient from '@/components/tools/CapitalGainsCalculatorClient'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import RelatedToolsBento, { financeRelatedTools } from '@/components/RelatedToolsBento'
-import HowItWorks, { calculatorHowItWorks } from '@/components/HowItWorks'
+import HowItWorks from '@/components/HowItWorks'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { createMetadata, createToolSchema, createFAQSchema, createCalculateActionSchema, createBreadcrumbSchema } from '@/lib/metadata'
-import { VisualGauge } from '@/components/ToolWrapper'
-import ReadMore from '../../components/ReadMore'
+import YMYLDisclaimer from '@/components/YMYLDisclaimer'
 
 export const metadata = createMetadata({
-  title: 'PROVEN Capital Gains Calculator: INSTANT 2026 Tax Tool',
-  description: 'FREE PROVEN capital gains tax calculator with INSTANT 2026 calculations. Expert tax planning & investment optimization. Maximize your returns today.',
-  keywords: 'capital gains calculator, tax planning strategies, investment optimization, long-term capital gains, short-term capital gains, tax loss harvesting, 2026 tax calculator',
+  title: 'Capital Gains Tax Calculator',
+  description: 'Estimate US federal capital gains tax on a single investment sale. Enter purchase price, sale price, holding period, and income to see short-term or long-term tax estimates using 2024 federal brackets.',
+  keywords: 'capital gains calculator, capital gains tax, short-term capital gains, long-term capital gains, investment tax calculator, federal tax estimate',
   url: 'https://calcuzy.app/capital-gains-calculator',
   image: '/og/og-finance.svg',
 })
@@ -23,10 +21,10 @@ export const metadata = createMetadata({
 export default function CapitalGainsCalculatorPage() {
   const structuredData = createToolSchema({
     name: 'Capital Gains Tax Calculator',
-    description: 'Calculate capital gains tax on investments with short-term and long-term tax rates for US federal taxes',
+    description: 'Estimate US federal capital gains tax on an investment sale using purchase price, sale price, holding period, and taxable income.',
     url: 'https://calcuzy.app/capital-gains-calculator',
     category: 'FinanceApplication',
-    features: ['Short-term tax calculation', 'Long-term tax calculation', '2024 US tax brackets', 'Visual ROI gauge', 'Shareable results']
+    features: ['Short-term tax estimate', 'Long-term tax estimate', '2024 US federal brackets', 'After-tax return', 'Shareable results']
   })
 
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -38,7 +36,7 @@ export default function CapitalGainsCalculatorPage() {
 
   const calculateActionSchema = createCalculateActionSchema({
     name: 'Calculate Capital Gains Tax',
-    description: 'Instantly calculate capital gains tax on investments with advanced tax optimization strategies',
+    description: 'Estimate federal capital gains tax from purchase price, sale price, holding period, and annual income.',
     url: 'https://calcuzy.app/capital-gains-calculator',
     inputType: 'financial',
     outputType: 'financial'
@@ -46,47 +44,63 @@ export default function CapitalGainsCalculatorPage() {
 
   const faqData = [
     {
-      question: 'How do advanced tax optimization strategies affect capital gains calculations?',
-      answer: 'Strategic tax planning can reduce effective capital gains rates by 40-60% through techniques like tax-loss harvesting, asset location optimization, and timing strategies. The "wash sale rule" prevents immediate repurchasing of sold securities, but sophisticated investors use "substantially different" securities to maintain market exposure while realizing losses for tax benefits.'
+      question: 'What is capital gains tax?',
+      answer: 'Capital gains tax applies when you sell an asset for more than you paid. The gain is generally the sale price minus your cost basis. In the US, gains are taxed as short-term (held one year or less) or long-term (held more than one year), with different federal rate schedules for each.'
     },
     {
-      question: 'What mathematical models optimize capital gains realization across tax brackets?',
-      answer: 'Progressive tax bracket optimization uses the "marginal rate arbitrage" model, where investors strategically realize gains to fill lower tax brackets before higher rates apply. The "tax-efficient glide path" algorithm shows that spreading gains over 3-5 years can reduce effective tax rates by 15-25% compared to lump-sum realization, especially for high-income taxpayers.'
+      question: 'What is the difference between short-term and long-term capital gains?',
+      answer: 'Short-term gains are taxed at ordinary income tax rates, which depend on your total taxable income. Long-term gains on assets held more than one year usually qualify for lower federal rates (0%, 15%, or 20% for most investments). This calculator lets you compare both scenarios for a single sale.'
     },
     {
-      question: 'How do Opportunity Zones and 1031 exchanges create tax deferral advantages?',
-      answer: 'Opportunity Zone investments offer 10% tax exclusion after 5 years, 15% after 7 years, and complete tax exemption after 10 years—creating potential tax savings of $23,800 per $100,000 gain. 1031 exchanges enable infinite tax deferral for real estate, but the 2018 Tax Cuts and Jobs Act limited like-kind exchanges to real property only, eliminating personal property exchanges.'
+      question: 'How does this calculator estimate my tax?',
+      answer: 'Enter your purchase price, sale price, holding period, and annual income. The tool calculates your capital gain and applies simplified 2024 federal brackets to estimate a rate and tax amount. It assumes a single sale with no adjustments for fees, wash sales, or multiple tax lots.'
     },
     {
-      question: 'What is the optimal asset allocation between tax-advantaged and taxable accounts?',
-      answer: 'Asset location optimization can increase after-tax returns by 0.5-1.5% annually. High-tax-efficiency assets (total stock market index funds, municipal bonds) belong in taxable accounts, while tax-inefficient assets (REITs, corporate bonds, actively managed funds) belong in tax-advantaged accounts. This "asset placement" strategy can save $15,000-45,000 in taxes over a 30-year investment horizon.'
+      question: 'What does this calculator not include?',
+      answer: 'This is a rough federal estimate only. It does not include state or local taxes, the 3.8% Net Investment Income Tax (NIIT), alternative minimum tax (AMT), filing status, deductions, or other income that may change your bracket. Real tax liability depends on your full return—consult a tax professional before filing.'
     },
     {
-      question: 'How does state-level tax planning impact overall capital gains strategy?',
-      answer: 'State tax differentials create "tax arbitrage opportunities." California\'s 13.3% top rate versus zero-tax states like Texas and Florida creates location-based planning strategies. Some investors establish residency in low-tax states before major gain realization, potentially saving $26,600 per $200,000 gain. However, state residency requirements typically require 183+ days of physical presence.'
+      question: 'Can I use this for stocks, crypto, or real estate?',
+      answer: 'The basic gain math (sale price minus cost basis) applies to many asset types, but tax rules differ. Crypto, collectibles, and some real estate sales have special rules. This tool provides a general federal estimate; use our crypto tax calculator for transaction-level crypto cost basis tracking.'
+    },
+    {
+      question: 'What tax year do the rates reflect?',
+      answer: 'Rates are based on 2024 US federal brackets for single-filer-style income thresholds. Tax laws and brackets change annually. Always verify current IRS guidance or speak with a qualified tax advisor before making financial decisions.'
     }
   ]
 
   const faqSchema = createFAQSchema(faqData)
 
   const steps = [
-    { title: 'Strategic Cost Basis Analysis', description: 'Input precise cost basis including commissions, fees, and wash sale adjustments to ensure accurate tax calculations across multiple tax lots.', inputMode: 'decimal' },
-    { title: 'Optimized Sale Price Modeling', description: 'Calculate net proceeds after transaction costs and determine optimal timing for tax efficiency based on bracket optimization models.', inputMode: 'decimal' },
-    { title: 'Advanced Holding Period Strategy', description: 'Analyze holding period implications including long-term preferential rates versus strategic short-term realization for bracket management.' },
-    { title: 'Comprehensive Income Integration', description: 'Input complete taxable income picture including wages, dividends, and other sources to optimize marginal tax rate positioning.', inputMode: 'numeric' },
-    { title: 'Multi-Year Tax Planning', description: 'Generate comprehensive tax optimization strategy with recommendations for timing, asset location, and loss harvesting opportunities.' }
+    { title: 'Enter purchase price', description: 'Input what you originally paid for the investment (your cost basis before fees or adjustments).' },
+    { title: 'Enter sale price', description: 'Input the amount you received or expect to receive when selling.' },
+    { title: 'Choose holding period', description: 'Select short-term (one year or less) or long-term (more than one year) to apply the correct rate type.' },
+    { title: 'Add annual income', description: 'Enter your approximate taxable income so the tool can pick a federal bracket for the estimate.' },
+    { title: 'Review your estimate', description: 'See capital gain, estimated tax, after-tax return, and copy or share your results.' }
   ]
 
   const tips = [
-    'Implement "marginal rate arbitrage" by spreading gains over 3-5 years to fill lower tax brackets before higher rates apply',
-    'Utilize tax loss harvesting throughout the year rather than waiting for December, using substantially different securities to avoid wash sale rules',
-    'Optimize asset location by placing tax-efficient index funds in taxable accounts and high-turnover actively managed funds in tax-advantaged accounts',
-    'Consider Opportunity Zone investments for 10-15 year holding periods to achieve 10-15% step-up in basis and complete tax exemption after 10 years',
-    'Coordinate capital gains realization with other income sources to minimize Net Investment Income Tax (NIIT) exposure and alternative minimum tax implications',
-    'Evaluate state tax arbitrage opportunities, particularly for California residents considering establishing residency in zero-tax states before major gain realization'
+    'Assets held more than one year often qualify for lower long-term federal rates',
+    'Keep records of purchase date, sale date, cost basis, and any fees paid',
+    'Capital losses can offset capital gains; up to $3,000 of excess losses may offset ordinary income per year',
+    'State capital gains taxes vary widely and are not included in this estimate',
+    'Speak with a CPA or tax advisor for filing, loss harvesting, or complex situations'
   ]
 
-  const roiValue = 25; // Placeholder value for ROI. Replace with actual calculation logic.
+  const howItWorksSteps = [
+    {
+      title: 'Enter your sale details',
+      description: 'Provide purchase price, sale price, holding period, and approximate annual income.'
+    },
+    {
+      title: 'Calculate your gain',
+      description: 'The tool subtracts cost basis from proceeds and selects a federal rate based on holding period and income.'
+    },
+    {
+      title: 'Review the estimate',
+      description: 'View estimated tax owed, after-tax return, and a summary you can copy or share.'
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
@@ -118,97 +132,64 @@ export default function CapitalGainsCalculatorPage() {
         />
         <div className="text-center mb-16 slide-up">
           <h1 className="heading-1 text-center mb-6">
-            Capital Gains Tax Calculator: Expert Tax Planning Strategies (2026)
+            Capital Gains Tax Calculator
           </h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Welcome to the definitive 2026 capital gains tax resource, combining precise calculations with advanced tax planning strategies. Our expert-curated tool incorporates mathematical optimization models, asset location insights, and comprehensive federal/state tax analysis to maximize your after-tax investment returns.
+            Estimate US federal capital gains tax on a single investment sale. Enter your purchase price, sale price, how long you held the asset, and your income to see short-term or long-term tax estimates.
           </p>
         </div>
 
-        <ReadMore>
-          <section className="prose max-w-4xl mx-auto py-10">
-            <h2>The Mathematics of Capital Gains Optimization</h2>
-            <p className="mb-4 text-gray-700">
-              Capital gains tax optimization represents one of the most sophisticated applications of mathematical finance in personal wealth management. The "marginal rate arbitrage" model enables investors to strategically realize gains to fill lower tax brackets before higher rates apply, potentially reducing effective tax rates by 15-25% compared to lump-sum realization. This approach requires precise calculation of taxable income across multiple years and coordination with other income sources to maximize tax efficiency.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Advanced algorithms now optimize the "tax-efficient glide path" for investment realization, showing that spreading gains over 3-5 years can create substantial tax savings for high-income taxpayers. These mathematical models consider factors like progressive tax brackets, alternative minimum tax implications, and Net Investment Income Tax thresholds. The optimization process becomes increasingly complex as portfolio size grows, often requiring sophisticated software to track cost bases, holding periods, and tax implications across thousands of individual transactions.
-            </p>
-            <h2>Strategic Asset Location and Tax-Efficient Portfolio Construction</h2>
-            <p className="mb-4 text-gray-700">
-              Asset location optimization can increase after-tax returns by 0.5-1.5% annually, representing $15,000-45,000 in tax savings over a 30-year investment horizon for a $500,000 portfolio. This strategy involves placing high-tax-efficiency assets (total stock market index funds, municipal bonds) in taxable accounts while allocating tax-inefficient assets (REITs, corporate bonds, actively managed funds) to tax-advantaged accounts. The mathematical optimization considers turnover rates, dividend yields, and expected returns to determine optimal placement.
-            </p>
-            <p className="mb-4 text-gray-700">
-              The "asset placement" strategy requires sophisticated analysis of tax efficiency metrics. For example, a high-turnover mutual fund generating 20% annual turnover might generate $10,000 in annual taxable distributions on a $500,000 investment, creating $2,380 in annual tax liability at current rates. By contrast, a tax-managed index fund with 5% turnover might generate only $2,500 in distributions, reducing tax liability to $595 annually. These differences compound significantly over time, making asset location a critical component of long-term wealth accumulation.
-            </p>
-            <h2>Advanced Tax Loss Harvesting and Wash Sale Rule Navigation</h2>
-            <p className="mb-4 text-gray-700">
-              Tax loss harvesting represents one of the most powerful tools for reducing capital gains tax liability, potentially saving $3,000 annually in ordinary income deductions plus unlimited capital gains offsets. However, the wash sale rule creates complex constraints that require sophisticated navigation. Professional investors use "substantially different" securities to maintain market exposure while realizing losses—for example, replacing an S&P 500 index fund with a large-cap growth fund or individual stock positions that provide similar market exposure without triggering wash sale violations.
-            </p>
-            <p className="mb-4 text-gray-700">
-              The implementation of tax loss harvesting requires precise timing and coordination. The optimal strategy involves realizing losses throughout the year rather than waiting until December, when market conditions may be unfavorable. Advanced algorithms now monitor portfolio positions daily, identifying harvesting opportunities when securities decline by predetermined thresholds. This systematic approach can capture 2-4% additional annual return through tax savings, significantly impacting long-term portfolio performance while maintaining target asset allocation.
-            </p>
-            <h2>Opportunity Zones and 1031 Exchanges: Strategic Tax Deferral</h2>
-            <p className="mb-4 text-gray-700">
-              Opportunity Zone investments offer unprecedented tax advantages, providing 10% tax exclusion after 5 years, 15% after 7 years, and complete tax exemption after 10 years. These benefits can create tax savings of $23,800 per $100,000 gain for high-income taxpayers, representing a 23.8% reduction in tax liability. However, Opportunity Zone investments require careful due diligence, as many funds charge high fees and the underlying investments may carry significant risk. The mathematical analysis must compare after-tax returns against alternative investments to determine true value.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Real estate investors continue to benefit from 1031 exchanges, which enable infinite tax deferral for like-kind property exchanges. The 2018 Tax Cuts and Jobs Act limited these exchanges to real property only, eliminating personal property exchanges but preserving powerful benefits for real estate investors. Sophisticated investors use " Delaware Statutory Trust" 1031 exchanges to achieve diversification while maintaining tax deferral, potentially deferring hundreds of thousands in capital gains taxes while transitioning from active property management to passive investment.
-            </p>
-          </section>
-        </ReadMore>
-
-        <AdUnit slot={1} />
+        <YMYLDisclaimer category="finance" />
 
         <div className="max-w-4xl mx-auto fade-in-up">
           <CapitalGainsCalculatorClient />
-
-          {/* Add VisualGauge for ROI visualization */}
-          <div className="mt-8 flex flex-col md:flex-row items-center gap-4">
-            <VisualGauge
-              value={roiValue} // Replace with actual ROI value from state or props
-              max={100}
-              label="Return on Investment (ROI)"
-              className="w-full md:w-1/2"
-            />
-          </div>
         </div>
+
+        <AdUnit slot={1} />
+
+        <section className="max-w-3xl mx-auto mt-12 prose prose-slate">
+          <h2 className="text-xl font-semibold text-slate-900 mb-3">How capital gains tax works</h2>
+          <p className="text-slate-600 mb-4">
+            When you sell an investment for more than you paid, the profit is a capital gain. The IRS treats gains differently depending on how long you owned the asset. Gains on assets held one year or less are short-term and generally taxed at ordinary income rates. Gains on assets held more than one year are long-term and typically taxed at lower federal rates.
+          </p>
+          <p className="text-slate-600 mb-4">
+            Your actual tax bill depends on your full tax picture—income, filing status, deductions, state taxes, and other factors. This calculator gives a simplified federal estimate for one sale so you can plan ahead, not a substitute for professional tax preparation.
+          </p>
+        </section>
 
         <AdUnit slot={2} />
 
-        {/* How It Works Section */}
         <HowItWorks 
-          title="How Our Capital Gains Calculator Works"
-          steps={calculatorHowItWorks}
+          title="How This Calculator Works"
+          steps={howItWorksSteps}
           className="bg-slate-50/50"
         />
 
-        {/* Tool Info Section */}
         <div className="mt-16 fade-in-up">
           <ToolInfo
             title="Capital Gains Tax Calculator"
             description={
               <>
                 <p className="mb-4">
-                  Capital gains tax optimization represents one of the most sophisticated wealth management strategies available to investors, combining mathematical precision with strategic tax planning. Our calculator incorporates advanced algorithms for marginal rate arbitrage, asset location optimization, and multi-year tax efficiency modeling to maximize after-tax returns while maintaining compliance with complex tax regulations.
+                  Use this free tool to estimate federal capital gains tax on a single sale. It applies 2024 US federal bracket logic to your inputs and shows capital gain, estimated tax, and after-tax return. All calculations run in your browser—nothing is stored on our servers.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                   <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
-                    <h4 className="font-semibold text-amber-800 mb-2">📊 Mathematical Optimization</h4>
+                    <h4 className="font-semibold text-amber-800 mb-2">Short-term gains</h4>
                     <p className="text-sm text-amber-700">
-                      Marginal rate arbitrage models can reduce effective tax rates by 15-25% through strategic gain realization timing.
+                      Taxed at ordinary income rates based on your entered annual income.
                     </p>
                   </div>
                   <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
-                    <h4 className="font-semibold text-emerald-800 mb-2">🎯 Asset Location Strategy</h4>
+                    <h4 className="font-semibold text-emerald-800 mb-2">Long-term gains</h4>
                     <p className="text-sm text-emerald-700">
-                      Optimal asset placement can increase after-tax returns by 0.5-1.5% annually, saving $15,000-45,000 over 30 years.
+                      Assets held more than one year may qualify for reduced federal rates (0%, 15%, or 20%).
                     </p>
                   </div>
                   <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                    <h4 className="font-semibold text-blue-800 mb-2">🔄 Tax Loss Harvesting</h4>
+                    <h4 className="font-semibold text-blue-800 mb-2">Estimate only</h4>
                     <p className="text-sm text-blue-700">
-                      Systematic loss harvesting can capture 2-4% additional annual return while maintaining target asset allocation.
+                      Does not include state tax, NIIT, AMT, or filing-status adjustments.
                     </p>
                   </div>
                 </div>
@@ -222,12 +203,10 @@ export default function CapitalGainsCalculatorPage() {
 
         <AdUnit slot={3} />
 
-        {/* Related Tools */}
         <div className="max-w-4xl mx-auto mt-12 fade-in-up">
           <RelatedTools currentTool="/capital-gains-calculator" category="finance" />
         </div>
 
-        {/* Related Tools Bento Footer */}
         <RelatedToolsBento 
           currentTool="/capital-gains-calculator"
           tools={financeRelatedTools}

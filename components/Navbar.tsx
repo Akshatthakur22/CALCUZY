@@ -16,10 +16,11 @@ export default function Navbar() {
             className="flex items-center text-slate-900 hover:text-blue-600 transition-colors duration-200 focus:outline-none"
           >
             <Image 
-              src="/logo.png" 
+              src="/logo.svg" 
               alt="Calcuzy Logo" 
               width={64} 
               height={64} 
+              unoptimized
               className="h-16 w-16 md:h-18 md:w-18"
             />
           </Link>

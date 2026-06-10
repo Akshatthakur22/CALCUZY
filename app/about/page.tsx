@@ -6,10 +6,10 @@ import Link from 'next/link'
 export const metadata = createMetadata({
   title: "About Calcuzy – The Story, Mission & Team Behind Your Free Online Toolbox",
   description:
-    "Learn about Calcuzy.app, the vision of founder Akshat Thakur. Discover our mission, values, and how a solo developer built 40+ free, privacy-first calculators, converters, and everyday tools for everyone.",
+    "Learn about Calcuzy.app, the vision of founder Akshat Thakur. Discover our mission, values, and how a solo developer built 31 free, privacy-first calculators, converters, and everyday tools.",
   keywords: "about calcuzy, calcuzy founder, akshat thakur, free calculators, online tools, privacy-first, mission, story, toolbox, utility platform",
   url: "https://calcuzy.app/about",
-  image: "/og-default.png",
+  image: "/og/og-default.svg",
 })
 
 export default function AboutPage() {
@@ -44,12 +44,12 @@ export default function AboutPage() {
 
         {/* Introduction & Founder Story */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">How a Late-Night Idea Became a Toolbox for Thousands</h2>
+          <h2 className="text-2xl font-semibold mb-4">How a Late-Night Idea Became a Free Toolbox</h2>
           <p className="mb-4 text-lg">
-            Calcuzy.app started on a random night in my college dorm room. I’m <strong>Akshat Thakur</strong>, a 3rd-year B.Tech CSE student who loves building things that are clean, fast, and genuinely helpful. There was no big startup plan—just a simple question: <em>“What if simple tools, when done right, could actually help thousands of people?”</em>
+            Calcuzy.app started on a random night in my college dorm room. I’m <strong>Akshat Thakur</strong>, a 3rd-year B.Tech CSE student who loves building things that are clean, fast, and genuinely helpful. There was no big startup plan—just a simple question: <em>“What if simple tools, when done right, could actually help people?”</em>
           </p>
           <p className="mb-4">
-            That question led to a few hours of coding, a lot of curiosity, and the birth of Calcuzy. What began as a playground for learning web development, SEO, and Google AdSense has grown into a platform with 40+ free tools used by students, professionals, and everyday people worldwide.
+            That question led to a few hours of coding, a lot of curiosity, and the birth of Calcuzy. What began as a hands-on project for learning web development has grown into a platform with 31 free tools for students, professionals, and everyday use.
           </p>
           <blockquote className="italic text-primary-text/80 text-xl font-medium mb-4 border-l-4 border-border pl-4">
             “Simple things, when polished with care, become powerful.”
@@ -64,7 +64,7 @@ export default function AboutPage() {
             <span className="font-bold">Akshat Thakur – Founder & Solo Developer</span>
           </div>
           <p className="mb-4">
-            I’ve been learning web development for less than a year, and Calcuzy became my hands-on project to explore SEO, AdSense, scaling, and building something that lasts. Every line of code, every UI tweak, and every new tool is a step in my journey to prove that small things done right can become big.
+            I’ve been learning web development for less than a year, and Calcuzy became my hands-on project to learn full-stack development, SEO, and how to build useful tools that last. Every line of code, every UI tweak, and every new tool is a step in that journey.
           </p>
           <h3 className="text-xl font-semibold mb-2">Why I Built Calcuzy</h3>
           <ul className="list-disc ml-6 mb-4">
@@ -86,7 +86,7 @@ export default function AboutPage() {
             <span className="font-bold">A Growing Collection of Everyday Tools</span>
           </div>
           <p className="mb-4">
-            Calcuzy is a collection of calculators, countdowns, converters, and generators—designed to be <strong>fast</strong>, <strong>simple</strong>, <strong>minimal</strong>, and <strong>distraction-free</strong>. No logins, no complicated interfaces, no tracking beyond what’s necessary. Just useful tools that work instantly, on any device.
+            Calcuzy is a collection of calculators, countdowns, converters, and generators—designed to be <strong>fast</strong>, <strong>simple</strong>, <strong>minimal</strong>, and <strong>distraction-free</strong>. No logins and no complicated interfaces. Calculator inputs stay in your browser; we use basic analytics to understand site usage. See our <Link href="/privacy-policy">Privacy Policy</Link> for details.
           </p>
           <h3 className="text-xl font-semibold mb-2">Real-World Examples</h3>
           <ul className="list-disc ml-6 mb-4">
@@ -132,7 +132,7 @@ export default function AboutPage() {
             <li>Feedback is taken seriously—many features come from user suggestions</li>
             <li>Updates happen regularly</li>
             <li>No dark patterns or forced interactions</li>
-            <li>Ads will never ruin the user experience</li>
+            <li>If we add advertising, it will not interfere with tool functionality</li>
             <li>Everything remains free and accessible</li>
           </ul>
           <p className="mb-4">
@@ -236,7 +236,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className="font-semibold">How do you keep my data private?</h3>
-              <p>Calcuzy collects no personal data. There are no logins, no tracking beyond basic analytics, and no selling of user information. See our <Link href="/privacy-policy">Privacy Policy</Link> for details.</p>
+              <p>We do not require accounts or store your calculator inputs on our servers. We use Google Analytics and Vercel Analytics for basic, aggregated site usage data. See our <Link href="/privacy-policy">Privacy Policy</Link> for details.</p>
             </div>
             <div>
               <h3 className="font-semibold">Can I suggest a new tool or feature?</h3>
@@ -252,7 +252,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className="font-semibold">Are there ads on Calcuzy?</h3>
-              <p>Yes, but ads are minimal and never intrusive. They help keep the platform free for everyone, but will never ruin your experience.</p>
+              <p>Calcuzy is free to use. We may introduce unobtrusive advertising in the future to help support the project, but tool functionality will always come first.</p>
             </div>
             <div>
               <h3 className="font-semibold">Can I use Calcuzy on my phone?</h3>

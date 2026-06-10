@@ -7,10 +7,10 @@ import { createMetadata } from '@/lib/metadata'
 export const metadata = createMetadata({
   title: 'Privacy Policy - How Calcuzy Protects Your Data',
   description:
-    'Learn how Calcuzy.app protects your privacy with 100% client-side calculations. No data collection, no accounts, complete anonymity. GDPR & CCPA compliant privacy practices.',
+    'Learn how Calcuzy.app protects your privacy. Calculator inputs stay in your browser. We use basic analytics (Google Analytics and Vercel Analytics) to improve the site.',
   keywords: 'privacy policy, data protection, user privacy, calcuzy privacy, anonymous calculations, GDPR compliance',
   url: 'https://calcuzy.app/privacy-policy',
-  image: '/og-default.png',
+  image: '/og/og-default.svg',
 })
 
 export default function PrivacyPolicyPage() {
@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
         <section className="text-center mb-16 fade-in-up">
           <h1 className="heading-1 mb-6">Privacy Policy</h1>
           <p className="paragraph max-w-3xl mx-auto">
-            At Calcuzy.app, your privacy isn't just a priority—it's our foundation. Every calculation happens instantly in your browser, never leaving your device. We've built our entire platform around the principle that powerful tools should never require you to sacrifice your privacy. This comprehensive policy explains our commitment to protecting your data while complying with global privacy standards including GDPR and CCPA.
+            At Calcuzy.app, your privacy matters. Calculator and converter inputs are processed in your browser whenever possible—they are not stored on our servers. This policy explains what limited data we collect through analytics and how we use it.
           </p>
           <div className="bg-card p-6 rounded-lg border border-border mt-6 max-w-2xl mx-auto">
             <div className="flex items-center gap-3 mb-3">
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 font-bold">✓</span>
-                <span>100% Client-side Processing</span>
+                <span>Calculator Inputs Stay Local</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 font-bold">✓</span>
@@ -57,11 +57,11 @@ export default function PrivacyPolicyPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 font-bold">✓</span>
-                <span>No Data Collection</span>
+                <span>No Sale of Personal Data</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 font-bold">✓</span>
-                <span>Anonymous by Default</span>
+                <span>Basic Analytics Only</span>
               </li>
             </ul>
           </div>
@@ -112,17 +112,17 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="heading-2 mb-4">4. Cookies & Tracking Technologies</h2>
               <p className="paragraph">
-                Calcuzy.app uses minimal cookies, only for essential site functionality (such as remembering your theme preference). We do not use cookies for advertising or tracking your activity across the web. You can disable cookies in your browser settings, but some features may not work as intended.
+                Calcuzy.app uses cookies and similar technologies through our analytics providers. Google Analytics may set cookies to measure page views and general usage patterns. Vercel Analytics collects anonymous, aggregated traffic data. These services help us understand which tools are useful and improve site performance. You can limit or block cookies through your browser settings or privacy extensions.
               </p>
             </section>
             {/* 5 */}
             <section>
-              <h2 className="heading-2 mb-4">5. Third-Party Analytics (Anonymous Mode)</h2>
+              <h2 className="heading-2 mb-4">5. Third-Party Analytics</h2>
               <p className="paragraph">
-                We use Google Analytics in anonymous mode to understand general usage patterns. All IP addresses are anonymized, and no personally identifiable information is collected. Analytics data is used only to improve the site and is never sold or shared with advertisers.
+                We use <strong>Google Analytics 4</strong> and <strong>Vercel Analytics</strong> to understand general usage patterns such as pages visited, approximate location (city/country level), browser type, and time on site. Google Analytics is configured with IP anonymization enabled. We do not use analytics data to identify individual users, and we do not sell analytics data to third parties.
               </p>
               <p className="paragraph">
-                For more information, see <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer" className="underline">Google Analytics Data Privacy & Security</a>.
+                For more information, see <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer" className="underline">Google Analytics Data Privacy & Security</a> and <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">Vercel Analytics Privacy</a>.
               </p>
             </section>
             {/* 6 */}
@@ -145,7 +145,7 @@ export default function PrivacyPolicyPage() {
                 <li>Contact us with privacy questions at <a href="mailto:calcuzyy@gmail.com" className="underline">calcuzyy@gmail.com</a></li>
               </ul>
               <p className="paragraph">
-                We comply with the General Data Protection Regulation (GDPR), California Consumer Privacy Act (CCPA), and other global privacy laws to the best of our ability.
+                We aim to follow privacy best practices and respond to user requests in good faith. If you have questions about your rights under laws such as GDPR or CCPA, contact us at <a href="mailto:calcuzyy@gmail.com" className="underline">calcuzyy@gmail.com</a>.
               </p>
             </section>
             {/* 8 */}
