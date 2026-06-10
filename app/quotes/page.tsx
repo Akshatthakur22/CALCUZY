@@ -5,8 +5,8 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Inspirational Quotes - 500+ Motivational, Love & Holiday Quotes',
-  description: 'Discover our comprehensive collection of 500+ inspirational quotes including motivational, love, graduation, Christmas, and aesthetic quotes. Find daily inspiration, heartfelt messages, and meaningful sayings for every occasion.',
+  title: 'Inspirational Quotes',
+  description: 'Browse motivational, love, graduation, Christmas, and aesthetic quotes. Short curated lists for cards, captions, and messages.',
   keywords: 'inspirational quotes, motivational quotes, love quotes, graduation quotes, christmas quotes, daily inspiration, positive quotes, life quotes',
   url: 'https://calcuzy.app/quotes',
   image: '/og/og-quotes.svg',

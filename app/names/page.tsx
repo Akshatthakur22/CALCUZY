@@ -5,8 +5,8 @@ import AdUnit from '@/components/AdUnit'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Baby Names & Pet Names - 1000+ Name Ideas for Families',
-  description: 'Explore our comprehensive collection of 1000+ baby names and pet names. Find perfect baby boy names, baby girl names, dog names, cat names, and American last names. Expert-curated name lists with meanings, origins, and naming trends.',
+  title: 'Baby Names & Pet Names',
+  description: 'Browse baby boy and girl names, dog and cat names, and common American surnames. Curated lists for inspiration—not official registries.',
   keywords: 'baby names, pet names, dog names, cat names, last names, name ideas, name inspiration, baby boy names, baby girl names',
   url: 'https://calcuzy.app/names',
   image: '/og/og-names.svg',

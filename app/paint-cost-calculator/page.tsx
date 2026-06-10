@@ -1,159 +1,135 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
+import PaintCostCalculatorClient from '@/components/tools/PaintCostCalculatorClient'
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
-import PaintCostCalculatorClient from '@/components/tools/PaintCostCalculatorClient'
-import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
-import ReadMore from '../../components/ReadMore'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import HowItWorks from '@/components/HowItWorks'
+import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: 'Paint Cost Calculator: Expert DIY Project Guide & Professional Painting Insights (2026)',
-  description: 'Professional paint cost calculator with advanced DIY project guides, surface preparation techniques, and professional painting strategies. Expert-crafted tool with coverage optimization, cost analysis, and industry standards.',
-  keywords: 'paint cost calculator, DIY painting guide, professional painting techniques, surface preparation, paint coverage optimization, cost analysis, painting project planning',
+  title: 'Paint Cost Calculator',
+  description: 'Estimate paint quantity and cost for a rectangular room. Enter room dimensions in meters, number of coats, and price per liter. Rough planning estimate only.',
+  keywords: 'paint cost calculator, how much paint do I need, room paint estimate, paint coverage calculator, DIY painting budget',
   url: 'https://calcuzy.app/paint-cost-calculator',
-  image: '/og/og-home.svg',
+  image: '/og/og-tools.svg',
 })
 
 export default function PaintCostCalculatorPage() {
   const structuredData = createToolSchema({
     name: 'Paint Cost Calculator',
-    description: 'Calculate paint cost and coverage for room painting projects.',
+    description: 'Estimate paint liters and total cost for walls and ceiling of a rectangular room using room dimensions, coats, and price per liter.',
     url: 'https://calcuzy.app/paint-cost-calculator',
-    category: 'UtilityApplication'
+    category: 'UtilityApplication',
+    features: ['Wall and ceiling area', 'Standard door/window deduction', 'Multiple coats', 'Liter estimate', 'Cost total'],
   })
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://calcuzy.app' },
+    { name: 'Tools', url: 'https://calcuzy.app/tools' },
+    { name: 'Paint Cost Calculator', url: 'https://calcuzy.app/paint-cost-calculator' },
+  ])
 
   const faqData = [
     {
-      question: 'How do surface preparation techniques affect paint coverage and long-term durability?',
-      answer: 'Surface preparation is the critical factor determining paint performance and longevity. Professional preparation includes cleaning with TSP substitute, repairing imperfections with spackling compound, sanding to 120-150 grit for optimal adhesion, and priming with appropriate substrate-specific primers. Research shows proper preparation can extend paint life by 40-60% and reduce paint consumption by 15-25% through better coverage efficiency. Different surfaces require specific preparation: drywall needs PVA primer, wood requires oil-based primer, and metal requires rust-inhibiting primer.'
+      question: 'How does this calculator estimate paint needed?',
+      answer: 'It calculates wall area from room length, width, and height (four walls), subtracts a fixed allowance for one standard door and one window, adds ceiling area, multiplies by your number of coats, and divides by a default coverage of 10 square meters per liter.',
     },
     {
-      question: 'What mathematical models optimize paint purchasing and minimize waste for large projects?',
-      answer: 'The "Paint Optimization Algorithm" (POA) incorporates surface area calculations, coverage rates, texture coefficients, and application efficiency factors. POA accounts for paint waste during application (typically 5-10% for rollers, 15-20% for sprayers) and recommends optimal can sizes to minimize leftover paint. Machine learning analysis of 10,000+ painting projects reveals specific purchasing patterns that reduce waste by 34% and save 12% on material costs through strategic volume purchasing and brand selection.'
+      question: 'Why are dimensions in meters?',
+      answer: 'The tool uses meters for room size and liters for paint volume. If you measure in feet, convert to meters first (1 foot ≈ 0.305 meters). Coverage and pricing should match the units on your paint can label.',
     },
     {
-      question: 'How do environmental factors like humidity and temperature affect paint application and drying times?',
-      answer: 'Environmental conditions significantly impact paint performance through complex chemical processes. Ideal painting conditions are 70-85°F with 40-50% humidity. High humidity (>70%) slows solvent evaporation, extending drying times by 50-100% and potentially causing poor film formation. Low humidity (<30%) causes rapid evaporation, leading to poor leveling and increased orange peel. Temperature affects paint viscosity: cold temperatures increase viscosity, reducing flow and leveling, while hot temperatures decrease viscosity, potentially causing runs and sags.'
+      question: 'Does this account for primer or textured walls?',
+      answer: 'No. Primer, rough surfaces, dark-to-light color changes, and porous drywall often need extra coats or more paint than a smooth, primed wall. Buy a little extra rather than relying on this as an exact order quantity.',
     },
     {
-      question: 'What advanced application techniques provide professional-quality results for DIY painters?',
-      answer: 'Professional painting techniques include "cutting in" with angled brushes for crisp edges, using the "W" pattern for roller application to ensure even coverage, and maintaining "wet edges" to prevent lap marks. Advanced methods like "back-rolling" after spraying improves texture uniformity, while "feathering" techniques blend repair areas seamlessly. Research shows proper technique can reduce paint consumption by 20% while improving finish quality by 35% compared to amateur application methods.'
+      question: 'How accurate is the coverage rate?',
+      answer: 'Real coverage varies by paint brand, finish (flat vs gloss), application method, and surface. Labels often cite roughly 8–12 m² per liter for interior wall paint. This tool uses 10 m²/L as a middle estimate—check your product label.',
     },
     {
-      question: 'How do different paint formulations and finishes affect coverage rates and project costs?',
-      answer: 'Paint formulations significantly impact coverage rates and cost-effectiveness. Flat paints typically cover 350-400 sq ft/gallon but are less durable, while gloss paints cover 250-300 sq ft/gallon but offer superior durability. High-quality paints with higher solids content provide better coverage despite higher initial costs, often requiring fewer coats. Ceramic-based paints offer enhanced durability but may require specialized application techniques. Understanding these characteristics enables optimal paint selection based on project requirements and long-term value considerations.'
-    }
+      question: 'Should I include trim, doors, or furniture?',
+      answer: 'This calculator covers walls and ceiling only. Trim, cabinets, and furniture need separate measurements. Moving furniture and taping edges also affect time and materials but are not included here.',
+    },
+    {
+      question: 'Is this a quote from a paint store?',
+      answer: 'No. This is a free browser-based estimate for DIY planning. Always confirm quantities with your retailer and factor in sales tax, brushes, rollers, tape, and drop cloths separately.',
+    },
   ]
 
   const faqSchema = createFAQSchema(faqData)
 
+  const steps = [
+    { title: 'Measure the room', description: 'Enter length, width, and height in meters.' },
+    { title: 'Set coats', description: 'Choose how many coats you plan to apply (often two for a color change).' },
+    { title: 'Enter paint price', description: 'Add your local cost per liter from the store or online listing.' },
+    { title: 'Calculate', description: 'Review wall area, total painted area, liters needed, and estimated cost.' },
+  ]
+
+  const tips = [
+    'Buy 10–15% extra paint for touch-ups and uneven surfaces',
+    'Use primer when covering dark colors or bare drywall',
+    'Test a sample patch in your room lighting before buying bulk',
+    'Flat paint often covers better than high-gloss on large walls',
+    'Ventilate the room and follow the manufacturer dry-time between coats',
+  ]
+
+  const howItWorksSteps = [
+    {
+      title: 'Enter room size',
+      description: 'Length, width, and height define the wall and ceiling surface area.',
+    },
+    {
+      title: 'Apply coverage math',
+      description: 'Total area × coats ÷ 10 m²/L gives an approximate liter count.',
+    },
+    {
+      title: 'Multiply by price',
+      description: 'Liters × cost per liter produces a rough materials budget.',
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
-      
+
       <main className="container section-responsive">
+        <Breadcrumbs
+          items={[
+            { name: 'Tools', url: '/tools' },
+            { name: 'Paint Cost Calculator', url: '/paint-cost-calculator' },
+          ]}
+        />
         <div className="text-center mb-16 slide-up">
-          <h1 className="heading-1 text-center mb-6">
-            Paint Cost Calculator: Expert DIY Project Guide & Professional Painting Insights (2026)
-          </h1>
+          <h1 className="heading-1 text-center mb-6">Paint Cost Calculator</h1>
           <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-            Welcome to the definitive 2026 paint cost calculator, combining advanced cost analysis with professional painting techniques and DIY project guidance. Our expert-crafted tool encompasses surface preparation science, application optimization strategies, and industry standards to help you achieve professional-quality results while optimizing material costs and project efficiency.
+            Estimate how much paint you need and what it might cost for a rectangular room. Enter dimensions in meters, number of coats, and price per liter. Results are a planning guide—not a professional takeoff.
           </p>
         </div>
-
-        <ReadMore>
-          <section className="prose max-w-4xl mx-auto py-10">
-            <h2>Surface Preparation Science: The Foundation of Professional Painting</h2>
-            <p className="mb-4 text-gray-700">
-              Surface preparation represents 70-80% of painting success, determining both paint longevity and coverage efficiency. Professional preparation begins with thorough cleaning using TSP (trisodium phosphate) substitutes to remove grease, dirt, and contaminants that interfere with paint adhesion. Research shows properly prepared surfaces can extend paint life by 40-60% compared to inadequately prepared surfaces, while reducing paint consumption by 15-25% through improved coverage efficiency.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Advanced preparation techniques include repairing imperfections with high-quality spackling compounds, sanding to optimal 120-150 grit for maximum paint adhesion without creating excessive surface roughness, and priming with substrate-specific formulations. Drywall requires PVA (polyvinyl acetate) primers for optimal absorption, wood surfaces need oil-based primers to prevent tannin bleeding, and metal surfaces demand rust-inhibiting primers with zinc chromate or modern eco-friendly alternatives. Each substrate presents unique preparation challenges that must be addressed for lasting results.
-            </p>
-            <h2>Mathematical Paint Optimization: Waste Reduction and Cost Efficiency</h2>
-            <p className="mb-4 text-gray-700">
-              The "Paint Optimization Algorithm" (POA) represents a breakthrough in paint purchasing efficiency, incorporating surface area calculations, coverage rates, texture coefficients, and application efficiency factors into a comprehensive waste-reduction model. POA accounts for paint waste during application—typically 5-10% for rollers and 15-20% for sprayers—and recommends optimal can sizes to minimize leftover paint while ensuring adequate material for project completion.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Machine learning analysis of over 10,000 painting projects reveals specific purchasing patterns that reduce waste by 34% and save 12% on material costs through strategic volume purchasing and optimal brand selection. The algorithm considers factors like seasonal pricing variations, manufacturer rebates, and bulk discount thresholds to maximize cost efficiency. This mathematical approach transforms paint purchasing from intuitive estimation to data-driven optimization, providing significant savings for both DIY enthusiasts and professional contractors.
-            </p>
-            <h2>Environmental Application Science: Humidity, Temperature, and Paint Performance</h2>
-            <p className="mb-4 text-gray-700">
-              Environmental conditions significantly impact paint performance through complex chemical processes that affect drying, curing, and film formation. Ideal painting conditions exist between 70-85°F with 40-50% relative humidity, creating optimal solvent evaporation rates and film formation characteristics. High humidity (&gt;70%) dramatically slows solvent evaporation, extending drying times by 50-100% and potentially causing poor film formation, adhesion problems, and mildew growth.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Low humidity (&lt;30%) causes excessively rapid solvent evaporation, leading to poor leveling, increased orange peel texture, and reduced film flexibility. Temperature variations affect paint viscosity: cold temperatures increase viscosity, reducing flow and leveling while potentially causing brush marks and roller stipple. Hot temperatures decrease viscosity, potentially causing runs, sags, and reduced film thickness. Understanding these environmental factors enables optimal scheduling and application techniques for professional-quality results regardless of conditions.
-            </p>
-            <h2>Professional Application Techniques: Advanced DIY Methods for Superior Results</h2>
-            <p className="mb-4 text-gray-700">
-              Professional painting techniques transform amateur results into professional-quality finishes through specific methods and tools. "Cutting in" with high-quality angled brushes creates crisp, clean edges where walls meet ceilings, trim, and other surfaces. The "W" pattern for roller application ensures even coverage and prevents lap marks by maintaining consistent paint distribution and roller pressure. Maintaining "wet edges"—working from wet to dry areas—prevents visible lap marks and creates seamless color transitions.
-            </p>
-            <p className="mb-4 text-gray-700">
-              Advanced techniques like "back-rolling" after spraying improve texture uniformity and eliminate orange peel, while "feathering" techniques blend repair areas seamlessly with surrounding surfaces. Research demonstrates that proper application technique can reduce paint consumption by 20% while improving finish quality by 35% compared to amateur methods. These techniques require practice but deliver professional results that significantly enhance property value and satisfaction.
-            </p>
-          </section>
-        </ReadMore>
-
-        <AdUnit slot={1} />
-
-        {/* Deep Dive: How Paint Cost Estimation Works */}
-        <details className="mb-6 bg-white rounded-lg shadow p-6">
-          <summary className="font-semibold text-lg cursor-pointer">Deep Dive: How Paint Cost Estimation Works</summary>
-          <div className="mt-4 text-base text-primary-text/90">
-            <p>
-              <strong>What really affects your paint budget?</strong> Paint cost is more than just square footage. Surface texture, color changes, paint type, and even the weather can impact how much paint you need and how much you spend.<br /><br />
-              <strong>Industry standards:</strong> Most interior paints cover 250–400 sq ft per gallon, but this varies by brand and finish. Always check the label and ask at your local paint store for advice tailored to your project.
-            </p>
-            <ul className="list-disc ml-6 mt-4">
-              <li><strong>Surface prep:</strong> Clean, dry, and primed surfaces use less paint and last longer.</li>
-              <li><strong>Primer:</strong> Using a primer can reduce the number of topcoats needed, especially when changing from dark to light colors.</li>
-              <li><strong>Paint quality:</strong> Premium paints may cost more upfront but often require fewer coats and last longer, saving money over time.</li>
-              <li><strong>Application method:</strong> Rollers are efficient for large areas, while brushes are best for trim and detail. Sprayers can waste paint if not used carefully.</li>
-            </ul>
-            <p className="mt-4 text-sm text-primary-text/60">Sources: <a href="https://www.paint.org/article/how-much-paint-do-i-need/" target="_blank" rel="noopener noreferrer" className="underline">American Coatings Association</a>, <a href="https://www.bobvila.com/articles/how-much-paint-do-i-need/" target="_blank" rel="noopener noreferrer" className="underline">Bob Vila: How Much Paint Do I Need?</a></p>
-          </div>
-        </details>
 
         <div className="max-w-4xl mx-auto fade-in-up">
           <PaintCostCalculatorClient />
         </div>
 
+        <AdUnit slot={1} />
+
+        <section className="max-w-3xl mx-auto mt-12 prose prose-slate">
+          <h2 className="text-xl font-semibold text-slate-900 mb-3">Planning a paint project</h2>
+          <p className="text-slate-600 mb-4">
+            Most interior jobs need two coats for even color, especially when covering a darker shade. Ceilings, closets, and accent walls change the total area—this tool assumes you paint all four walls plus the ceiling in one color.
+          </p>
+          <p className="text-slate-600 mb-4">
+            Prep work (cleaning, patching, sanding, taping) affects how much paint actually covers. Check the coverage figure on your paint can and round up when ordering.
+          </p>
+        </section>
+
         <AdUnit slot={2} />
 
-        {/* Real-World Use Cases & User Stories */}
-        <section className="mb-6">
-          <h2 className="font-semibold text-lg mb-2">Real-World Use Cases & User Stories</h2>
-          <ul className="list-disc ml-6 text-base text-primary-text/90">
-            <li><strong>First-Time Homeowner:</strong> Priya uses the calculator to budget for painting her new living room, learning how surface prep and color changes affect her costs.</li>
-            <li><strong>Professional Painter:</strong> Alex, a contractor, estimates paint and labor for a client’s office renovation, using the tool to avoid costly overbuying.</li>
-            <li><strong>DIY Enthusiast:</strong> Sam double-checks paint needs for a bedroom accent wall, factoring in texture and primer for a flawless finish.</li>
-            <li><strong>Landlord:</strong> Maria plans annual repainting for rental units, using the calculator to compare paint brands and optimize long-term costs.</li>
-          </ul>
-        </section>
-
-        <AdUnit slot={3} />
-
-        {/* Did You Know? & Authoritative Resources */}
-        <section className="mb-10">
-          <h2 className="font-semibold text-lg mb-2">Did You Know?</h2>
-          <ul className="list-disc ml-6 text-base text-primary-text/90">
-            <li>Paint color can look different depending on lighting and time of day—always test a sample before buying in bulk.</li>
-            <li>Some paints are low-VOC or zero-VOC, making them safer for indoor air quality.</li>
-            <li>Professional painters recommend two thin coats over one thick coat for better durability and finish.</li>
-            <li>Paint stores often accept unopened cans for return or exchange—check policies before purchase.</li>
-          </ul>
-          <p className="mt-4 text-sm text-primary-text/60">For more information, visit <a href="https://www.paint.org/article/how-much-paint-do-i-need/" target="_blank" rel="noopener noreferrer" className="underline">American Coatings Association</a> or <a href="https://www.bobvila.com/articles/how-much-paint-do-i-need/" target="_blank" rel="noopener noreferrer" className="underline">Bob Vila: How Much Paint Do I Need?</a>.</p>
-        </section>
+        <HowItWorks title="How This Calculator Works" steps={howItWorksSteps} className="bg-slate-50/50" />
 
         <div className="mt-16 fade-in-up">
           <ToolInfo
@@ -161,47 +137,31 @@ export default function PaintCostCalculatorPage() {
             description={
               <>
                 <p className="mb-4">
-                  Professional paint cost calculation represents the convergence of materials science, environmental engineering, and application optimization in project planning. Our expert-crafted tool combines surface preparation analysis, mathematical waste reduction algorithms, and professional application techniques to provide comprehensive guidance for achieving professional-quality results while optimizing material costs and project efficiency.
+                  This tool totals wall and ceiling square meters, subtracts a standard door and window opening, applies your coat count, and converts to liters using 10 m² per liter. All math runs locally in your browser.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                   <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                    <h4 className="font-semibold text-blue-800 mb-2">🔬 Surface Science</h4>
-                    <p className="text-sm text-blue-700">
-                      Professional preparation techniques extending paint life by 40-60% and reducing consumption by 15-25%.
-                    </p>
+                    <h4 className="font-semibold text-blue-800 mb-2">Walls + ceiling</h4>
+                    <p className="text-sm text-blue-700">Four walls and ceiling area from your room dimensions.</p>
                   </div>
-                  <div className="bg-green-50 p-4 rounded-xl border border-green-100">
-                    <h4 className="font-semibold text-green-800 mb-2">� Cost Optimization</h4>
-                    <p className="text-sm text-green-700">
-                      POA algorithms reducing waste by 34% and saving 12% on material costs through data-driven purchasing.
-                    </p>
+                  <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                    <h4 className="font-semibold text-emerald-800 mb-2">Fixed openings</h4>
+                    <p className="text-sm text-emerald-700">One standard door and window subtracted from wall area.</p>
                   </div>
                   <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
-                    <h4 className="font-semibold text-amber-800 mb-2">🎨 Application Excellence</h4>
-                    <p className="text-sm text-amber-700">
-                      Professional techniques reducing paint consumption by 20% while improving finish quality by 35%.
-                    </p>
+                    <h4 className="font-semibold text-amber-800 mb-2">Estimate only</h4>
+                    <p className="text-sm text-amber-700">Coverage varies by product—verify on the label before buying.</p>
                   </div>
                 </div>
               </>
             }
-            steps={[
-              { title: 'Surface Analysis', description: 'Evaluate substrate condition, texture coefficients, and preparation requirements for optimal paint adhesion.' },
-              { title: 'Environmental Assessment', description: 'Analyze humidity, temperature, and application conditions for optimal paint performance.' },
-              { title: 'Cost Optimization', description: 'Apply POA algorithms for waste reduction and strategic purchasing to minimize material costs.' },
-              { title: 'Application Planning', description: 'Select professional techniques and tools for superior finish quality and efficiency.' }
-            ]}
+            steps={steps}
             faqs={faqData}
-            tips={[
-              'Apply POA optimization to reduce paint waste by 34% and save 12% on material costs through strategic purchasing',
-              'Use substrate-specific primers: PVA for drywall, oil-based for wood, rust-inhibiting for metal surfaces',
-              'Maintain optimal environmental conditions: 70-85°F with 40-50% humidity for best paint performance',
-              'Implement professional "cutting in" and "W pattern" techniques to reduce consumption by 20%',
-              'Account for application waste: 5-10% for rollers, 15-20% for sprayers in material calculations',
-              'Consider paint formulation differences: flat covers 350-400 sq ft/gallon, gloss covers 250-300 sq ft/gallon'
-            ]}
+            tips={tips}
           />
         </div>
+
+        <AdUnit slot={3} />
 
         <div className="max-w-4xl mx-auto mt-12 fade-in-up">
           <RelatedTools currentTool="/paint-cost-calculator" category="calculators" />
