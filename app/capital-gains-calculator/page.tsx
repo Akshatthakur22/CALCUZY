@@ -7,41 +7,22 @@ import RelatedTools from '@/components/RelatedTools'
 import RelatedToolsBento, { financeRelatedTools } from '@/components/RelatedToolsBento'
 import HowItWorks from '@/components/HowItWorks'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { createMetadata, createToolSchema, createFAQSchema, createCalculateActionSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
+import GuideLink from '@/components/GuideLink'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Capital Gains Tax Calculator',
   description: 'Estimate US federal capital gains tax on a single investment sale. Enter purchase price, sale price, holding period, and income to see short-term or long-term tax estimates using 2024 federal brackets.',
   keywords: 'capital gains calculator, capital gains tax, short-term capital gains, long-term capital gains, investment tax calculator, federal tax estimate',
   url: 'https://calcuzy.app/capital-gains-calculator',
-  image: '/og/og-finance.svg',
+  image: '/og/og-finance.png',
 })
 
 export default function CapitalGainsCalculatorPage() {
-  const structuredData = createToolSchema({
-    name: 'Capital Gains Tax Calculator',
-    description: 'Estimate US federal capital gains tax on an investment sale using purchase price, sale price, holding period, and taxable income.',
-    url: 'https://calcuzy.app/capital-gains-calculator',
-    category: 'FinanceApplication',
-    features: ['Short-term tax estimate', 'Long-term tax estimate', '2024 US federal brackets', 'After-tax return', 'Shareable results']
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
-    { name: 'Capital Gains Calculator', url: 'https://calcuzy.app/capital-gains-calculator' }
-  ])
-
-  const calculateActionSchema = createCalculateActionSchema({
-    name: 'Calculate Capital Gains Tax',
-    description: 'Estimate federal capital gains tax from purchase price, sale price, holding period, and annual income.',
-    url: 'https://calcuzy.app/capital-gains-calculator',
-    inputType: 'financial',
-    outputType: 'financial'
-  })
-
   const faqData = [
     {
       question: 'What is capital gains tax?',
@@ -68,8 +49,6 @@ export default function CapitalGainsCalculatorPage() {
       answer: 'Rates are based on 2024 US federal brackets for single-filer-style income thresholds. Tax laws and brackets change annually. Always verify current IRS guidance or speak with a qualified tax advisor before making financial decisions.'
     }
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Enter purchase price', description: 'Input what you originally paid for the investment (your cost basis before fees or adjustments).' },
@@ -102,24 +81,29 @@ export default function CapitalGainsCalculatorPage() {
     }
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Capital Gains Tax Calculator',
+      description: 'Estimate US federal capital gains tax on an investment sale using purchase price, sale price, holding period, and taxable income.',
+      url: 'https://calcuzy.app/capital-gains-calculator',
+      category: 'FinanceApplication',
+      features: ['Short-term tax estimate', 'Long-term tax estimate', '2024 US federal brackets', 'After-tax return', 'Shareable results'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
+      { name: 'Capital Gains Calculator', url: 'https://calcuzy.app/capital-gains-calculator' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['capital-gains-calculator'].howTo,
+    calculateAction: CALCULATOR_SEO['capital-gains-calculator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(calculateActionSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">
@@ -155,6 +139,7 @@ export default function CapitalGainsCalculatorPage() {
           <p className="text-slate-600 mb-4">
             Your actual tax bill depends on your full tax picture—income, filing status, deductions, state taxes, and other factors. This calculator gives a simplified federal estimate for one sale so you can plan ahead, not a substitute for professional tax preparation.
           </p>
+          <GuideLink toolPath="/capital-gains-calculator" />
         </section>
 
         <AdUnit slot={2} />

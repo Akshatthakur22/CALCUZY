@@ -6,31 +6,20 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
-import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Password Strength Checker & Hash Generator',
   description: 'Check password strength with a simple score and generate SHA-256 hashes in your browser. Nothing is stored or sent to our servers.',
   keywords: 'password strength checker, password security, SHA-256 hash generator, password tester, strong password',
   url: 'https://calcuzy.app/password-tools',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function PasswordToolsPage() {
-  const structuredData = createToolSchema({
-    name: 'Password Strength Checker & Hash Generator',
-    description: 'Score password strength from length and character variety, and generate SHA-256 hashes locally in the browser.',
-    url: 'https://calcuzy.app/password-tools',
-    category: 'UtilityApplication',
-    features: ['Strength score', 'Length and variety checks', 'Common pattern detection', 'SHA-256 hashing', 'Browser-only processing'],
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Password Tools', url: 'https://calcuzy.app/password-tools' },
-  ])
-
   const faqData = [
     {
       question: 'How does the strength checker score passwords?',
@@ -57,8 +46,6 @@ export default function PasswordToolsPage() {
       answer: 'No. Hash functions are one-way. Anyone with the hash cannot recover the original password from it alone—though weak passwords can still be guessed by attackers trying common options.',
     },
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Enter a password', description: 'Type or paste text into the strength field to see a live score.' },
@@ -90,11 +77,28 @@ export default function PasswordToolsPage() {
     },
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Password Strength Checker & Hash Generator',
+      description: 'Score password strength from length and character variety, and generate SHA-256 hashes locally in the browser.',
+      url: 'https://calcuzy.app/password-tools',
+      category: 'UtilityApplication',
+      features: ['Strength score', 'Length and variety checks', 'Common pattern detection', 'SHA-256 hashing', 'Browser-only processing'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Password Tools', url: 'https://calcuzy.app/password-tools' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['password-tools'].howTo,
+    calculateAction: CALCULATOR_SEO['password-tools'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
 
       <main className="container section-responsive">

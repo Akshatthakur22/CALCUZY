@@ -6,26 +6,13 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
-import { createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
 
 export { metadata } from './metadata'
 
 export default function AgeCalculator() {
-  const structuredData = createToolSchema({
-    name: 'Age Calculator',
-    description: 'Calculate exact age in years, months, and days from a birth date and target date.',
-    url: 'https://calcuzy.app/age-calculator',
-    category: 'UtilityApplication',
-    features: ['Years, months, days breakdown', 'Leap year support', 'Any target date', 'Privacy-focused']
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Calculators', url: 'https://calcuzy.app/tools#calculators' },
-    { name: 'Age Calculator', url: 'https://calcuzy.app/age-calculator' }
-  ])
-
   const faqData = [
     {
       question: 'How does this age calculator work?',
@@ -52,8 +39,6 @@ export default function AgeCalculator() {
       answer: 'No. Dates and results are processed in your browser. Nothing is sent to our servers.'
     }
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Enter birth date', description: 'Select your date of birth using the calendar picker.' },
@@ -85,20 +70,29 @@ export default function AgeCalculator() {
     }
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Age Calculator',
+      description: 'Calculate exact age in years, months, and days from a birth date and target date.',
+      url: 'https://calcuzy.app/age-calculator',
+      category: 'UtilityApplication',
+      features: ['Years, months, days breakdown', 'Leap year support', 'Any target date', 'Privacy-focused'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Calculators', url: 'https://calcuzy.app/tools#calculators' },
+      { name: 'Age Calculator', url: 'https://calcuzy.app/age-calculator' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['age-calculator'].howTo,
+    calculateAction: CALCULATOR_SEO['age-calculator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       <main className="container section-responsive">
         <Breadcrumbs 

@@ -9,32 +9,20 @@ import RelatedTools from '@/components/RelatedTools'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
-import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Property Tax Estimator',
   description: 'Estimate annual and monthly property tax from home value, local tax rate, and exemptions. Simple formula for budgeting—not a bill from your assessor.',
   keywords: 'property tax estimator, property tax calculator, annual property tax, homestead exemption, effective tax rate',
   url: 'https://calcuzy.app/property-tax-estimator',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function PropertyTaxEstimatorPage() {
-  const structuredData = createToolSchema({
-    name: 'Property Tax Estimator',
-    description: 'Estimate property taxes from assessed or market value, tax rate percentage, and dollar exemptions.',
-    url: 'https://calcuzy.app/property-tax-estimator',
-    category: 'FinanceApplication',
-    features: ['Annual tax estimate', 'Monthly payment', 'Exemption field', 'Effective rate', 'Custom tax rate'],
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
-    { name: 'Property Tax Estimator', url: 'https://calcuzy.app/property-tax-estimator' },
-  ])
-
   const faqData = [
     {
       question: 'How does this estimator calculate tax?',
@@ -61,8 +49,6 @@ export default function PropertyTaxEstimatorPage() {
       answer: 'No. This is a simplified budgeting calculator. For appeals, deductions, or investment decisions, consult your county assessor or a qualified tax professional.',
     },
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Enter property value', description: 'Use assessed value if you have it; otherwise market value as a proxy.' },
@@ -94,11 +80,29 @@ export default function PropertyTaxEstimatorPage() {
     },
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Property Tax Estimator',
+      description: 'Estimate property taxes from assessed or market value, tax rate percentage, and dollar exemptions.',
+      url: 'https://calcuzy.app/property-tax-estimator',
+      category: 'FinanceApplication',
+      features: ['Annual tax estimate', 'Monthly payment', 'Exemption field', 'Effective rate', 'Custom tax rate'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
+      { name: 'Property Tax Estimator', url: 'https://calcuzy.app/property-tax-estimator' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['property-tax-estimator'].howTo,
+    calculateAction: CALCULATOR_SEO['property-tax-estimator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
 
       <main className="container section-responsive">

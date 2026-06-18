@@ -6,31 +6,20 @@ import ToolInfo from '@/components/ToolInfo'
 import AdUnit from '@/components/AdUnit'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
-import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Unit Converter',
   description: 'Convert length, weight, temperature, and volume between metric and imperial units. Free browser-based converter—no signup, calculations stay on your device.',
   keywords: 'unit converter, metric to imperial, length converter, weight converter, temperature converter, volume converter',
   url: 'https://calcuzy.app/unit-converter',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function UnitConverter() {
-  const structuredData = createToolSchema({
-    name: 'Unit Converter',
-    description: 'Convert between length, weight, temperature, and volume units including metric and US customary measurements.',
-    url: 'https://calcuzy.app/unit-converter',
-    category: 'UtilityApplication',
-    features: ['Length conversion', 'Weight conversion', 'Temperature conversion', 'Volume conversion', 'Instant results'],
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Unit Converter', url: 'https://calcuzy.app/unit-converter' },
-  ])
-
   const faqData = [
     {
       question: 'Which unit categories does this tool support?',
@@ -57,8 +46,6 @@ export default function UnitConverter() {
       answer: 'Not in this version. It converts single quantities within one category at a time (e.g., miles to kilometers, not mph to km/h directly).',
     },
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Pick a category', description: 'Choose length, weight, temperature, or volume.' },
@@ -90,11 +77,28 @@ export default function UnitConverter() {
     },
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Unit Converter',
+      description: 'Convert between length, weight, temperature, and volume units including metric and US customary measurements.',
+      url: 'https://calcuzy.app/unit-converter',
+      category: 'UtilityApplication',
+      features: ['Length conversion', 'Weight conversion', 'Temperature conversion', 'Volume conversion', 'Instant results'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Unit Converter', url: 'https://calcuzy.app/unit-converter' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['unit-converter'].howTo,
+    calculateAction: CALCULATOR_SEO['unit-converter'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
 
       <main className="container section-responsive">

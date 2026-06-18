@@ -8,32 +8,20 @@ import AdUnit from '@/components/AdUnit'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
-import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'BMI Calculator',
   description: 'Calculate Body Mass Index (BMI) using metric or imperial units. See WHO/CDC adult categories for ages 20+. Screening tool only—not a medical diagnosis.',
   keywords: 'BMI calculator, body mass index, health calculator, weight assessment, WHO BMI, CDC BMI, adult BMI',
   url: 'https://calcuzy.app/bmi-calculator',
-  image: '/og/og-default.svg',
+  image: '/og/og-default.png',
 })
 
 export default function BMICalculator() {
-  const structuredData = createToolSchema({
-    name: 'BMI Calculator',
-    description: 'Calculate Body Mass Index with metric or imperial units and view WHO/CDC adult weight categories.',
-    url: 'https://calcuzy.app/bmi-calculator',
-    category: 'HealthApplication',
-    features: ['Metric and imperial units', 'Instant BMI calculation', 'WHO/CDC adult categories', 'Privacy-focused', 'Adults 20+']
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Health', url: 'https://calcuzy.app/tools#health' },
-    { name: 'BMI Calculator', url: 'https://calcuzy.app/bmi-calculator' }
-  ])
-
   const faqData = [
     {
       question: 'How is BMI calculated?',
@@ -61,7 +49,40 @@ export default function BMICalculator() {
     }
   ]
 
-  const faqSchema = createFAQSchema(faqData)
+  const howItWorksSteps = [
+    {
+      title: 'Enter height and weight',
+      description: 'Choose metric or imperial units and fill in both fields.'
+    },
+    {
+      title: 'Apply the BMI formula',
+      description: 'Weight is divided by height squared (× 703 for imperial).'
+    },
+    {
+      title: 'See your category',
+      description: 'Your number is mapped to standard adult underweight, normal, overweight, or obese ranges.'
+    }
+  ]
+
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'BMI Calculator',
+      description: 'Calculate Body Mass Index with metric or imperial units and view WHO/CDC adult weight categories.',
+      url: 'https://calcuzy.app/bmi-calculator',
+      category: 'HealthApplication',
+      features: ['Metric and imperial units', 'Instant BMI calculation', 'WHO/CDC adult categories', 'Privacy-focused', 'Adults 20+'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Health', url: 'https://calcuzy.app/tools#health' },
+      { name: 'BMI Calculator', url: 'https://calcuzy.app/bmi-calculator' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['bmi-calculator'].howTo,
+    calculateAction: CALCULATOR_SEO['bmi-calculator'].calculateAction,
+  })
 
   const steps = [
     { title: 'Choose units', description: 'Select metric (kg, m) or imperial (lb, in).' },
@@ -79,35 +100,9 @@ export default function BMICalculator() {
     'Consult a healthcare provider for personalized advice'
   ]
 
-  const howItWorksSteps = [
-    {
-      title: 'Enter height and weight',
-      description: 'Choose metric or imperial units and fill in both fields.'
-    },
-    {
-      title: 'Apply the BMI formula',
-      description: 'Weight is divided by height squared (× 703 for imperial).'
-    },
-    {
-      title: 'See your category',
-      description: 'Your number is mapped to standard adult underweight, normal, overweight, or obese ranges.'
-    }
-  ]
-
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">

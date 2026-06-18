@@ -6,25 +6,20 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import HowItWorks from '@/components/HowItWorks'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
-import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'NDA Generator',
   description: 'Draft a basic unilateral non-disclosure agreement template. Enter party names, term, and purpose—then copy the text for attorney review. Not legal advice.',
   keywords: 'NDA generator, non-disclosure agreement, confidentiality agreement template, NDA template, business NDA',
   url: 'https://calcuzy.app/nda-generator',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function NDAGeneratorPage() {
-  const structuredData = createToolSchema({
-    name: 'NDA Generator',
-    description: 'Generate a basic unilateral non-disclosure agreement template with customizable term, purpose, and return-of-materials option.',
-    url: 'https://calcuzy.app/nda-generator',
-    category: 'UtilityApplication',
-    features: ['Unilateral NDA template', 'Custom duration', 'Purpose field', 'Return materials option', 'Copy to clipboard']
-  })
-
   const faqData = [
     {
       question: 'What is a non-disclosure agreement (NDA)?',
@@ -51,8 +46,6 @@ export default function NDAGeneratorPage() {
       answer: 'No. NDAs cannot legally prevent reporting crimes, harassment, or whistleblowing protected by law. Courts may refuse to enforce agreements that are overly broad or against public policy.'
     }
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Name the parties', description: 'Enter the disclosing party (sharing secrets) and receiving party (learning them).' },
@@ -86,16 +79,23 @@ export default function NDAGeneratorPage() {
     }
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'NDA Generator',
+      description: 'Generate a basic unilateral non-disclosure agreement template with customizable term, purpose, and return-of-materials option.',
+      url: 'https://calcuzy.app/nda-generator',
+      category: 'UtilityApplication',
+      features: ['Unilateral NDA template', 'Custom duration', 'Purpose field', 'Return materials option', 'Copy to clipboard'],
+    },
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['nda-generator'].howTo,
+    calculateAction: CALCULATOR_SEO['nda-generator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">

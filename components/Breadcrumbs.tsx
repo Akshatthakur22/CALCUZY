@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { createBreadcrumbSchema } from '@/lib/metadata'
 
 interface BreadcrumbItem {
   name: string
@@ -12,15 +11,8 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
-  const breadcrumbSchema = createBreadcrumbSchema(items)
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <nav className={`flex items-center space-x-2 text-sm text-gray-600 mb-6 ${className}`}>
+    <nav className={`flex items-center space-x-2 text-sm text-gray-600 mb-6 ${className}`} aria-label="Breadcrumb">
         <Link 
           href="/" 
           className="hover:text-primary transition-colors"
@@ -49,6 +41,5 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
           </div>
         ))}
       </nav>
-    </>
   )
 }

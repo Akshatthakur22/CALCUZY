@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Quotes about beauty, art, and life for captions and creative projects. Simple lists—no fake design science claims.',
   keywords: 'aesthetic quotes, beauty quotes, art quotes, caption quotes, visual inspiration quotes',
   url: 'https://calcuzy.app/aesthetic-quotes',
-  image: '/og/og-quotes.svg',
+  image: '/og/og-quotes.png',
 })
 
 const config = {

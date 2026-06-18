@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Browse cat name ideas for male, female, and unisex kittens. Short lists for inspiration—pick a name that is easy to call at home.',
   keywords: 'cat names, kitten names, male cat names, female cat names, unique cat names, pet names',
   url: 'https://calcuzy.app/cat-names',
-  image: '/og/og-names.svg',
+  image: '/og/og-names.png',
 })
 
 const config = {

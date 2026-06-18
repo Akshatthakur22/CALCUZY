@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Romantic and relationship quotes for cards, messages, and anniversaries. Short sayings with author credits where known.',
   keywords: 'love quotes, romantic quotes, relationship quotes, anniversary quotes, heartfelt quotes',
   url: 'https://calcuzy.app/love-quotes',
-  image: '/og/og-quotes.svg',
+  image: '/og/og-quotes.png',
 })
 
 const config = {

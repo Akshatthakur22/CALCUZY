@@ -66,6 +66,10 @@ const staticPages: PageEntry[] = [
 const blogPages: PageEntry[] = [
   { path: '/blog', priority: 0.5, changeFrequency: 'weekly' },
   { path: '/blog/bmi-calculator-guide', priority: 0.6, changeFrequency: 'monthly' },
+  { path: '/blog/capital-gains-tax-guide', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/blog/crypto-tax-guide', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/blog/will-writing-guide', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/blog/rent-affordability-guide', priority: 0.7, changeFrequency: 'monthly' },
 ]
 
 function toSitemapEntries(pages: PageEntry[], lastModified: string): MetadataRoute.Sitemap {

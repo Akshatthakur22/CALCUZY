@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import AdUnit from '@/components/AdUnit'
+import { GUIDES, guideUrl } from '@/lib/guides'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
@@ -9,7 +10,7 @@ export const metadata = createMetadata({
   description: 'Explore our collection of 31 free online tools including calculators, converters, generators, and utilities for finance, health, legal, home improvement, and more. All tools are free, fast, and privacy-focused.',
   keywords: 'online tools, calculators, converters, generators, free tools, utility tools, financial calculators, health calculators, legal documents',
   url: 'https://calcuzy.app/tools',
-  image: '/og/og-default.svg',
+  image: '/og/og-default.png',
 })
 
 const toolCategories = [
@@ -215,6 +216,53 @@ export default function ToolsPage() {
         </section>
 
         <AdUnit slot={2} format="rectangle" />
+
+        {/* Guides paired with tools */}
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                  Guides & Tutorials
+                </h2>
+                <p className="text-slate-600 max-w-2xl mx-auto">
+                  In-depth explainers paired with our calculators—finance, health, and legal topics with formulas, examples, and FAQs.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {GUIDES.map((guide) => (
+                  <div
+                    key={guide.slug}
+                    className="bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-100 hover:shadow-md transition-all"
+                  >
+                    <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                      {guide.category}
+                    </span>
+                    <h3 className="font-semibold text-slate-900 mt-3 mb-2 line-clamp-2">
+                      <Link href={guideUrl(guide.slug)} className="hover:text-blue-600 transition-colors">
+                        {guide.title}
+                      </Link>
+                    </h3>
+                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">{guide.excerpt}</p>
+                    <div className="flex flex-wrap gap-3 text-sm">
+                      <Link href={guideUrl(guide.slug)} className="text-blue-600 hover:underline font-medium">
+                        Read guide →
+                      </Link>
+                      <Link href={guide.toolPath} className="text-slate-500 hover:text-blue-600 transition-colors">
+                        {guide.toolName} →
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center mt-8">
+                <Link href="/blog/" className="text-blue-600 hover:underline font-medium">
+                  View all guides on the blog →
+                </Link>
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Comprehensive Content Section */}
         <section className="py-12 md:py-16 bg-slate-50/50">

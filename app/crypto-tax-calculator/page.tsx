@@ -7,32 +7,21 @@ import RelatedTools from '@/components/RelatedTools'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
-import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import GuideLink from '@/components/GuideLink'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Crypto Tax Calculator',
   description: 'Estimate cryptocurrency capital gains and losses using FIFO, LIFO, or average cost. US-focused cost basis helper—not tax filing software.',
   keywords: 'crypto tax calculator, bitcoin tax, cryptocurrency capital gains, FIFO LIFO, crypto cost basis, capital gains losses',
   url: 'https://calcuzy.app/crypto-tax-calculator',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function CryptoTaxCalculatorPage() {
-  const structuredData = createToolSchema({
-    name: 'Crypto Tax Calculator',
-    description: 'Estimate cryptocurrency capital gains and losses using FIFO, LIFO, or average cost basis methods.',
-    url: 'https://calcuzy.app/crypto-tax-calculator',
-    category: 'FinanceApplication',
-    features: ['FIFO cost basis', 'LIFO cost basis', 'Average cost method', 'Buy and sell transactions', 'Gains and losses summary']
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
-    { name: 'Crypto Tax Calculator', url: 'https://calcuzy.app/crypto-tax-calculator' }
-  ])
-
   const faqData = [
     {
       question: 'Does this calculator show my tax bill?',
@@ -59,8 +48,6 @@ export default function CryptoTaxCalculatorPage() {
       answer: 'In the US, capital losses can generally offset capital gains. Net losses may offset up to $3,000 of ordinary income per year, with excess carried forward. Limits and rules change—verify with current IRS guidance or a tax advisor.'
     }
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Add transactions', description: 'Enter buy and sell rows with date, amount, price per unit, and optional fees.' },
@@ -94,20 +81,29 @@ export default function CryptoTaxCalculatorPage() {
     }
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Crypto Tax Calculator',
+      description: 'Estimate cryptocurrency capital gains and losses using FIFO, LIFO, or average cost basis methods.',
+      url: 'https://calcuzy.app/crypto-tax-calculator',
+      category: 'FinanceApplication',
+      features: ['FIFO cost basis', 'LIFO cost basis', 'Average cost method', 'Buy and sell transactions', 'Gains and losses summary'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
+      { name: 'Crypto Tax Calculator', url: 'https://calcuzy.app/crypto-tax-calculator' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['crypto-tax-calculator'].howTo,
+    calculateAction: CALCULATOR_SEO['crypto-tax-calculator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">
@@ -143,6 +139,7 @@ export default function CryptoTaxCalculatorPage() {
           <p className="text-slate-600 mb-4">
             This calculator helps you explore those totals for simple buy/sell histories. It does not handle every taxable event (swaps, income, wash sales, multi-wallet consolidation) and does not apply federal or state tax rates. For complex portfolios, use specialized crypto tax software or a qualified CPA.
           </p>
+          <GuideLink toolPath="/crypto-tax-calculator" />
         </section>
 
         <AdUnit slot={2} />

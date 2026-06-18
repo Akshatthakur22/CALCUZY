@@ -10,7 +10,7 @@ export const metadata = createMetadata({
     'Learn how Calcuzy.app protects your privacy. Calculator inputs stay in your browser. We use basic analytics (Google Analytics and Vercel Analytics) to improve the site.',
   keywords: 'privacy policy, data protection, user privacy, calcuzy privacy, anonymous calculations, GDPR compliance',
   url: 'https://calcuzy.app/privacy-policy',
-  image: '/og/og-default.svg',
+  image: '/og/og-default.png',
 })
 
 export default function PrivacyPolicyPage() {

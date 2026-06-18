@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Christmas quotes for cards, family messages, and holiday posts. Traditional, inspirational, and family themes.',
   keywords: 'christmas quotes, holiday wishes, christmas sayings, christmas card messages, festive quotes',
   url: 'https://calcuzy.app/christmas-quotes',
-  image: '/og/og-quotes.svg',
+  image: '/og/og-quotes.png',
 })
 
 const config = {

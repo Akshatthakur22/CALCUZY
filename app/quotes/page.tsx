@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   description: 'Browse motivational, love, graduation, Christmas, and aesthetic quotes. Short curated lists for cards, captions, and messages.',
   keywords: 'inspirational quotes, motivational quotes, love quotes, graduation quotes, christmas quotes, daily inspiration, positive quotes, life quotes',
   url: 'https://calcuzy.app/quotes',
-  image: '/og/og-quotes.svg',
+  image: '/og/og-quotes.png',
 })
 
 const quoteCategories = [

@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Browse baby boy name ideas in traditional, modern, and strong styles. Inspiration lists—not official popularity rankings.',
   keywords: 'baby boy names, boy names, unique boy names, popular boy names, baby name ideas',
   url: 'https://calcuzy.app/baby-boy-names',
-  image: '/og/og-names.svg',
+  image: '/og/og-names.png',
 })
 
 const config = {

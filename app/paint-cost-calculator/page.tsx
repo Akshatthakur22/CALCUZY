@@ -6,31 +6,20 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
-import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Paint Cost Calculator',
   description: 'Estimate paint quantity and cost for a rectangular room. Enter room dimensions in meters, number of coats, and price per liter. Rough planning estimate only.',
   keywords: 'paint cost calculator, how much paint do I need, room paint estimate, paint coverage calculator, DIY painting budget',
   url: 'https://calcuzy.app/paint-cost-calculator',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function PaintCostCalculatorPage() {
-  const structuredData = createToolSchema({
-    name: 'Paint Cost Calculator',
-    description: 'Estimate paint liters and total cost for walls and ceiling of a rectangular room using room dimensions, coats, and price per liter.',
-    url: 'https://calcuzy.app/paint-cost-calculator',
-    category: 'UtilityApplication',
-    features: ['Wall and ceiling area', 'Standard door/window deduction', 'Multiple coats', 'Liter estimate', 'Cost total'],
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Paint Cost Calculator', url: 'https://calcuzy.app/paint-cost-calculator' },
-  ])
-
   const faqData = [
     {
       question: 'How does this calculator estimate paint needed?',
@@ -57,8 +46,6 @@ export default function PaintCostCalculatorPage() {
       answer: 'No. This is a free browser-based estimate for DIY planning. Always confirm quantities with your retailer and factor in sales tax, brushes, rollers, tape, and drop cloths separately.',
     },
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Measure the room', description: 'Enter length, width, and height in meters.' },
@@ -90,11 +77,28 @@ export default function PaintCostCalculatorPage() {
     },
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Paint Cost Calculator',
+      description: 'Estimate paint liters and total cost for walls and ceiling of a rectangular room using room dimensions, coats, and price per liter.',
+      url: 'https://calcuzy.app/paint-cost-calculator',
+      category: 'UtilityApplication',
+      features: ['Wall and ceiling area', 'Standard door/window deduction', 'Multiple coats', 'Liter estimate', 'Cost total'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Paint Cost Calculator', url: 'https://calcuzy.app/paint-cost-calculator' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['paint-cost-calculator'].howTo,
+    calculateAction: CALCULATOR_SEO['paint-cost-calculator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
 
       <main className="container section-responsive">

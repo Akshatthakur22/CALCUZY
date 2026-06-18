@@ -6,32 +6,20 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
-import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Date Difference Calculator',
   description: 'Calculate days, weeks, months, and years between two dates. Optional time-of-day precision, quick presets, and leap-year-aware Gregorian calendar math—all in your browser.',
   keywords: 'date difference calculator, days between dates, date calculator, time between dates, calendar calculator',
   url: 'https://calcuzy.app/date-difference',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function DateDifference() {
-  const structuredData = createToolSchema({
-    name: 'Date Difference Calculator',
-    description: 'Calculate the difference between two dates in years, months, days, and total days using the Gregorian calendar.',
-    url: 'https://calcuzy.app/date-difference',
-    category: 'UtilityApplication',
-    features: ['Days and total day count', 'Years, months, days breakdown', 'Optional time precision', 'Quick presets', 'Leap year support']
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Calculators', url: 'https://calcuzy.app/tools#calculators' },
-    { name: 'Date Difference Calculator', url: 'https://calcuzy.app/date-difference' }
-  ])
-
   const faqData = [
     {
       question: 'How does this calculator work?',
@@ -58,8 +46,6 @@ export default function DateDifference() {
       answer: 'No. Dates and results are calculated entirely in your browser. Nothing is sent to our servers.'
     }
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Choose dates', description: 'Select a start date and end date, or use a quick preset (week, month, year, etc.).' },
@@ -91,20 +77,29 @@ export default function DateDifference() {
     }
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Date Difference Calculator',
+      description: 'Calculate the difference between two dates in years, months, days, and total days using the Gregorian calendar.',
+      url: 'https://calcuzy.app/date-difference',
+      category: 'UtilityApplication',
+      features: ['Days and total day count', 'Years, months, days breakdown', 'Optional time precision', 'Quick presets', 'Leap year support'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Calculators', url: 'https://calcuzy.app/tools#calculators' },
+      { name: 'Date Difference Calculator', url: 'https://calcuzy.app/date-difference' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['date-difference'].howTo,
+    calculateAction: CALCULATOR_SEO['date-difference'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">

@@ -6,25 +6,20 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import HowItWorks from '@/components/HowItWorks'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
-import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Ovulation Calculator',
   description: 'Estimate your fertile window and ovulation day using the calendar method. Enter cycle length and last period date for a rough fertility timeline—not medical advice.',
   keywords: 'ovulation calculator, fertile window, ovulation day, menstrual cycle calculator, fertility calendar, period tracker',
   url: 'https://calcuzy.app/ovulation-calculator',
-  image: '/og/og-health.svg',
+  image: '/og/og-health.png',
 })
 
 export default function OvulationCalculatorPage() {
-  const structuredData = createToolSchema({
-    name: 'Ovulation Calculator',
-    description: 'Estimate ovulation day, fertile window, and next period using cycle length and the first day of your last period.',
-    url: 'https://calcuzy.app/ovulation-calculator',
-    category: 'HealthApplication',
-    features: ['Fertile window estimate', 'Ovulation day estimate', 'Next period estimate', 'Calendar method', 'Cycle length input']
-  })
-
   const faqData = [
     {
       question: 'How does this ovulation calculator work?',
@@ -51,8 +46,6 @@ export default function OvulationCalculatorPage() {
       answer: 'Consider speaking with a clinician if your cycles are irregular, you have been trying to conceive for 12 months (or 6 months if over 35), you suspect PCOS or other conditions, or you need personalized fertility or contraception guidance. This tool is for general education only.'
     }
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Enter cycle length', description: 'Input your average number of days from the start of one period to the start of the next (often 21–35 days).' },
@@ -86,16 +79,23 @@ export default function OvulationCalculatorPage() {
     }
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Ovulation Calculator',
+      description: 'Estimate ovulation day, fertile window, and next period using cycle length and the first day of your last period.',
+      url: 'https://calcuzy.app/ovulation-calculator',
+      category: 'HealthApplication',
+      features: ['Fertile window estimate', 'Ovulation day estimate', 'Next period estimate', 'Calendar method', 'Cycle length input'],
+    },
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['ovulation-calculator'].howTo,
+    calculateAction: CALCULATOR_SEO['ovulation-calculator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">

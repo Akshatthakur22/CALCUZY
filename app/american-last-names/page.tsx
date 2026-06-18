@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Browse common American surnames for genealogy, writing, or general interest. Grouped lists—not a complete census database.',
   keywords: 'american last names, common surnames, US surnames, family names, genealogy surnames',
   url: 'https://calcuzy.app/american-last-names',
-  image: '/og/og-names.svg',
+  image: '/og/og-names.png',
 })
 
 const config = {

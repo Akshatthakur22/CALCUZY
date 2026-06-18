@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   description: 'Browse baby boy and girl names, dog and cat names, and common American surnames. Curated lists for inspiration—not official registries.',
   keywords: 'baby names, pet names, dog names, cat names, last names, name ideas, name inspiration, baby boy names, baby girl names',
   url: 'https://calcuzy.app/names',
-  image: '/og/og-names.svg',
+  image: '/og/og-names.png',
 })
 
 const nameCategories = [

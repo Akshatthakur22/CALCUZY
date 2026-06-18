@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Browse popular dog name ideas for male, female, and unisex puppies. Short lists for inspiration—pick a name that is easy to say and fits your dog.',
   keywords: 'dog names, puppy names, male dog names, female dog names, unique dog names, pet names',
   url: 'https://calcuzy.app/dog-names',
-  image: '/og/og-names.svg',
+  image: '/og/og-names.png',
 })
 
 const config = {

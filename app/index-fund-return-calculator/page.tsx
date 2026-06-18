@@ -6,25 +6,20 @@ import IndexFundReturnCalculatorClient from '@/components/tools/IndexFundReturnC
 import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
-import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Index Fund Return Calculator',
   description: 'Calculate index fund returns, SIP investments, and compound annual growth rate (CAGR). Free investment growth calculator with monthly contributions.',
   keywords: 'index fund calculator, SIP calculator, CAGR calculator, investment returns, compound interest, mutual fund calculator',
   url: 'https://calcuzy.app/index-fund-return-calculator',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function IndexFundReturnCalculatorPage() {
-  const structuredData = createToolSchema({
-    name: 'Index Fund Return Calculator',
-    description: 'Calculate index fund returns, SIP investments, and compound annual growth rate',
-    url: 'https://calcuzy.app/index-fund-return-calculator',
-    category: 'FinanceApplication',
-    features: ['Lump sum returns', 'SIP calculations', 'CAGR calculator', 'Compound interest', 'Investment projections']
-  })
-
   const faqData = [
     {
       question: 'What is an index fund?',
@@ -48,8 +43,6 @@ export default function IndexFundReturnCalculatorPage() {
     }
   ]
 
-  const faqSchema = createFAQSchema(faqData)
-
   const steps = [
     { title: 'Enter Initial Investment', description: 'Input the lump sum amount you plan to invest initially.' },
     { title: 'Set Monthly Contribution', description: 'Enter your planned monthly SIP amount (can be $0 for lump sum only).' },
@@ -66,16 +59,23 @@ export default function IndexFundReturnCalculatorPage() {
     'Diversify across different index types (total market, international, bonds)'
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Index Fund Return Calculator',
+      description: 'Calculate index fund returns, SIP investments, and compound annual growth rate',
+      url: 'https://calcuzy.app/index-fund-return-calculator',
+      category: 'FinanceApplication',
+      features: ['Lump sum returns', 'SIP calculations', 'CAGR calculator', 'Compound interest', 'Investment projections'],
+    },
+    faqs: faqData,
+    howToSteps: steps,
+    howTo: CALCULATOR_SEO['index-fund-return-calculator'].howTo,
+    calculateAction: CALCULATOR_SEO['index-fund-return-calculator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">

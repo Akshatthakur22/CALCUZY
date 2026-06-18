@@ -1,5 +1,8 @@
 import { Metadata } from 'next'
-import { createMetadata, createWebPageSchema, createBreadcrumbSchema, createFAQSchema } from '@/lib/metadata'
+import { createMetadata } from '@/lib/metadata'
+import { buildBlogGuideSchemas } from '@/lib/build-blog-schemas'
+import { getGuideBySlug } from '@/lib/guides'
+import BlogGuideJsonLd from '@/components/blog/BlogGuideJsonLd'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
@@ -7,12 +10,14 @@ import AdUnit from '@/components/AdUnit'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
 import Link from 'next/link'
 
+const guide = getGuideBySlug('bmi-calculator-guide')!
+
 export const metadata: Metadata = createMetadata({
   title: 'BMI Calculator Guide: What BMI Means and How to Use It',
-  description: 'Learn how Body Mass Index is calculated, WHO/CDC adult categories, limitations, and when to talk to a doctor. Includes a link to our free BMI calculator.',
+  description: guide.excerpt,
   keywords: 'BMI calculator, body mass index, healthy weight, BMI categories, WHO BMI, CDC BMI',
-  url: 'https://calcuzy.app/blog/bmi-calculator-guide',
-  image: '/og/og-health.svg',
+  url: `https://calcuzy.app/blog/${guide.slug}`,
+  image: guide.ogImage,
 })
 
 const faqData = [
@@ -34,35 +39,20 @@ const faqData = [
   }
 ]
 
-const breadcrumbSchema = createBreadcrumbSchema([
-  { name: 'Home', url: 'https://calcuzy.app' },
-  { name: 'Blog', url: 'https://calcuzy.app/blog' },
-  { name: 'BMI Calculator Guide', url: 'https://calcuzy.app/blog/bmi-calculator-guide' }
-])
-
-const webPageSchema = createWebPageSchema({
-  name: 'BMI Calculator Guide',
-  description: 'How Body Mass Index is calculated, what the categories mean, and when BMI is—and is not—a useful health screen.',
-  url: 'https://calcuzy.app/blog/bmi-calculator-guide'
+const schemas = buildBlogGuideSchemas({
+  slug: guide.slug,
+  headline: guide.title,
+  description: guide.excerpt,
+  datePublished: '2024-01-15',
+  dateModified: '2026-03-18',
+  image: guide.ogImage,
+  faqs: faqData,
 })
-
-const faqSchema = createFAQSchema(faqData)
 
 export default function BMICalculatorGuide() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <BlogGuideJsonLd schemas={schemas} />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <Navbar />
         

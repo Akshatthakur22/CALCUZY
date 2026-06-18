@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   description: 'Free countdown timers for all major holidays and events. Track days until Christmas, New Year, Halloween, Easter, Thanksgiving, Black Friday, and more. Accurate, real-time countdowns with timezone support.',
   keywords: 'countdown timers, holiday countdown, days until christmas, new year countdown, halloween countdown, event timers, holiday tracker',
   url: 'https://calcuzy.app/countdowns',
-  image: '/og/og-countdowns.svg',
+  image: '/og/og-countdowns.png',
 })
 
 const countdowns = [

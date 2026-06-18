@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Browse baby girl name ideas in traditional, modern, and unique styles. Inspiration lists—not official popularity rankings.',
   keywords: 'baby girl names, girl names, unique girl names, popular girl names, baby name ideas',
   url: 'https://calcuzy.app/baby-girl-names',
-  image: '/og/og-names.svg',
+  image: '/og/og-names.png',
 })
 
 const config = {

@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Graduation quotes for cards, speeches, and social posts. Themes include achievement, the future, and learning.',
   keywords: 'graduation quotes, commencement quotes, graduation wishes, senior quotes, class of quotes',
   url: 'https://calcuzy.app/graduation-quotes',
-  image: '/og/og-quotes.svg',
+  image: '/og/og-quotes.png',
 })
 
 const config = {

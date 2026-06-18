@@ -7,32 +7,21 @@ import RelatedTools from '@/components/RelatedTools'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import HowItWorks from '@/components/HowItWorks'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
-import { createMetadata, createToolSchema, createFAQSchema, createBreadcrumbSchema } from '@/lib/metadata'
+import GuideLink from '@/components/GuideLink'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Rent Affordability Calculator',
   description: 'See how much rent fits your budget using the 30% guideline, your income, and monthly expenses. Estimate only—not financial advice.',
   keywords: 'rent affordability calculator, how much rent can I afford, 30 percent rule, rent budget, housing affordability',
   url: 'https://calcuzy.app/rent-affordability-calculator',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function RentAffordabilityCalculatorPage() {
-  const structuredData = createToolSchema({
-    name: 'Rent Affordability Calculator',
-    description: 'Estimate affordable rent based on gross monthly income, other expenses, and a configurable percentage guideline.',
-    url: 'https://calcuzy.app/rent-affordability-calculator',
-    category: 'FinanceApplication',
-    features: ['30% rule default', 'Custom rent percentage', 'Expense adjustment', 'Affordability status', 'Remaining income']
-  })
-
-  const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: 'https://calcuzy.app' },
-    { name: 'Tools', url: 'https://calcuzy.app/tools' },
-    { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
-    { name: 'Rent Affordability Calculator', url: 'https://calcuzy.app/rent-affordability-calculator' }
-  ])
-
   const faqData = [
     {
       question: 'How does this calculator work?',
@@ -59,8 +48,6 @@ export default function RentAffordabilityCalculatorPage() {
       answer: 'No. This is a simple budgeting estimate. Landlords, lenders, and local programs may use different criteria. Speak with a housing counselor or financial advisor for decisions that affect your lease or long-term finances.'
     }
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Enter gross income', description: 'Input your total monthly income before taxes.' },
@@ -93,20 +80,29 @@ export default function RentAffordabilityCalculatorPage() {
     }
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Rent Affordability Calculator',
+      description: 'Estimate affordable rent based on gross monthly income, other expenses, and a configurable percentage guideline.',
+      url: 'https://calcuzy.app/rent-affordability-calculator',
+      category: 'FinanceApplication',
+      features: ['30% rule default', 'Custom rent percentage', 'Expense adjustment', 'Affordability status', 'Remaining income'],
+    },
+    breadcrumbItems: [
+      { name: 'Home', url: 'https://calcuzy.app' },
+      { name: 'Tools', url: 'https://calcuzy.app/tools' },
+      { name: 'Finance', url: 'https://calcuzy.app/tools#finance' },
+      { name: 'Rent Affordability Calculator', url: 'https://calcuzy.app/rent-affordability-calculator' },
+    ],
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['rent-affordability-calculator'].howTo,
+    calculateAction: CALCULATOR_SEO['rent-affordability-calculator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">
@@ -142,6 +138,7 @@ export default function RentAffordabilityCalculatorPage() {
           <p className="text-slate-600 mb-4">
             Location matters: market rents in some cities push households above 30% without other options. Use this calculator to see your numbers, then weigh commute costs, utilities, debt payments, and emergency savings—not the headline rent alone.
           </p>
+          <GuideLink toolPath="/rent-affordability-calculator" />
         </section>
 
         <AdUnit slot={2} />

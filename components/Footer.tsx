@@ -10,6 +10,7 @@ const footerLinks = {
   ],
   explore: [
     { href: '/tools', label: 'All Tools' },
+    { href: '/blog', label: 'Guides & Blog' },
     { href: '/countdowns', label: 'Countdowns' },
     { href: '/names', label: 'Name Generators' },
     { href: '/quotes', label: 'Quotes' },

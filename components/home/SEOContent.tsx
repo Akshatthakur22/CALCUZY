@@ -96,6 +96,35 @@ export default function SEOContent() {
               Unlike many online tool platforms, Calcuzy runs calculations in your browser whenever possible, so sensitive inputs do not need to be sent to our servers. We do not require accounts, and we describe our limited analytics practices in our Privacy Policy.
             </p>
             
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">In-Depth Guides for Key Tools</h3>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              Beyond quick calculations, we publish detailed guides that explain the concepts behind our most-used tools. Read the{' '}
+              <Link href="/blog/capital-gains-tax-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
+                capital gains tax guide
+              </Link>
+              ,{' '}
+              <Link href="/blog/crypto-tax-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
+                crypto tax guide
+              </Link>
+              ,{' '}
+              <Link href="/blog/rent-affordability-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
+                rent affordability guide
+              </Link>
+              ,{' '}
+              <Link href="/blog/will-writing-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
+                will writing guide
+              </Link>
+              , and{' '}
+              <Link href="/blog/bmi-calculator-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
+                BMI calculator guide
+              </Link>
+              {' '}on our{' '}
+              <Link href="/blog/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
+                blog
+              </Link>
+              —each links to a free calculator you can use immediately.
+            </p>
+
             <h3 className="text-xl font-semibold text-slate-800 mb-4">Clear Formulas and Practical Guides</h3>
             <p className="text-slate-600 mb-6 leading-relaxed">
               Each tool uses published formulas and widely accepted guidelines where applicable. For example, our BMI calculator references WHO and CDC categories, and our finance tools are intended as educational starting points—not professional tax or financial advice. We improve tools over time based on feedback and updated public guidance.

@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description: 'Browse motivational quotes about success, perseverance, and achievement. Short sayings for cards, captions, and daily inspiration.',
   keywords: 'motivational quotes, success quotes, inspirational quotes, perseverance quotes, achievement quotes',
   url: 'https://calcuzy.app/motivational-quotes',
-  image: '/og/og-quotes.svg',
+  image: '/og/og-quotes.png',
 })
 
 const config = {

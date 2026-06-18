@@ -4,25 +4,20 @@ import RandomNumberClient from '@/components/client/RandomNumberClient'
 import RelatedTools from '@/components/RelatedTools'
 import ToolInfo from '@/components/ToolInfo'
 import AdUnit from '@/components/AdUnit'
-import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Random Number Generator - Generate Random Numbers Instantly',
   description: 'Generate random numbers instantly with customizable range and quantity. Perfect for games, contests, statistics, random selection, and decision making. Cryptographically secure, mobile-friendly, and completely free.',
   keywords: 'random number generator, generate random numbers, random number tool, lottery number generator, dice roller, random picker, number generator',
   url: 'https://calcuzy.app/random-number-generator',
-  image: '/og/og-tools.svg',
+  image: '/og/og-tools.png',
 })
 
 export default function RandomNumberGenerator() {
-  const structuredData = createToolSchema({
-    name: 'Random Number Generator',
-    description: 'Generate random numbers instantly with customizable range and quantity for games, contests, and statistics',
-    url: 'https://calcuzy.app/random-number-generator',
-    category: 'UtilityApplication',
-    features: ['Custom range selection', 'Multiple number generation', 'Instant results', 'Copy to clipboard', 'Mobile-friendly']
-  })
-
   const faqData = [
     {
       question: 'How random are the numbers generated?',
@@ -70,8 +65,6 @@ export default function RandomNumberGenerator() {
     }
   ]
 
-  const faqSchema = createFAQSchema(faqData)
-
   const steps = [
     { title: 'Set Minimum Value', description: 'Enter the lowest possible number you want in your range (e.g., 1 for dice rolls).' },
     { title: 'Set Maximum Value', description: 'Enter the highest possible number you want (e.g., 6 for a standard die, 100 for percentages).' },
@@ -86,16 +79,23 @@ export default function RandomNumberGenerator() {
     'Results are instantly copyable for easy sharing or documentation'
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Random Number Generator',
+      description: 'Generate random numbers instantly with customizable range and quantity for games, contests, and statistics',
+      url: 'https://calcuzy.app/random-number-generator',
+      category: 'UtilityApplication',
+      features: ['Custom range selection', 'Multiple number generation', 'Instant results', 'Copy to clipboard', 'Mobile-friendly'],
+    },
+    faqs: faqData,
+    howToSteps: steps,
+    howTo: CALCULATOR_SEO['random-number-generator'].howTo,
+    calculateAction: CALCULATOR_SEO['random-number-generator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">

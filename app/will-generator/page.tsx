@@ -6,25 +6,21 @@ import ToolInfo from '@/components/ToolInfo'
 import RelatedTools from '@/components/RelatedTools'
 import HowItWorks from '@/components/HowItWorks'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
-import { createMetadata, createToolSchema, createFAQSchema } from '@/lib/metadata'
+import GuideLink from '@/components/GuideLink'
+import ToolJsonLd from '@/components/ToolJsonLd'
+import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
+import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Will Generator',
   description: 'Draft a basic last will and testament template with beneficiaries, assets, and an executor. Free starting point for simple estates—not a substitute for an attorney.',
   keywords: 'will generator, last will and testament, basic will template, estate planning, beneficiary designation, executor appointment',
   url: 'https://calcuzy.app/will-generator',
-  image: '/og/og-legal.svg',
+  image: '/og/og-legal.png',
 })
 
 export default function WillGeneratorPage() {
-  const structuredData = createToolSchema({
-    name: 'Will Generator',
-    description: 'Create a simple last will and testament template with beneficiaries, asset bequests, and an executor designation.',
-    url: 'https://calcuzy.app/will-generator',
-    category: 'UtilityApplication',
-    features: ['Beneficiary percentages', 'Specific asset bequests', 'Executor appointment', 'Special wishes', 'Copy to clipboard']
-  })
-
   const faqData = [
     {
       question: 'What is a last will and testament?',
@@ -51,8 +47,6 @@ export default function WillGeneratorPage() {
       answer: 'Consider professional help if you have minor children, own a business, hold property in multiple states, have a high net worth, need a trust, or want to minimize estate taxes. An attorney can ensure your documents meet state law and reflect your full situation.'
     }
   ]
-
-  const faqSchema = createFAQSchema(faqData)
 
   const steps = [
     { title: 'Enter your name', description: 'Provide your full legal name as it should appear on the document.' },
@@ -85,16 +79,23 @@ export default function WillGeneratorPage() {
     }
   ]
 
+  const schemas = buildToolPageSchemas({
+    tool: {
+      name: 'Will Generator',
+      description: 'Create a simple last will and testament template with beneficiaries, asset bequests, and an executor designation.',
+      url: 'https://calcuzy.app/will-generator',
+      category: 'UtilityApplication',
+      features: ['Beneficiary percentages', 'Specific asset bequests', 'Executor appointment', 'Special wishes', 'Copy to clipboard'],
+    },
+    faqs: faqData,
+    howToSteps: howItWorksSteps,
+    howTo: CALCULATOR_SEO['will-generator'].howTo,
+    calculateAction: CALCULATOR_SEO['will-generator'].calculateAction,
+  })
+
   return (
     <div className="min-h-screen bg-primary-bg fade-in">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <ToolJsonLd schemas={schemas} />
       <Navbar />
       
       <main className="container section-responsive">
@@ -123,6 +124,7 @@ export default function WillGeneratorPage() {
           <p className="text-slate-600 mb-4">
             Many adults benefit from having a will, especially parents, homeowners, and anyone with clear preferences for their property. State law applies if you die without one. This generator is best for simple situations; trusts, guardianship clauses, and tax planning require professional guidance.
           </p>
+          <GuideLink toolPath="/will-generator" />
         </section>
 
         <AdUnit slot={2} />

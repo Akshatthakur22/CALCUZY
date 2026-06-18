@@ -9,7 +9,7 @@ export const metadata = createMetadata({
     "Have feedback, suggestions, or questions? Contact Calcuzy.app founder Akshat Thakur directly. I personally read and respond to every message about tools, bugs, or feature requests.",
   keywords: "contact calcuzy, akshat thakur contact, calcuzy support, feedback calcuzy, report bug calcuzy, tool suggestions",
   url: "https://calcuzy.app/contact",
-  image: "/og/og-default.svg",
+  image: "/og/og-default.png",
 })
 
 export default function ContactPage() {

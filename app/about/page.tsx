@@ -9,7 +9,7 @@ export const metadata = createMetadata({
     "Learn about Calcuzy.app, the vision of founder Akshat Thakur. Discover our mission, values, and how a solo developer built 31 free, privacy-first calculators, converters, and everyday tools.",
   keywords: "about calcuzy, calcuzy founder, akshat thakur, free calculators, online tools, privacy-first, mission, story, toolbox, utility platform",
   url: "https://calcuzy.app/about",
-  image: "/og/og-default.svg",
+  image: "/og/og-default.png",
 })
 
 export default function AboutPage() {

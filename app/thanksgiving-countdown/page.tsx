@@ -8,7 +8,7 @@ export const metadata = createMetadata({
   description: thanksgivingCountdown.description,
   keywords: thanksgivingCountdown.keywords,
   url: `https://calcuzy.app${thanksgivingCountdown.slug}`,
-  image: '/og/og-countdowns.svg',
+  image: '/og/og-countdowns.png',
 })
 
 export default function ThanksgivingCountdown() {

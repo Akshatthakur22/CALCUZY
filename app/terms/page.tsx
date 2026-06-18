@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   description: 'Official Terms of Service for Calcuzy.app. Understand acceptable use, user responsibilities, disclaimers, and your rights while using our 31 free online tools and calculators.',
   keywords: 'terms of service, calcuzy terms, user agreement, acceptable use, online tools terms, calculator terms',
   url: 'https://calcuzy.app/terms',
-  image: '/og/og-default.svg',
+  image: '/og/og-default.png',
 })
 
 export default function TermsPage() {

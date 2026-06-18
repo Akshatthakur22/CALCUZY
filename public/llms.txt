@@ -1,0 +1,73 @@
+# Calcuzy — Free Online Tools Platform
+# https://calcuzy.app/
+
+> Calcuzy is a free, fast, privacy-first online tools platform with calculators,
+> converters, finance tools, legal document generators, countdown timers, name lists,
+> and quote collections. No signup required. US-focused finance and tax tools use
+> current federal bracket guidance with clear YMYL disclaimers.
+
+## Core Calculators
+- BMI Calculator: https://calcuzy.app/bmi-calculator/
+- Age Calculator: https://calcuzy.app/age-calculator/
+- Date Difference Calculator: https://calcuzy.app/date-difference/
+- Ovulation Calculator: https://calcuzy.app/ovulation-calculator/
+- Unit Converter: https://calcuzy.app/unit-converter/
+- Random Number Generator: https://calcuzy.app/random-number-generator/
+- Password Tools: https://calcuzy.app/password-tools/
+- Paint Cost Calculator: https://calcuzy.app/paint-cost-calculator/
+
+## Finance Tools
+- Capital Gains Tax Calculator: https://calcuzy.app/capital-gains-calculator/
+- Crypto Tax Calculator: https://calcuzy.app/crypto-tax-calculator/
+- Index Fund Return Calculator: https://calcuzy.app/index-fund-return-calculator/
+- Property Tax Estimator: https://calcuzy.app/property-tax-estimator/
+- Rent Affordability Calculator: https://calcuzy.app/rent-affordability-calculator/
+
+## Legal Tools
+- Will Generator: https://calcuzy.app/will-generator/
+- NDA Generator: https://calcuzy.app/nda-generator/
+
+## Countdown Timers
+- All Countdowns: https://calcuzy.app/countdowns/
+- Days Until Christmas: https://calcuzy.app/days-until-christmas/
+- Days Until New Year: https://calcuzy.app/days-until-new-year/
+- Days Until Halloween: https://calcuzy.app/days-until-halloween/
+- Thanksgiving Countdown: https://calcuzy.app/thanksgiving-countdown/
+- Easter Countdown: https://calcuzy.app/easter-countdown/
+- Black Friday Countdown: https://calcuzy.app/black-friday-countdown/
+
+## Names
+- All Name Lists: https://calcuzy.app/names/
+- Baby Boy Names: https://calcuzy.app/baby-boy-names/
+- Baby Girl Names: https://calcuzy.app/baby-girl-names/
+- Dog Names: https://calcuzy.app/dog-names/
+- Cat Names: https://calcuzy.app/cat-names/
+- American Last Names: https://calcuzy.app/american-last-names/
+
+## Quotes
+- All Quotes: https://calcuzy.app/quotes/
+- Motivational Quotes: https://calcuzy.app/motivational-quotes/
+- Love Quotes: https://calcuzy.app/love-quotes/
+- Aesthetic Quotes: https://calcuzy.app/aesthetic-quotes/
+- Christmas Quotes: https://calcuzy.app/christmas-quotes/
+- Graduation Quotes: https://calcuzy.app/graduation-quotes/
+
+## Guides
+- Blog: https://calcuzy.app/blog/
+- BMI Calculator Guide: https://calcuzy.app/blog/bmi-calculator-guide/
+- Capital Gains Tax Guide: https://calcuzy.app/blog/capital-gains-tax-guide/
+- Crypto Tax Guide: https://calcuzy.app/blog/crypto-tax-guide/
+- Will Writing Guide: https://calcuzy.app/blog/will-writing-guide/
+- Rent Affordability Guide: https://calcuzy.app/blog/rent-affordability-guide/
+
+## Directory
+- All Tools: https://calcuzy.app/tools/
+
+## About & Trust
+- About Calcuzy: https://calcuzy.app/about/
+- Contact: https://calcuzy.app/contact/
+- Privacy Policy: https://calcuzy.app/privacy-policy/
+- Terms of Service: https://calcuzy.app/terms/
+
+## Sitemap
+- https://calcuzy.app/sitemap.xml

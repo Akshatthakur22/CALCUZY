@@ -4,7 +4,8 @@ import Footer from '@/components/Footer'
 import AdPlaceholder from '@/components/home/AdPlaceholder'
 import TrustSection from '@/components/home/TrustSection'
 import SEOContent from '@/components/home/SEOContent'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, createFAQSchema, createWebSiteSchema, createOrganizationSchema } from '@/lib/metadata'
+import { homepageFaqs } from '@/lib/homepage-faqs'
 import { Metadata } from 'next'
 
 // Dynamic imports for heavy client components to improve initial load
@@ -78,30 +79,13 @@ export const metadata: Metadata = createMetadata({
   description: 'Smart calculators, generators, converters, finance tools, legal tools, naming tools, and daily utilities — all free, fast, and beautifully designed.',
   keywords: 'online tools platform, calculators, generators, converters, finance tools, legal tools, name generators, countdown timers, security tools, content tools, BMI calculator, age calculator, will generator, capital gains calculator',
   url: 'https://calcuzy.app',
-  image: '/og/og-default.svg',
+  image: '/og/og-default.png',
 })
 
 export default function HomePage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Calcuzy",
-    "description": "Free online tools platform with 31 calculators, generators, and utilities",
-    "url": "https://calcuzy.app",
-    "sameAs": [
-      "https://twitter.com/calcuzy",
-      "https://github.com/calcuzy"
-    ]
-  }
-
-  const organizationData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Calcuzy",
-    "url": "https://calcuzy.app",
-    "logo": "https://calcuzy.app/logo.svg",
-    "description": "Free online tools platform with 31 calculators, generators, and utilities"
-  }
+  const faqSchema = createFAQSchema(homepageFaqs)
+  const structuredData = createWebSiteSchema()
+  const organizationData = createOrganizationSchema()
 
   return (
     <div className="min-h-screen bg-white">
@@ -113,6 +97,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
       <Navbar />

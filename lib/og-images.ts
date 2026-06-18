@@ -1,14 +1,14 @@
-/** Open Graph image paths (SVG assets in /public/og/) */
+/** Open Graph image paths (PNG preferred for social crawlers; SVG fallbacks in /public/og/) */
 export const OG_IMAGES = {
-  default: '/og/og-default.svg',
-  tools: '/og/og-tools.svg',
-  finance: '/og/og-finance.svg',
-  health: '/og/og-health.svg',
-  legal: '/og/og-legal.svg',
-  home: '/og/og-home.svg',
-  quotes: '/og/og-quotes.svg',
-  names: '/og/og-names.svg',
-  countdowns: '/og/og-countdowns.svg',
+  default: '/og/og-default.png',
+  tools: '/og/og-tools.png',
+  finance: '/og/og-finance.png',
+  health: '/og/og-health.png',
+  legal: '/og/og-legal.png',
+  home: '/og/og-home.png',
+  quotes: '/og/og-quotes.png',
+  names: '/og/og-names.png',
+  countdowns: '/og/og-countdowns.png',
 } as const
 
 export function getOpenGraphImageType(imagePath: string): string {
