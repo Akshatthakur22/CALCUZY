@@ -215,8 +215,6 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        <AdUnit slot={2} format="rectangle" />
-
         {/* Guides paired with tools */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
@@ -264,101 +262,39 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* Comprehensive Content Section */}
+        {/* About the toolkit */}
         <section className="py-12 md:py-16 bg-slate-50/50">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
-                Why Choose Calcuzy's Online Tools?
+            <div className="max-w-4xl mx-auto prose prose-slate">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+                How to use these tools
               </h2>
-              
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Industry-Leading Accuracy</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">
-                    Every tool in our collection is developed using industry-standard algorithms and validated against professional benchmarks. Our financial calculators incorporate current tax laws and market practices, while our health tools follow WHO and CDC guidelines. This commitment to accuracy ensures you can rely on our results for important decisions.
-                  </p>
-                  <ul className="space-y-2 text-slate-600">
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Expert-reviewed algorithms and formulas</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Regular updates with latest standards</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Professional-grade precision</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Privacy-First Architecture</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">
-                    Unlike many online tool platforms, we never store your personal information or track your usage. All calculations happen directly in your browser using client-side processing. This means your sensitive financial data, health information, and personal details never leave your device, providing complete privacy and security.
-                  </p>
-                  <ul className="space-y-2 text-slate-600">
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>100% client-side processing</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>No data collection or storage</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>GDPR and privacy law compliant</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Comprehensive Tool Coverage</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">
-                    Our platform covers every major category of online tools you might need. From complex financial calculations like crypto tax and capital gains to everyday utilities like age calculators and unit converters, we've consolidated everything you need in one convenient location. This eliminates the need to bookmark multiple sites or switch between different applications.
-                  </p>
-                  <ul className="space-y-2 text-slate-600">
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>31 specialized tools across multiple categories</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Regular additions based on user feedback</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Tools for personal and professional use</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Mobile-Optimized Experience</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">
-                    Every tool is fully responsive and optimized for mobile devices. Whether you're calculating BMI at the gym, determining investment returns during your commute, or generating legal documents from your home office, our tools work seamlessly across all devices. This mobile-first approach ensures you have access to professional tools wherever and whenever you need them.
-                  </p>
-                  <ul className="space-y-2 text-slate-600">
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Fully responsive design</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Touch-optimized interfaces</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Instant loading on any device</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <p className="text-slate-600 leading-relaxed">
+                Each calculator page includes a short guide: the formula or method used, step-by-step instructions,
+                worked examples, limitations, and links to official references where they exist (IRS publications, WHO/CDC
+                guidance, HUD rent benchmarks, and similar sources). Results are educational starting points—not tax,
+                legal, or medical advice.
+              </p>
+              <h3 className="text-xl font-semibold text-slate-800 mt-8 mb-3">Privacy</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Calculator inputs run in your browser when possible. We do not require an account. See our{' '}
+                <Link href="/privacy-policy/" className="text-blue-600 hover:underline">
+                  Privacy Policy
+                </Link>{' '}
+                for analytics and advertising disclosures.
+              </p>
+              <h3 className="text-xl font-semibold text-slate-800 mt-8 mb-3">Found a bug or need a tool?</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Calcuzy is maintained by{' '}
+                <Link href="/about/" className="text-blue-600 hover:underline">
+                  Akshat Thakur
+                </Link>
+                . Send feedback through the{' '}
+                <Link href="/contact/" className="text-blue-600 hover:underline">
+                  contact page
+                </Link>
+                —feature requests and corrections are welcome.
+              </p>
             </div>
           </div>
         </section>

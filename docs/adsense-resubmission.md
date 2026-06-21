@@ -25,7 +25,7 @@ We addressed the "Low value content" policy issue on calcuzy.app with the follow
 
 2. Removed low-quality filler — Replaced generic marketing copy and inaccurate claims (e.g., "cryptographically secure" on the random number tool) with accurate, user-first explanations.
 
-3. Thin list pages — Name and quote list pages (e.g., /love-quotes/) are set to noindex and removed from sitemap so Google focuses on our calculator and blog content.
+3. Thin list pages — Name, quote, and individual holiday countdown pages (e.g., /love-quotes/, /days-until-christmas/) are set to noindex and removed from sitemap so Google focuses on our calculator and blog content.
 
 4. Privacy Policy — Added a Google AdSense section with cookie disclosure and opt-out links per Google publisher requirements.
 

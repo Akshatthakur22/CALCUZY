@@ -31,12 +31,6 @@ const toolPages: PageEntry[] = [
   { path: '/password-tools', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/will-generator', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/nda-generator', priority: 0.9, changeFrequency: 'monthly' },
-  { path: '/days-until-christmas', priority: 0.8, changeFrequency: 'weekly' },
-  { path: '/days-until-new-year', priority: 0.8, changeFrequency: 'weekly' },
-  { path: '/days-until-halloween', priority: 0.7, changeFrequency: 'weekly' },
-  { path: '/thanksgiving-countdown', priority: 0.7, changeFrequency: 'weekly' },
-  { path: '/easter-countdown', priority: 0.7, changeFrequency: 'weekly' },
-  { path: '/black-friday-countdown', priority: 0.7, changeFrequency: 'weekly' },
 ]
 
 const categoryPages: PageEntry[] = [

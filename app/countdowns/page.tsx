@@ -106,69 +106,39 @@ export default function CountdownsPage() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight tracking-tight">
                 Countdown Timers
               </h1>
-              <div className="prose prose-lg max-w-none mb-8">
-                <p className="paragraph">
-                  Countdown timers serve as powerful tools for anticipation, planning, and celebration. Whether you're counting down to major holidays, tracking special events, or managing deadlines, our comprehensive collection of countdown timers provides precise, real-time tracking that helps you prepare and make the most of every moment. These tools combine accuracy with user-friendly design, ensuring you never miss an important date or celebration again.
-                </p>
-                
-                <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 mb-8">
-                  <h3 className="text-xl font-semibold text-blue-900 mb-4">Why Countdown Timers Matter</h3>
-                  <ul className="space-y-3 text-blue-800">
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold mt-1">•</span>
-                      <span><strong>Event Planning:</strong> Countdowns help with preparation, scheduling, and coordination of celebrations and deadlines</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold mt-1">•</span>
-                      <span><strong>Anticipation Building:</strong> Creates excitement and psychological preparation for upcoming events</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold mt-1">•</span>
-                      <span><strong>Time Management:</strong> Provides clear timeline visualization for project planning and goal setting</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold mt-1">•</span>
-                      <span><strong>Shared Experience:</strong> Enables groups to synchronize countdowns for collective anticipation</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <h3 className="text-xl font-semibold text-slate-800 mb-4">Types of Countdown Timers & Their Applications</h3>
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-3">Holiday Countdowns</h4>
-                    <p className="text-slate-700 mb-4">Track major holidays like Christmas, New Year, Halloween, Easter, Thanksgiving, and more. Perfect for holiday planning, gift preparation, and celebration coordination.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-3">Event Countdowns</h4>
-                    <p className="text-slate-700 mb-4">Count down to weddings, birthdays, conferences, concerts, and personal milestones. Ideal for event planning and deadline tracking.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-3">Personal Countdowns</h4>
-                    <p className="text-slate-700 mb-4">Track fitness goals, project deadlines, savings targets, and personal objectives. Great for motivation and time management.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-3">Business Countdowns</h4>
-                    <p className="text-slate-700 mb-4">Product launches, marketing campaigns, quarterly reviews, and fiscal year endings. Essential for business planning and team coordination.</p>
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-semibold text-slate-800 mb-4">Features of Our Countdown Timers</h3>
-                <p className="paragraph mb-6">
-                  Our countdown timers are designed with precision and user experience in mind. Each timer features automatic timezone detection, real-time updates every second, and responsive design that works perfectly on all devices. The interface displays days, hours, minutes, and seconds in a clear, readable format, making it easy to see exactly how much time remains at a glance. Additional features include the ability to share countdowns on social media, set notifications, and customize display preferences.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-slate-800 mb-4">The Psychology of Countdown Timers</h3>
-                <p className="paragraph mb-6">
-                  Research shows that countdown timers tap into fundamental human psychology of anticipation and time perception. The visual representation of decreasing time creates urgency and motivation, while the structured timeline helps reduce anxiety about upcoming events. Countdowns also leverage the "goal gradient" effect—where motivation increases as the target date approaches—making them particularly effective for habit formation and deadline achievement. This psychological understanding explains why countdown timers are so popular for everything from New Year's resolutions to product launches.
-                </p>
-                
-                <p className="paragraph">
-                  Whether you're planning a major holiday celebration, tracking a personal goal, or coordinating with others, our countdown timers provide the structure and motivation needed to make every moment count. Explore our collection to find the perfect timer for your needs and start building anticipation for your next big moment.
-                </p>
-              </div>
+              <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+                Live holiday timers that show days, hours, minutes, and seconds until a fixed date in your local timezone.
+                Useful for general planning—confirm store hours, travel, and broadcast times separately when precision matters.
+              </p>
             </div>
           </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-12 prose prose-slate">
+          <h2 className="text-xl font-semibold text-slate-900">How these timers work</h2>
+          <ol className="text-slate-600 space-y-2">
+            <li>
+              <strong>Pick a holiday</strong> — each page targets one calendar date (for example December 25 for Christmas).
+            </li>
+            <li>
+              <strong>Uses your device clock</strong> — remaining time is calculated in your browser&apos;s local timezone.
+            </li>
+            <li>
+              <strong>Updates while open</strong> — the display refreshes every second until you close the tab.
+            </li>
+            <li>
+              <strong>Verify moving dates</strong> — Easter and Thanksgiving follow calendar rules that change each year.
+            </li>
+          </ol>
+          <h2 className="text-xl font-semibold text-slate-900 mt-8">What they are not</h2>
+          <p className="text-slate-600">
+            These are simple planning widgets, not official event schedules. Retailers, schools, and broadcasters set their
+            own hours. For budgeting around holidays, use our{' '}
+            <Link href="/tools/" className="text-blue-600 hover:underline">
+              finance and home calculators
+            </Link>
+            .
+          </p>
         </section>
 
         <AdUnit slot={1} format="horizontal" />
@@ -224,8 +194,6 @@ export default function CountdownsPage() {
             </div>
           </div>
         </section>
-
-        <AdUnit slot={2} format="rectangle" />
 
         {/* Info Section */}
         <section className="py-12 md:py-16 bg-slate-50/50">

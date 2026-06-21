@@ -4,6 +4,7 @@ import { createMetadata } from '@/lib/metadata'
 import { blackFridayCountdown } from '@/lib/countdown-page-content'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: blackFridayCountdown.title,
   description: blackFridayCountdown.description,
   keywords: blackFridayCountdown.keywords,

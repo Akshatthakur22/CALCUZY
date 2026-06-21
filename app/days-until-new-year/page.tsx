@@ -4,6 +4,7 @@ import { createMetadata } from '@/lib/metadata'
 import { newYearCountdown } from '@/lib/countdown-page-content'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: newYearCountdown.title,
   description: newYearCountdown.description,
   keywords: newYearCountdown.keywords,
