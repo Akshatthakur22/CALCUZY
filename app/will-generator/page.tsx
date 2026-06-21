@@ -11,6 +11,7 @@ import ToolJsonLd from '@/components/ToolJsonLd'
 import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
 import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
 import { createMetadata } from '@/lib/metadata'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 
 export const metadata = createMetadata({
   title: 'Will Generator',
@@ -128,6 +129,8 @@ export default function WillGeneratorPage() {
         </section>
 
         <AdUnit slot={2} />
+
+                <ToolEducationalGuide slug="will-generator" />
 
         <HowItWorks
           title="How This Tool Works"

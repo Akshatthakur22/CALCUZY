@@ -6,146 +6,102 @@ export default function SEOContent() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            The Complete Online Tools Platform for Modern Life
+            Free calculators and tools — built to be useful, not noisy
           </h2>
-          
+
           <div className="prose prose-slate max-w-none">
             <p className="text-slate-600 mb-6 leading-relaxed">
-              In today&apos;s fast-paced digital world, having access to reliable online tools is essential for both personal and professional success. Calcuzy has emerged as the premier all-in-one platform that brings together every conceivable utility you might need, from complex financial calculations to simple everyday conversions. Our comprehensive suite of tools eliminates the need to bookmark multiple websites or switch between different applications, providing a seamless experience that saves time and boosts productivity.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Why Choose Calcuzy for Your Online Tool Needs?</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              What sets Calcuzy apart is our unwavering commitment to excellence in every tool we offer. Whether you&apos;re using our{' '}
-              <Link href="/bmi-calculator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                free BMI calculator for health monitoring
+              Calcuzy is a collection of free online calculators, converters, and document templates created by{' '}
+              <Link href="/about/" className="text-blue-600 hover:underline">
+                Akshat Thakur
               </Link>
-              , determining{' '}
-              <Link href="/capital-gains-calculator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                capital gains taxes for investment planning
-              </Link>
-              , or generating a{' '}
-              <Link href="/will-generator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                legal will for estate planning
-              </Link>
-              , each tool is built for accuracy and ease of use. Calcuzy is a solo-built project designed for students, professionals, and anyone who needs a quick, reliable calculator or converter without signing up.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Comprehensive Calculator Suite for Every Need</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              The breadth of our calculator offerings is unmatched in the online tools space. Our calculators category covers everything from basic arithmetic to complex financial modeling, including our popular{' '}
-              <Link href="/age-calculator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                age calculator that provides precise breakdowns in years, months, and days
-              </Link>
-              , BMI calculators for health tracking, and sophisticated investment calculators for financial planning. Our{' '}
-              <Link href="/days-until-christmas" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                countdown timers for Christmas
-              </Link>
-              {' '}and other holidays help users stay organized and prepared for important events.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Advanced Financial Tools for Smart Money Management</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Finance tools represent one of our most robust categories, featuring{' '}
-              <Link href="/crypto-tax-calculator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                crypto tax calculators
-              </Link>
-              {' '}that simplify complex tax computations,{' '}
-              <Link href="/index-fund-return-calculator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                investment return calculators
-              </Link>
-              {' '}that help users make informed financial decisions, and budget planners that enable better money management. These tools are particularly valuable for individuals navigating the complexities of personal finance, small business owners managing their accounts, and investors tracking their portfolios.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Home & Living Tools for Everyday Decisions</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Our home and real estate tools category addresses the practical needs of homeowners and renters alike. From{' '}
-              <Link href="/rent-affordability-calculator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                rent affordability calculators
-              </Link>
-              {' '}that help users understand their housing options to{' '}
-              <Link href="/paint-cost-calculator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                paint cost calculators for home improvement planning
-              </Link>
-              , these tools empower users to make informed decisions about their living spaces. The name generators category showcases our creative side, helping users find the perfect{' '}
-              <Link href="/baby-boy-names" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                baby names
-              </Link>
-              ,{' '}
-              <Link href="/dog-names" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                pet names
-              </Link>
-              , and more.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Legal Document Generators for Professional Needs</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              For legal and professional requirements, our platform offers sophisticated document generators including{' '}
-              <Link href="/will-generator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                will generators for estate planning
-              </Link>
-              {' '}and{' '}
-              <Link href="/nda-generator" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                NDA generators for business protection
-              </Link>
-              . These tools provide basic document templates for getting started—they are not a substitute for advice from a qualified attorney.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Privacy-First Approach to Online Tools</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Unlike many online tool platforms, Calcuzy runs calculations in your browser whenever possible, so sensitive inputs do not need to be sent to our servers. We do not require accounts, and we describe our limited analytics practices in our Privacy Policy.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">In-Depth Guides for Key Tools</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Beyond quick calculations, we publish detailed guides that explain the concepts behind our most-used tools. Read the{' '}
-              <Link href="/blog/capital-gains-tax-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                capital gains tax guide
-              </Link>
-              ,{' '}
-              <Link href="/blog/crypto-tax-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                crypto tax guide
-              </Link>
-              ,{' '}
-              <Link href="/blog/rent-affordability-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                rent affordability guide
-              </Link>
-              ,{' '}
-              <Link href="/blog/will-writing-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                will writing guide
-              </Link>
-              , and{' '}
-              <Link href="/blog/bmi-calculator-guide/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                BMI calculator guide
-              </Link>
-              {' '}on our{' '}
-              <Link href="/blog/" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                blog
-              </Link>
-              —each links to a free calculator you can use immediately.
+              . Each tool runs in your browser when possible, so your inputs stay on your device. There is no signup wall and no paywall.
             </p>
 
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Clear Formulas and Practical Guides</h3>
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">What you will find here</h3>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              Each tool uses published formulas and widely accepted guidelines where applicable. For example, our BMI calculator references WHO and CDC categories, and our finance tools are intended as educational starting points—not professional tax or financial advice. We improve tools over time based on feedback and updated public guidance.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Mobile-Optimized Design for On-the-Go Access</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Understanding that modern life requires flexibility, every tool on Calcuzy is fully optimized for mobile devices. Whether you&apos;re calculating BMI at the gym, determining investment returns during your commute, or generating legal documents from your home office, our responsive design ensures a seamless experience across all devices. This mobile-first approach means you have access to professional-grade tools wherever and whenever you need them.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">Community-Driven Development and User Feedback Integration</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Calcuzy evolves based on real user needs and feedback. Our development roadmap is heavily influenced by community suggestions, with new tools being added regularly based on user demand. We maintain an active feedback loop through our contact channels, ensuring that the tools we develop address actual pain points and provide genuine value. This community-centric approach has helped us build a platform that truly serves the diverse needs of our global user base.
-            </p>
-            
-            <p className="text-slate-600 leading-relaxed">
-              Calcuzy is an independent project focused on useful, privacy-conscious online tools. We continue to expand the collection and welcome feedback through our contact page. Browse our{' '}
-              <Link href="/tools" className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-200 hover:decoration-blue-400 transition-colors">
-                full tools directory
+              The finance tools—{' '}
+              <Link href="/rent-affordability-calculator/" className="text-blue-600 hover:underline">
+                rent affordability
               </Link>
-              {' '}to find calculators, converters, and generators in one place.
+              ,{' '}
+              <Link href="/capital-gains-calculator/" className="text-blue-600 hover:underline">
+                capital gains tax
+              </Link>
+              ,{' '}
+              <Link href="/crypto-tax-calculator/" className="text-blue-600 hover:underline">
+                crypto tax
+              </Link>
+              , and{' '}
+              <Link href="/property-tax-estimator/" className="text-blue-600 hover:underline">
+                property tax
+              </Link>
+              —include formulas, worked examples, and links to official sources. They are educational starting points, not professional tax or legal advice.
+            </p>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              Health and everyday tools like the{' '}
+              <Link href="/bmi-calculator/" className="text-blue-600 hover:underline">
+                BMI calculator
+              </Link>
+              ,{' '}
+              <Link href="/age-calculator/" className="text-blue-600 hover:underline">
+                age calculator
+              </Link>
+              , and{' '}
+              <Link href="/unit-converter/" className="text-blue-600 hover:underline">
+                unit converter
+              </Link>{' '}
+              explain how results are calculated and where the method comes from (for example WHO/CDC categories for adult BMI).
+            </p>
+
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">In-depth guides on the blog</h3>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              For topics that need more context, we publish long-form guides on the{' '}
+              <Link href="/blog/" className="text-blue-600 hover:underline">
+                Calcuzy blog
+              </Link>
+              :{' '}
+              <Link href="/blog/rent-affordability-guide/" className="text-blue-600 hover:underline">
+                rent and the 30% rule
+              </Link>
+              ,{' '}
+              <Link href="/blog/capital-gains-tax-guide/" className="text-blue-600 hover:underline">
+                capital gains tax
+              </Link>
+              ,{' '}
+              <Link href="/blog/crypto-tax-guide/" className="text-blue-600 hover:underline">
+                crypto cost basis
+              </Link>
+              ,{' '}
+              <Link href="/blog/bmi-calculator-guide/" className="text-blue-600 hover:underline">
+                BMI explained
+              </Link>
+              , and{' '}
+              <Link href="/blog/will-writing-guide/" className="text-blue-600 hover:underline">
+                basic will writing
+              </Link>
+              . Every guide links back to a free tool you can use immediately.
+            </p>
+
+            <h3 className="text-xl font-semibold text-slate-800 mb-4">How we approach accuracy and privacy</h3>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              Formulas follow published standards where they exist. Finance and legal tools include clear disclaimers. We describe analytics and advertising practices in our{' '}
+              <Link href="/privacy-policy/" className="text-blue-600 hover:underline">
+                Privacy Policy
+              </Link>
+              . If you spot an error or want a new tool,{' '}
+              <Link href="/contact/" className="text-blue-600 hover:underline">
+                send feedback
+              </Link>
+              —many additions on Calcuzy started that way.
+            </p>
+
+            <p className="text-slate-600 leading-relaxed">
+              Browse the full directory on the{' '}
+              <Link href="/tools/" className="text-blue-600 hover:underline">
+                tools page
+              </Link>
+              .
             </p>
           </div>
         </div>

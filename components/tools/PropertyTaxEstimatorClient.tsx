@@ -64,16 +64,6 @@ export default function PropertyTaxEstimatorClient() {
   return (
     <Card className="max-w-4xl mx-auto mb-12">
       <div className="space-y-8">
-        {/* Header */}
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-primary-text mb-2">
-            Property Tax Estimator
-          </h1>
-          <p className="text-secondary-text">
-            Calculate your annual and monthly property taxes with location-based comparisons
-          </p>
-        </div>
-
         {/* Property Information */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold text-primary-text">Property Information</h3>

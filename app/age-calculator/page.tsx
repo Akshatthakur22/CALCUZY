@@ -9,6 +9,7 @@ import HowItWorks from '@/components/HowItWorks'
 import ToolJsonLd from '@/components/ToolJsonLd'
 import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
 import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 
 export { metadata } from './metadata'
 
@@ -126,6 +127,8 @@ export default function AgeCalculator() {
         </section>
 
         <AdUnit slot={2} />
+
+                <ToolEducationalGuide slug="age-calculator" />
 
         <HowItWorks
           title="How This Calculator Works"

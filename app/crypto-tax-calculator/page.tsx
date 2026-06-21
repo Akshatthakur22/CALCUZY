@@ -12,6 +12,7 @@ import ToolJsonLd from '@/components/ToolJsonLd'
 import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
 import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
 import { createMetadata } from '@/lib/metadata'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 
 export const metadata = createMetadata({
   title: 'Crypto Tax Calculator',
@@ -143,6 +144,8 @@ export default function CryptoTaxCalculatorPage() {
         </section>
 
         <AdUnit slot={2} />
+
+                <ToolEducationalGuide slug="crypto-tax-calculator" />
 
         <HowItWorks
           title="How This Calculator Works"

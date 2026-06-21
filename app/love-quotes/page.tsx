@@ -2,6 +2,7 @@ import QuotePageShell from '@/components/QuotePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'Love Quotes',
   description: 'Romantic and relationship quotes for cards, messages, and anniversaries. Short sayings with author credits where known.',
   keywords: 'love quotes, romantic quotes, relationship quotes, anniversary quotes, heartfelt quotes',

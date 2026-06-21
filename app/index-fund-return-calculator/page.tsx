@@ -4,6 +4,7 @@ import Card from '@/components/Card'
 import AdUnit from '@/components/AdUnit'
 import IndexFundReturnCalculatorClient from '@/components/tools/IndexFundReturnCalculatorClient'
 import ToolInfo from '@/components/ToolInfo'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 import RelatedTools from '@/components/RelatedTools'
 import YMYLDisclaimer from '@/components/YMYLDisclaimer'
 import ToolJsonLd from '@/components/ToolJsonLd'
@@ -98,6 +99,8 @@ export default function IndexFundReturnCalculatorPage() {
         </div>
 
         <AdUnit slot={2} />
+
+        <ToolEducationalGuide slug="index-fund-return-calculator" />
 
         {/* Tool Info Section */}
         <div className="mt-16 fade-in-up">

@@ -2,6 +2,7 @@ import QuotePageShell from '@/components/QuotePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'Christmas Quotes',
   description: 'Christmas quotes for cards, family messages, and holiday posts. Traditional, inspirational, and family themes.',
   keywords: 'christmas quotes, holiday wishes, christmas sayings, christmas card messages, festive quotes',

@@ -2,6 +2,7 @@ import NamePageShell from '@/components/NamePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'Baby Boy Names',
   description: 'Browse baby boy name ideas in traditional, modern, and strong styles. Inspiration lists—not official popularity rankings.',
   keywords: 'baby boy names, boy names, unique boy names, popular boy names, baby name ideas',

@@ -1,4 +1,4 @@
-import { ADS_ENABLED } from '@/lib/ads-config'
+import { ADS_ENABLED, MAX_AD_SLOTS_PER_PAGE } from '@/lib/ads-config'
 
 interface AdUnitProps {
   slot: number
@@ -51,7 +51,7 @@ const formatConfig = {
 }
 
 export default function AdUnit({ slot, format = 'responsive', className = '' }: AdUnitProps) {
-  if (!ADS_ENABLED) {
+  if (!ADS_ENABLED || slot > MAX_AD_SLOTS_PER_PAGE) {
     return null
   }
 

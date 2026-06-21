@@ -2,6 +2,7 @@ import NamePageShell from '@/components/NamePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'Cat Names',
   description: 'Browse cat name ideas for male, female, and unisex kittens. Short lists for inspiration—pick a name that is easy to call at home.',
   keywords: 'cat names, kitten names, male cat names, female cat names, unique cat names, pet names',

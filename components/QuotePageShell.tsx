@@ -20,6 +20,7 @@ export interface QuotePageConfig {
   heroDescription: string
   introTitle: string
   introParagraphs: [string, string]
+  editorialNotes?: string[]
   faqs: { question: string; answer: string }[]
   tips: string[]
 }
@@ -65,6 +66,17 @@ export default function QuotePageShell({ config, sections }: QuotePageShellProps
           <p className="paragraph text-center max-w-2xl mx-auto mb-8">{config.heroDescription}</p>
         </div>
 
+        <section className="max-w-3xl mx-auto mb-12 prose prose-slate">
+          <h2 className="text-xl font-semibold text-slate-900 mb-3">{config.introTitle}</h2>
+          <p className="text-slate-600 mb-4">{config.introParagraphs[0]}</p>
+          <p className="text-slate-600 mb-4">{config.introParagraphs[1]}</p>
+          {config.editorialNotes?.map((note) => (
+            <p key={note.slice(0, 30)} className="text-slate-600 mb-4">
+              {note}
+            </p>
+          ))}
+        </section>
+
         <div className="max-w-4xl mx-auto mb-12 space-y-10">
           {sections.map((section) => (
             <div key={section.title}>
@@ -90,14 +102,6 @@ export default function QuotePageShell({ config, sections }: QuotePageShellProps
 
         <AdUnit slot={1} />
 
-        <section className="max-w-3xl mx-auto mt-12 prose prose-slate">
-          <h2 className="text-xl font-semibold text-slate-900 mb-3">{config.introTitle}</h2>
-          <p className="text-slate-600 mb-4">{config.introParagraphs[0]}</p>
-          <p className="text-slate-600 mb-4">{config.introParagraphs[1]}</p>
-        </section>
-
-        <AdUnit slot={2} />
-
         <HowItWorks title="How to Use These Quotes" steps={howItWorksSteps} className="bg-slate-50/50" />
 
         <div className="mt-16 fade-in-up">
@@ -113,8 +117,6 @@ export default function QuotePageShell({ config, sections }: QuotePageShellProps
             tips={config.tips}
           />
         </div>
-
-        <AdUnit slot={3} />
       </main>
 
       <Footer />

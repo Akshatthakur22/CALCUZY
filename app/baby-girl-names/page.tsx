@@ -2,6 +2,7 @@ import NamePageShell from '@/components/NamePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'Baby Girl Names',
   description: 'Browse baby girl name ideas in traditional, modern, and unique styles. Inspiration lists—not official popularity rankings.',
   keywords: 'baby girl names, girl names, unique girl names, popular girl names, baby name ideas',

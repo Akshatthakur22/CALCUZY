@@ -37,16 +37,6 @@ const toolPages: PageEntry[] = [
   { path: '/thanksgiving-countdown', priority: 0.7, changeFrequency: 'weekly' },
   { path: '/easter-countdown', priority: 0.7, changeFrequency: 'weekly' },
   { path: '/black-friday-countdown', priority: 0.7, changeFrequency: 'weekly' },
-  { path: '/dog-names', priority: 0.7, changeFrequency: 'monthly' },
-  { path: '/cat-names', priority: 0.7, changeFrequency: 'monthly' },
-  { path: '/baby-boy-names', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/baby-girl-names', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/american-last-names', priority: 0.6, changeFrequency: 'monthly' },
-  { path: '/motivational-quotes', priority: 0.6, changeFrequency: 'weekly' },
-  { path: '/love-quotes', priority: 0.6, changeFrequency: 'weekly' },
-  { path: '/aesthetic-quotes', priority: 0.6, changeFrequency: 'weekly' },
-  { path: '/christmas-quotes', priority: 0.5, changeFrequency: 'weekly' },
-  { path: '/graduation-quotes', priority: 0.5, changeFrequency: 'monthly' },
 ]
 
 const categoryPages: PageEntry[] = [

@@ -10,6 +10,7 @@ import ToolJsonLd from '@/components/ToolJsonLd'
 import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
 import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
 import { createMetadata } from '@/lib/metadata'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 
 export const metadata = createMetadata({
   title: 'Unit Converter',
@@ -132,6 +133,8 @@ export default function UnitConverter() {
         </section>
 
         <AdUnit slot={2} />
+
+                <ToolEducationalGuide slug="unit-converter" />
 
         <HowItWorks title="How This Converter Works" steps={howItWorksSteps} className="bg-slate-50/50" />
 

@@ -2,6 +2,7 @@ import QuotePageShell from '@/components/QuotePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'Motivational Quotes',
   description: 'Browse motivational quotes about success, perseverance, and achievement. Short sayings for cards, captions, and daily inspiration.',
   keywords: 'motivational quotes, success quotes, inspirational quotes, perseverance quotes, achievement quotes',

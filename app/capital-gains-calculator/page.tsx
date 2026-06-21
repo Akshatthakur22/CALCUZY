@@ -13,6 +13,7 @@ import GuideLink from '@/components/GuideLink'
 import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
 import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
 import { createMetadata } from '@/lib/metadata'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 
 export const metadata = createMetadata({
   title: 'Capital Gains Tax Calculator',
@@ -143,6 +144,8 @@ export default function CapitalGainsCalculatorPage() {
         </section>
 
         <AdUnit slot={2} />
+
+                <ToolEducationalGuide slug="capital-gains-calculator" />
 
         <HowItWorks 
           title="How This Calculator Works"

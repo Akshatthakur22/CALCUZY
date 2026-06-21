@@ -73,9 +73,12 @@ export default function CountdownPageShell({ config, children }: CountdownPageSh
           <p className="text-slate-600 mb-4">{config.introParagraphs[0]}</p>
           <p className="text-slate-600 mb-4">{config.introParagraphs[1]}</p>
           <p className="text-sm text-slate-500">Target: {config.targetDateLabel}</p>
+          <p className="text-slate-600 mt-4">
+            Countdown timers show time remaining until a fixed calendar date in your local timezone. They are useful
+            for general planning—confirm store hours, broadcast times, and travel schedules separately when precision
+            matters.
+          </p>
         </section>
-
-        <AdUnit slot={2} />
 
         <HowItWorks title="How This Countdown Works" steps={howItWorksSteps} className="bg-slate-50/50" />
 
@@ -108,8 +111,6 @@ export default function CountdownPageShell({ config, children }: CountdownPageSh
             tips={config.tips}
           />
         </div>
-
-        <AdUnit slot={3} />
 
         <div className="max-w-4xl mx-auto mt-12 fade-in-up">
           <RelatedTools currentTool={config.slug} category="date-tools" />

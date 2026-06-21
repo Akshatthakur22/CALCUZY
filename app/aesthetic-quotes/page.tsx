@@ -2,6 +2,7 @@ import QuotePageShell from '@/components/QuotePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'Aesthetic Quotes',
   description: 'Quotes about beauty, art, and life for captions and creative projects. Simple lists—no fake design science claims.',
   keywords: 'aesthetic quotes, beauty quotes, art quotes, caption quotes, visual inspiration quotes',

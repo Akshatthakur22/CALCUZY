@@ -10,6 +10,7 @@ import ToolJsonLd from '@/components/ToolJsonLd'
 import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
 import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
 import { createMetadata } from '@/lib/metadata'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 
 export const metadata = createMetadata({
   title: 'Date Difference Calculator',
@@ -137,6 +138,8 @@ export default function DateDifference() {
         </section>
 
         <AdUnit slot={2} />
+
+                <ToolEducationalGuide slug="date-difference" />
 
         <HowItWorks
           title="How This Calculator Works"

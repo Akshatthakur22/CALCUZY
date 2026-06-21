@@ -10,6 +10,7 @@ import ToolJsonLd from '@/components/ToolJsonLd'
 import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
 import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
 import { createMetadata } from '@/lib/metadata'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 
 export const metadata = createMetadata({
   title: 'Password Strength Checker & Hash Generator',
@@ -132,6 +133,8 @@ export default function PasswordToolsPage() {
         </section>
 
         <AdUnit slot={2} />
+
+                <ToolEducationalGuide slug="password-tools" />
 
         <HowItWorks title="How These Tools Work" steps={howItWorksSteps} className="bg-slate-50/50" />
 

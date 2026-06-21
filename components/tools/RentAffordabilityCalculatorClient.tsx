@@ -91,16 +91,6 @@ export default function RentAffordabilityCalculatorClient() {
   return (
     <Card className="max-w-4xl mx-auto mb-12">
       <div className="space-y-8">
-        {/* Header */}
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-primary-text mb-2">
-            Rent Affordability Calculator
-          </h1>
-          <p className="text-secondary-text">
-            Calculate how much rent you can comfortably afford based on your income and expenses
-          </p>
-        </div>
-
         {/* Income Section */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold text-primary-text">Income Information</h3>

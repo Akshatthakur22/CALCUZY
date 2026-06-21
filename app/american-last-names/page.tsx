@@ -2,6 +2,7 @@ import NamePageShell from '@/components/NamePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'American Last Names',
   description: 'Browse common American surnames for genealogy, writing, or general interest. Grouped lists—not a complete census database.',
   keywords: 'american last names, common surnames, US surnames, family names, genealogy surnames',

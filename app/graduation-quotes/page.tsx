@@ -2,6 +2,7 @@ import QuotePageShell from '@/components/QuotePageShell'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
+  noIndex: true,
   title: 'Graduation Quotes',
   description: 'Graduation quotes for cards, speeches, and social posts. Themes include achievement, the future, and learning.',
   keywords: 'graduation quotes, commencement quotes, graduation wishes, senior quotes, class of quotes',

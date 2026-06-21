@@ -10,6 +10,7 @@ import ToolJsonLd from '@/components/ToolJsonLd'
 import { buildToolPageSchemas } from '@/lib/build-tool-schemas'
 import { CALCULATOR_SEO } from '@/lib/calculator-seo-config'
 import { createMetadata } from '@/lib/metadata'
+import ToolEducationalGuide from '@/components/ToolEducationalGuide'
 
 export const metadata = createMetadata({
   title: 'NDA Generator',
@@ -133,6 +134,8 @@ export default function NDAGeneratorPage() {
         </section>
 
         <AdUnit slot={2} />
+
+                <ToolEducationalGuide slug="nda-generator" />
 
         <HowItWorks
           title="How This Tool Works"

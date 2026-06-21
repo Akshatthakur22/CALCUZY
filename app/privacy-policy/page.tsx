@@ -114,10 +114,38 @@ export default function PrivacyPolicyPage() {
               <p className="paragraph">
                 Calcuzy.app uses cookies and similar technologies through our analytics providers. Google Analytics may set cookies to measure page views and general usage patterns. Vercel Analytics collects anonymous, aggregated traffic data. These services help us understand which tools are useful and improve site performance. You can limit or block cookies through your browser settings or privacy extensions.
               </p>
+              <p className="paragraph">
+                If we display Google AdSense advertisements, Google and its partners may use cookies to serve ads based on your prior visits to this site or other websites. You can learn how Google uses data from partner sites at{' '}
+                <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="underline">
+                  Google&apos;s partner sites policy
+                </a>
+                . You may opt out of personalized advertising via{' '}
+                <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="underline">
+                  Google Ads Settings
+                </a>
+                .
+              </p>
             </section>
-            {/* 5 */}
+            {/* 5 — AdSense */}
             <section>
-              <h2 className="heading-2 mb-4">5. Third-Party Analytics</h2>
+              <h2 className="heading-2 mb-4">5. Advertising (Google AdSense)</h2>
+              <p className="paragraph">
+                Calcuzy may use <strong>Google AdSense</strong> to show advertisements. Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to this website or other websites. Google&apos;s use of advertising cookies enables it and its partners to serve ads to users based on their visit to Calcuzy and/or other sites on the Internet.
+              </p>
+              <p className="paragraph">
+                Users may opt out of personalized advertising by visiting{' '}
+                <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="underline">Ads Settings</a>
+                . Alternatively, you can opt out of third-party vendor use of cookies for personalized advertising by visiting{' '}
+                <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="underline">aboutads.info</a>
+                .
+              </p>
+              <p className="paragraph">
+                We aim to place ads only on pages with substantial original content and never allow ads to outweigh useful content on a screen. Calculator inputs remain in your browser and are not sold to advertisers.
+              </p>
+            </section>
+            {/* 6 */}
+            <section>
+              <h2 className="heading-2 mb-4">6. Third-Party Analytics</h2>
               <p className="paragraph">
                 We use <strong>Google Analytics 4</strong> and <strong>Vercel Analytics</strong> to understand general usage patterns such as pages visited, approximate location (city/country level), browser type, and time on site. Google Analytics is configured with IP anonymization enabled. We do not use analytics data to identify individual users, and we do not sell analytics data to third parties.
               </p>
@@ -125,16 +153,16 @@ export default function PrivacyPolicyPage() {
                 For more information, see <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer" className="underline">Google Analytics Data Privacy & Security</a> and <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">Vercel Analytics Privacy</a>.
               </p>
             </section>
-            {/* 6 */}
+            {/* 7 */}
             <section>
-              <h2 className="heading-2 mb-4">6. Data Retention & Security</h2>
+              <h2 className="heading-2 mb-4">7. Data Retention & Security</h2>
               <p className="paragraph">
                 Anonymous analytics data is retained for up to 26 months, after which it is automatically deleted. We use industry-standard security practices to protect all data, including HTTPS encryption and regular security reviews.
               </p>
             </section>
-            {/* 7 */}
+            {/* 8 */}
             <section>
-              <h2 className="heading-2 mb-4">7. Your Rights (GDPR, CCPA, etc.)</h2>
+              <h2 className="heading-2 mb-4">8. Your Rights (GDPR, CCPA, etc.)</h2>
               <p className="paragraph">
                 You have the right to:
               </p>
@@ -148,32 +176,32 @@ export default function PrivacyPolicyPage() {
                 We aim to follow privacy best practices and respond to user requests in good faith. If you have questions about your rights under laws such as GDPR or CCPA, contact us at <a href="mailto:calcuzyy@gmail.com" className="underline">calcuzyy@gmail.com</a>.
               </p>
             </section>
-            {/* 8 */}
+            {/* 9 */}
             <section>
-              <h2 className="heading-2 mb-4">8. Children’s Privacy</h2>
+              <h2 className="heading-2 mb-4">9. Children’s Privacy</h2>
               <p className="paragraph">
                 Calcuzy.app is designed for general audiences and does not knowingly collect information from children under 13. If you believe a child has provided personal data, please contact us for prompt removal.
               </p>
             </section>
-            {/* 9 */}
+            {/* 10 */}
             <section>
-              <h2 className="heading-2 mb-4">9. Changes to This Policy</h2>
+              <h2 className="heading-2 mb-4">10. Changes to This Policy</h2>
               <p className="paragraph">
                 We may update this Privacy Policy from time to time. Major changes will be announced on the site. Your continued use of Calcuzy.app means you accept the updated policy.
               </p>
             </section>
-            {/* 10 */}
+            {/* 11 */}
             <section>
-              <h2 className="heading-2 mb-4">10. References & Resources</h2>
+              <h2 className="heading-2 mb-4">11. References & Resources</h2>
               <ul className="list-disc ml-6">
                 <li><a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer" className="underline">GDPR.eu: General Data Protection Regulation</a></li>
                 <li><a href="https://oag.ca.gov/privacy/ccpa" target="_blank" rel="noopener noreferrer" className="underline">California Consumer Privacy Act (CCPA)</a></li>
                 <li><a href="https://www.eff.org/issues/privacy" target="_blank" rel="noopener noreferrer" className="underline">EFF: Privacy & Security</a></li>
               </ul>
             </section>
-            {/* 11 */}
+            {/* 12 */}
             <section>
-              <h2 className="heading-2 mb-4">11. Contact</h2>
+              <h2 className="heading-2 mb-4">12. Contact</h2>
               <p className="paragraph">
                 For any privacy-related questions, requests, or concerns, please email <a href="mailto:calcuzyy@gmail.com" className="underline">calcuzyy@gmail.com</a>. We are committed to resolving all privacy issues promptly and transparently.
               </p>
